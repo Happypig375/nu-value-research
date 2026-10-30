@@ -1,0 +1,19 @@
+# Linux handoff — 30 October 2026 (HKT)
+
+The operating copy is `/home/happypig375/workspace/nu-value-research`. The research goal remains **blocked**. Migration did not activate research, literature work, native builds or either Daybreak-only branch (deliberate recovery fault triggering and ordinary screen serializer/runtime persistence). Historical README/PLAN wording is retained as source provenance; it does not resume the goal.
+
+Home HEAD `fca2547c7d37c9af13db574d137d5152e54f0759` and its working state are authoritative. The local `port/linux-2026-10-30` branch first records the four original tracked WIP files in `868bd9a4eb064b68a9f22268e3b24958e8f180af`, without changing their working bytes. Source untracked/ignored files remain in place and outside migration commits. The separately retained GitHub clone in home-port's `.orchestration/source-archives/nu-github-clone` is at `2346751bc681850463b5acb26ebcc9cd97344cf5`, **25 commits ahead of Home**. It was not merged; this checkout is not claimed current with GitHub.
+
+The raw copy passed source-before/source-after comparisons: 294,598 files and 221,660,448,333 bytes. The sealed archive is mode 0400, SHA256 `a577ffa9a8dfb91be69a7b14ae04558849f5012b08bb2106dad27e5c827b4a95`. Both approved external `.artifacts/project-rename-20260930` and `.artifacts/workstream-e2` targets were subsequently installed and hash-verified; original inert link metadata and transformation receipts remain in `.orchestration/evidence/`. No research content was moved. Original operating text and Git metadata are backed up in `home-operational-originals/`, with hashes in `home-operational-originals.json`.
+
+Run `bash scripts/linux_smoke.sh` using the local `.venv` (Python 3.12.16, created without pip). All **11 existing standard-library CI-routing tests passed**. No package download or .NET setup was needed. This verifies structural routing only; native runtime and scientific results were not tested. Sparse patterns remain unchanged. Repository-local CRLF-aware Git settings preserve Home's working bytes; the added shell runner alone has an LF attribute. See `linux-preparation.json`, `linux-application.json`, `linux-smoke.log` and `linux-final-preservation.sha256` under `.orchestration/evidence/`.
+
+The existing session import is complete: 43 scoped IDs / 23 files, all approved spawn edges present, prior server rows unchanged. Exact-cwd, no-turn resume passed with recovered Codex ID `01a189e7-9a74-7271-9572-6f7a5504dba1`. The current context was recovered; historical UI pages are empty, while original history is preserved separately. No source Claude session was found. Resume explicitly with:
+
+```sh
+codex resume 01a189e7-9a74-7271-9572-6f7a5504dba1 --cd /home/happypig375/workspace/nu-value-research -m gpt-6-astra -c 'model_reasoning_effort="high"'
+```
+
+The local `.codex/config.toml` specifies Astra/high. Native config-read recognized it but disabled the project layer because this project is not trusted; effective defaults were unset. No global trust/config was changed. Keep the explicit overrides above unless the owner changes trust. Session production/completeness/config-read receipts are copied into `.orchestration/evidence/session-port/`.
+
+Orca registration succeeded: `fff9d7d9-6be2-42b2-aa71-81955c3cee7b`; logs are preserved locally. No push was performed. Further substantive research requires the existing blocked-goal and Daybreak authority gates; no new technical blocker was found for this bounded migration.

@@ -1,3 +1,11 @@
+# Server migration scope — 30 October 2026
+
+The operational copy is `/home/happypig375/workspace/nu-value-research`. Read [STATUS.md](STATUS.md) for setup, verified session resumes and migration limits. The original Home instructions below are preserved byte-for-byte; migration does not activate their historical research assignments.
+
+The restored original research goal remains **blocked**. R02/R10/R12 construction returns remain closed. The deliberate recovery-fault trigger and ordinary screen serializer/runtime-persistence branches remain unfinished and **Daybreak-only**: other models must not investigate, implement, test, execute or delegate them. Porting permits only the audited standard-library CI-routing smoke, operational documentation and environment checks. No native experiment/build, provider/candidate call, literature expansion or goal activation is selected.
+
+Home HEAD `fca2547` is authoritative for this working snapshot. The separate GitHub provenance `2346751` is 25 commits ahead; it was not merged. Its later instruction snapshots are retained in ignored `.orchestration/evidence/github-instruction-provenance/`. Reconcile research authority explicitly before future science; do not silently replace Home WIP or treat this checkout as current with GitHub. No push or tracker change is part of migration.
+
 # Maintainer entry point
 
 Read [PLAN.md](PLAN.md) first. It owns authority and the current assignment. The [2026-09-30 supervisor review](docs/supervisor-review-2026-09-30.md) explains the latest corrections. Historical proposals do not override these routes.

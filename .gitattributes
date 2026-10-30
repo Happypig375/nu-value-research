@@ -43,3 +43,6 @@
 # Retain the terminal blank line in the original frozen protocol artifacts.
 /experiments/nu-r04-pause-runtime/fault-gates.md whitespace=-blank-at-eof,cr-at-eol
 /experiments/nu-r04-pause-runtime/pre-execution-contract.md whitespace=-blank-at-eof,cr-at-eol
+
+# Keep the added Linux runner executable by bash after checkout.
+/scripts/linux_smoke.sh text eol=lf

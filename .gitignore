@@ -10,3 +10,6 @@ results/
 **/bin/
 **/obj/
 .DS_Store
+
+# Local Linux migration evidence and environment
+.orchestration/evidence/

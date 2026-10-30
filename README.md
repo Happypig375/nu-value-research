@@ -1,3 +1,18 @@
+# Linux operating copy — 30 October 2026
+
+Use `/home/happypig375/workspace/nu-value-research` on this server. [STATUS.md](STATUS.md) records the blocked goal, current session, exact resume command and preserved research boundaries. Historical Home locations below remain provenance.
+
+The accepted migration smoke is the existing standard-library CI-routing suite. Create the small Python environment if needed, then run:
+
+```sh
+/home/happypig375/.local/share/uv/python/cpython-3.12.16-linux-x86_64-gnu/bin/python3.12 -m venv --without-pip .venv
+bash scripts/linux_smoke.sh
+```
+
+No third-party package or .NET SDK is needed for this check. The sparse Home working tree intentionally omits root `pyproject.toml` and `global.json`; do not materialize excluded files or rebuild held native branches to satisfy a historical Git blob. Windows binaries and `.artifacts/` stay in place. Both separately approved archive targets are installed as verified real directories, with original link metadata and transformation receipts in `.orchestration/evidence/`.
+
+Home HEAD `fca2547` and its WIP remain the source state. The retained GitHub clone at `2346751` is 25 commits ahead and was not merged. Original operating text/Git metadata and the complete sealed raw archive remain preserved. This structural smoke establishes neither native-runtime portability nor scientific validity.
+
 # Nu value research
 
 This project investigates where Nu's approach to state, domain modeling, coordination and development tools provides useful differences, and what evidence would establish their value. **Interactive Software Evolution (ISE)** remains the repository's internal codename.
