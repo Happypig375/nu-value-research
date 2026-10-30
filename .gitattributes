@@ -32,6 +32,7 @@
 # Preserve the exact hashed bytes of these experiment inputs and receipts.
 /experiments/nu-r10-schema-reload/** -text whitespace=cr-at-eol
 /experiments/nu-r10-schema-migration/** -text whitespace=cr-at-eol
+/experiments/nu-r02-input-feasibility/** -text whitespace=cr-at-eol
 /experiments/nu-r02-standalone-lifecycle/** -text whitespace=cr-at-eol
 /experiments/nu-r04-pause-runtime/** -text whitespace=cr-at-eol
 /experiments/nu-r06-recovery-cost/** -text whitespace=cr-at-eol

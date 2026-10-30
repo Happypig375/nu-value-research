@@ -282,3 +282,22 @@ declared configuration, the indirect Villa reconstruction boundary, actual
 save/reopen, repair and complete work explicit. Source propagation under that
 change, visible appearance, practical demand and ordinary editing access remain
 unobserved; the preservation prerequisite does not establish them.
+
+#### 2026-10-18 accepted revision comparison
+
+The [revision construction record](nu-terra-firma-revision-feasibility-2026-10-18.md)
+now binds the common shared-tint/local-roughness requirement and ordinary
+batch operation in an accepted prospective protocol. Each operation receives
+the same existing family metadata and must preserve all declared configuration
+on every original entity. Propagation and batch have different allowed saved
+history consequences; those are reported separately from the common required
+material outcome. Every eligible reopen consumes its own actual save,
+including an adverse one.
+
+The lifecycle recorder has a separate callback counter and contiguous
+ordinals, plus address/ID transition checks; final IDs alone cannot count
+intermediate repeated reconstruction. The predicted 163 original-entity
+occurrences are a falsifiable expectation, not a run-validity requirement.
+The construction record owns current review, compile and execution gates.
+No native revision outcome or complete-work advantage follows from the
+accepted protocol or synthetic controls.

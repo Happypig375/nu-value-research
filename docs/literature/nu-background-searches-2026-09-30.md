@@ -9822,3 +9822,39 @@ explicit. This is no new paper search, publication reading, Zotero write or
 reading-count increment. The broad survey remains open, and neither the
 preservation result nor the source report resumes R02/R10 or allocates
 experimental candidates or participants.
+
+### R12 Terra Firma revision contract and recorder boundary, 2026-10-18
+
+The [revision construction record](../nu-terra-firma-revision-feasibility-2026-10-18.md)
+and [accepted prospective protocol](../../experiments/nu-r12-terra-revision/PROTOCOL.md)
+bind a common shared tint/local roughness requirement, ordinary batch field
+updates, actual-save reopens, all-original configuration and indirect Villa
+reconstruction. No native revision outcome is established at this checkpoint.
+The corrected prerequisite's complete inventory confirms 32 effective all-None
+material records, 2,351 observed original explicit properties and the actual
+older nested histories; it is reused evidence, not another native trial.
+
+Four selected pinned source-body uses materially extend the previous screen:
+
+| Source | Coverage and consequence |
+| --- | --- |
+| [WorldModuleEntity](https://github.com/bryanedds/Nu/blob/064f7ae92a8506689cd91aff5e6804a375d6ef3d/Nu/Nu/World/WorldModuleEntity.fs#L2147) | Registration/unregistration notification timing and `writeEntity` history controls. Read IDs while available; compare the two advancing histories against current source serialization, removing only top-level self-history. |
+| [WorldEvents](https://github.com/bryanedds/Nu/blob/064f7ae92a8506689cd91aff5e6804a375d6ef3d/Nu/Nu/World/WorldEvents.fs#L12) | Three lifecycle payload kinds and typed address. Count before classification and retain every delivered callback. |
+| [WorldGame](https://github.com/bryanedds/Nu/blob/064f7ae92a8506689cd91aff5e6804a375d6ef3d/Nu/Nu/World/WorldGame.fs#L54) | Public Game lifecycle address supplies an observer that survives target reconstruction. |
+| [Color](https://github.com/bryanedds/Nu/blob/064f7ae92a8506689cd91aff5e6804a375d6ef3d/Nu/Nu.Math/Color.cs#L104) | Float RGBA constructor binds the exactly representable authored tint components; no visual inference. |
+
+Selected source bytes match the retained Nu archive. Previously credited
+propagation, material and project methods are reused without a duplicate
+screen. Independent review rejected endpoint-only event validation because a
+lost balanced intermediate pair can preserve the endpoint map. The accepted
+counter/ordinal correction tests recorder loss while keeping the predicted
+163 reconstruction occurrences open to falsification. It cannot independently
+prove that all internal actions emitted or delivered an event.
+
+Scite accepted `nu_r12_terra_revision_contract_20261018` once: **4 cited,
+0 excluded, 0 skipped**. The inspected report has four source identities,
+`retrieved:null`, `truncated:false`, zero missing reasons and
+`retrieval_unlinked:false`. The stage describes selected source bodies, not
+four paper or whole-file readings. No new literature search, Zotero write,
+publication reading or reading-count increment is credited. Source preparation,
+synthetic checker validation and eventual native execution remain separate.

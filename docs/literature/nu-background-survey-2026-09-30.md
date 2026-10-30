@@ -1729,3 +1729,32 @@ does not execute propagation, measure visual/physics preservation, validate
 ordinary Gaia/agent access, establish practical demand or estimate authoring
 benefit. Existing literature and the deferred human steering question retain
 their separate scopes. R02/R10 and candidate/participant allocations are unchanged.
+
+## 2026-10-18 continuation: field intent and reconstruction measurement
+
+**Discovery and primary understanding:** selected pinned lifecycle, entity
+serialization and RGBA constructor bodies support the
+[accepted Terra Firma revision protocol](../nu-terra-firma-revision-feasibility-2026-10-18.md).
+This extends the existing source/practice-grounded case without adding a paper
+reading or independent study. Both operators receive the existing family
+metadata; the ordinary batch reads each current material record and changes
+only the requested field.
+
+**Evidence disposition, B04/B05/B08/B10/B12:** the shared tint and local
+roughness condition now separates field-level intent from whole-property
+propagation. The predicted material conflict and indirect Villa reconstruction
+remain hypotheses for this artifact. A rejected recorder design showed why
+endpoint IDs alone cannot establish repeated reconstruction counts: a missing
+balanced intermediate pair can leave the same endpoint. The accepted protocol
+requires independent callback counts and ordinals, while retaining coherent
+count divergence as evidence. Callback integrity does not prove complete
+internal/native event emission or delivery.
+
+**Next consequential action:** complete source/checker/compile acceptance and
+observe the fixed four revision cases and eligible actual-save reopens. Retain
+adverse delivery, treatment-specific histories, all declared collateral
+configuration and maintainer preparation work. Faithful reopening of an adverse
+save is not successful delivery. Visuals, native lifetime, ordinary editing
+access, practical demand and authoring/steering benefit remain separate gaps.
+Neither construction nor this source synthesis changes the R02/R10 returns
+or experimental candidate/participant allocations.
