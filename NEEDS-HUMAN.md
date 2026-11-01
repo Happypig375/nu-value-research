@@ -41,9 +41,9 @@ The orchestrator approved "7(a), 8(a) and 8(b) (the recommended options)".
 
 ## 2026-11-02 — Kimi K3 (Daybreak branches)
 
-### K2. Checkpoint note (no decision needed): branch B paused at credit ceiling, one rebuild + three runs left
-- **Facts:** Branch B's protocol is committed (`c06e926`) and its probe needs one rebuild (a one-line lazy-evaluation fix is already applied) and three scripted runs (export, import, replace-nodestroy). Instructions are in `experiments/nu-daybreak-screen-persistence/README.md`; prepared source and caches are in `/tmp/kimi-daybreak-20261102/runs/`. A leftover Xvfb on display `:94` from the failed export attempt can be killed.
-- **Recommendation:** a future Kimi session (or the same one resumed) can finish branch B without any user decision. Nothing here blocks anyone else.
+### K2. DONE (no decision needed): branch B finished — export works, stock import API broken at pinned revision
+- **Facts:** All three arms ran. Export passed (file contains the complete model and declared screen properties, no entity content, as source-verified). Both import arms crashed identically inside `World.readScreenFromFile`: it addresses the imported screen with one name instead of the game-rooted two, a reproducible engine defect in a callerless code path at pinned Nu `064f7ae`. Results are in `docs/nu-daybreak-screen-persistence-2026-11-02.md` and STATUS.md. Evidence in `.artifacts/daybreak-screen-persistence-20261102/`. Scratch `/tmp/kimi-daybreak-20261102/` (~3 GB, rebuildable) can be deleted.
+- **Open follow-up (for a future decision, not blocking):** whether to amend the protocol to test a corrected import (engine patch or new API) is a separate question; documented as "next step" in the results doc.
 
 ### K1. The two private source drafts for the Daybreak branches are still not on the server
 - **Facts:** The brief (`.orchestration/TASK-daybreak-kimi.md`) expects two private, unaccepted source candidates under `~/workspace/home-port/.orchestration/rescued/nu-value-recovery/20261025-s180-integrity-stop-01/value-preparation/`:

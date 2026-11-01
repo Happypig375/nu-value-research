@@ -82,4 +82,39 @@ Harness: the same functional, accompanied Gaia harness as the accepted B0/B1 and
 
 ## Results (appended after execution)
 
-*(pending)*
+**Conclusion: export works and writes exactly the verified scope; the stock import API is broken at the pinned revision.** `World.writeScreenToFile` produced the expected file from the live halted screen, and the model inside it round-trips to B0 through the symbolic format. `World.readScreenFromFile` cannot install it: `World.readScreen` constructs the imported screen at a one-name address (`Screen (ntoa screenState.Name)`, `WorldScreen.fs:309`) instead of the game-rooted two-name address used everywhere else (`Game.Handle / name`, e.g. `createScreen4` at `WorldScreen.fs:228`). Both import arms crashed with the same engine exception before any observation. The branch-B question "saved through the ordinary serializer and loaded back so that B0 is reproduced" is answered: **export, yes; stock import, no — a reproducible engine defect, observed, not inferred.**
+
+### Attempts (all preserved; evidence in `.artifacts/daybreak-screen-persistence-20261102/`)
+
+Builds: attempt 01 — operator shell error (`dotnet` not on PATH; nothing ran). Attempt 02 — compile error FS0072 (probe `world` parameter needed a type annotation). Attempt 03 — compiled, but probe DLL not used further. Attempt 04 — compile error FS0001 (one missed lazy-reference use). Attempt 05 — **compiled** (probe `c3c010d7…8fb7`, Breakout DLL `1ca025c3…908c`). Runs:
+
+| Run | Outcome | Detail |
+| --- | --- | --- |
+| export-01 | failed in 0.37 s (SIGABRT) | Probe construction bug: parsed the B0 reference before `Nu.initPlus` registered Nu's math converters. Never reached the engine. |
+| export-02 | **passed** in 28.7 s | Negative controls rejected the fresh board; B0 installed via the supported setter; full common check passed before and after export. |
+| import-01 | **failed** in 22.3 s | `InvalidCastException` (`Nu.Screen`→`Nu.Group`) inside `readScreenFromFile`, during first-time MMCC content sync. |
+| replace-nodestroy-01 | **failed** in 23.3 s | Identical exception without the group-destruction step, so the defect is in the import API itself, not in this policy. |
+
+The orchestrator's stop rule (two failures at the same step) is met at the import step; the crash is deterministic by construction (see below), so no further identical reruns were spent.
+
+### What the export file actually contains (observed)
+
+`transfer/gameplay-screen.nuscreen`, 3,045 bytes, SHA-256 `a1827a05…c3e6f`: dispatcher `GameplayDispatcher`; exactly the properties `Incoming, Model, Name, Outgoing, Persistent, RequestedSong, SlideOpt`; **zero group descriptors** — the declaratively protected `Scene` group and its entities are excluded, matching the source reading. The `Model` property parses back to a `Gameplay` value bit-equal to the B0 reference. So the file carries the complete screen model and declared screen properties, and no live entity content — as the protocol predicted from source.
+
+### Why import fails (observed exception + source mechanism)
+
+Stack: `readScreenFromFile` (`WorldScreen.fs:331`) → `readScreen` (`:310`) → `addScreen` (`WorldModuleScreen.fs:474`) → `registerScreen` (`:456`) → MMCC `Register` (`WorldModule2.fs:2863`) → `TrySynchronize` → `Content.synchronizeScreen` (`WorldContent.fs:277`) → `InvalidCastException: Unable to cast object of type 'Nu.Screen' to type 'Nu.Group'`.
+
+Mechanism: `readScreen` builds the screen as `Screen (ntoa screenState.Name)` — a one-name address (`[|"Gameplay"|]`), while the real screen lives at the two-name game-rooted address (`[|"Game"; "Gameplay"|]`). Two consequences, both observed in the trace: (1) `getScreenExists` misses the existing screen, so the import is treated as a new screen and re-registered; (2) content sync derives child addresses from the wrong parent names, producing two-name addresses that `deriveFromNames` (`WorldSimulant.fs:237-248`: length 2 → Screen, 3 → Group) maps to `Screen`, which the sync then casts to `Group` — the crash. Without MMCC content the same defect would silently install the imported state at an address nothing else reads. This path has no callers anywhere in the pinned tree (§1 item 17), so the defect was never exercised at this revision. Whether later Nu revisions fixed it was not checked (out of scope).
+
+### Interpretation and limits
+
+- What round-trips through Nu's ordinary serializer: the screen's declared properties and the complete seven-field gameplay model, bit-exact, verified against the closed history-04 B0 reference on the export side (`modelRoundTripEqualsB0: true`; common check passed pre- and post-export).
+- What does not round-trip through the stock API: installation of that file back into a world. The import defect blocks the declared common outcome check in the fresh process, so **no claim of reproduced B0 state after import is made**. The negative controls and export-side checks did pass, so the export half of the round-trip is genuinely evidenced.
+- The diagnostic arm's frozen prediction (stale entities survive a no-destroy replace) was not reached: the same API defect crashes first. Recorded as not-observed, neither confirmed nor falsified.
+- Out of scope as before: native/physics state, audio, eye/camera, transitions, journals/tasklets, editor state, RNG continuation, resumed processes; no benefit claim; rendering parity not claimed (software renderer, Mesa override as in the R04 Linux reproduction).
+- Costs so far: one authored probe (~280 lines) plus scripts reusing the reviewed harness; 5 builds and 4 runs; the whole cycle (fix, build ~90 s, run ~25 s) is cheap, but correcting the engine defect means patching engine source — a different evidence class (adapted source), not the ordinary API, and not done here.
+
+### Next step (not started)
+
+A written amendment could test a corrected import (engine patch rooting the address at `Game.Handle`, or a caller-side descriptor walk using only public APIs — none exists, since `addScreen` is internal) to answer whether the file format round-trips once the addressing defect is removed. That is a new question with a different evidence class; it needs its own protocol first.
