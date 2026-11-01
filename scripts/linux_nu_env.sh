@@ -20,7 +20,13 @@ display="${NU_DISPLAY:-:93}"; n="${display#:}"
 mkdir -p "$runs"
 xdir="$runs/.x11"; mkdir -p -m 700 "$xdir"
 export DISPLAY="$display" XAUTHORITY="$xdir/xauth"
-if ! pgrep -u "$(id -u)" -f "^Xvfb $display " >/dev/null; then
+existing="$(pgrep -u "$(id -u)" -a -f "^Xvfb $display " | head -1 || true)"
+if [ -n "$existing" ]; then
+  # Reuse our own running display with the cookie file it was started with.
+  auth="$(sed -n 's/.* -auth \([^ ]*\).*/\1/p' <<<"$existing")"
+  [ -n "$auth" ] && [ -r "$auth" ] || { echo "cannot find auth file of running Xvfb $display" >&2; exit 3; }
+  export XAUTHORITY="$auth"
+else
   [ -S "/tmp/.X11-unix/X$n" ] && { echo "display $display is in use by someone else" >&2; exit 3; }
   rm -f "$XAUTHORITY"; ( umask 077; xauth -q -f "$XAUTHORITY" add "$display" . "$(mcookie)" )
   nohup Xvfb "$display" -screen 0 1920x1080x24 -nolisten tcp -auth "$XAUTHORITY" </dev/null >"$xdir/xvfb.log" 2>&1 &
@@ -28,6 +34,6 @@ if ! pgrep -u "$(id -u)" -f "^Xvfb $display " >/dev/null; then
 fi
 
 { echo "command: $*"; echo "display=$DISPLAY started=$(date -Is)"
-  env | grep -E '^(DOTNET_ROOT|NUGET_PACKAGES|LIBGL|GALLIUM|LP_NUM|SDL_|MESA_|LD_LIBRARY_PATH)=' | sort
+  env | grep -E '^(DOTNET_ROOT|NUGET_PACKAGES|XAUTHORITY|LIBGL|GALLIUM|LP_NUM|SDL_|MESA_|LD_LIBRARY_PATH)=' | sort
   dotnet --version; } > "$runs/$log.env.txt"
 exec nice -n 10 "$@"

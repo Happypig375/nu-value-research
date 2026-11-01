@@ -64,3 +64,29 @@ The limits of the original B0/B1 records still apply:
 - one pinned application in functional mode.
 
 Software rendering means no performance claim; elapsed times are not comparisons. A pass shows only that these bounded history observations reproduce on this server. If B1 matches bit for bit, that holds for this twenty-step managed trajectory only, not for Nu's determinism in general. Nothing here bears on maintenance benefit or agent access.
+
+## Results (added 2 November 2026, after the runs)
+
+**Conclusion: both history packages reproduce on this Linux server, and B1's twenty-step trace is bit-for-bit identical to Windows.** Every pass condition was met. The only failure was one environment mistake in my wrapper, fixed without changing any package byte.
+
+| Step | Result |
+| --- | --- |
+| 1. Prepare | `prepare.py` exit 0. Instrumented `Gaia.fs` hash `19964b82…6cdfc5`, **equal to the Windows bridge-generated hash**; original `Gaia.fs` `0cf653d4…`; no application source modified. Archive hash `eb0aa771…f92b`. The 16 package files were copied unchanged (hash list in the evidence folder). |
+| 2. Build | B0 probe (with Gaia and Breakout): exit 0 in 77 s, **334 warnings, the same count as the first full Windows build**, codes NU1608/NU1901/NU1902 only. B1: exit 0, codes NU1608/NU1901/NU1902 only (counts depend on which projects rebuild, so they are not compared). |
+| 3. B0 history | Attempt 02 **passed** in 108 s. The first scoring state came at game time 278 (Windows: 149), with score 100, 29 bricks and 5 lives. The checkpoint was taken at that halted boundary. Eleven real drift updates followed, then Gaia's undo restored the complete model and projection, and the next halted boundary agreed. No Left/Right input was seen. |
+| 4. B0 fresh | **Passed** in 26 s. The Linux checkpoint was rebuilt exactly in a new process, and both negative controls failed equality, as required. |
+| 5. B1 runs | History and fresh each **passed** in 34 s. Both matched the declared reference at all twenty steps and at the final halted observation. Update/TimeUpdate counts were 30/30 for history and 20/20 for fresh, the same as Windows. |
+| 6. B1 on Linux | Frozen `compare.py` **passes**: 20 complete models and 20 projections equal, and all three corruption checks rejected. |
+| 7. B1 across platforms | `compare_platforms.py`: **history 24/24 and fresh 23/23 records equal to Windows**. That covers the seeded checkpoint, event schedules, all twenty steps and the final halted state. A one-bit corruption is detected in each arm, and the Windows-against-Windows self-test passes. The frozen `compare.py` also passes on both mixed pairs (Windows history with Linux fresh, and Linux history with Windows fresh). |
+
+**Attempts, all retained** (`.artifacts/r03-linux-reproduction-20261102/`):
+
+1. B0 history attempt 01: **failed in 0.5 s**, before the engine opened a window. SDL reported `x11 not available` and the X server said `Authorization required`. Cause: my wrapper `scripts/linux_nu_env.sh` reused the virtual display that the build step had started, but pointed at a different cookie file. I fixed the wrapper to reuse the running display's own cookie file. No package byte changed.
+2. B0 history attempt 02, B0 fresh 01, B1 history 01, B1 fresh 01: all passed at the first try.
+
+**What this adds.** The R03 history observations do not depend on Windows or on hardware OpenGL, so this server is now a usable environment for R03 as well as R04. B1's identical bit patterns show that this twenty-step managed ball trajectory (including the update-5 wall bounce) is computed identically by .NET 10 on both platforms.
+
+**Limits.** These hold in addition to the protocol's limits.
+- B0's Linux checkpoint is a different game state from Windows, as expected from the random start. B0 is reproduced as a mechanism, not as identical values.
+- The same OpenGL-override caveat as R04 applies: nothing drawn was scored.
+- Probe and application binaries differ from Windows, as expected: builds embed absolute paths. Linux probe `4ea8d399…` (B0) and `cef2ed85…` (B1); application `9fa87ba8…`.
