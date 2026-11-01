@@ -2,6 +2,17 @@
 
 Newest first. Each item lists the options, my recommendation and what it blocks. Background is in [STATUS.md](STATUS.md) (section dated 1 November 2026).
 
+## 2026-11-02 item 7 — Claude Opus
+
+### 7. May I run a fresh "real keyboard input" check, given that the R02 input gate is stopped?
+- **Facts:** In STATUS ("Groundwork for the next step") I proposed checking that a real key press, sent to the virtual display through the X server, reaches the unchanged standalone game, and that the result can be seen from outside by screenshot. PLAN names this kind of check ("establish supported input … observations") as the next step after R02's lifecycle pair. But PLAN's **R02 input-construction return** (15 October, five-failure rule) stopped exactly that line of work. It says that resuming requires binding the returned draft and getting independent and parent acceptance first. A fresh check that doesn't reuse the draft could still count as resuming that gate under another name.
+- **Options:**
+  - (a) Treat the 2 November pre-approval as covering a fresh, independently written input check, with a protocol committed first and the returned draft left unread. State clearly that it is new work, not the R02 gate.
+  - (b) Treat it as resuming the R02 gate. Wait for an explicit user decision and follow PLAN's resumption conditions.
+  - (c) Skip it.
+- **Recommendation:** (b). The project's rules are strict about returned gates, and this is a judgment the user should make. I'm continuing with the Linux reproductions meanwhile.
+- **Blocks:** only this input check.
+
 ## 2026-11-02 — Kimi K3 (Daybreak branches)
 
 ### K2. Checkpoint note (no decision needed): branch B paused at credit ceiling, one rebuild + three runs left

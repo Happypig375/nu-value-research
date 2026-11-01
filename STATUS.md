@@ -1,5 +1,24 @@
 # Status and continuation plan — 1 November 2026 (HKT)
 
+## More October packages reproduce on Linux — Claude Opus (2 November 2026, ~02:50 HKT)
+
+**Conclusion:** three more frozen native packages from 15 October reproduce unchanged on this server. With R04 earlier today, that makes four. This server is now a working environment for the pinned Nu revision, not just in principle. Each check had its protocol committed before any build or run.
+
+| Package | Result | Record |
+| --- | --- | --- |
+| R03 history pair (B0 undo restore, B1 twenty-step continuation) | All four runs pass. **B1's twenty steps are bit-for-bit identical to Windows** in both arms. B0 reached a different (random) checkpoint and restored it exactly. | [doc](docs/nu-r03-linux-reproduction-2026-11-02.md) |
+| R10 live code reload (F# Interactive recompiles a running game) | Pass at the first attempt; **every compared field equals Windows**, including the generated type name `FSI_0005`. | [doc](docs/nu-r10-live-reload-linux-reproduction-2026-11-02.md) |
+| R02 standalone lifecycle (both unchanged Breakout games, Play/Quit/Play) | Both pass at the first attempt; **callback counts (485/487) and event sequences equal Windows**. Only clock units and the random ball differ. | [doc](docs/nu-r02-lifecycle-linux-reproduction-2026-11-02.md) |
+
+- **Failures, all kept:** one, B0 history attempt 01. My new display wrapper `scripts/linux_nu_env.sh` used the wrong X cookie file; I fixed the wrapper, not the package.
+- **Deviations, stated in the docs:**
+  - R02's manifest files differ from Windows only by line endings: all 3,240 rows are identical.
+  - R02's build script needed a `powershell` command, supplied by a per-user PowerShell 7.4.6 (official tarball, hash checked).
+  - R02's build acceptance had no second reviewer.
+- **None of this touches** the stopped R02 input draft, the R10 schema-migration draft, R12 material-intent, R03 native-001 or the Daybreak branches. These checks measure no benefit.
+- **Scratch:** the build trees (16.5 GB) were deleted, which is logged in each evidence folder's `DELETIONS.log`. Evidence is in `.artifacts/{r03-linux-reproduction,r10-live-reload-linux,r02-lifecycle-linux}-20261102/`.
+- **Next, unless told otherwise:** the same check for the R06 recovery-cost series, then the small compile/probe packages (R01, R04 diagnostics, R05, R10 conversion, R12 propagation). The real-keyboard input check proposed earlier is on hold pending NEEDS-HUMAN item 7, because it may overlap the stopped R02 input gate.
+
 ## Daybreak-only branches — Kimi K3 session (2 November 2026)
 
 **Conclusion, in plain language.** The screen save/reload branch (branch B) is prepared and part-built, but no successful run exists yet. All source reading for it is done and written down; the experiment protocol is fixed and committed; the probe program compiled once and is one small fix away from compiling again (fix applied, not yet rebuilt). The one attempted run (export arm) failed in my probe's startup code before the engine even opened a window — my probe parsed the reference model file before Nu had registered its math type converters. This is a probe bug, not an engine result. The recovery fault-trigger branch (branch A) is untouched: its private source draft is still not on the server (see NEEDS-HUMAN item K1), and the orchestrator told this session to leave it until the sources arrive.
