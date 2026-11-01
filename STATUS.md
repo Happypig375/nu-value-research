@@ -17,6 +17,19 @@ Written by a fresh Claude Opus session started by the orchestrator. Questions fo
 3. **Scite check.** The prescribed read-only `citation_report` for the saved R14 audit `r14_public_request_frame_20261026` now gets an answer instead of the old login error. The answer is "no decisions recorded for this session": Scite keeps these reports per session, so a new connection cannot see the old audit. The login blocker is gone, but the old audit can't be checked remotely. Logged in `~/workspace/exchange/literature-quota.tsv` (1 Scite call).
 4. Answered nu-gaia-agentic's question about what Gaia users do in the Interactive window, in `~/workspace/exchange/nu-value-research--to--nu-gaia-agentic.md`. Short answer: we have no usage data, only source readings. One of them matters for their tasks: every Interactive evaluation takes an undo snapshot and clears redo, even a read-only one.
 
+## Handover: Kimi K3 brief ready — Claude session no longer editing (2 November 2026, ~01:30 HKT)
+
+- **The brief for the Daybreak-only branches is ready:** `.orchestration/TASK-daybreak-kimi.md` (untracked, private). The user decided on 2 November that Kimi K3, via GitHub Copilot CLI, does this work. The brief covers:
+  - the two branches and where their preserved material is;
+  - the exact rules that made them Daybreak-only, and which rules still apply;
+  - what to verify, build and test, and the acceptance checks;
+  - which files it may and must not touch;
+  - how to report.
+- **The Claude Opus session has stopped editing this checkout** after the commit that adds this section. No background job of mine is running and no Xvfb display is left open. The Kimi session can start without overlap.
+- **R14 Scite audit (NEEDS-HUMAN item 2): done.** The saved 81 decisions were submitted once under `r14_public_request_frame_20261026_resubmit_20261102`. Scite recorded 13 cited and 68 excluded, with 0 skipped. The report readback is complete, with no missing reasons. Receipt: `.artifacts/r14-citation-resubmission-20261102/receipt.json`.
+- **GitHub CI for the backup push (run 41328309334): passed.** Linux 11 min 4 s, Windows 15 min 53 s; the maintenance job was skipped by design. These are the repo's structural checks only.
+- **Still open for the user:** nothing from this session. The Daybreak work now belongs to the Kimi session.
+
 ## Backed up to GitHub; work now on `main`, 2 November 2026 (user-authorized)
 
 - **Before:**

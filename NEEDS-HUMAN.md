@@ -2,6 +2,11 @@
 
 Newest first. Each item lists the options, my recommendation and what it blocks. Background is in [STATUS.md](STATUS.md) (section dated 1 November 2026).
 
+## 2026-11-02 items 2 and 4 — Claude Opus
+
+- **Item 2: DONE (option a).** home-port's copy of the Home C: folder brought the saved R14 audit input (`citation-input.json`, SHA-256 `152b181e…1966`). I submitted the 81 unchanged decisions once to Scite under the new ID `r14_public_request_frame_20261026_resubmit_20261102`. Scite recorded 13 cited, 68 excluded and 0 skipped. Reading the report back showed 81 screened, no decision missing a reason, not truncated. The old ID stays unverifiable (Scite reports are per session). Receipt: `.artifacts/r14-citation-resubmission-20261102/receipt.json`.
+- **Item 4: handed to Kimi K3** (user decision, 2 Nov). The self-contained brief is `.orchestration/TASK-daybreak-kimi.md`. I did none of the work. The brief notes that the two private source drafts for these branches (`recovery-reachability-20261025/`, `screen-persistence-source-20261025/`) are **not yet on the server**: only `r14-external-accounts-20261026/` had arrived in home-port's `rescued/nu-value-recovery/`. The historical inputs for the screen-persistence branch are on the server.
+
 ## 2026-11-02 item 3 done — Claude Opus
 
 - **Item 3: DONE** (the user approved it as development work). R04 reproduces on Linux: 4/4 references pass, 5/5 faults caught at their predicted gates, reference records identical to Windows. One environment fix was needed (Mesa OpenGL 4.6 override). Details are in STATUS.md and `docs/nu-r04-linux-reproduction-2026-11-02.md`. Nothing is waiting on the user for this.
