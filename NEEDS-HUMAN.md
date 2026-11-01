@@ -2,6 +2,17 @@
 
 Newest first. Each item lists the options, my recommendation and what it blocks. Background is in [STATUS.md](STATUS.md) (section dated 1 November 2026).
 
+## 2026-11-02 — Kimi K3 (Daybreak branches)
+
+### K1. The two private source drafts for the Daybreak branches are still not on the server
+- **Facts:** The brief (`.orchestration/TASK-daybreak-kimi.md`) expects two private, unaccepted source candidates under `~/workspace/home-port/.orchestration/rescued/nu-value-recovery/20261025-s180-integrity-stop-01/value-preparation/`:
+  - `recovery-reachability-20261025/` (branch A: deliberate recovery fault-trigger). Expected evidence hash `e137ca45b2c97f378b3fbc03b28f3dbe92ca2c14573cb10de7d34949eb9bf7f3`, source coverage `713082c71c7f218ad5d91bd1d958b0995ffe6efa0ba95fc31082b905894e235e`.
+  - `screen-persistence-source-20261025/` (branch B: ordinary screen serializer / runtime persistence). Expected evidence hash `abe47eacf194768a31bd37393e8cbc4cba37f079669a6aa2d1f805bf16352e18`, source coverage `0b5f94683a8c066124e9864f45007aeb285921e30fd54f3d8b906e65f11a40ad`.
+  - On 2 November only `r14-external-accounts-20261026/` has arrived. I checked both `rescued/nu-value-recovery/` and `rescued/nu-value-recovery-remainder/`; neither candidate is there. The home-port copy from Home `C:/Users/hadri/nu-value-recovery/` is still in progress or missed these two folders.
+- **Options:** (a) home-port finishes copying `value-preparation/recovery-reachability-20261025/` and `value-preparation/screen-persistence-source-20261025/` from Home `C:`, so I can verify the candidates' claims against the pinned Nu source, as the brief's step 1 asks. (b) I skip the candidate-check step and do my own independent source reading of the pinned Nu revision for both branches, treating the candidates as unavailable rather than as something to check. The brief explicitly allows this: "the candidates are prior drafts to check, not required inputs."
+- **Recommendation:** (b) now, with (a) as a later addition. I will do my own source verification directly from the pinned Nu archive (hash-checked). If the candidates arrive later, I can compare my verified notes against them as a separate pass.
+- **Blocks:** only the "check the candidate against source" step for branch A. Branch B has all its required inputs on the server (six files, all SHA-256 verified on 2 Nov) and is proceeding without either candidate.
+
 ## 2026-11-02 items 2 and 4 — Claude Opus
 
 - **Item 2: DONE (option a).** home-port's copy of the Home C: folder brought the saved R14 audit input (`citation-input.json`, SHA-256 `152b181e…1966`). I submitted the 81 unchanged decisions once to Scite under the new ID `r14_public_request_frame_20261026_resubmit_20261102`. Scite recorded 13 cited, 68 excluded and 0 skipped. Reading the report back showed 81 screened, no decision missing a reason, not truncated. The old ID stays unverifiable (Scite reports are per session). Receipt: `.artifacts/r14-citation-resubmission-20261102/receipt.json`.

@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <NuSource Condition="'$(NuSource)' == ''">../../.artifacts/r03-feasibility-20261015/source</NuSource>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Probe.fs" />
+    <ProjectReference Include="$(NuSource)/Nu/Nu.Gaia/Nu.Gaia.fsproj" />
+    <ProjectReference Include="$(NuSource)/Projects/Breakout Mmcc/Breakout Mmcc.fsproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="AssimpNet"><HintPath>$(NuSource)/Nu/Nu.Dependencies/AssimpNet/netstandard2.1/AssimpNet.dll</HintPath></Reference>
+    <Reference Include="BulletSharp"><HintPath>$(NuSource)/Nu/Nu.Dependencies/BulletSharpPInvoke/netstandard2.1/BulletSharp.dll</HintPath></Reference>
+    <Reference Include="OpenGL.Net"><HintPath>$(NuSource)/Nu/Nu.Dependencies/OpenGL.NET/lib/netcoreapp2.2/OpenGL.Net.dll</HintPath></Reference>
+    <Reference Include="TiledSharp"><HintPath>$(NuSource)/Nu/Nu.Dependencies/TiledSharp/lib/netstandard2.0/TiledSharp.dll</HintPath></Reference>
+  </ItemGroup>
+</Project>
