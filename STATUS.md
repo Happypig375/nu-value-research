@@ -1,5 +1,34 @@
 # Status and continuation plan — 1 November 2026 (HKT)
 
+## Daybreak-only branches — Kimi K3 session (2 November 2026)
+
+**Conclusion, in plain language.** The screen save/reload branch (branch B) is prepared and part-built, but no successful run exists yet. All source reading for it is done and written down; the experiment protocol is fixed and committed; the probe program compiled once and is one small fix away from compiling again (fix applied, not yet rebuilt). The one attempted run (export arm) failed in my probe's startup code before the engine even opened a window — my probe parsed the reference model file before Nu had registered its math type converters. This is a probe bug, not an engine result. The recovery fault-trigger branch (branch A) is untouched: its private source draft is still not on the server (see NEEDS-HUMAN item K1), and the orchestrator told this session to leave it until the sources arrive.
+
+**Authority.** User decision of 2 November: the two Daybreak-only branches are assigned to this Kimi K3 session (GitHub Copilot CLI), per `.orchestration/TASK-daybreak-kimi.md`. No other model was delegated any part of this work.
+
+### Branch B (ordinary screen serializer export/import)
+
+- **Source verification: done.** `docs/nu-daybreak-screen-persistence-2026-11-02.md` section 1 lists 18 decisive claims, each checked directly against the pinned Nu source (`064f7ae`, archive hash re-verified) and Prime 11.5.1 (its DLL names build commit `4026f31`; that source was fetched from GitHub for reading). All 18 verified; none wrong, none unresolved. Key findings: a screen file stores the screen's properties including the full gameplay `Model` (a typed record round-trips through Prime's symbolic converter), but **no group or entity content**, because MMCC-created simulants carry "declarative protection" and the writers filter it out. The read side replaces an existing screen's state without re-registration, contains no rollback, and does not clean up pre-existing child entities. Selecting the screen fires `StartPlaying`, which would wipe an imported model — so the import policy must not re-select. Gaia at this revision has no screen save/load menu command at all; this is an engine-API route, not an existing editor feature.
+- **Design and protocol: fixed and committed** (commit `c06e926`) before any run. Round-trip type: `ScreenDescriptor` with the model inside. Destination policy: one transfer file between two fresh processes. Import policy: destroy the screen's groups, then replace the screen state from the file, then force one content sync so entities rebuild from the imported model. Common outcome check: after export → fresh process → import, the model must equal the B0 reference (`experiments/nu-history-b1/checkpoint/gameplay.symbol`) bit-for-bit and the projected entity observation must equal `projection.json` exactly. Negative controls (fresh random board must not match) are declared. A third diagnostic arm replaces state without destroying groups and is predicted to leave stale brick entities — recorded either way.
+- **Build and run attempts (all preserved):**
+  1. Build attempt 01: failed to find `dotnet` — my shell put the SDK path assignment and its use in one `export` line, so PATH got the empty old value. Environment mistake, nothing built.
+  2. Build attempt 02: compile error FS0072 in my probe (a `world` parameter needed a type annotation). Fixed.
+  3. Build attempt 03: **compiled** (exit 0; probe DLL `7f7354f4…03dd`).
+  4. Export run attempt 01: **failed in 0.37 s** (SIGABRT). My probe parsed `gameplay.symbol` at startup, before `Nu.initPlus` registers Nu's math type converters, so `Vector3` had no converter. Never reached the engine. Logs in `.artifacts/daybreak-screen-persistence-20261102/run-export-01/`.
+  5. Build attempt 04: after making the reference parsing lazy, one missed use site remained (FS0001 at line 211). **The fix is applied in the working tree but not yet built.**
+- **What's left to finish branch B:** rebuild (expected to compile now), then run the three arms (export, import, replace-nodestroy) under Xvfb display `:94`, then `compare.py`, then append the Results section to the protocol doc. Every step is scripted in `experiments/nu-daybreak-screen-persistence/README.md`. Prepared source, NuGet cache copy and build tree are in `/tmp/kimi-daybreak-20261102/runs/` (about 3 GB, rebuildable from committed inputs); run/build evidence is copied to `.artifacts/daybreak-screen-persistence-20261102/`.
+- **Evidence paths:** protocol doc above; package `experiments/nu-daybreak-screen-persistence/`; evidence `.artifacts/daybreak-screen-persistence-20261102/`; scratch `/tmp/kimi-daybreak-20261102/` (includes the read-only Nu and Prime source copies I verified against).
+
+### Branch A (deliberate recovery fault-trigger)
+
+- Not started. The private candidate folder (`recovery-reachability-20261025/`) is not on the server; home-port's copy from Home so far brought only `r14-external-accounts-20261026/`. Per the orchestrator, branch A waits until its sources arrive. See NEEDS-HUMAN item K1.
+
+### Session state
+
+- **I am no longer editing this checkout.** No background jobs or Xvfb displays of mine are left running (the export attempt's Xvfb on `:94` may still exist; it is safe to kill — `pgrep -f "^Xvfb :94 "`). Committed locally on `main` as `c06e926` (protocol + package + NEEDS-HUMAN) plus the checkpoint commit that adds this section. **Nothing was pushed.** The stopped R02/R10/R12 drafts were not opened, staged or modified. `PLAN.md` and `AGENTS.md` untouched.
+- **Stopped by credit ceiling** (orchestrator: 548/1500 used, ceiling ~500 for this brief), not by a research blocker. The remaining work is mechanical: one rebuild and three scripted runs.
+
+
 Written by a fresh Claude Opus session started by the orchestrator. Questions for the user are in [NEEDS-HUMAN.md](NEEDS-HUMAN.md). The migration record from 30–31 October is kept unchanged further down.
 
 ## Where things stand (short version)

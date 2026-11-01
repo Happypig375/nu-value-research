@@ -103,8 +103,10 @@ module Program =
             let emit label values =
                 let record = fields (("event", box label) :: values)
                 File.AppendAllText (trace, json record + Environment.NewLine)
-            let target = scvalue<Gameplay> (File.ReadAllText (Path.Combine (referenceDir, "gameplay.symbol")))
-            let targetProjection = File.ReadAllText (Path.Combine (referenceDir, "projection.json"))
+            // NOTE: parse the reference values lazily. Nu's math type converters (Vector3 etc.)
+            // are registered only during Nu.initPlus, so scvalue<Gameplay> cannot run before it.
+            let target = lazy (scvalue<Gameplay> (File.ReadAllText (Path.Combine (referenceDir, "gameplay.symbol"))))
+            let targetProjection = lazy (File.ReadAllText (Path.Combine (referenceDir, "projection.json")))
             let mutable callbacks = 0
             let mutable phase = "initialize"
             let mutable passed = false
@@ -125,20 +127,20 @@ module Program =
             let equalModel a b = json (modelData a) = json (modelData b)
             let verifyTarget label world =
                 observe label world
-                require (label + ": model mismatch") (equalModel target (Simulants.Gameplay.GetGameplay world))
-                require (label + ": projected values mismatch") ((projectionErrors target world).Length = 0)
-                require (label + ": projection/entity set mismatch") (json (projection world) = targetProjection)
+                require (label + ": model mismatch") (equalModel target.Value (Simulants.Gameplay.GetGameplay world))
+                require (label + ": projected values mismatch") ((projectionErrors target.Value world).Length = 0)
+                require (label + ": projection/entity set mismatch") (json (projection world) = targetProjection.Value)
                 require (label + ": world advanced") world.Halted
                 require (label + ": wrong screen") (World.getSelectedScreen world = Simulants.Gameplay)
                 require (label + ": screen not idling") (World.getSelectedScreenIdling world)
-            let initialize world =
+            let initialize (world : World) =
                 require "initial world not halted" world.Halted
                 require "Gameplay is not selected/idling" (World.getSelectedScreen world = Simulants.Gameplay && World.getSelectedScreenIdling world)
                 let g = Simulants.Gameplay.GetGameplay world
                 require "initial Gameplay contract" (g.Score = 0 && g.Bricks.Count = 30 && g.GameplayState = Playing)
                 observe "initial" world
-                require "initial model negative control passed incorrectly" (not (equalModel target g))
-                require "initial projection negative control passed incorrectly" (json (projection world) <> targetProjection)
+                require "initial model negative control passed incorrectly" (not (equalModel target.Value g))
+                require "initial projection negative control passed incorrectly" (json (projection world) <> targetProjection.Value)
                 emit "negative-controls" ["modelRejected", box true; "projectionRejected", box true]
             let callback (world : World) =
                 if not done_ then
@@ -152,7 +154,7 @@ module Program =
                             initialize world
                             match mode with
                             | "export" ->
-                                Simulants.Gameplay.SetGameplay target world
+                                Simulants.Gameplay.SetGameplay target.Value world
                                 phase <- "settle"
                             | "import" ->
                                 let groupsBefore = World.getGroups Simulants.Gameplay world |> Seq.map (fun group -> group.Name) |> Seq.toList
@@ -183,7 +185,7 @@ module Program =
                                         try let converter = SymbolicConverter (false, None, typeof<DesignerProperty>)
                                             let dp = converter.ConvertFrom modelSymbol :?> DesignerProperty
                                             match dp.DesignerValue with
-                                            | :? Gameplay as g -> equalModel target g
+                                            | :? Gameplay as g -> equalModel target.Value g
                                             | _ -> false
                                         with _ -> false
                                     | None -> false
@@ -202,18 +204,18 @@ module Program =
                                 phase <- "verified"
                             | _ -> // replace-nodestroy
                                 observe "post-import-diagnostic" world
-                                require "diagnostic: model was not replaced" (equalModel target (Simulants.Gameplay.GetGameplay world))
+                                require "diagnostic: model was not replaced" (equalModel target.Value (Simulants.Gameplay.GetGameplay world))
                                 require "diagnostic: world advanced" world.Halted
                                 let names = World.getEntities scene world |> Seq.map (fun entity -> entity.Name) |> Seq.toList
                                 let brickEntities = names |> List.filter (fun name -> name.StartsWith "@")
-                                let projectionMatches = json (projection world) = targetProjection
+                                let projectionMatches = json (projection world) = targetProjection.Value
                                 emit "diagnostic"
                                     ["entityCount", box names.Length
                                      "brickEntityCount", box brickEntities.Length
-                                     "expectedBrickCountFromModel", box target.Bricks.Count
+                                     "expectedBrickCountFromModel", box target.Value.Bricks.Count
                                      "projectionMatchesB0", box projectionMatches
                                      "predictionWasStaleEntitiesSurvive", box true
-                                     "predictionObserved", box (not projectionMatches && brickEntities.Length = 30 + target.Bricks.Count)]
+                                     "predictionObserved", box (not projectionMatches && brickEntities.Length = 30 + target.Value.Bricks.Count)]
                                 finish true "Diagnostic complete: model replaced; stale-content prediction recorded." world
                         | "exported" ->
                             verifyTarget "post-export-B0" world

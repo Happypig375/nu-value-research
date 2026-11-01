@@ -4,6 +4,10 @@ Newest first. Each item lists the options, my recommendation and what it blocks.
 
 ## 2026-11-02 — Kimi K3 (Daybreak branches)
 
+### K2. Checkpoint note (no decision needed): branch B paused at credit ceiling, one rebuild + three runs left
+- **Facts:** Branch B's protocol is committed (`c06e926`) and its probe needs one rebuild (a one-line lazy-evaluation fix is already applied) and three scripted runs (export, import, replace-nodestroy). Instructions are in `experiments/nu-daybreak-screen-persistence/README.md`; prepared source and caches are in `/tmp/kimi-daybreak-20261102/runs/`. A leftover Xvfb on display `:94` from the failed export attempt can be killed.
+- **Recommendation:** a future Kimi session (or the same one resumed) can finish branch B without any user decision. Nothing here blocks anyone else.
+
 ### K1. The two private source drafts for the Daybreak branches are still not on the server
 - **Facts:** The brief (`.orchestration/TASK-daybreak-kimi.md`) expects two private, unaccepted source candidates under `~/workspace/home-port/.orchestration/rescued/nu-value-recovery/20261025-s180-integrity-stop-01/value-preparation/`:
   - `recovery-reachability-20261025/` (branch A: deliberate recovery fault-trigger). Expected evidence hash `e137ca45b2c97f378b3fbc03b28f3dbe92ca2c14573cb10de7d34949eb9bf7f3`, source coverage `713082c71c7f218ad5d91bd1d958b0995ffe6efa0ba95fc31082b905894e235e`.
