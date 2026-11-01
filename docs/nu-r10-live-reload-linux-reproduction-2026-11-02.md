@@ -65,3 +65,23 @@ The original limits stay:
 - one supported edit with an unchanged schema.
 
 A pass shows only that this bounded reload observation reproduces on this server. It says nothing about the separate schema-reload result, the stopped migration construction, or any benefit.
+
+## Results (added 2 November 2026, after the runs)
+
+**Conclusion: the R10 live-reload pair reproduces on this Linux server at the first attempt, and every compared field equals the accepted Windows run.** F# Interactive compiled the one-line edit inside the running Gaia process and installed it under the same generated type name as on Windows. Live and fresh agree after one update.
+
+| Step | Result |
+| --- | --- |
+| 1. Prepare | Exit 0. `Gaia.fs` `0cf653d4…` → `0700ba14…` and `Gameplay.fs` `571e2a5c…` → `736132f1…`, **equal to Windows**. The 8 package files were copied unchanged (hash list in the evidence folder). |
+| 2. Baseline build | Exit 0 in 75 s, 334 warnings, codes NU1608/NU1901/NU1902 only. |
+| 3. Live run | Exit 0 in 66 s. The ready signal arrived at the checkpoint, and the one edit was made. Its before/after hashes and the ready signal's checkpoint/projection hashes **equal the Windows `edit.json`**. The reload installed `FSI_0005.Breakout.Gameplay` with reward 200, and the probe passed. |
+| 4. Fresh build | Exit 0 in 12 s, same warning codes. |
+| 5. Fresh run | Exit 0 in 25 s; probe passed. |
+| 6. `compare.py` | **Pass.** |
+| 7. Across platforms | All 11 compared fields **equal Windows `final2-comparison.json`**: checkpoint and post-update model/projection hashes, the event word, the one-update delta, the post summary (time 150, score 300, 5 lives, 28 bricks, `@455` removed, same ball bits), and the three generated type names, including `FSI_0005`. Only the two whole-trace hashes were excluded, as declared. Receipt: `platform-comparison.json`. |
+
+**Attempts:** one of each step, all passing. Nothing was retried. Evidence: `.artifacts/r10-live-reload-linux-20261102/`.
+
+**Limits.** These hold in addition to the protocol's limits.
+- The same OpenGL-override caveat as R04/R03 applies.
+- Binary hashes differ from Windows because builds embed paths. Linux probe `5e2e5a09…`; application `c4cd619d…` (reward 100) and `32d559ae…` (reward 200).
