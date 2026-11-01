@@ -82,3 +82,39 @@ The original limits stay:
 - no native-physics restoration, no release of retained history, no human or agent benefit.
 
 Six pairs on a shared machine is a small sample. Replicated directions would show only that these two component orderings are not specific to one machine.
+
+## Results (added 2 November 2026, after the runs)
+
+**Conclusion: the R06 series reproduces on this Linux server. All fourteen processes passed, including FR, which timed out at startup on Windows.**
+- **Acquisition** (taking the snapshot) replicated exactly: H was faster in all six pairs on both machines.
+- **Direct recovery** did **not** fully replicate. H was slower in five of six Linux pairs; in pair 5 it was faster by 0.019 ms (6.547 vs 6.566 ms, effectively a tie). On Windows, H was slower in all six.
+- **Request-to-ready** stayed mixed, as on Windows.
+
+| Step | Result |
+| --- | --- |
+| 1. Prepare | Exit 0. Gaia is the only reviewed exception, instrumented to `67f46559…`, and the source manifest is `cbc4fea8…`. **Both equal the accepted Windows preparation** (`source-preparation-06.json`). 31 package files were copied unchanged. |
+| 2. Build | Exit 0. **400 warnings: FS0046 4, NU1608 6, NU1901 247, NU1902 143. Identical to the Windows build-02 counts.** Sources were stable across the build. I accepted receipt `b03f9e81…`. |
+| 3. Feasibility | FH **pass**. FR **pass**: the declared B0 output was reached at the next halted callback. On Windows, FR timed out during Gaia startup with no observation. That timeout therefore did not recur here. One run cannot explain it, but it was not a fixed property of the R route or the package. |
+| 4. Measured | **12 of 12 pass**, in the frozen order, about 29 s each. All share one identity signature, and no integrity flag was raised. |
+| 5. Summary | Frozen `summarize.py` exit 0; `measuredSeriesMismatch: false`. |
+
+**Timing.** Medians in milliseconds. Absolute values are not comparable across machines; directions are.
+
+| Component | Windows H / R | Linux H / R | H − R per pair, Linux | Pattern, Windows → Linux |
+| --- | --- | --- | --- | --- |
+| Acquisition | 2.38 / 5.39 | 0.60 / 1.75 | −1.2, −1.1, −1.2, −1.1, −1.1, −1.2 | H faster 6/6 → **6/6 (replicated)** |
+| Direct recovery | 33.7 / 14.6 | 6.35 / 4.20 | +2.3, +1.1, +2.1, +2.3, −0.02, +2.7 | H slower 6/6 → **5/6** |
+| Request-to-ready | 354 / 369 | 299 / 276 | −16.8, +50.3, +81.8, −36.0, +128.1, +12.2 | mixed → mixed |
+
+Comparison receipt: `.artifacts/r06-linux-20261102/platform-comparison.json`, made by `experiments/nu-r06-recovery-cost/compare_platforms.py`. Its Windows-against-Windows self-test reproduces the published pattern.
+
+**Reading it.**
+- Gaia's snapshot is cheaper to take than serializing the model, on both machines and with a very stable gap on Linux (about 1.1–1.2 ms).
+- Gaia's undo operation is usually, but not always, more expensive than setting a deserialized model. On Linux the gap is smaller (median 2.2 ms vs 12.0 ms) and one pair is a tie. "H recovery slower in every pair" was therefore a property of the Windows sample, not a rule.
+- Time from request to the next ready callback is dominated by the frame schedule (about 300 ms) and shows no consistent direction on either machine.
+
+**Limits.** These hold in addition to the protocol's limits.
+- The build acceptance had no second reviewer.
+- The machine is shared, and runs were niced.
+- Six pairs per machine.
+- Software rendering. Request-to-ready includes frame time, which differs with the renderer.
