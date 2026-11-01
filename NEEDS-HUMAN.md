@@ -2,6 +2,12 @@
 
 Newest first. Each item lists the options, my recommendation and what it blocks. Background is in [STATUS.md](STATUS.md) (section dated 1 November 2026).
 
+## 2026-11-02 orchestrator decisions — Claude Opus
+
+- **Item 6: DONE** with option (a). Added the 149 restored paths **plus `STATUS.md` and `NEEDS-HUMAN.md`** to the sparse patterns. Those two are also committed files outside the old patterns, and re-applying the patterns would otherwise have deleted them from disk. Nothing new on disk; details are in STATUS.md.
+- **Item 2: WAITING** for home-port to copy `C:/Users/hadri/nu-value-recovery/` to the server. If the R14 input (`value-preparation/r14-external-accounts-20261026/`) is there: re-submit the 81 decisions once under a new, dated audit ID and read the report back. If it can't be found: option (b), close the remote check as unverifiable and keep the local decisions as the record.
+- **Items 3 and 4:** passed to the user by the orchestrator. Still open.
+
 ## 2026-11-02 merge done — Claude Opus
 
 - **Item 1: DONE** (user-approved). `ebe4418` → merge commit `6894668`, not pushed. Details are in STATUS.md.
