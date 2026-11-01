@@ -2,6 +2,11 @@
 
 Newest first. Each item lists the options, my recommendation and what it blocks. Background is in [STATUS.md](STATUS.md) (section dated 1 November 2026).
 
+## 2026-11-02 item 3 done — Claude Opus
+
+- **Item 3: DONE** (the user approved it as development work). R04 reproduces on Linux: 4/4 references pass, 5/5 faults caught at their predicted gates, reference records identical to Windows. One environment fix was needed (Mesa OpenGL 4.6 override). Details are in STATUS.md and `docs/nu-r04-linux-reproduction-2026-11-02.md`. Nothing is waiting on the user for this.
+- **Item 4 (Daybreak-only):** still parked. The user's restriction names Daybreak models specifically, so the "development is pre-approved" rule doesn't make me eligible. Only the user can change that.
+
 ## 2026-11-02 orchestrator decisions — Claude Opus
 
 - **Item 6: DONE** with option (a). Added the 149 restored paths **plus `STATUS.md` and `NEEDS-HUMAN.md`** to the sparse patterns. Those two are also committed files outside the old patterns, and re-applying the patterns would otherwise have deleted them from disk. Nothing new on disk; details are in STATUS.md.

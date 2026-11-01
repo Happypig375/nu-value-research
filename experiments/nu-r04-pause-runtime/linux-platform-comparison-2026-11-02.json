@@ -1,0 +1,843 @@
+{
+  "arms": {
+    "baseline-explicit": {
+      "linux_attempts": [
+        "run-baseline-explicit-01",
+        "run-baseline-explicit-02"
+      ],
+      "linux": {
+        "folder": "run-baseline-explicit-02",
+        "exit_code": 0,
+        "timed_out": false,
+        "elapsed_seconds": 32.660355403029826,
+        "result": {
+          "event": "result",
+          "pass": true,
+          "detail": "Four baseline fixtures satisfied the declared one-pair observations.",
+          "phase": "fixture-run:quit",
+          "updates": 4,
+          "timeUpdates": 4,
+          "callbacks": 14
+        },
+        "engine_exit": {
+          "event": "engine-exit",
+          "exitCode": 0,
+          "probeFinished": true,
+          "probePassed": true
+        },
+        "exceptions": 0,
+        "event_counts": {
+          "configuration": 1,
+          "audio-request": 3,
+          "preseed-cleared-observation": 1,
+          "fixture-before": 4,
+          "fixture-after": 4,
+          "result": 1,
+          "engine-exit": 1
+        }
+      },
+      "windows": {
+        "folder": "runtime-amended-baseline-explicit-01",
+        "exit_code": 0,
+        "timed_out": false,
+        "elapsed_seconds": 27.828000000008615,
+        "result": {
+          "event": "result",
+          "pass": true,
+          "detail": "Four baseline fixtures satisfied the declared one-pair observations.",
+          "phase": "fixture-run:quit",
+          "updates": 4,
+          "timeUpdates": 4,
+          "callbacks": 14
+        },
+        "engine_exit": {
+          "event": "engine-exit",
+          "exitCode": 0,
+          "probeFinished": true,
+          "probePassed": true
+        },
+        "exceptions": 0,
+        "event_counts": {
+          "configuration": 1,
+          "audio-request": 3,
+          "preseed-cleared-observation": 1,
+          "fixture-before": 4,
+          "fixture-after": 4,
+          "result": 1,
+          "engine-exit": 1
+        }
+      },
+      "fixed_records": {
+        "count_linux": 13,
+        "count_windows": 13,
+        "exact_json_equal": true,
+        "sha256_linux": "4e1cbbf7fc8fa41b7d251cac8b1f7d20854f10e0876a489e100990dff23df2f7",
+        "sha256_windows": "4e1cbbf7fc8fa41b7d251cac8b1f7d20854f10e0876a489e100990dff23df2f7",
+        "first_difference": null
+      },
+      "reference_passed": true
+    },
+    "baseline-wildcard": {
+      "linux_attempts": [
+        "run-baseline-wildcard-01"
+      ],
+      "linux": {
+        "folder": "run-baseline-wildcard-01",
+        "exit_code": 0,
+        "timed_out": false,
+        "elapsed_seconds": 32.61009302199818,
+        "result": {
+          "event": "result",
+          "pass": true,
+          "detail": "Four baseline fixtures satisfied the declared one-pair observations.",
+          "phase": "fixture-run:quit",
+          "updates": 4,
+          "timeUpdates": 4,
+          "callbacks": 14
+        },
+        "engine_exit": {
+          "event": "engine-exit",
+          "exitCode": 0,
+          "probeFinished": true,
+          "probePassed": true
+        },
+        "exceptions": 0,
+        "event_counts": {
+          "configuration": 1,
+          "audio-request": 3,
+          "preseed-cleared-observation": 1,
+          "fixture-before": 4,
+          "fixture-after": 4,
+          "result": 1,
+          "engine-exit": 1
+        }
+      },
+      "windows": {
+        "folder": "runtime-amended-baseline-wildcard-01",
+        "exit_code": 0,
+        "timed_out": false,
+        "elapsed_seconds": 31.125,
+        "result": {
+          "event": "result",
+          "pass": true,
+          "detail": "Four baseline fixtures satisfied the declared one-pair observations.",
+          "phase": "fixture-run:quit",
+          "updates": 4,
+          "timeUpdates": 4,
+          "callbacks": 14
+        },
+        "engine_exit": {
+          "event": "engine-exit",
+          "exitCode": 0,
+          "probeFinished": true,
+          "probePassed": true
+        },
+        "exceptions": 0,
+        "event_counts": {
+          "configuration": 1,
+          "audio-request": 3,
+          "preseed-cleared-observation": 1,
+          "fixture-before": 4,
+          "fixture-after": 4,
+          "result": 1,
+          "engine-exit": 1
+        }
+      },
+      "fixed_records": {
+        "count_linux": 13,
+        "count_windows": 13,
+        "exact_json_equal": true,
+        "sha256_linux": "4e1cbbf7fc8fa41b7d251cac8b1f7d20854f10e0876a489e100990dff23df2f7",
+        "sha256_windows": "4e1cbbf7fc8fa41b7d251cac8b1f7d20854f10e0876a489e100990dff23df2f7",
+        "first_difference": null
+      },
+      "reference_passed": true
+    },
+    "pause-explicit": {
+      "linux_attempts": [
+        "run-pause-explicit-01"
+      ],
+      "linux": {
+        "folder": "run-pause-explicit-01",
+        "exit_code": 0,
+        "timed_out": false,
+        "elapsed_seconds": 30.650565929012373,
+        "result": {
+          "event": "result",
+          "pass": true,
+          "detail": "Pause, ten frozen pairs, retained resume, one no-input pair, Quit reset, and fresh play passed.",
+          "phase": "fresh-run",
+          "updates": 12,
+          "timeUpdates": 12,
+          "callbacks": 22,
+          "pauseClicks": 3,
+          "quitClicks": 1,
+          "playClicks": 1
+        },
+        "engine_exit": {
+          "event": "engine-exit",
+          "exitCode": 0,
+          "probeFinished": true,
+          "probePassed": true
+        },
+        "exceptions": 0,
+        "event_counts": {
+          "configuration": 1,
+          "audio-request": 3,
+          "preseed-cleared-observation": 1,
+          "seed-observation": 1,
+          "seeded-B0": 1,
+          "scored-observation": 15,
+          "paused-before": 1,
+          "paused-after-ten": 1,
+          "resumed-before": 1,
+          "resumed-after-one": 1,
+          "title-after-quit": 1,
+          "fresh-gameplay": 1,
+          "result": 1,
+          "engine-exit": 1
+        }
+      },
+      "windows": {
+        "folder": "runtime-amended-pause-explicit-01",
+        "exit_code": 0,
+        "timed_out": false,
+        "elapsed_seconds": 34.60899999999674,
+        "result": {
+          "event": "result",
+          "pass": true,
+          "detail": "Pause, ten frozen pairs, retained resume, one no-input pair, Quit reset, and fresh play passed.",
+          "phase": "fresh-run",
+          "updates": 12,
+          "timeUpdates": 12,
+          "callbacks": 22,
+          "pauseClicks": 3,
+          "quitClicks": 1,
+          "playClicks": 1
+        },
+        "engine_exit": {
+          "event": "engine-exit",
+          "exitCode": 0,
+          "probeFinished": true,
+          "probePassed": true
+        },
+        "exceptions": 0,
+        "event_counts": {
+          "configuration": 1,
+          "audio-request": 3,
+          "preseed-cleared-observation": 1,
+          "seed-observation": 1,
+          "seeded-B0": 1,
+          "scored-observation": 15,
+          "paused-before": 1,
+          "paused-after-ten": 1,
+          "resumed-before": 1,
+          "resumed-after-one": 1,
+          "title-after-quit": 1,
+          "fresh-gameplay": 1,
+          "result": 1,
+          "engine-exit": 1
+        }
+      },
+      "fixed_records": {
+        "count_linux": 22,
+        "count_windows": 22,
+        "exact_json_equal": true,
+        "sha256_linux": "b42f76fa98e6c20005953297c7be534e69a76708749678dcf4a069474afead28",
+        "sha256_windows": "b42f76fa98e6c20005953297c7be534e69a76708749678dcf4a069474afead28",
+        "first_difference": null
+      },
+      "reference_passed": true
+    },
+    "pause-wildcard": {
+      "linux_attempts": [
+        "run-pause-wildcard-01"
+      ],
+      "linux": {
+        "folder": "run-pause-wildcard-01",
+        "exit_code": 0,
+        "timed_out": false,
+        "elapsed_seconds": 31.507842540042475,
+        "result": {
+          "event": "result",
+          "pass": true,
+          "detail": "Pause, ten frozen pairs, retained resume, one no-input pair, Quit reset, and fresh play passed.",
+          "phase": "fresh-run",
+          "updates": 12,
+          "timeUpdates": 12,
+          "callbacks": 22,
+          "pauseClicks": 3,
+          "quitClicks": 1,
+          "playClicks": 1
+        },
+        "engine_exit": {
+          "event": "engine-exit",
+          "exitCode": 0,
+          "probeFinished": true,
+          "probePassed": true
+        },
+        "exceptions": 0,
+        "event_counts": {
+          "configuration": 1,
+          "audio-request": 3,
+          "preseed-cleared-observation": 1,
+          "seed-observation": 1,
+          "seeded-B0": 1,
+          "scored-observation": 15,
+          "paused-before": 1,
+          "paused-after-ten": 1,
+          "resumed-before": 1,
+          "resumed-after-one": 1,
+          "title-after-quit": 1,
+          "fresh-gameplay": 1,
+          "result": 1,
+          "engine-exit": 1
+        }
+      },
+      "windows": {
+        "folder": "runtime-amended-pause-wildcard-01",
+        "exit_code": 0,
+        "timed_out": false,
+        "elapsed_seconds": 28.610000000000582,
+        "result": {
+          "event": "result",
+          "pass": true,
+          "detail": "Pause, ten frozen pairs, retained resume, one no-input pair, Quit reset, and fresh play passed.",
+          "phase": "fresh-run",
+          "updates": 12,
+          "timeUpdates": 12,
+          "callbacks": 22,
+          "pauseClicks": 3,
+          "quitClicks": 1,
+          "playClicks": 1
+        },
+        "engine_exit": {
+          "event": "engine-exit",
+          "exitCode": 0,
+          "probeFinished": true,
+          "probePassed": true
+        },
+        "exceptions": 0,
+        "event_counts": {
+          "configuration": 1,
+          "audio-request": 3,
+          "preseed-cleared-observation": 1,
+          "seed-observation": 1,
+          "seeded-B0": 1,
+          "scored-observation": 15,
+          "paused-before": 1,
+          "paused-after-ten": 1,
+          "resumed-before": 1,
+          "resumed-after-one": 1,
+          "title-after-quit": 1,
+          "fresh-gameplay": 1,
+          "result": 1,
+          "engine-exit": 1
+        }
+      },
+      "fixed_records": {
+        "count_linux": 22,
+        "count_windows": 22,
+        "exact_json_equal": true,
+        "sha256_linux": "b42f76fa98e6c20005953297c7be534e69a76708749678dcf4a069474afead28",
+        "sha256_windows": "b42f76fa98e6c20005953297c7be534e69a76708749678dcf4a069474afead28",
+        "first_difference": null
+      },
+      "reference_passed": true
+    },
+    "fault-missing-toggle": {
+      "linux_attempts": [
+        "run-fault-missing-toggle-01"
+      ],
+      "linux": {
+        "folder": "run-fault-missing-toggle-01",
+        "exit_code": 1,
+        "timed_out": false,
+        "elapsed_seconds": 24.785023134027142,
+        "result": {
+          "event": "result",
+          "pass": false,
+          "detail": "pause-reached",
+          "phase": "pause-settle",
+          "updates": 0,
+          "timeUpdates": 0,
+          "callbacks": 4,
+          "pauseClicks": 1,
+          "quitClicks": 0,
+          "playClicks": 0
+        },
+        "engine_exit": {
+          "event": "engine-exit",
+          "exitCode": 0,
+          "probeFinished": true,
+          "probePassed": false
+        },
+        "exceptions": 1,
+        "event_counts": {
+          "configuration": 1,
+          "audio-request": 3,
+          "preseed-cleared-observation": 1,
+          "seed-observation": 1,
+          "seeded-B0": 1,
+          "scored-observation": 1,
+          "failure-observation": 1,
+          "exception": 1,
+          "result": 1,
+          "engine-exit": 1
+        }
+      },
+      "windows": {
+        "folder": "runtime-amended-fault-missing-toggle-01",
+        "exit_code": 1,
+        "timed_out": false,
+        "elapsed_seconds": 26.780999999988126,
+        "result": {
+          "event": "result",
+          "pass": false,
+          "detail": "pause-reached",
+          "phase": "pause-settle",
+          "updates": 0,
+          "timeUpdates": 0,
+          "callbacks": 4,
+          "pauseClicks": 1,
+          "quitClicks": 0,
+          "playClicks": 0
+        },
+        "engine_exit": {
+          "event": "engine-exit",
+          "exitCode": 0,
+          "probeFinished": true,
+          "probePassed": false
+        },
+        "exceptions": 1,
+        "event_counts": {
+          "configuration": 1,
+          "audio-request": 3,
+          "preseed-cleared-observation": 1,
+          "seed-observation": 1,
+          "seeded-B0": 1,
+          "scored-observation": 1,
+          "failure-observation": 1,
+          "exception": 1,
+          "result": 1,
+          "engine-exit": 1
+        }
+      },
+      "fixed_records": {
+        "count_linux": 10,
+        "count_windows": 10,
+        "exact_json_equal": false,
+        "sha256_linux": "f249726748feb98e44d22eb6b96fb0316a1a6d39f41500c7a3a3240f517dd484",
+        "sha256_windows": "21927c9db596767a3aaa5a68159ca9cdd2fd9ec8ea0a6bb81b0d53850dfc4528",
+        "first_difference": {
+          "index": 7,
+          "event": "exception",
+          "differing_keys": [
+            "stack"
+          ]
+        }
+      },
+      "expected_gate": "pause-reached",
+      "gate_matches_prediction": true
+    },
+    "fault-hidden-content": {
+      "linux_attempts": [
+        "run-fault-hidden-content-01"
+      ],
+      "linux": {
+        "folder": "run-fault-hidden-content-01",
+        "exit_code": 1,
+        "timed_out": false,
+        "elapsed_seconds": 26.188635234953836,
+        "result": {
+          "event": "result",
+          "pass": false,
+          "detail": "pause-projection",
+          "phase": "pause-settle",
+          "updates": 0,
+          "timeUpdates": 0,
+          "callbacks": 4,
+          "pauseClicks": 1,
+          "quitClicks": 0,
+          "playClicks": 0
+        },
+        "engine_exit": {
+          "event": "engine-exit",
+          "exitCode": 0,
+          "probeFinished": true,
+          "probePassed": false
+        },
+        "exceptions": 1,
+        "event_counts": {
+          "configuration": 1,
+          "audio-request": 3,
+          "preseed-cleared-observation": 1,
+          "seed-observation": 1,
+          "seeded-B0": 1,
+          "scored-observation": 1,
+          "failure-observation": 1,
+          "exception": 1,
+          "result": 1,
+          "engine-exit": 1
+        }
+      },
+      "windows": {
+        "folder": "runtime-amended-fault-hidden-content-01",
+        "exit_code": 1,
+        "timed_out": false,
+        "elapsed_seconds": 20.09299999999348,
+        "result": {
+          "event": "result",
+          "pass": false,
+          "detail": "pause-projection",
+          "phase": "pause-settle",
+          "updates": 0,
+          "timeUpdates": 0,
+          "callbacks": 4,
+          "pauseClicks": 1,
+          "quitClicks": 0,
+          "playClicks": 0
+        },
+        "engine_exit": {
+          "event": "engine-exit",
+          "exitCode": 0,
+          "probeFinished": true,
+          "probePassed": false
+        },
+        "exceptions": 1,
+        "event_counts": {
+          "configuration": 1,
+          "audio-request": 3,
+          "preseed-cleared-observation": 1,
+          "seed-observation": 1,
+          "seeded-B0": 1,
+          "scored-observation": 1,
+          "failure-observation": 1,
+          "exception": 1,
+          "result": 1,
+          "engine-exit": 1
+        }
+      },
+      "fixed_records": {
+        "count_linux": 10,
+        "count_windows": 10,
+        "exact_json_equal": false,
+        "sha256_linux": "d5c6d51c0134a21d2f29bde0ef9c9d4464ce66019a6ee4ba1d396b59b6bc4a51",
+        "sha256_windows": "6c3509b977180cd70c44fa0ac12157849597c271d1e893f312451ca89cc8df9b",
+        "first_difference": {
+          "index": 7,
+          "event": "exception",
+          "differing_keys": [
+            "stack"
+          ]
+        }
+      },
+      "expected_gate": "pause-projection",
+      "gate_matches_prediction": true
+    },
+    "fault-advancing-time": {
+      "linux_attempts": [
+        "run-fault-advancing-time-01"
+      ],
+      "linux": {
+        "folder": "run-fault-advancing-time-01",
+        "exit_code": 1,
+        "timed_out": false,
+        "elapsed_seconds": 25.385328278003726,
+        "result": {
+          "event": "result",
+          "pass": false,
+          "detail": "pause-frozen-model",
+          "phase": "paused-run",
+          "updates": 1,
+          "timeUpdates": 1,
+          "callbacks": 6,
+          "pauseClicks": 1,
+          "quitClicks": 0,
+          "playClicks": 0
+        },
+        "engine_exit": {
+          "event": "engine-exit",
+          "exitCode": 0,
+          "probeFinished": true,
+          "probePassed": false
+        },
+        "exceptions": 1,
+        "event_counts": {
+          "configuration": 1,
+          "audio-request": 3,
+          "preseed-cleared-observation": 1,
+          "seed-observation": 1,
+          "seeded-B0": 1,
+          "scored-observation": 3,
+          "paused-before": 1,
+          "failure-observation": 1,
+          "exception": 1,
+          "result": 1,
+          "engine-exit": 1
+        }
+      },
+      "windows": {
+        "folder": "runtime-amended-fault-advancing-time-01",
+        "exit_code": 1,
+        "timed_out": false,
+        "elapsed_seconds": 20.156000000002678,
+        "result": {
+          "event": "result",
+          "pass": false,
+          "detail": "pause-frozen-model",
+          "phase": "paused-run",
+          "updates": 1,
+          "timeUpdates": 1,
+          "callbacks": 6,
+          "pauseClicks": 1,
+          "quitClicks": 0,
+          "playClicks": 0
+        },
+        "engine_exit": {
+          "event": "engine-exit",
+          "exitCode": 0,
+          "probeFinished": true,
+          "probePassed": false
+        },
+        "exceptions": 1,
+        "event_counts": {
+          "configuration": 1,
+          "audio-request": 3,
+          "preseed-cleared-observation": 1,
+          "seed-observation": 1,
+          "seeded-B0": 1,
+          "scored-observation": 3,
+          "paused-before": 1,
+          "failure-observation": 1,
+          "exception": 1,
+          "result": 1,
+          "engine-exit": 1
+        }
+      },
+      "fixed_records": {
+        "count_linux": 13,
+        "count_windows": 13,
+        "exact_json_equal": false,
+        "sha256_linux": "c1888ddb046162be9a099514bb18a5ba573018230c3b495c8a91476ad0321249",
+        "sha256_windows": "5653a1d30db57068534ee9d996ff9ef2a38538c4087590241034ec2dfc663acd",
+        "first_difference": {
+          "index": 10,
+          "event": "exception",
+          "differing_keys": [
+            "stack"
+          ]
+        }
+      },
+      "expected_gate": "pause-frozen-model",
+      "gate_matches_prediction": true
+    },
+    "fault-reset-resume": {
+      "linux_attempts": [
+        "run-fault-reset-resume-01"
+      ],
+      "linux": {
+        "folder": "run-fault-reset-resume-01",
+        "exit_code": 1,
+        "timed_out": false,
+        "elapsed_seconds": 28.793899754993618,
+        "result": {
+          "event": "result",
+          "pass": false,
+          "detail": "resume-retained",
+          "phase": "resume-settle",
+          "updates": 10,
+          "timeUpdates": 10,
+          "callbacks": 16,
+          "pauseClicks": 2,
+          "quitClicks": 0,
+          "playClicks": 0
+        },
+        "engine_exit": {
+          "event": "engine-exit",
+          "exitCode": 0,
+          "probeFinished": true,
+          "probePassed": false
+        },
+        "exceptions": 1,
+        "event_counts": {
+          "configuration": 1,
+          "audio-request": 3,
+          "preseed-cleared-observation": 1,
+          "seed-observation": 1,
+          "seeded-B0": 1,
+          "scored-observation": 13,
+          "paused-before": 1,
+          "paused-after-ten": 1,
+          "failure-observation": 1,
+          "exception": 1,
+          "result": 1,
+          "engine-exit": 1
+        }
+      },
+      "windows": {
+        "folder": "runtime-amended-fault-reset-resume-01",
+        "exit_code": 1,
+        "timed_out": false,
+        "elapsed_seconds": 35.15600000000268,
+        "result": {
+          "event": "result",
+          "pass": false,
+          "detail": "resume-retained",
+          "phase": "resume-settle",
+          "updates": 10,
+          "timeUpdates": 10,
+          "callbacks": 16,
+          "pauseClicks": 2,
+          "quitClicks": 0,
+          "playClicks": 0
+        },
+        "engine_exit": {
+          "event": "engine-exit",
+          "exitCode": 0,
+          "probeFinished": true,
+          "probePassed": false
+        },
+        "exceptions": 1,
+        "event_counts": {
+          "configuration": 1,
+          "audio-request": 3,
+          "preseed-cleared-observation": 1,
+          "seed-observation": 1,
+          "seeded-B0": 1,
+          "scored-observation": 13,
+          "paused-before": 1,
+          "paused-after-ten": 1,
+          "failure-observation": 1,
+          "exception": 1,
+          "result": 1,
+          "engine-exit": 1
+        }
+      },
+      "fixed_records": {
+        "count_linux": 24,
+        "count_windows": 24,
+        "exact_json_equal": false,
+        "sha256_linux": "289f5c45cc3b95154054babc05feebf818bdc1ba888bed6ba489b8cc6f58b013",
+        "sha256_windows": "86112e632cb17c3aef3ec8ab41e237fa0ca38573af21a47aa412c86947f75a6a",
+        "first_difference": {
+          "index": 19,
+          "event": "scored-observation",
+          "differing_keys": [
+            "model",
+            "projection"
+          ]
+        }
+      },
+      "expected_gate": "resume-retained",
+      "gate_matches_prediction": true
+    },
+    "fault-stale-quit": {
+      "linux_attempts": [
+        "run-fault-stale-quit-01"
+      ],
+      "linux": {
+        "folder": "run-fault-stale-quit-01",
+        "exit_code": 1,
+        "timed_out": false,
+        "elapsed_seconds": 29.492881590034813,
+        "result": {
+          "event": "result",
+          "pass": false,
+          "detail": "quit-reset",
+          "phase": "title-halted",
+          "updates": 11,
+          "timeUpdates": 11,
+          "callbacks": 20,
+          "pauseClicks": 3,
+          "quitClicks": 1,
+          "playClicks": 0
+        },
+        "engine_exit": {
+          "event": "engine-exit",
+          "exitCode": 0,
+          "probeFinished": true,
+          "probePassed": false
+        },
+        "exceptions": 1,
+        "event_counts": {
+          "configuration": 1,
+          "audio-request": 3,
+          "preseed-cleared-observation": 1,
+          "seed-observation": 1,
+          "seeded-B0": 1,
+          "scored-observation": 14,
+          "paused-before": 1,
+          "paused-after-ten": 1,
+          "resumed-before": 1,
+          "resumed-after-one": 1,
+          "failure-observation": 1,
+          "exception": 1,
+          "result": 1,
+          "engine-exit": 1
+        }
+      },
+      "windows": {
+        "folder": "runtime-amended-fault-stale-quit-01",
+        "exit_code": 1,
+        "timed_out": false,
+        "elapsed_seconds": 35.04700000000594,
+        "result": {
+          "event": "result",
+          "pass": false,
+          "detail": "quit-reset",
+          "phase": "title-halted",
+          "updates": 11,
+          "timeUpdates": 11,
+          "callbacks": 20,
+          "pauseClicks": 3,
+          "quitClicks": 1,
+          "playClicks": 0
+        },
+        "engine_exit": {
+          "event": "engine-exit",
+          "exitCode": 0,
+          "probeFinished": true,
+          "probePassed": false
+        },
+        "exceptions": 1,
+        "event_counts": {
+          "configuration": 1,
+          "audio-request": 3,
+          "preseed-cleared-observation": 1,
+          "seed-observation": 1,
+          "seeded-B0": 1,
+          "scored-observation": 14,
+          "paused-before": 1,
+          "paused-after-ten": 1,
+          "resumed-before": 1,
+          "resumed-after-one": 1,
+          "failure-observation": 1,
+          "exception": 1,
+          "result": 1,
+          "engine-exit": 1
+        }
+      },
+      "fixed_records": {
+        "count_linux": 22,
+        "count_windows": 22,
+        "exact_json_equal": true,
+        "sha256_linux": "b42f76fa98e6c20005953297c7be534e69a76708749678dcf4a069474afead28",
+        "sha256_windows": "b42f76fa98e6c20005953297c7be534e69a76708749678dcf4a069474afead28",
+        "first_difference": null
+      },
+      "expected_gate": "quit-reset",
+      "gate_matches_prediction": true
+    }
+  },
+  "linux_explicit_vs_wildcard": {
+    "baseline-explicit vs baseline-wildcard": {
+      "exact_json_equal": true,
+      "first_difference": null
+    },
+    "pause-explicit vs pause-wildcard": {
+      "exact_json_equal": true,
+      "first_difference": null
+    }
+  }
+}

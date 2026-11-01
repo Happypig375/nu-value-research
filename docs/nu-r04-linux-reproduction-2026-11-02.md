@@ -43,6 +43,44 @@ The project's stop rule applies: five unresolved failures at one unchanged step 
 
 The same limits as the original R04 record apply: synthetic clicks, an audio request hook rather than real playback, one pinned application and mode. Software rendering means no framebuffer or performance claim. Passing shows only that the frozen R04 observations reproduce on this server. It says nothing about maintenance benefit, the value of pause, or agent access.
 
-## Results
+## Results (added 2 November 2026, after the runs)
 
-(Added after the runs.)
+**Conclusion: the frozen R04 package reproduces on this Linux server.** All nine variants built. The four reference variants passed, and the five faults were caught at exactly their predicted gates. Every fixed record of the reference variants matches Windows exactly. One environment fix was needed: Mesa's software renderer offers OpenGL 4.5, and Nu at this revision asks for 4.6.
+
+| Step | Result |
+| --- | --- |
+| 1. SDK | `10.0.302` (runtime 10.0.10), per-user in `~/.local/share/dotnet-sdk-10.0.302`. |
+| 2. Prepare | Exit 0 in 10 s. Every Nu, application and instrumentation hash equals the Windows preflight-08 receipt. The two probe files equal the amended probes the published Windows runs used (`amended-probes-01/source`). |
+| 3. Build | All nine exit 0, about 70–76 s each. **334 warnings each, codes NU1608/NU1901/NU1902 only, same as Windows.** Binary hashes differ from Windows, as expected: builds embed absolute source paths. |
+| 4. Run | See the attempts below. Final: 4/4 references pass, 5/5 faults caught at their predicted gate. Runs took about 25–33 s each; none came near the 600 s deadline. |
+
+**Attempts, all retained:**
+
+1. `baseline-explicit` attempt 01: **failed in 1.4 s**. OpenGL.Net threw `ArgumentNullException` in `Gl.QueryContextVersion`: requesting Nu's OpenGL 4.6 core context from Mesa 23.2.1 llvmpipe (which offers 4.5) returned no version string. No probe observation was made.
+2. `baseline-explicit` attempt 02: same package, plus the environment-only Mesa override `MESA_GL_VERSION_OVERRIDE=4.6` and `MESA_GLSL_VERSION_OVERRIDE=460`. Nu logged `Initialized OpenGL 4.6 (Core Profile) Mesa 23.2.1`. **Passed.**
+3. The other eight variants, attempt 01 each, with the same environment: all as predicted.
+
+**Comparison with Windows** (`compare_platforms.py`, same record selection as the original receipt script; a self-test on Windows-against-Windows reproduces the published counts):
+
+| Variant | Linux outcome | Fixed records equal to Windows? |
+| --- | --- | --- |
+| baseline-explicit / baseline-wildcard | pass / pass | **yes**, 13 of 13 each |
+| pause-explicit / pause-wildcard | pass / pass | **yes**, 22 of 22 each |
+| fault-missing-toggle | caught at `pause-reached` | identical except the stack-trace file path |
+| fault-hidden-content | caught at `pause-projection` | identical except the stack-trace file path |
+| fault-advancing-time | caught at `pause-frozen-model` | identical except the stack-trace file path |
+| fault-reset-resume | caught at `resume-retained` | identical up to the fault. Afterwards only ball direction and brick colours differ, because the fault resets to a fresh, randomised start. The stack path differs too. |
+| fault-stale-quit | caught at `quit-reset` | **yes**, 22 of 22 |
+
+On Linux, explicit and wildcard also agree exactly (baselines and pause arms), as they did on Windows.
+
+**Limits.** These hold in addition to the protocol's limits.
+- The OpenGL override makes Mesa claim a version its software renderer does not fully support. Nothing rendered was scored, and no shader error appeared in these runs. Still, any later work that depends on what is drawn must not assume rendering parity with Windows.
+- Audio went through SDL on a machine with no sound device. Only the request hook is observed, as on Windows.
+- This repeats the frozen observations on a second platform. It adds no new comparison and establishes no benefit.
+
+**What this changes.** The 26 October blocker "no suitable native environment" is resolved for this pinned R04 package. Later R04 work named in the [behavioral contract](nu-r04-behavioral-contract-2026-10-26.md) can use this server: ordinary access, comparable outside observations, and a differently organised correct implementation. Such work needs its own protocol first.
+
+**Files.**
+- Tracked: [linux_run.sh](../experiments/nu-r04-pause-runtime/linux_run.sh) (environment wrapper), [compare_platforms.py](../experiments/nu-r04-pause-runtime/compare_platforms.py) and the comparison output [linux-platform-comparison-2026-11-02.json](../experiments/nu-r04-pause-runtime/linux-platform-comparison-2026-11-02.json).
+- Private, ignored: `.artifacts/r04-linux-reproduction-20261102/` holds all run folders (traces, stdout/stderr, process receipts, environment files), the prepare/build receipts and logs, the SDK identity and the deletion log. The 35 GB build tree was deleted afterwards; it can be rebuilt from committed inputs in about 12 minutes.

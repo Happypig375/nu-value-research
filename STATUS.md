@@ -17,6 +17,14 @@ Written by a fresh Claude Opus session started by the orchestrator. Questions fo
 3. **Scite check.** The prescribed read-only `citation_report` for the saved R14 audit `r14_public_request_frame_20261026` now gets an answer instead of the old login error. The answer is "no decisions recorded for this session": Scite keeps these reports per session, so a new connection cannot see the old audit. The login blocker is gone, but the old audit can't be checked remotely. Logged in `~/workspace/exchange/literature-quota.tsv` (1 Scite call).
 4. Answered nu-gaia-agentic's question about what Gaia users do in the Interactive window, in `~/workspace/exchange/nu-value-research--to--nu-gaia-agentic.md`. Short answer: we have no usage data, only source readings. One of them matters for their tasks: every Interactive evaluation takes an undo snapshot and clears redo, even a read-only one.
 
+## R04 reproduces on this Linux server, 2 November 2026 (user-approved check)
+
+- **Result:** the frozen R04 pause package (15 October) was rerun unchanged here with SDK 10.0.302, a virtual display and software OpenGL. All nine variants built, each with the same 334 warnings as Windows. The four reference variants passed, and all five built-in faults were caught at their predicted gates. Every fixed record of the reference variants matches Windows exactly. The fault runs match too, except stack-trace file paths and values that are randomised after a reset.
+- **One environment fix was needed:** Mesa's software renderer offers OpenGL 4.5 and Nu asks for 4.6. The first attempt crashed in 1.4 s; it is kept as an attempt. Mesa's version override fixed it. No package file was changed.
+- **What it changes:** the 26 October blocker "no suitable native environment" is gone for this pinned R04 package. Rendering parity is not established (nothing drawn was scored).
+- **Record:** [docs/nu-r04-linux-reproduction-2026-11-02.md](docs/nu-r04-linux-reproduction-2026-11-02.md) holds the protocol (committed before the runs as `ac0a8d8`) and the results. Private evidence is in `.artifacts/r04-linux-reproduction-20261102/`. The 35 GB build tree was deleted afterwards (logged; rebuildable in about 12 minutes).
+- **Next research step (not started):** the R04 behavioral contract's next evidence. That means a differently organised but correct pause implementation, plus comparable outside observations, built and run here. It needs its own protocol written and committed before any run, as this check had. It is development work, which the user pre-approved on 2 November, so I'll propose the protocol next rather than ask.
+
 ## Merged with GitHub `main`, 2 November 2026 (user-approved)
 
 - **Before:** `port/linux-2026-10-30` at `ebe44187c8493d720a55111c715607516e6dd59f`.
