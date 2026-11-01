@@ -25,6 +25,15 @@ Written by a fresh Claude Opus session started by the orchestrator. Questions fo
 - **Record:** [docs/nu-r04-linux-reproduction-2026-11-02.md](docs/nu-r04-linux-reproduction-2026-11-02.md) holds the protocol (committed before the runs as `ac0a8d8`) and the results. Private evidence is in `.artifacts/r04-linux-reproduction-20261102/`. The 35 GB build tree was deleted afterwards (logged; rebuildable in about 12 minutes).
 - **Next research step (not started):** the R04 behavioral contract's next evidence. That means a differently organised but correct pause implementation, plus comparable outside observations, built and run here. It needs its own protocol written and committed before any run, as this check had. It is development work, which the user pre-approved on 2 November, so I'll propose the protocol next rather than ask.
 
+### Groundwork for the next step (found 2 Nov; nothing built or run yet)
+
+The behavioral contract's next dependency is to verify **ordinary standalone input and external observation**: a real key press reaching the unmodified standalone game through SDL, and the result seen only from outside the process. What's already known:
+- **Input route:** `libXtst.so.6` (the X server's XTEST input extension) is installed, so a small ctypes script can send real key and mouse events to the virtual display without sudo. No xdotool is installed. This route is OS-level input into SDL's X11 backend, unlike the old probe's directly published ClickEvents.
+- **External observation:** `xwd` (screen capture of the X display) is installed and its format can be parsed with plain Python. Pillow is not installed.
+- **The game** (pinned source, `Projects/Breakout Mmcc`) starts standalone through `Program.fs`'s `World.run` and goes Splash → Title → Gameplay. It moves the paddle with **Left/Right arrow keys** (4 units per update, clamped to ±128). The Title has Play, Credits and Exit buttons; Gameplay has a Quit button. Virtual resolution is 640×360 by default.
+- **Still to pin down:** exact button screen positions (from `Assets/Gui/*.nugroup` and the window scaling), the window size under Xvfb, and a pixel rule for locating the paddle.
+- **Proposed first check:** unmodified game. Launch it, see the Title, click Play, hold Right and then Left and check that the paddle moves each way in screenshots, click Quit and reach the Title, then Play again for a fresh board. Write the protocol and commit it before running. Build fresh: the returned R02 input drafts must not be reused or read.
+
 ## Merged with GitHub `main`, 2 November 2026 (user-approved)
 
 - **Before:** `port/linux-2026-10-30` at `ebe44187c8493d720a55111c715607516e6dd59f`.
