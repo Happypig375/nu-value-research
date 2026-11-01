@@ -66,3 +66,26 @@ The original limits stay:
 - no claim about practical value or agent access.
 
 A pass shows only that this bounded lifecycle observation reproduces on this server.
+
+## Results (added 2 November 2026, after the runs)
+
+**Conclusion: the R02 standalone lifecycle pair reproduces on this Linux server at the first attempt.** Both unchanged games completed Title → Play → Gameplay → Quit → Title → Play with a fresh game. Both the primary oracle and the initializer diagnostic passed. Callback counts and the full sequence of lifecycle events equal Windows exactly.
+
+| Step | Result |
+| --- | --- |
+| 1. Prepare | Exit 0. `prepare.py` accepted the archive and both application manifests. **One protocol check was not met as worded:** the source-manifest file hash is `72fed10d…`, not Windows `bcdac43e…`. The cause is text encoding only. Python on Windows wrote that JSON file with CRLF line endings and on Linux with LF. All 3,240 rows are identical, and converting the Linux file to CRLF gives exactly `bcdac43e…`. The same holds for both application manifests (`39174d03…`, `b815e8de…`). No source byte differs. |
+| 2. Build | `build.py` exit 0 with the PowerShell 7.4.6 shim. **270 warnings per arm, codes NU1901/NU1902 only, 349 host files per arm, 3,240 source inputs checked with zero mismatches**, all the same as Windows. Assembly names were complete. I checked these points and accepted receipt `c153d336…`; there was no independent review, as declared. |
+| 3. Runs | MMCC: **pass**, initializer diagnostic pass, engine returned 0, 71 s, no timeout. ImSim: **pass**, initializer diagnostic pass, engine returned 0, 74 s, no timeout. |
+| 4. Comparison | Callbacks: **MMCC 485, ImSim 487, equal to Windows.** Trace rows: 1,026 and 1,031, equal to Windows. Every row has the same kind in the same order, so every lifecycle event, phase boundary and transition increment is the same (Windows: MMCC 95/95/95, ImSim 95/97/95). |
+
+**What differs in the traces** (`trace-diff.txt`; `trace_diff.py` compares every value):
+- **Engine tick times.** These come from the operating system's high-resolution clock. Its rate is 10 MHz on Windows and 1 GHz on Linux, so the first ticks differ by exactly 100×. These are wall-clock units, not game state.
+- **Ball position and velocity** in both games. The ball's starting direction is random, as in B0.
+- **In MMCC, one observation shows 4 lives instead of 5**: the randomly launched ball fell once on Linux before Quit, with no input given. The oracle does not depend on this, and the fresh second game starts at 5 lives on both platforms.
+
+**Attempts:** one of each step, all passing. Evidence: `.artifacts/r02-lifecycle-linux-20261102/`.
+
+**Limits.** These hold in addition to the protocol's limits.
+- The build-receipt acceptance had no second reviewer.
+- The same OpenGL-override caveat as the other Linux checks applies.
+- The PowerShell shim affects only how assembly names were read for the receipt, not the build or the run.
