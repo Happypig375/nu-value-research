@@ -17,6 +17,22 @@ Written by a fresh Claude Opus session started by the orchestrator. Questions fo
 3. **Scite check.** The prescribed read-only `citation_report` for the saved R14 audit `r14_public_request_frame_20261026` now gets an answer instead of the old login error. The answer is "no decisions recorded for this session": Scite keeps these reports per session, so a new connection cannot see the old audit. The login blocker is gone, but the old audit can't be checked remotely. Logged in `~/workspace/exchange/literature-quota.tsv` (1 Scite call).
 4. Answered nu-gaia-agentic's question about what Gaia users do in the Interactive window, in `~/workspace/exchange/nu-value-research--to--nu-gaia-agentic.md`. Short answer: we have no usage data, only source readings. One of them matters for their tasks: every Interactive evaluation takes an undo snapshot and clears redo, even a read-only one.
 
+## Backed up to GitHub; work now on `main`, 2 November 2026 (user-authorized)
+
+- **Before:**
+  - local `main` was `fca2547` (Home's state);
+  - GitHub `main` was `2346751`;
+  - the working branch `port/linux-2026-10-30` was at `d48fd4e`.
+- **Steps:**
+  1. `git fetch` (GitHub `main` unchanged at `2346751`).
+  2. Fast-forwarded local `main` to `2346751`, then fast-forwarded it again to `d48fd4e`. The port branch already contained GitHub `main`, so the "merge" was a fast-forward: no merge commit, no conflicts, no history rewritten.
+  3. Renamed the remote `origin` to `nu-value-research`; `main`'s upstream tracking followed automatically.
+  4. Switched the working copy to `main`.
+  5. Pushed `main` to `nu-value-research` (public repo `Happypig375/nu-value-research`).
+- **After:** `main` = `d48fd4e` plus this STATUS commit, pushed. `port/linux-2026-10-30` stays a local branch at `d48fd4e` and is not pushed.
+- **Disk check:** before and after the switch, the same 935 tracked files are on disk with identical SHA-256 hashes, and the total file count is unchanged. The sparse-checkout patterns (fixed earlier) kept everything in place.
+- **Before pushing,** I scanned the nine new commits for secrets and private material: none found. They contain operational notes, the two R04 Linux scripts, a results JSON and `.codex/config.toml` (model name only).
+
 ## R04 reproduces on this Linux server, 2 November 2026 (user-approved check)
 
 - **Result:** the frozen R04 pause package (15 October) was rerun unchanged here with SDK 10.0.302, a virtual display and software OpenGL. All nine variants built, each with the same 334 warnings as Windows. The four reference variants passed, and all five built-in faults were caught at their predicted gates. Every fixed record of the reference variants matches Windows exactly. The fault runs match too, except stack-trace file paths and values that are randomised after a reset.
