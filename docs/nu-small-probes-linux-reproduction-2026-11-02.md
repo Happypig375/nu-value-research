@@ -56,3 +56,29 @@ Each probe keeps its original limits:
 - a direct physics dependency without a Nu world (R01).
 
 Passing shows only that these bounded observations reproduce on this server.
+
+## Results (added 2 November 2026, after the runs)
+
+**Conclusion: all six small probes reproduce on this Linux server.**
+- R01's Box2D physics traces are bit-for-bit identical to Windows once Windows line endings are restored.
+- R05 and R12 ran the very Nu binaries built on Windows and gave identical observations.
+- One environment failure (R10 conversion attempt 01) exposed a real platform difference in the .NET SDKs.
+
+| Probe | Result |
+| --- | --- |
+| R04 compiler diagnostics | Runner exit 0. **All six cases match `original-results.tsv`**: build exits, run exits 0/2/1/1/2/0, and unique and raw FS0025 counts. |
+| R04 application diagnostics | Runner exit 0. **All four variants match Windows** in build exit, warnings (210/210/211/210), unique warnings (150/150/151/150), selected and total FS0025 (0/0/1/0) and prediction pass. Assembly hashes differ, as declared. |
+| R05 events | Runner exit 0. **All three observations equal the receipt**: cascade `game,screen,group`; resolve-stop `game,screen`; unsubscribe `plain:before`. It used the Windows-built `Nu.dll` `5bcf797d…` unchanged. That is the build in the preserved source tree; the original R05 used the corrected build `e96cd61d…`, also from Windows. |
+| R10 Prime conversion | Attempt 02: restore, build (0 warnings, 0 errors) and run exit 0. **8/8 cases pass**, and the loaded Prime DLL is `61a67158…`, equal to the receipt. |
+| R12 propagation | Build and run exit 0, disposition `completed_pass`, on the preserved Windows R05 host (sealed `Nu.dll` `e96cd61d…`, copied exactly). **All records equal Windows** except for three excluded kinds of field: paths, the OS name and the list of loaded runtime assemblies. The other exception is the entity `Order` numbers, which Nu derives from the system clock (rate 10 MHz on Windows, 1 GHz on Linux; 11 distinct values on both). |
+| R01 platform | Restore, build and run exit 0; `dependencyCarryPositive` false, as recorded. **`summary.json` and both traces are byte-identical to Windows after converting LF to CRLF** (`7F8E05FB…`, `E715CEC5…`, `FA73315E…`). It ran on the .NET 8.0.33 runtime, per-user. |
+
+**Attempts, all retained** (`.artifacts/small-probes-linux-20261102/`):
+- **R10 conversion attempt 01** failed at locked restore with NU1403. FSharp.Core 10.1.302 resolved from the Linux SDK's bundled `library-packs` folder has a different content hash (`wFeX…`) from the lock file's (`bN7X…`). The preserved Windows package cache shows the locked package came from the Windows SDK's own `library-packs`. **The two SDKs ship different FSharp.Core 10.1.302 packages under the same version, and the DLLs inside differ too** (`fsharp-core-dll-compare.txt`).
+- **R10 conversion attempt 02** seeded its cache from the preserved Windows package cache (an environment-only fix, which the README allows: "or an existing package cache") and passed.
+- The R03, R04, R06, R10 live-reload and R02 Linux runs earlier today seeded the same Windows cache, so they used the Windows FSharp.Core. The four PowerShell or Python runners here (both R04 probes, R05, R12) use their own empty caches. They therefore compiled against the Linux SDK's FSharp.Core and still matched.
+- No other failures.
+
+**Preserved inputs.** The file list (path, size, modification time) of `.artifacts/r03-feasibility-20261015/source` and `.artifacts/r05-events-20261015/bin` was identical before and after the batch (4,640 files).
+
+**Not covered:** the R10 initializer-only schema reload and the R12 Terra Firma packages. They are larger native packages and need their own protocols.
