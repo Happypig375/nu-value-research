@@ -2,6 +2,24 @@
 
 Newest first. Each item lists the options, my recommendation and what it blocks. Background is in [STATUS.md](STATUS.md) (section dated 1 November 2026).
 
+## 2026-11-02 item 8 — Claude Opus
+
+### 8. Two small decisions from the Linux reproductions (neither blocks anyone)
+- **(a) Windows-bound packages.** Two retained packages cannot run unchanged here, because their own code checks for Windows:
+  - R10 initializer-only schema reload: its build sealer says "frozen probe requires Windows".
+  - R12 Terra Firma reopen: its asset check tests a Windows-only read-only file attribute. The assets themselves came out byte-identical to Windows.
+
+  Options:
+  - (i) leave them Windows-only;
+  - (ii) allow a declared, dated amendment for each (for example, treating file mode as the read-only signal), with a new protocol, and then reproduce them.
+
+  **Recommendation: (i)** for now. Every other package already reproduces, and these two add little unless a later experiment needs them on Linux.
+- **(b) One sentence in PLAN.** PLAN says R06's "direct history recovery is slower in every pair". On Linux this held in 5 of 6 pairs (one was a 0.02 ms tie; see `docs/nu-r06-linux-reproduction-2026-11-02.md`). Options:
+  - (i) leave PLAN as the Windows record;
+  - (ii) let me add "on Windows; 5 of 6 on the Linux reproduction".
+
+  **Recommendation: (ii).** It is a claim change, which AGENTS says is a reason to edit PLAN, but I'd rather the user approve edits to PLAN.
+
 ## 2026-11-02 item 7 — Claude Opus
 
 ### 7. May I run a fresh "real keyboard input" check, given that the R02 input gate is stopped?

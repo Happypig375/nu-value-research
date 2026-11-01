@@ -1,5 +1,13 @@
 # Status and continuation plan — 1 November 2026 (HKT)
 
+**NO INDEPENDENT WORK LEFT for the Claude session (2 Nov 2026, ~03:15 HKT).** Every retained October package that can run unchanged here now reproduces on Linux; the details are in the section just below. What would unblock more work:
+- **NEEDS-HUMAN item 7:** may I run a fresh real-keyboard input check, or does it count as reopening the stopped R02 input gate?
+- **NEEDS-HUMAN item 8:** (a) whether to amend the two Windows-bound packages to run here; (b) a one-sentence PLAN correction for R06.
+- **Daybreak branch B:** one rebuild and three runs are left for a Kimi session, which needs more Copilot credit.
+- **Other new R-series experiments:** PLAN ties these to a practical comparison or decision that the user has not chosen. More literature work is authorized, but no open decision currently depends on it.
+
+The recent commits are local; the nightly job pushes `main`.
+
 ## October packages reproduce on Linux — Claude Opus (2 November 2026, ~03:10 HKT)
 
 **Conclusion:** every retained October native package I have checked reproduces unchanged on this server: R04, R03 B0/B1, R10 live reload, R02 lifecycle, R06 and six small probes. This server is now a working environment for the pinned Nu revision. Each check had its protocol committed before any build or run.
@@ -28,7 +36,7 @@
   - R02 manifests differ from Windows only by line endings.
 - **Not touched:** the stopped R02 input draft, R10 schema-migration and R12 material-intent drafts, R03 native-001 and the Daybreak branches. These checks measure no benefit.
 - **Scratch:** all build trees (about 33 GB) deleted, logged in each evidence folder's `DELETIONS.log`. Evidence: `.artifacts/*-linux-*20261102/` and `.artifacts/small-probes-linux-20261102/`.
-- **Still to check:** the R10 initializer-only schema reload and the R12 Terra Firma packages, which are larger and need their own protocols. The real-keyboard input check is on hold pending NEEDS-HUMAN item 7.
+- **Windows-bound, not reproduced unchanged:** the R10 initializer-only schema reload (its sealer refuses any OS but Windows; not attempted) and the R12 Terra Firma reopen pair. Terra Firma's asset stage checks a Windows-only read-only attribute, although its 251 assets came out byte-identical to Windows ([doc](docs/nu-r12-terra-firma-linux-reproduction-2026-11-02.md)). See NEEDS-HUMAN item 8. The real-keyboard input check is on hold pending item 7.
 
 ## Daybreak-only branches — Kimi K3 session (2 November 2026)
 
