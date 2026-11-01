@@ -60,3 +60,21 @@ The original limits stay:
 - no authoring benefit.
 
 Software rendering makes timing meaningless.
+
+## Results (added 2 November 2026, after the attempts)
+
+**Conclusion: the Terra Firma pair cannot be reproduced unchanged on Linux. Its asset stage checks a Windows-only file attribute. The assets themselves are byte-identical to Windows.** I stopped before the build stage, because continuing would require changing the package.
+
+**Attempts, all retained** (`.artifacts/r12-terra-linux-20261102/`):
+
+1. **Assets attempt 01:** `run.py` refused the output location. It only writes inside `.artifacts/r12-propagation-20261018/` under its own repository root, and it reads three authority files from there.
+2. **Assets attempt 02:** I copied those three authority files into the same relative path inside the scratch copy, so the preserved Windows folder was not written to. `run.py` checks their hashes (`fd945db4…`, `07458874…`, `29529d5f…`), and they were accepted. Results:
+   - The **pipeline ran and exited 0** in 46 s.
+   - The source and the Windows-built pipeline host were unchanged.
+   - The **asset-closure check failed for all 248 assets, with one reason: `not_read_only`.** The runner tests the Windows `FILE_ATTRIBUTE_READONLY` flag (`st_file_attributes`), which Linux files never have.
+   - The extra `AssetGraph.tracker` was also reported on Windows; it is not a difference.
+   - `ready_for_parent_review` is false, so the build stage cannot follow unchanged.
+
+**Asset content across platforms:** all **251 published files are byte-identical to Windows `terra-assets-01`**. That covers the 120 images transformed by the pipeline's encoders and the empty `AssetGraph.tracker`. Hash lists are in the evidence folder. The Windows-built Nu asset pipeline therefore produces the same bytes on Linux.
+
+**Disposition:** like R10's initializer-only schema reload (whose build sealer refuses any OS but Windows), this package is Windows-bound as written. Running it here would need a declared amendment, such as treating file mode as the read-only signal. That is a package change, outside these unchanged-reproduction checks. I have not made it. The L0/L1 native pair was not run.
