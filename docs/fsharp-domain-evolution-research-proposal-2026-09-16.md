@@ -4,6 +4,22 @@
 
 **Supervisory amendment, 2026-09-30:** retain D1 as a candidate, not the completion criterion for the reopened whole-background survey. The [review](supervisor-review-2026-09-30.md) corrects the treatment terminology, separates diagnostic opportunity from semantic coverage, carries temporal-oracle limits into this proposal, and distinguishes design blockers from legitimate negative outcomes. No construction, compiler probe, candidate run or new allocation occurred in this amendment. The original text is preserved at `f00d98d2e6f8bbe1eda96ffc72d8d3999084f959`.
 
+**Current preparation decision, 2026-10-26:** continue the bounded authored
+maintenance question, without claiming a representative population of domain
+extensions. The [oracle eligibility audit](nu-r04-oracle-eligibility-audit-2026-10-26.md)
+reconciles the completed October 15 compiler and fixed-reference runtime
+checks with the remaining evaluator/access dependencies. Those observations
+supersede the dated unexecuted descriptions below at their exact scope. The
+existing oracle assumes the reference's case, model and control organization;
+it is not yet a final scorer for every correct reorganization this proposal
+permits. The subsequent [behavioral/compatibility decision](nu-r04-behavioral-contract-2026-10-26.md)
+selects ordinary standalone MMCC and the authored pause/progress/lifecycle
+requirements, with independent effect observations. It permits different
+private state organizations and separates Q2's stronger phase/race requirements.
+It also preserves unresolved measurements separately from observed failures.
+Ordinary access and evaluator calibration remain unverified. No candidate
+experiment, new construction or allocation follows.
+
 ## Introduction and practical problem
 
 F# discriminated unions let a program name its domain states. Explicitly enumerating the current cases can make a later added case expose an incomplete match. A catch-all can cover existing and newly added cases without that diagnostic. **Both initial variants may be exhaustive:** the treatment is explicit case enumeration versus catch-all coverage, not exhaustive versus non-exhaustive, typed versus untyped, or correct versus initially defective code. Microsoft's [FS0025 documentation](https://learn.microsoft.com/en-us/dotnet/fsharp/language-reference/compiler-messages/fs0025) gives explicit coverage and a wildcard as alternative repairs; its [pattern reference](https://learn.microsoft.com/en-us/dotnet/fsharp/language-reference/pattern-matching) describes a wildcard as matching any input. These primary semantics were rechecked on 2026-09-30. Neither coverage strategy establishes whether the newly required behavior is correct.
@@ -55,7 +71,7 @@ Define change families from requirements before candidate outcomes. Include adde
 
 ### Diagnostic opportunity is not semantic coverage
 
-The future feasibility specification must establish the treatment at the **source-site** level, separately from the **behavioral-obligation** level. This is a requirement for later authorized validation, not permission to build probes now.
+Establish the treatment at the **source-site** level, separately from the **behavioral-obligation** level. The selected source site now has actual-project compiler evidence and fixed-reference runtime observations. Other sites, ordinary candidate delivery and broader valid implementations still need their own evidence; the completed checks do not authorize new probes.
 
 For each targeted site, record the original cases/payloads/guards, equivalent branches, why a fallback is legitimate in the original domain, and the fixed compiler/warning policy. Both variants must satisfy the original contract; do not insert a present-day bug into the fallback arm. Prefer minimal source transformations and shared branch bodies where appropriate rather than gratuitously duplicating implementation. Record unavoidable source-size differences; do not force token equality.
 
@@ -73,6 +89,26 @@ The addendum supplies researcher-authored serve preparation, pause/resume and al
 
 The [task-diversity continuation](nu-task-diversity-and-common-requirements-2026-10-11.md#r04-an-additional-authentic-convention-site) adds Blaze Vector MMCC's existing BulletCommand match. Its final Penetration/destruction arm has a source argument for an initially equivalent catch-all; no variant was constructed. Authored lifetime-renewal, cancellation and unchanged-case-set alternatives expose distinct versus valid default behavior and temporal/identity obligations. The checked-in warning policy matches the Breakout sheet. This broadens source/application coverage within Nu's demo lineage, not representative sampling or independent evidence; the MMCC/ImSim pair is not substituted for D1's arms. All feasibility, provenance, practical-value and allocation conditions remain.
 
+### Historical requirements and valid alternatives, 2026-10-26
+
+The [R04 source-history audit](nu-r04-history-task-audit-2026-10-26.md) qualifies
+both real API-rename examples: the extra named-handler edit follows only when
+the application-local case must also be renamed. Updating an external event
+subscription can retain the old local case name. Record the actual contract,
+ownership and reason for any naming requirement before task construction;
+do not reject a behaviorally correct alternative because it differs from the
+historical patch. Source edit counts alone are not maintenance work estimates.
+
+The same audit retains genuine no-extension changes, no authenticated
+projectile case-extension request in the inspected history, and a score
+feature patch whose state scrutinee changes in a later revision. Serve,
+renewal and cancellation remain authored questions. Preserve that status,
+intermediate source and follow-up corrections; independently validate any
+reference solution and retained obligations. A bounded authored experiment can
+still answer its conditional question, but neither demo history nor a successful
+compiler probe makes its workload representative. Candidate execution remains
+unallocated and existing model/storage/returned-gate restrictions remain.
+
 ### Candidate policy and information
 
 Pin the Codex CLI, returned model identity, settings, source snapshot, .NET/F# toolchain, dependencies and environment. Give each run a fresh isolated workspace/context, the same behavioral request, available current source, documentation and existing public tests. Allow the same ordinary source navigation, build/test feedback and bounded repair opportunities in both arms. Freeze compiler flags, including warning severity; do not turn warnings into errors after seeing results. An agent may use another correct organization or a catch-all. Preserve the assigned arm in analysis and record resulting changes descriptively.
@@ -83,7 +119,27 @@ Agents must not see the alternate arm, research predictions, reference patches, 
 
 Before model evaluation, establish a common behavioral contract and an independent final oracle. Cover initial regressions, new behavior, relevant event ordering, repeated transitions and forbidden side effects where the requirement demands them. Validate the oracle against reviewed reference implementations, plausible faults and at least one alternative correct implementation. Count no extra credit for matching a reference patch. Faults must test obligations, not enforce source style. Keep test-author access and development/evaluation boundaries explicit.
 
+The [current eligibility audit](nu-r04-oracle-eligibility-audit-2026-10-26.md)
+identifies an additional acceptance requirement: the published explicit/wildcard
+pause references share the same `Paused` case, typed model, controls and local
+pause schedule. They establish the clause comparison's fixed observations,
+not compatibility with all admitted source organizations. For the authored
+behavioral request, allow a correct strategy that does not add a union case;
+do not filter out that assigned attempt because it lacks a diagnostic. If a
+public type/interface extension is itself required, state its owner and
+compatibility reason before outcomes. A future evaluator must validate an
+appropriate alternative organization and distinguish an interface mismatch
+from a demonstrated behavioral failure. Keep the frozen probe unchanged.
+
 The primary outcome is **all-obligation success for the assigned change within budget**, requiring the applicable old and new checks under the declared observation contract. This is oracle-relative success, not proof of all possible executions. Report partial obligation coverage separately. Also report compilation/diagnostic status, new failures versus retained failures, elapsed time, every attempted token debit and review-relevant patch size. A correct fallback is a success; clearing a warning is not automatically one. Infrastructure-blocked observations, time-budget exhaustion and unrun slots are distinct, under rules frozen before evaluation. Do not exclude slow or noncompiling candidates after assignment.
+
+For the current authored R04 preparation, follow the
+[completion and missing-observation rule](nu-r04-behavioral-contract-2026-10-26.md#completion-and-missing-observations).
+Verified completion, an observed required failure and an unresolved outcome
+are distinct. Keep all assigned attempts; an unsupported evaluator interface
+is neither completion nor a demonstrated semantic defect. Report logical
+missing-outcome bounds separately from eventual sampling uncertainty. These
+rules do not make an ineligible or systematically biased evaluator acceptable.
 
 Classify diagnostic opportunities at source sites and behavioral obligations independently, as above, before model results. Do not call an obligation "compiler-verified" because an associated site emits FS0025. Their association is explanatory evidence; do not condition the primary effect on successful compilation or adjust it for post-assignment diagnostics, edits or repair counts. Those may be mechanisms through which the source convention acts.
 
@@ -109,7 +165,28 @@ Measure one-time source preparation/review separately from per-change execution 
 
 The existing `src/ise/agents/codex.py` integration is the intended reuse path, not a newly validated runtime in this supervisory pass. Before any separately approved experiment, reconcile the pinned CLI's actual event schema, warning/output delivery and usage fields using the approved model-free and integration boundaries. This review ran no adapter, compiler or live model request and establishes no current backend compatibility. Do not change OAuth/backend choices or quietly launch a diagnostic call.
 
-The next review must decide whether this question merits a **separately scoped, model-free feasibility packet**. It would need to establish: a legitimate convention contrast in public F# source; initial equivalence; enough meaningful independent changes; deterministic observation of temporal behavior through existing facilities; sensitive independent tests; and credible effort/precision requirements. No reference changes, new adapters or tests were constructed in this literature assignment. If Nu cannot satisfy those conditions without a substitute engine or a task-solving observation seam, defer the Nu case and return for a decision.
+The completed [application builds](nu-application-diagnostic-feasibility-2026-10-15.md)
+establish warning-only FS0025 at the selected site. The
+[pause runtime record](nu-pause-runtime-feasibility-2026-10-15.md) establishes
+matching bounded baseline/successor observations and sensitivity to five
+declared faults under functional accompanied Gaia. Preserve all preparation
+and reconstruction failures. These resolve the corresponding earlier probe
+questions, not ordinary physical input, standalone transitions, candidate
+access, general equivalence or maintenance benefit.
+
+The [common behavioral/compatibility boundary](nu-r04-behavioral-contract-2026-10-26.md)
+now selects standalone MMCC, ordinary input and the authored pause/resume,
+retained-progress, quit and fresh-play family, including independently observed
+effects. It is not an authenticated request or a frozen candidate prompt. Next
+establish an evaluator that admits the permitted alternatives under actual
+ordinary access; the accompanied probe does not validate the selected
+standalone environment. Source-convention assignment remains the treatment
+even when the candidate reorganizes the successor. Enough independent changes for a broader
+claim, actual tool/observation access and credible effort/precision requirements
+remain unresolved. If those conditions require a substitute engine or a
+task-solving observation seam, defer the Nu case rather than mislabeling the
+fixed probe as an ordinary maintenance study. Current storage/model restrictions
+and returned construction gates remain in force.
 
 Separate design feasibility from what a completed experiment finds.
 
@@ -125,6 +202,12 @@ A local effect remains conditional on the implementation, task families, model a
 | --- | --- | --- |
 | **Unique — Scite** | **Unconfirmed.** No exact duplicate was identified in the recorded screen; closest full methods leave a narrower empirical contrast. Exhaustiveness, type feedback and source-organization evaluation are established | Bound priority to this search. Follow any newly consequential duplicate; do not interpret unexamined records or low graph coverage as absence |
 | **Valuable** | **Plausible, concretely motivated.** The result could change an F# maintainer's convention and verification effort, including a useful negative answer | Validate task prevalence, worthwhile effect and effort with the actual use case; no benefit or return is yet measured |
-| **Scientifically valid** | **Credible proposed design, not a validated study.** Common behavior, controlled assignment, independent scoring, intention-to-treat and clustered uncertainty address the principal rivals | Case equivalence, test sensitivity, apparatus/accounting, task diversity and allocation remain unvalidated |
+| **Scientifically valid** | **Proposed design with bounded feasibility evidence.** The selected warning contrast and fixed-reference observations/fault detections are established; no candidate maintenance study is validated | General equivalence, an evaluator compatible with admitted alternatives, ordinary access, accounting, task diversity and allocation remain unresolved |
 
-**Disposition: recommend D1 narrowed by Nu's temporal-obligation perspective; defer experimental start.** This is a completed research-discovery recommendation for human review, not human approval or an empirical proof. All existing construction, candidate, worker and H holds remain; new allocation is zero.
+**Disposition: retain D1 as a bounded authored maintenance question; candidate
+execution remains unallocated.** The completed mechanism checks are evidence
+at their stated scope, not human approval, maintenance benefit or representative
+workload coverage. Follow PLAN for current local-construction authority,
+storage/model restrictions and returned gates; the historical blanket worker
+hold does not override authorized maintainer assistance. New candidate,
+participant, paid and H allocation is zero.

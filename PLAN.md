@@ -1,12 +1,86 @@
 # Research plan
 
+**Current continuation return, 2026-10-26:** the goal is now **blocked**, not
+complete, after three consecutive no-progress turns with the same unresolved
+access/model/execution conditions. All maintainer subagents are complete. The
+[current handoff](docs/handoff-2026-10-26-blocked.md) records the pending Scite
+audit and executable resumption conditions. The broad survey, practical-value
+research and both Daybreak-only branches remain unfinished.
+
+**Current storage return, 2026-10-26:** A: reports Warning / Full Repair Needed
+after a new installed-source checksum failure. Stop A: writes and execution.
+The [verified preservation and documentation location](docs/workspace-integrity-return-2026-10-26.md)
+is `C:/Users/hadri/nu-value-recovery/20261025-s180-integrity-stop-01/publication-review`,
+a fresh remote checkout. S180's selected full reading and R04/R14 synthesis
+are integrated there. The subsequent [bounded S180 calculation](docs/literature/full-reading/S180-correlation-reconstruction.md)
+completed separately in a fresh verified C: calculation folder, preserving both
+earlier setup failures. This location supersedes the October 23 A: route for
+documentation only. Preserve earlier workspaces and all returned gates. The Daybreak-only
+restriction below is unchanged; no restricted branch was resumed.
+
+**R04 task-provenance checkpoint, 2026-10-26:** the
+[historical-task audit](docs/nu-r04-history-task-audit-2026-10-26.md) distinguishes
+required external changes, optional local renames and the maintainer's chosen
+diff. Real neutral changes and a later state-scrutinee correction qualify task
+and oracle selection; authored positive extension sketches remain authored.
+The amended D1 proposal preserves valid alternatives. Next bind a practical
+contract or explicitly retain the authored question's scope; this source audit
+allocates no candidate execution and resumes no restricted/returned branch.
+The subsequent [oracle eligibility audit](docs/nu-r04-oracle-eligibility-audit-2026-10-26.md)
+selects the bounded authored behavioral question for preparation. The completed
+pause oracle assumes its reference's case/model/control/schedule organization;
+it is not yet a final evaluator for all the correct alternatives D1 permits.
+The [behavioral contract](docs/nu-r04-behavioral-contract-2026-10-26.md) now selects
+ordinary standalone MMCC, player-visible pause/progress/lifecycle requirements
+and independent effect observations, while permitting different private state
+organizations. Q2's stronger next-loop and same-pass requirements stay separate.
+Unresolved measurements remain distinct from observed failures. Next establish
+ordinary access and comparable observations, including a differently organized
+correct implementation, in a suitable future feasibility environment; do not
+repeat the compiler probe or manufacture a required local type edit. This desk
+decision establishes no evaluator, native environment or candidate allocation.
+
+**Current handoff and model restriction, 2026-10-25:** the completed
+reading/source integration following the [October 23 handoff](docs/handoff-2026-10-23-paused.md)
+is published. The later deliberate recovery fault-trigger branch and ordinary
+screen serializer/runtime persistence branch are **unfinished, Daybreak-only
+work**. Non-Daybreak ChatGPT models must not investigate, implement, test,
+execute or delegate either branch. Models without verified Daybreak identity
+are ineligible. Follow the [restriction and saved state](docs/unfinished-daybreak-only-work-2026-10-25.md);
+earlier instructions to continue ordinary persistence are superseded.
+Separate literature/synthesis remains authorized and the broad survey remains
+open. R03 native-001 is terminal; this handoff and model eligibility do not
+reopen the R02/R10/R12 construction returns or allocate experiments.
+
 **Supervisory revision: 2026-09-30, based on `f00d98d2e6f8bbe1eda96ffc72d8d3999084f959`.** This is the current work assignment and authority map. The [review](docs/supervisor-review-2026-09-30.md) records findings, evidence, and limits. Earlier versions remain in Git; this revision does not overwrite reading records, experimental results, or permissions.
 
 **Local workspace migration, 2026-10-08:** continue from `A:/nu-value-research`. The [migration record](docs/workspace-migration-2026-10-08.md) identifies the separate archive, preserved local evidence and sparse-checkout restoration. Older engineering files omitted from this local view remain in Git; their absence is not a deletion or a change of authority. The current survey assignment and the survey continuation below remain in force.
 
+**Current publication/execution location, 2026-10-23:** continue from
+`A:/nu-value-execution/20261023-material-intent/publication`. The
+[relocation record](docs/workspace-integrity-return-2026-10-18.md#2026-10-23-separate-a-execution-and-publication-location)
+binds the clean checkout restored from pushed `ac828bec` and the separately
+verified native input copy. Low/fluctuating C: capacity cannot support the next
+six-process package. The original A: workspace and C: recovery/evidence remain
+preserved; do not pull/reset/clean either. New native composition still needs
+prospective controls, current source/build sealing and acceptance. This changes
+storage location, not the R02/R10 returns or experimental allocation.
+
 ## Active assignment: prepare the broad research agenda and continue consequential literature
 
 Continue the user-authorized survey of **Nu's claimed innovations and the wider background of evolving interactive software**, including mechanisms, alternatives, empirical benefits/costs, practice, and evaluation methods. This assignment is broader than D1 and supersedes the earlier decision-specific literature completion. Neither an empty queue, a paper count, nor evidence sufficient for D1 completes it.
+
+**User refinement, 2026-10-19:** the intended research endpoint is a useful
+improvement over a credible status quo for evolving stateful interactive
+software, grounded in Nu but potentially transferable beyond game engines.
+The [updated objective and comparator rules](docs/nu-research-agenda-2026-10-08.md#2026-10-19-objective-improve-evolution-of-stateful-software)
+separate whole-engine workflows, mechanism alternatives and non-game transfer.
+Investigate relevant Nu issues, discussions and commit/PR/release history as
+supplementary task and design evidence. Select the practical decision and
+baseline before claiming improvement; literature supplies methods and prior
+results, while our comparison must establish the effect. A favorable Nu result
+is not required, and all adverse work remains. This changes research direction,
+not the R02/R10 returns or candidate/participant allocation.
 
 **User continuation, 2026-10-08:** prepare the plausible research directions together, prioritized by research value, and search/read literature as needed. The [ranked research agenda](docs/nu-research-agenda-2026-10-08.md) owns the direction cards, comparison/outcome boundaries, preparation order and conditions for changing priority. Do not require the user to choose a single direction before preparing the others. Priorities are revisable judgments; no favorable Nu result is presumed.
 
@@ -20,13 +94,58 @@ The user's subsequent instruction, “parallelize your work with subagents,” a
 
 ## Where current information lives
 
-**Current execution evidence, 2026-10-15:** [R04](docs/nu-diagnostic-feasibility-2026-10-15.md) now observes the adapted compiler-warning contrast and warning-free behavioral failure; its [four actual-project builds](docs/nu-application-diagnostic-feasibility-2026-10-15.md) also confirm warning-only FS0025 for the added explicit case amid 210 existing dependency warnings, without a pause-runtime claim; [R10](docs/nu-conversion-feasibility-2026-10-15.md) observes Prime defaulting/positional hazards and the selected explicit value mapping; [R05](docs/nu-event-feasibility-2026-10-15.md) observes bounded Nu stub-world delivery; [R01](docs/nu-platform-feasibility-2026-10-15.md) observes support with displacement lag outside its authored tolerance. These are scoped mechanism probes, not benefit estimates. [R03](docs/nu-history-feasibility-2026-10-15.md) now passes one real functional Gaia B0 history/fresh reconstruction pair with both negative controls. The [seeded B1 continuation](docs/nu-history-continuation-2026-10-15.md) now passes twenty matched model/projection steps with the predicted managed wall bounce and exact event word. The [R10 live/fresh pair](docs/nu-live-reload-feasibility-2026-10-15.md) now preserves a halted unchanged-schema checkpoint across one actual reward-rule reload, verifies FSI model/dispatcher installation and matches one declared post-edit hit. It bypasses F9/menu invocation and does not observe native input replay or external-effect preservation. The [R04 pause/lifecycle execution](docs/nu-pause-runtime-feasibility-2026-10-15.md) now passes four references and detects all five frozen source faults at their declared gates. Its retained setup failure exposes a reconstruction limit: matching model values can coexist with stale initialization-only entity properties; the common corrected setup explicitly clears content first. The [R06 component-cost series](docs/nu-recovery-cost-feasibility-2026-10-15.md) now completes all twelve assigned measured processes after a separately recorded, unattached reconstruction diagnostic. History acquisition is faster in every pair, direct history recovery is slower in every pair, and readiness differences go both ways. The original reconstruction feasibility timeout remains failed and unexplained; unequal retained payload scopes and unmeasured practical work limit the result. The [R02 standalone lifecycle pair](docs/nu-standalone-lifecycle-feasibility-2026-10-15.md) now passes both unchanged applications once, including the separately declared scalar-initializer diagnostics and their distinct cleanup obligations. ImSim Play takes 95 callbacks rather than the frozen nominal prediction of 96, within the unchanged 100-callback bound. Next establish supported input and effective-pause observations for matched pause/exit references; synthetic lifecycle ClickEvents do not validate SDL/ButtonFacet delivery, held-key polling, or paused behavior. These observations do not establish maintenance benefit. Native contact/audio/framebuffer restoration and ordinary agent access remain unverified. The [October 15 survey continuation](docs/literature/nu-background-survey-2026-09-30.md#2026-10-15-continuation-completed-methods-and-bounded-mechanism-evidence) supersedes earlier selected-paper access gaps while preserving S305's unread journal edition and raw/supplement limitations. Prioritize those gaps by the comparison they can change; do not repeat completed method inventories or infer independent studies from shared datasets.
+**R03 passive-access disposition, 2026-10-23:** the
+[one native observation](docs/nu-passive-access-observation-2026-10-23.md)
+followed accepted exact package preparation. Its one submitted drag left
+Position K unchanged with no history entry, so the required distinct F and
+C0-C3 traversal were not established. Normal process exit does not make the
+case pass. An undeclared new `gaia/imgui.ini` separately fails the frozen output
+boundary. Preserve the complete attempt and partial visible property/selection
+evidence; do not reset or repeat this consumed assignment. The preparation
+gate passed with four prior failures retained. R02/R10/R12 remain returned.
+Follow the updated [continuation prompt](docs/continuation-prompt-2026-10-23.md)
+for source-only clarification or consequential literature before any distinct
+future protocol; this is not a repair or benefit result.
+
+**Earlier preparation checkpoint, 2026-10-23:** the parallel preparation and
+reading segment produced accepted [R03 artifacts](docs/nu-passive-access-preparation-2026-10-23.md):
+16-field state roundtrip and eight synthetic launcher controls passed, with
+four construction failures retained. The package configuration and native
+observation pending at that checkpoint are now resolved by the terminal
+disposition above; its launch instructions are historical. Source audits bind
+Nu exception-recovery demand, a real API-rename burden case and Camunda's
+existing migration comparator; S311 separates estimated dependencies from
+actual history. The current [continuation prompt](docs/continuation-prompt-2026-10-23.md)
+records the requested return without closing the broad survey.
+
+**R12 ordinary material-intent construction return, 2026-10-23:** the
+[native baseline record](docs/nu-material-intent-baseline-2026-10-23.md#native-construction-return-at-gate-008)
+now stops this construction at five unresolved failures. Build 002 compiled
+and sealed the adapter; Gate 005 passed narrower controls. Gate 007's complete
+readiness review rejected release, launch, observation and persistence-scoring
+coverage. The corrected Gate 008 control set then failed in its synthetic
+symbol fixture before producing results. No source correction, retry or new
+readiness review followed; no native process has run. The exact returned
+ten-file package and all attempts remain local, unaccepted and unpublished
+apart from the frozen protocol. Ordinary continuation does not resume this
+gate. Explicit resumption would first bind that returned draft and attempt
+limits, then require current objective controls, build/seal correspondence and
+independent plus parent acceptance. R02/R10 remain returned. Continue
+independent [R03 passive-access preparation](docs/nu-history-question-access-2026-10-18.md#2026-10-23-predecessor-audit-and-passive-access-preparation),
+practical task selection and consequential literature; candidate/participant
+allocation remains unchanged.
+
+**Current execution evidence, 2026-10-15:** [R04](docs/nu-diagnostic-feasibility-2026-10-15.md) now observes the adapted compiler-warning contrast and warning-free behavioral failure; its [four actual-project builds](docs/nu-application-diagnostic-feasibility-2026-10-15.md) also confirm warning-only FS0025 for the added explicit case amid 210 existing dependency warnings, without a pause-runtime claim; [R10](docs/nu-conversion-feasibility-2026-10-15.md) observes Prime defaulting/positional hazards and the selected explicit value mapping; [R05](docs/nu-event-feasibility-2026-10-15.md) observes bounded Nu stub-world delivery; [R01](docs/nu-platform-feasibility-2026-10-15.md) observes support with displacement lag outside its authored tolerance. These are scoped mechanism probes, not benefit estimates. [R03](docs/nu-history-feasibility-2026-10-15.md) now passes one real functional Gaia B0 history/fresh reconstruction pair with both negative controls. The [seeded B1 continuation](docs/nu-history-continuation-2026-10-15.md) now passes twenty matched model/projection steps with the predicted managed wall bounce and exact event word. The [R10 live/fresh pair](docs/nu-live-reload-feasibility-2026-10-15.md) now preserves a halted unchanged-schema checkpoint across one actual reward-rule reload, verifies FSI model/dispatcher installation and matches one declared post-edit hit. It bypasses F9/menu invocation and does not observe native input replay or external-effect preservation. The [R04 pause/lifecycle execution](docs/nu-pause-runtime-feasibility-2026-10-15.md) now passes four references and detects all five frozen source faults at their declared gates. Its retained setup failure exposes a reconstruction limit: matching model values can coexist with stale initialization-only entity properties; the common corrected setup explicitly clears content first. The [R06 component-cost series](docs/nu-recovery-cost-feasibility-2026-10-15.md) now completes all twelve assigned measured processes after a separately recorded, unattached reconstruction diagnostic. History acquisition is faster in every pair, direct history recovery is slower in every pair, and readiness differences go both ways. The original reconstruction feasibility timeout remains failed and unexplained; unequal retained payload scopes and unmeasured practical work limit the result. The [R02 standalone lifecycle pair](docs/nu-standalone-lifecycle-feasibility-2026-10-15.md) now passes both unchanged applications once, including the separately declared scalar-initializer diagnostics and their distinct cleanup obligations. ImSim Play takes 95 callbacks rather than the frozen nominal prediction of 96, within the unchanged 100-callback bound. Next establish supported input and effective-pause observations for matched pause/exit references; synthetic lifecycle ClickEvents do not validate SDL/ButtonFacet delivery, held-key polling, or paused behavior. These observations do not establish maintenance benefit. Native contact/audio/framebuffer restoration and ordinary agent access remain unverified. The [October 15 survey continuation](docs/literature/nu-background-survey-2026-09-30.md#2026-10-15-continuation-completed-methods-and-bounded-mechanism-evidence) supersedes earlier selected-paper access gaps at their selected editions. The [October 18 S305 journal reconciliation](docs/literature/full-reading/S305-problem-centered-design-journal-reading-2026-10-18.md) now closes that final-edition gap: it adds the same six-person S304 prototype check and explicitly limits walkthrough predictions, without a new independent study. Raw/supplement limitations remain. Prioritize those gaps by the comparison they can change; do not repeat completed method inventories or infer independent studies from shared datasets.
 
 **R10 schema execution, 2026-10-16:** the [initializer-only application reload](docs/nu-schema-reload-feasibility-2026-10-16.md) now validly fails the required added-field mapping: old seven-field state and selected projection survive, but actual FSI conversion supplies reward 0 despite the new initializer of 200. The separate fresh reference observes initial reward 200 and reconstructs the required checkpoint. Both declared continuations pass their reward-specific oracles, with scores 100 and 300; this is not a matched successful preservation pair. All construction and native attempts are retained. The [source-bound migration audit](docs/nu-live-edit-contract-2026-10-11.md#2026-10-16-source-boundary-for-an-explicit-migration) identifies a possible pre-conversion witness and application composition, with intermediate-content/event obligations. The separate [explicit-migration treatment](docs/nu-schema-migration-feasibility-2026-10-16.md) now has an accepted frozen protocol and oracle for absence, deliberate zero, nondefault 75, actual-state repeat, failed-compilation notification and fresh-reference cases. The executed application now compiles with verified source/PDB/DLL correspondence after four retained failed target attempts. Three harness candidates have failed independent review; parent inspection also rejected an intervening unassigned rescue reload. Four harness/conformance failures remain unresolved. The subsequent correction crossed a separate five-failure objective-control threshold: attempts 11–18 failed consecutively, requiring return at 15. Later passing controls 19/20 do not authorize that overrun. R10 construction is now stopped; its exact current draft is preserved locally, uncompiled and unaccepted. Build 23 remains the last compilation and no native migration process has run. Ordinary continuation does not resume this gate. If explicitly resumed, bind the returned draft and missing per-attempt input limits, then accept its controls, current compile/seal, and independent plus parent review before the unchanged six-process sequence. Preserve all work and failures. This result establishes neither automatic semantic migration nor practical benefit. The R02 return below remains in force.
 
 **R02 input-construction return, 2026-10-15:** further preparation, builds and native execution have stopped at the five-failure return rule in [AGENTS](AGENTS.md#stop-and-handoff). The new probe failed compilation on attempts 01–08 before later successful compiles; the threshold should have triggered at attempt 05. Different compiler error classes did not reset the same gate. No native input run occurred. The latest draft is uncompiled; an unreviewed copied-host preparation exists, but no final source/host/build review was accepted. The unfinished draft remains local under `experiments/nu-r02-input-feasibility/`; private attempt/review records and the `parent-stop-rule-return-01.json` / `parent-stop-rule-return-amendment-02.json` handoff are under `.artifacts/r02-input-feasibility-20261015/`. If resumed after this return, bind the exact source, unchanged 349-file host per arm and runner/build composition, then complete independent and parent acceptance before any native run.
 
-**R03/R12 continuation, 2026-10-18:** the [R03 symptom/access map](docs/nu-history-question-access-2026-10-18.md) binds the retained stale-position episode but leaves its original predecessor names missing; the inferred collision is not confirmed diagnosis ground truth. Gaia Interactive evaluation snapshots even a getter and clears redo history, so next validate the chosen ordinary inspection route and branch/halt policy. The [R12 public propagation fixture](docs/nu-propagation-feasibility-2026-10-18.md) passes one Button/Text revision in a functional, accompanied, halted stub world, preserving the observed equal-value, deletion and recreation limits. The [Terra Firma continuation](docs/nu-reuse-and-authoring-contract-2026-10-11.md#2026-10-18-existing-terra-firma-family-and-next-revision-case) binds an existing 32-palm family to an authored shared-tint/local-roughness contrast and ordinary batch/composition alternatives. Its [native load/save/fresh-reopen pair](docs/nu-terra-firma-reopen-feasibility-2026-10-18.md) now passes the declared 197-entity, 166-link, 11-history and selected Villa/palm configuration checks. Retain the first invalid observer attempt, failed compile, review rejections and interrupted restart work; successful process/save completion did not validate the original Symbol encoding. Next bind the common revision protocol and batch alternative, including indirect ancestor reconstruction and complete work. No propagation revision, visual result, ordinary Gaia/input access or authoring benefit follows from this preservation prerequisite. These results do not resume the R02/R10 returns or allocate candidate/participant work.
+**R03/R12 continuation, 2026-10-18:** the [R03 symptom/access map](docs/nu-history-question-access-2026-10-18.md) binds the retained stale-position episode but leaves its original predecessor names missing; the inferred collision is not confirmed diagnosis ground truth. Gaia Interactive evaluation snapshots even a getter and clears redo history, so the chosen ordinary inspection route and branch/halt policy remain an access dependency. The [R12 public propagation fixture](docs/nu-propagation-feasibility-2026-10-18.md) passes one Button/Text revision in a functional, accompanied, halted stub world, preserving the observed equal-value, deletion and recreation limits. The [Terra Firma prerequisite](docs/nu-terra-firma-reopen-feasibility-2026-10-18.md) passes the declared original-scene load/save/fresh-reopen preservation checks, retaining the invalid observer attempt, failed compile, review rejections and restart-interrupted work.
+
+The [Terra Firma revision series](docs/nu-terra-firma-revision-feasibility-2026-10-18.md) now completes P-shared, B-shared and P-local revision/reopen pairs. Both shared cases tint all 32 palms. P-local preserves the selected roughness but leaves that palm untinted, including after actual-save reopen; this is valid adverse delivery. Other declared configuration, links and raw histories preserve. Strict current-source/history correspondence separately fails on fresh Order values. Propagation records 160 original reconstruction pairs against its frozen prediction of 163, with a source-supported three-address filter explanation; B-shared records zero. Keep these bounded managed observations separate from total work, native lifetime and authoring benefit. The first B-local process has no material outcome because its input integrity fails before editing. The later [revalidated continuation](docs/nu-terra-firma-revision-continuation-2026-10-18.md) now completes the batch/local edit and its actual-save reopen: all 32 tints, local roughness, other declared configuration, links and old histories pass, with zero operator lifecycle pairs. Four pairs are complete across nine processes, including the preserved invalid startup.
+
+**Storage/input-integrity return, 2026-10-18:** follow the [integrity record](docs/workspace-integrity-return-2026-10-18.md) before further A: writes or native execution. Despite Healthy/OK status, three B-local staged inputs changed from their pre-launch hashes and its original scene became undecodable. The seventh process is invalid/incomplete; its reopen is ineligible and no replacement is assigned. Native work stopped immediately. A verified C: recovery copy preserves all 36 then-uncommitted files and 4,993 selected private experiment files; publication proceeds from a temporary C: checkout, leaving A: and unrelated drafts untouched. First establish reliable execution storage and revalidate exact source/assets/host/compiled package and retained evidence, then prospectively bind any continuation while preserving the failure and original chronology. This environmental return does not resume the separate R02/R10 five-failure gates or allocate candidate/participant work. The [later integrity update](docs/workspace-integrity-return-2026-10-18.md#clean-checks-and-bounded-continuation) records two clean CHKDSK snapshots, exact revalidation of all 5,029 recovery-manifest files plus source/assets/host/build inputs, and accepted execution of the two-process B-local continuation. Both recorded 447-file input checks and protected post-run checks pass. This resolves that bounded environmental return while retaining the damaged evidence; it does not certify hardware or resume R02/R10. Publication remains in the C: recovery checkout and the unrelated A: drafts remain untouched. Next bind a practical repair/completion comparison with complete work and history consequences, or another consequential accessible dependency; the broad survey remains open.
 
 | Question | Authoritative record |
 | --- | --- |
@@ -54,6 +173,8 @@ The B01-B12 themes remain open pending the broader survey. Their single `Open` l
 These are not four new documents or per-theme paper quotas. Extend the existing survey map. An unanswered empirical question can remain after a literature area has been responsibly surveyed; it is not by itself a command to keep searching forever. Conversely, an unanswered acquisition/coverage question cannot be relabeled an empirical gap. Keep scope, date and known counterevidence explicit before calling any theme surveyed. The supervisory pass itself closed no theme and did not certify overall coverage; the subsequent dated assessment follows below.
 
 ## Current scientific handoff and next work
+
+**2026-10-23 continuation:** the [development-history audit](docs/nu-development-history-audit-2026-10-23.md) binds Nu's property-override policy, already-present repairs, passive inspection route and live-model conversion rationale. The [status-quo and transfer audit](docs/nu-status-quo-and-transfer-audit-2026-10-23.md) credits ordinary engine and Redux/XState mechanisms. The subsequent [material-intent decision](docs/nu-material-intent-baseline-2026-10-23.md) corrects the contrast: an explicit mode table plus the successful batch is itself the strengthened ordinary baseline. Its [pure component](experiments/nu-r12-material-intent/RESULTS.md) now passes the declared controls after retained construction failures and review. The [native protocol](experiments/nu-r12-material-intent-native/PROTOCOL.md) now has independent and parent acceptance for coupled construction, with frozen input/output limits, exact A cache/build identities and eighteen control groups. Next complete the adapter/runner/oracle, controls and current source/PDB/DLL seal before native acceptance. After this one baseline sequence, prioritize the [history-repair, domain-convention and conditional workflow comparisons](docs/nu-research-agenda-2026-10-08.md#preparation-priority-after-the-ordinary-material-baseline) by their remaining practical dependencies. JSON mode/hash pairing over supplied maps is not material persistence or benefit. Do not label an equivalent helper as a distinct treatment; later integration must establish useful capability or work beyond that baseline. The [Showtime source case and Harny follow-up](docs/nu-xstate-practice-case-2026-10-23.md) bind real persistence/runtime policy decisions, but neither supplies the required cross-version preservation obligation. Harny deliberately excludes old-schema resume; do not invent a migration requirement from that cutoff. Continue other consequential agenda gaps. These decisions change no retained Nu runtime result, candidate allocation, or R02/R10 return.
 
 **Dated preparation history:** the October 8/11 paragraphs below preserve the desk-stage findings and then-outstanding dependencies. The October 15 current-execution paragraph above owns their updated runtime status and next action; the execution authorization above owns current construction authority. Empirical benefit, ordinary agent access and participant allocation retain their stated unresolved status.
 

@@ -301,3 +301,202 @@ occurrences are a falsifiable expectation, not a run-validity requirement.
 The construction record owns current review, compile and execution gates.
 No native revision outcome or complete-work advantage follows from the
 accepted protocol or synthetic controls.
+
+#### 2026-10-18 revision observations and integrity return
+
+The [execution record](nu-terra-firma-revision-feasibility-2026-10-18.md) first
+completed P-shared, B-shared and P-local revise/actual-save reopen pairs.
+Both shared cases deliver all 32 tints. P-local retains the selected palm's
+roughness but also its old albedo, so only 31 receive the tint; faithful
+reopening does not cure this authored requirement failure. Other declared
+configuration, links and raw-history preservation pass. Propagation's exact
+current-source/history check separately finds regenerated Order differences
+after fresh reopen. Batch retains its old histories, whose later maintenance
+consequences remain untested.
+
+Propagation records 160 original reconstruction pairs over 139 changed IDs,
+versus the frozen prediction of 163. Three same-name copied palms have one
+pair rather than two; pinned address/filter behavior explains that pattern
+without changing the prediction or claiming total native work. B-shared has
+no operator lifecycle events or original ID changes. The missed P-local target
+itself is rebuilt twice, keeping the field-intent failure separate from the
+three-address prediction divergence.
+
+The first B-local attempt fails the original-scene integrity guard before any
+edit. Its three changed staged inputs make that attempt invalid/incomplete,
+and its reopen remains ineligible. The
+[storage return](workspace-integrity-return-2026-10-18.md) preserved the failed
+attempt and a verified C: recovery copy. After clean CHKDSK snapshots, exact
+input revalidation and prospective acceptance, the separate
+[two-process continuation](nu-terra-firma-revision-continuation-2026-10-18.md)
+now completes B-local and its own actual-save reopen. All 32 tints, selected
+roughness, other declared configuration, links and old histories pass, with
+zero operator lifecycle callbacks or changed original IDs.
+
+Four revision/reopen pairs are complete across nine processes, including the
+invalid startup. Batch's retained histories and propagation's advanced
+histories remain different endpoints; their later maintenance consequences
+have not been executed. A practical comparison must count helper construction,
+verification, failed work, repair and history consequences. These observations
+do not establish a general reuse, authoring or steering advantage; the separate
+R02/R10 returns remain stopped.
+
+#### 2026-10-18 next comparison: continued use and workflow switching
+
+The practical decision is whether a level author maintaining these placed
+props should use public source propagation, a reusable field-update helper,
+or a declared combination when shared revisions must retain independent local
+fields. The existing maintainer rationale and S254's reuse accounts support
+that decision frame; they do not establish its frequency, independent demand
+or a productivity effect. Existing family links remain supplied setup, with
+the selection/helper and verification work recorded separately.
+
+The next maintenance question concerns a second shared albedo revision from
+each workflow's **actual saved endpoint**, retaining the specified roughness
+and unrelated configuration. The first stage keeps its original result:
+P-local's missed tint remains failed delivery even if a later operation fixes
+it. Saved histories are inputs to the next operation, not metadata to normalize
+into a preferred reference before comparison. The invalid B-local startup has
+no successor; the accepted L0-02 save is the eligible batch/local endpoint.
+
+| Question | Eligible continuation | Interpretation |
+| --- | --- | --- |
+| Continued batch use | B-shared/B-local followed by the same field-update policy | Leaving propagation history unchanged is not a failure by itself. Test the new and retained material/configuration obligations. |
+| Continued propagation | P-shared/P-local followed by public propagation, with any repair policy prospectively separate and explicit | Count failed delivery, reconstruction and any subsequent selection, repair and verification. A repair may use an ordinary helper; its work is not free. |
+| Switching from batch to propagation | B-shared/B-local followed by public propagation | This is a compatibility diagnostic for choosing that switch. It is not the main batch policy and cannot alone establish that continued batching is worse. |
+
+A history-source difference is consequential only through a stated future
+operation or guarantee. Do not impose equal serialized histories as a common
+success rule when the workflows legitimately use different policies. Conversely,
+retaining a link does not establish that every later propagation will express
+the author's field-level intent. The pinned reconciliation branches and actual
+saved descriptors must determine the next prediction; then native observation,
+if assigned, must test it independently. Source inference is not execution.
+
+The comparison must separate one-time selection/helper construction from each
+revision's editing, verification, failed work and repair. Charge any history
+refresh or workflow conversion explicitly and preserve its pre-refresh input.
+Report intermediate delivery and final recovery separately, following the
+[R09 actual-history contract](nu-change-sequence-contract-2026-10-11.md).
+Repeated edits to these same props do not add independent applications or
+participants. Instrumented process time and property-write counts remain
+mechanism observations until ordinary editing access and complete work can be
+measured under a declared policy.
+
+This selects the next decision and valid comparator policies; it assigns no
+additional native process or candidate and changes no frozen package. A later
+execution protocol still needs exact revised values, actual predecessor hashes,
+operator/repair order, observations, controls and limits before acceptance.
+
+#### 2026-10-18 retained-history audit: a conditional switching prediction
+
+A read-only audit now binds the four actual saved L0 endpoints to their
+receipts and inspects the next material-comparison branch at the existing
+Nu pin. Propagation stores the first tint in its Palm source history and all
+eight nested Palm histories in the source Villa. Batch preserves the older
+histories, where those material properties are absent. All 32 current palm
+descriptors explicitly contain the edited material in both batch cases.
+
+The [property branch](https://github.com/bryanedds/Nu/blob/064f7ae92a8506689cd91aff5e6804a375d6ef3d/Nu/Nu/World/WorldModule2.fs#L614)
+compares the whole material symbol with the previous source value when one is
+present. With no previous value, it instead compares the target with its
+[dispatcher/facet default](https://github.com/bryanedds/Nu/blob/064f7ae92a8506689cd91aff5e6804a375d6ef3d/Nu/Nu/World/WorldFacets.fs#L3212).
+For these RigidModel entities the material default has sixteen unset fields.
+A batch-tinted record differs from that default and is preserved as a local
+whole-property change; missing history does not make it adopt the new source.
+
+**Conditional source prediction, not a new execution:** change only the source
+Palm's albedo to a distinct value, then invoke the unchanged public propagation
+wrapper from each retained endpoint, without refreshing histories or changing
+dispatchers, overlays or links.
+
+| Actual saved predecessor | Palm / nested Villa histories contain first tint | Predicted palms receiving the later albedo, including edited source |
+| --- | --- | --- |
+| P-shared | Present / 8 of 8 | 32 of 32 |
+| P-local | Present / 8 of 8 | 31 of 32; selected roughness target retains its prior material |
+| B-shared | Absent / 0 of 8 | 1 of 32; only the edited source |
+| B-local L0-02 | Absent / 0 of 8 | 1 of 32; only the edited source |
+
+The same-name address filter does not supply an exception: 28 targets have a
+direct route, 24 copied-Villa palms have an ancestor route, and 21 have both.
+The three copied palms named exactly `Palm` use only the ancestor route.
+The batch Villa history also lacks their material property, so its default
+comparison preserves the old tint. After a direct propagation update in P,
+an ancestor comparison may preserve the already-new value rather than replace
+it again. These route consequences are source inference; no second-revision
+callback or native outcome has been observed.
+
+The parent checked the material/default and direct/ancestor source branches,
+four source-file identities, twenty receipt/capture/save identities, and the
+critical saved-versus-Settled material, overlay, facet, link and history fields
+for all 32 palms plus Villa in each case. The retained original result checks
+supply the save/reopen preservation evidence; this audit does not repeat those
+native processes. P's Order-only correspondence findings remain separate and
+unchanged.
+
+Private evidence is under the C: recovery root's
+`r12-history-followup-20261018/`: `r12-history-followup-evidence-01.md`
+(SHA-256 `596b4d3ed467331bd7344305ac575e925e25d779332213f79bd595fe0619caf5`),
+`history-branch-derivation-01.json`
+(`7b8b29e56d337b2c3397ae37e8634d25411efa6a066036e7b02ce5d4c0124def`),
+and the script, parent acceptance and three retained parser-only failures.
+No frozen input, operator, oracle or native result changed.
+
+This resolves the source-level reason to distinguish continued use from a
+switch. It neither makes the original batch result adverse nor estimates
+future maintenance effort. A continued field-wise batch, explicit history
+refresh, changed overlay or a target returned to the all-unset default is a
+different case. Any practical execution must now choose its policy and charge
+conversion/repair work explicitly; the source prediction alone does not
+justify adding more cosmetic revisions.
+
+### 2026-10-23 next construction: explicit field policy and credible rivals
+
+The [development-history audit](nu-development-history-audit-2026-10-23.md)
+establishes whole-Nu-property override preservation as the public abstraction.
+Material-field independence is our authored requirement. It also separates
+the accepted #946 repair from an abandoned sibling and distinguishes group
+save/reopen from standalone export. Preserve the original strict Order/history
+findings; a future contract should observe effective child sequence and raw
+provenance separately, with no retrospective oracle relaxation.
+
+The [status-quo audit](nu-status-quo-and-transfer-audit-2026-10-23.md)
+credits ordinary Unity/Unreal selective inheritance and Godot's two valid
+material workflows. Existing merge and correspondence literature supplies
+relevant methods. The next local construction candidate is the least invasive
+explicit material-field policy that can retain declared local choices across
+family revisions. Compare it with the already-successful field-update helper
+and unchanged public propagation with a declared repair policy. This is an
+integration/value question, not a claim that three-way merging is new.
+
+Before construction, bind initial family/target state, the selected field
+meanings, same-field and equal-to-base local intent, reset/absence semantics,
+eligible coupled-field constraints, conflict/rejection policy and actual saved
+predecessors. State whether provenance advances after success, partial delivery
+or rejection. Count setup, representation and metadata, selection/editing,
+validation, unsuccessful work, repair, save/reopen and later conversion. The
+information boundary and falsifiers are in the audit; they are prospective
+discriminators, not a compulsory new matrix or completed protocol.
+
+The initial P-local missed tint, valid batch outcomes and later-switch source
+prediction remain unchanged. Any new comparison must show a useful outcome
+beyond merely reproducing the successful batch and must accept equal/better
+ordinary alternatives. No new native process, helper, shader, engine port or
+candidate run is added by this continuation.
+
+### 2026-10-23 construction correction: credit the intent-aware helper
+
+The [follow-up decision](nu-material-intent-baseline-2026-10-23.md) identifies
+the least-invasive mode table plus field update as the strengthened ordinary
+baseline itself. A separate treatment label does not create a comparison.
+The accepted [component contract](../experiments/nu-r12-material-intent/CONTRACT.md)
+uses a paired companion document, explicit equal-valued pins and immediate
+return to source inheritance. `ValueNone` means imported material fallback,
+not source inheritance. No historical merge base or invented coupled-field
+invariant is needed for this bounded policy.
+
+The construction first checks the component on synthetic paired inputs.
+Actual Nu save/reopen, editor integration and complete-work benefit remain
+separate. A future observer must sort sibling identities by `GetOrder`, not
+by names or raw set enumeration; fresh numeric Orders are not portable state.
+The old runtime outcomes and strict history findings remain unchanged.

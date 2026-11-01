@@ -998,5 +998,116 @@
     "metadata_verified": "2026-09-15 HKT",
     "edition_date": "2024-07-12",
     "landing_url": "https://doi.org/10.1145/3643757"
+  },
+  {
+    "id": "S311",
+    "parent_key": "YNG9EI88",
+    "attachment_key": "HCLDBPF3",
+    "doi": "10.48550/arXiv.2508.18721",
+    "title": "LLM as an Execution Estimator: Recovering Missing Dependency for Practical Time-travelling Debugging",
+    "edition_label": "Full Text - arXiv v5",
+    "source_url": "https://arxiv.org/pdf/2508.18721v5",
+    "pages": 15,
+    "bytes": 1940313,
+    "sha256": "67dc6d169c39e5b89a147e2c77ee05b7edb2f6d0c9824476b0e0811913150855",
+    "retrieval": "Direct official arXiv v5 PDF acquired and attached through the authorized local Zotero API on 2026-10-23 HKT; downloaded and Zotero-stored bytes match",
+    "catalog_authors": [
+      {
+        "firstName": "Yunrui",
+        "lastName": "Pei",
+        "creatorType": "author"
+      },
+      {
+        "firstName": "Hongshu",
+        "lastName": "Wang",
+        "creatorType": "author"
+      },
+      {
+        "firstName": "Wenjie",
+        "lastName": "Zhang",
+        "creatorType": "author"
+      },
+      {
+        "firstName": "Yun",
+        "lastName": "Lin",
+        "creatorType": "author"
+      },
+      {
+        "firstName": "Weiyu",
+        "lastName": "Kong",
+        "creatorType": "author"
+      },
+      {
+        "firstName": "Jin Song",
+        "lastName": "Dong",
+        "creatorType": "author"
+      }
+    ],
+    "edition_authors": [
+      "Yunrui Pei",
+      "Hongshu Wang",
+      "Wenjie Zhang",
+      "Yun Lin",
+      "Weiyu Kong",
+      "Jin Song Dong"
+    ],
+    "edition_title": "LLM as an Execution Estimator: Recovering Missing Dependency for Practical Time-travelling Debugging",
+    "metadata_source": "https://arxiv.org/abs/2508.18721v5",
+    "metadata_verified": "2026-10-23 HKT",
+    "edition_date": "2025-09-03",
+    "landing_url": "https://arxiv.org/abs/2508.18721v5"
+  },
+  {
+    "id": "S312",
+    "parent_key": "B6V8URKN",
+    "attachment_key": "M9CEPSUX",
+    "doi": "10.48550/arXiv.2604.24212",
+    "title": "Empowering Autonomous Debugging Agents with Efficient Dynamic Analysis",
+    "edition_label": "Full Text - arXiv v1",
+    "source_url": "https://arxiv.org/pdf/2604.24212v1",
+    "pages": 22,
+    "bytes": 2272386,
+    "sha256": "06142ac31471ab675fcb8351751533207615b9b502560acfc83d30112394f7e1",
+    "retrieval": "Direct official arXiv v1 PDF acquired through the authorized remote-zotero-pdfs collect/review/attach workflow and local Zotero API on 2026-10-23 HKT; downloaded, staged, and Zotero-stored bytes match",
+    "catalog_authors": [
+      {
+        "firstName": "Jiahong",
+        "lastName": "Xiang",
+        "creatorType": "author"
+      },
+      {
+        "firstName": "Xiaoyang",
+        "lastName": "Xu",
+        "creatorType": "author"
+      },
+      {
+        "firstName": "Xiaopan",
+        "lastName": "Chu",
+        "creatorType": "author"
+      },
+      {
+        "firstName": "Hongliang",
+        "lastName": "Tian",
+        "creatorType": "author"
+      },
+      {
+        "firstName": "Yuqun",
+        "lastName": "Zhang",
+        "creatorType": "author"
+      }
+    ],
+    "edition_authors": [
+      "Jiahong Xiang",
+      "Xiaoyang Xu",
+      "Xiaopan Chu",
+      "Hongliang Tian",
+      "Yuqun Zhang"
+    ],
+    "edition_title": "Empowering Autonomous Debugging Agents with Efficient Dynamic Analysis",
+    "metadata_source": "https://arxiv.org/abs/2604.24212v1",
+    "metadata_verified": "2026-10-23 HKT",
+    "edition_date": "2026-04-27",
+    "landing_url": "https://arxiv.org/abs/2604.24212v1",
+    "related_published_doi": "10.1145/3797126"
   }
 ]

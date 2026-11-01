@@ -56,6 +56,8 @@ jobs:
         run: python -m pip install -e .
       - name: Unit tests
         run: python -m unittest discover -s tests -v
+      - name: Check ordinary R12 material intent controls (no engine)
+        run: dotnet run --project experiments/nu-r12-material-intent/R12MaterialIntent.fsproj -c Release --no-launch-profile --artifacts-path "${{ runner.temp }}/r12-material-intent"
       - name: Check H0 model-free source fixture
         run: python scripts/h0_check.py --output-dir results/h0-linux
       - name: Audit H1/H2 requests and trusted semantic faults (no model)
@@ -133,6 +135,8 @@ jobs:
         run: python -m pip install -e .
       - name: Unit tests
         run: python -m unittest discover -s tests -v
+      - name: Check ordinary R12 material intent controls (no engine)
+        run: dotnet run --project experiments/nu-r12-material-intent/R12MaterialIntent.fsproj -c Release --no-launch-profile --artifacts-path "${{ runner.temp }}/r12-material-intent"
       - name: Check H0 model-free source fixture
         run: python scripts/h0_check.py --output-dir results/h0-windows
       - name: Audit H1/H2 requests and trusted semantic faults (no model)

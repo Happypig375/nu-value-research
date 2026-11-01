@@ -6,7 +6,7 @@
 
 **Source continuation, 2026-10-11:** the [ownership/history and scenario audit](../nu-source-contracts-and-scenarios-2026-10-11.md) inspects pinned Nu implementation and public maintenance history directly. It establishes a transition/pause issue-to-patch lineage and functional-mode represented-gameplay undo with native reconstruction. The subsequent [comparator/convention audit](../nu-comparator-and-convention-audit-2026-10-11.md) adds ordinary Godot facilities and D1's existing match/warning-policy sheet. Task eligibility, application-specific snapshot safety, agent access and measured benefit remain separate. The dated coverage refinements add source/practice understanding, not publication-reading credit or experimental results.
 
-**2026-10-15 continuation:** existing attachments now close the selected practice, generation, scene-merge and walkthrough reading gaps at the editions in the [index](full-reading/INDEX.md). S305 is complete at its 1990 report only; the 1991 journal remains at publisher Get Access. The [PDF audit](pdf-acquisition-audit-2026-10-15.md) corrects the false human-verification classification. Confident local experiments are authorized; the dated continuation below integrates bounded probes without claiming comparative benefit. Historical hold/access statements below retain their checkpoint scope.
+**2026-10-15 continuation:** existing attachments now close the selected practice, generation, scene-merge and walkthrough reading gaps at the editions in the [index](full-reading/INDEX.md). At that checkpoint S305 was complete at its 1990 report only. The [October 18 journal reconciliation](full-reading/S305-problem-centered-design-journal-reading-2026-10-18.md) now closes the final-edition gap and distinguishes the added, overlapping six-person prototype check. The [PDF audit](pdf-acquisition-audit-2026-10-15.md) corrects the false human-verification classification. Confident local experiments are authorized; the dated continuation below integrates bounded probes without claiming comparative benefit. Historical hold/access statements below retain their checkpoint scope.
 
 ## Question and scope
 
@@ -1758,3 +1758,481 @@ save is not successful delivery. Visuals, native lifetime, ordinary editing
 access, practical demand and authoring/steering benefit remain separate gaps.
 Neither construction nor this source synthesis changes the R02/R10 returns
 or experimental candidate/participant allocations.
+
+## 2026-10-18 continuation: observed field-intent limit and integrity return
+
+**Discovery and primary understanding:** the existing Terra Firma family now
+has [three completed revision/reopen pairs](../nu-terra-firma-revision-feasibility-2026-10-18.md).
+New selected address/filter and save/read Order bodies explain coherent
+prediction divergence and strict history correspondence findings. This is
+maintainer mechanism evidence on one artifact, not a new publication, an
+independent empirical population or a broader task-prevalence result.
+
+**Evidence disposition, B04/B05/B08/B10/B12:** both shared propagation and
+shared batch deliver the tint to all 32 palms. With an independent local
+roughness choice, propagation tints 31 and retains both the target's desired
+roughness and undesired old albedo. It faithfully saves/reopens that adverse
+state. This observes a whole-property/field-intent boundary without assuming
+every override should be overwritten. Other declared configuration, links
+and raw histories preserve. The two propagation histories separately fail
+exact fresh current-source correspondence because Order values regenerate;
+this is not established rendering damage or a future maintenance defect.
+
+Both propagation operators record 160 original reconstruction pairs instead
+of the frozen 163 prediction; exactly three same-name copied palms account
+for the difference. B-shared records zero operator pairs. Preserved callback
+counts, ordinals and address/ID transitions support the managed observations,
+subject to internal event-emission/delivery limits. The missed local target
+is rebuilt twice, so that failure is separate from the count divergence.
+Fixed order, unequal instrumentation and missing complete work prevent a
+speed or productivity conclusion.
+
+**Next consequential action:** B-local stops before editing after its staged
+input bytes change; it supplies no local batch outcome and no eligible reopen.
+The [storage-integrity return](../workspace-integrity-return-2026-10-18.md)
+preserves a verified C: recovery copy and stops native execution. Establish
+reliable execution storage and revalidate the exact inputs before any
+prospectively bound continuation. Preserve all seven processes and the
+original chronology. A subsequent practical repair/completion comparison must
+count selection/helper construction, verification, failure, repair and history
+consequences. Visuals, native lifetime, ordinary editing access, demand and
+authoring/steering benefit remain separate questions. The R02/R10 returns,
+candidate/participant allocations and broad survey boundaries are unchanged.
+
+## 2026-10-18 continuation: practical rationale without a field-merge promise
+
+**Discovery and primary understanding, B05/B10/B12:** the
+[new propagation-practice check](../nu-practice-and-task-provenance-2026-10-11.md#2026-10-18-continuation-material-revision-rationale-and-observed-limits)
+examines a distinct issue/discussion vocabulary rather than repeating the
+earlier reload/undo/default-asset frame. The maintainer's shared-material
+proposal and local-delta discussions ground the selected family-maintenance
+question. Complete historical defect accounts preserve separate dispatcher,
+link, history and child-order obligations. The exact search ranges and
+uninspected continuations remain in the ledger; no new paper reading or
+independent empirical population is claimed.
+
+**Evidence disposition:** R12 is an authored task on a real artifact with a
+specific maintainer rationale. The sources do not promise field-wise merging
+inside a material record, and all credited accounts come from the maintainer.
+Thus the observed local-condition failure concerns the frozen authored
+requirement; it does not establish a violation of documented Nu semantics,
+external demand or measured benefit. The related historical child-order
+report does not diagnose the experiment's fresh timestamp-Order findings.
+
+**Next consequential action:** preserve shared versus local intent explicitly
+in any practical completion/repair comparison, including valid whole-material
+policies and the work of translating the requirement into supported edits.
+Reliable execution storage remains prerequisite to the missing batch/local
+condition. Ordinary editing access, complete work and broader beneficiary
+coverage remain separate dependencies; another broad issue search would not
+resolve them. Existing allocations and R02/R10 returns are unchanged.
+
+## 2026-10-18 continuation: batch/local result after exact input recovery
+
+**Discovery and primary understanding, B04/B05/B08/B10/B12:** the
+[revalidated Terra Firma continuation](../nu-terra-firma-revision-feasibility-2026-10-18.md#revalidated-continuation-and-next-consequential-action)
+resolves the previously missing local batch outcome. This is two more processes
+on the same artifact under the original build and oracle, not an independent
+study or a new prevalence source. The original integrity failure remains.
+
+**Evidence disposition:** batch now delivers all 32 tints while preserving the
+local roughness, other declared configuration, links and eleven old histories;
+its actual save reopens with those values. Zero operator lifecycle callbacks
+and unchanged original IDs contrast with propagation's 160 reconstruction
+pairs. The recorded 447-file pre-launch composition and protected post-run
+checks pass for both processes. This supports the authored field-intent
+comparison, while propagation's adverse local result and fresh Order/history
+findings remain unchanged. Different history obligations and the interruption
+prevent treating the pair as an equal-future-state or speed comparison.
+
+**Next consequential action:** specify practical completion/repair and later
+history obligations before another execution assignment, counting selection,
+helper construction, verification, failed work and recovery. The current series
+contains four complete pairs and one invalid startup across nine processes.
+Ordinary editing access, native lifetime, demand, complete authoring cost and
+steering benefit remain separate; the broad survey and R02/R10 returns retain
+their existing boundaries.
+
+## 2026-10-18 continuation: S305 journal edition reconciled
+
+**Discovery and primary reading, B01/B10/B12:** the user supplied the final
+journal PDF and updated its existing Zotero DOI. The [complete journal reading](full-reading/S305-problem-centered-design-journal-reading-2026-10-18.md)
+covers all 39 PDF pages, printed pp.319-355, all 11 figures and the full method,
+results, limitations and reference tail. Publisher/PDF and legacy Crossref
+metadata support the same article identity under the two DOI forms; a formal
+registry alias and unavailable legacy-file byte identity are not established.
+The report and journal remain separate editions of one credited S305 work.
+
+**Evidence disposition:** the final retains three designs, six development and
+four reserve problems, 30 analytical walkthroughs and the favorable OpsTrains
+ranking. It adds one minimal prototype and the same six-person assisted
+Bunsen check reported in S304. Users' omitted basic assumptions, compelling
+alternative interpretations and need to understand action effects qualify the
+analytic prediction. The journal explicitly treats walkthroughs as fallible
+preparation for, or partial substitutes for, empirical evaluation; it supplies
+no calibrated readiness/accuracy score or three-design user comparison. The
+report's full Bunsen appendix is absent from the journal and remains useful.
+
+**Next consequential action:** use this final-edition account in R07/R20's
+knowledge/assistance inventory, preserving chosen representation, operation,
+understanding of effects and independently verified outcome as separate
+observations. Select the practical task before human validation. Follow
+CU-CS-480-90 or underlying protocols only when a selected claim requires them;
+the journal body is no longer an access gap. The 286-work checkpoint is
+unchanged, and shared ChemTrains reports are not independent replications.
+
+## 2026-10-18 continuation: R12 history consequences and comparator policy
+
+**Discovery and understanding:** no new search or publication reading was
+needed for this source-level question. The [retained-history audit](../nu-reuse-and-authoring-contract-2026-10-11.md#2026-10-18-retained-history-audit-a-conditional-switching-prediction)
+now binds all four actual saved endpoints to the pinned whole-property and
+default-comparison branches, including nested Villa propagation.
+
+**Evidence disposition:** both completed batch cases deliver the specified
+tint and retain their old histories. A later switch to source propagation is
+predicted to change only the edited source palm: the other batch-tinted
+records differ from the default used when old history lacks that property.
+The corresponding propagation-predecessor predictions are 32/32 for shared
+and 31/32 for local, preserving its whole-material override. These are
+conditional source predictions, not later native observations. The original
+invalid startup, local tint failure and Order-history findings are unchanged.
+
+**Next consequential action:** distinguish continued batch use from switching
+to propagation, and declare repair/history conversion as explicit work. A
+second batch update need not depend on propagation history. Bind intermediate
+delivery, actual inherited state and cumulative construction/verification/
+repair costs for the practical comparison. The source result narrows that
+design; it does not establish authoring savings, independent demand, a general
+reuse advantage or whole-background survey completion.
+
+## 2026-10-23 continuation: development history and credible status quo
+
+**Discovery and primary understanding, B02/B04/B05/B08/B10/B12:** ten bounded
+maintainer assistants traced Nu's propagation, history-access and live-model
+lineages; inspected ordinary Godot, Unity and Unreal material workflows; bound
+Redux and stable/alpha XState mechanisms; and recalled structured-merge and
+correspondence literature. The [search ledger](nu-background-searches-2026-09-30.md#2026-10-23-development-history-comparators-and-merge-methods)
+separates exact source editions, selected reading, noisy discovery, failed
+routes and decisions. Seven completed primary reconstructions were reused;
+no new paper body, PDF reading or native application run is credited.
+
+**Evidence disposition:** the [development-history audit](../nu-development-history-audit-2026-10-23.md)
+shows that Nu's public override policy operates at its property boundary. The
+authored material-field requirement is stronger; its missed tint remains
+adverse to that requirement. Relevant historical repairs are present at the
+pin, with an abandoned sibling and unverified issue/commit associations
+kept distinct. Group save, entity export, raw Order/history and effective child
+sequence are different obligations. Ordinary property-panel inspection is
+source-supported without Interactive's unconditional snapshot; UI precision,
+branch behavior and agent transport remain unobserved. Live-model evolution
+has practical maintainer rationale, while successful type-default conversion
+does not promise an application's new-field initializer.
+
+The [status-quo audit](../nu-status-quo-and-transfer-audit-2026-10-23.md) credits
+Unity/Unreal selective material inheritance and Godot's ordinary copied-material
+and parameterized-shader alternatives. The known merge/correspondence methods
+are predecessors, not grounds for a new-algorithm claim. Redux's retained-action
+recomputation and XState's application-owned snapshot transformation are
+existing non-game mechanisms with separate history, pending-work and effect
+boundaries. Their documented/source-supported capability is not executed
+save/reopen, semantic migration, developer benefit or independent demand.
+
+**Next consequential action:** the [material-intent follow-up](../nu-material-intent-baseline-2026-10-23.md)
+identifies the explicit mode table plus field update as an ordinary helper,
+so construct that stronger reference baseline first. The prospective component
+separates imported-asset fallback, source inheritance and equal-value pins;
+its synthetic pairing controls do not establish Nu persistence. A later
+integration must improve capability or complete work beyond this baseline,
+with actual saved predecessors and metadata/setup/verification/repair counted.
+For non-game transfer, the [Showtime follow-up](../nu-xstate-practice-case-2026-10-23.md)
+now binds a public persistence-schema/reset change and relaunch report, with
+machine-change causality and cross-version preservation intent still unresolved.
+Do not treat that source evidence as a runtime or benefit result, or add a
+cosmetic machine change solely to fit a preferred task label. Follow the deferred merge/lens
+originals if a stronger general resolution or correspondence-law claim makes
+them consequential. The broad survey stays open and the R02/R10 returns stay
+stopped; these findings do not allocate candidates or participants.
+
+## 2026-10-23 follow-up: a stronger ordinary baseline and valid reset policies
+
+The [material-intent component](../nu-material-intent-baseline-2026-10-23.md)
+now has an accepted pure implementation and Linux/Windows control results.
+The saved Nu sequence is prepared at the architecture level, with actual-state
+continuation, relative-order observations and all work retained; no new native
+result is established. A passing supplied-map component is neither actual
+material persistence nor comparative benefit. Once the ordinary native baseline
+is accepted, further repetitions need a practical comparison that can change a
+decision.
+
+The [Harny follow-up](../nu-xstate-practice-case-2026-10-23.md#actual-runtime-evolution-with-an-explicit-compatibility-cutoff)
+binds real XState-to-declarative runtime evolution and same-version pause/resume
+demand, while its source deliberately excludes old-schema resume. Together
+with Showtime's reset policy, this narrows the proposed transfer task: find an
+actual retention requirement rather than declaring rejection a defect. Six
+focused queries and their selected primary sources leave that application
+selection unresolved; no new paper body was read and no field-completeness or
+lack-of-demand inference follows. Mechanism findings, practical demand and
+empirical advantage remain separate.
+
+## 2026-10-23 completed parallel follow-up and handoff
+
+The [R03 passive-access preparation](../nu-passive-access-preparation-2026-10-23.md)
+produced reviewed configuration, launch and capture artifacts, preserving four
+construction failures. Its then-pending native check is now terminal, as
+recorded below. The [continuation prompt](../continuation-prompt-2026-10-23.md)
+contains the current handoff. The separate R02/R10/R12 returns remain stopped;
+accepted preparation is not native or benefit evidence.
+
+The new source work improves task selection. [Nu #151's exact recovery
+lineage](../nu-history-question-access-2026-10-18.md#2026-10-23-recovery-demand-and-the-next-comparison)
+supports preserving an editing session after user-code failure, with a
+maintainer-authored historical trigger. It does not recover the missing roots
+of our stale-position episode or establish independent adopter demand. R03/R06
+still need a common verified recovery/repair and continuation outcome, with
+capture, navigation, reconstruction, failures and verification included in
+separate work ledgers. Reused S42/S66/S310 evidence makes initial information
+and the difference between localization and repair decisive.
+
+[S311](full-reading/S311-partial-trace-dependency-estimation.md) is a newly
+completed 15-page preprint reading. Estimated missing dependency edges improve
+one reported automatic regression-localization pipeline on 489 selected bugs.
+They remain estimates with false/missed-edge risk, not actual retained state
+or completed repair. A rescue estimator would be a separately named treatment;
+it cannot fill missing R03 provenance retroactively. Acquisition, full reading
+and reproduction remain distinct; the linked implementation is access-limited.
+
+Two additional source cases preserve useful adverse possibilities. The
+[authentic API rename](../nu-practice-and-task-provenance-2026-10-11.md#2026-10-23-a-real-api-rename-and-a-qualified-lifetime-case)
+creates consumer editing work that a valid equivalent catch-all may avoid,
+without adding gameplay behavior. R04 should retain that boundary rather than
+select only favorable new-case warnings. The R05 event-retention report is
+qualified, with actual disposal/collection and live-contact behavior still
+unmeasured; an observed treatment-induced behavior regression would be adverse
+evidence, not an invalid run.
+
+For transfer, [Camunda's current-instance migration](../nu-workflow-migration-transfer-2026-10-23.md)
+has explicit user preservation demand and an existing manual-plan/validation
+baseline. Finishing old instances under old behavior is only a valid option
+when it meets the requirement. A new assistance method must improve on those
+ordinary facilities. [NgRx replay](../nu-status-quo-and-transfer-audit-2026-10-23.md#a-concrete-replay-failure-and-a-migration-obligation)
+similarly makes reducer availability and external-effect boundaries concrete,
+but no eligible exact historical artifact has been recovered. A missing
+artifact is an eligibility limit, not proof that replay failed.
+
+The [search ledger](nu-background-searches-2026-09-30.md#2026-10-23-parallel-recovery-evolution-and-transfer-source-audit)
+records the once-only 74-source audit and separate nine-decision scholarly
+segment, with query/edition/coverage gaps. These deepen B02/B03/B04/B06/B08/B10
+and B12 without closing the other themes or the broad survey. The next
+consequential scholarly lead is ADI if ordinary coding-agent repair is selected;
+no title-only screen is treated as a read method or a novelty verdict.
+
+## 2026-10-23 native access disposition
+
+The [single R03 attempt](../nu-passive-access-observation-2026-10-23.md)
+supports ordinary LeftWall selection and reading its displayed position. The
+submitted drag did not create the required distinct state or history entry,
+so the proposed passive history traversal was not tested. A new `gaia/imgui.ini`
+also violated the frozen output boundary. Independent and parent review retain
+both failures and the partial observations; normal process exit is not a
+passing protocol or evidence of repair value.
+
+This changes readiness for B04/B08's history-access comparison, without
+changing the literature's reported findings. The cause of the ineffective
+interaction remains unresolved. The consumed assignment has no retry; any
+source-only clarification informs a distinct future question. R03/R06 still
+need an eligible practical task, demonstrated access, a common verified
+recovery/repair outcome and complete work accounting. No new search, paper
+reading or candidate/participant evidence is credited by this local attempt.
+
+## 2026-10-25: resumed integration and a recovery target
+
+The user reactivated the goal after the October 23 handoff. The completed
+[S312 ADI reading](full-reading/S312-adi-agent-repair.md) is now integrated at
+arXiv v1; the checkpoint is **288 fully read works**, not field completion.
+The selected edition's 22 pages and visuals were read by the earlier worker.
+Substantive review verified the paper's counts and exact artifact summaries,
+and corrected the clean-matching claim: deposited prompts differ materially.
+
+ADI-enabled configurations have higher reported held-out repair counts in all
+four model comparisons; PDB is mixed and adverse for two. The comparison has
+common paper-reported benchmark/model/budget conditions but bundles dynamic
+information, tools, prompts/workflow and reruns. Final patch resolution is
+stronger than localization or agent self-report. Those useful results coexist
+with curated Python-task coverage, missing comparator trajectories/results,
+submitted-ID inconsistencies and unresolved temperature/source-to-run binding.
+API spend and selected runtime omit complete setup/integration/maintenance work.
+
+For B04/B08 and R03/R08, ADI reconstructs selected traces by rerunning a
+reproducer. It does not recover missing actual historical roots or establish
+native/GUI state preservation. The [reviewed recovery-target analysis](../nu-recovery-target-and-serialization-2026-10-25.md)
+selects session recovery as a distinct practical question: ordinary Gaia
+already provides history/F7 checkpoints. K, G and handler-entry F can differ,
+and group-file persistence omits Breakout's screen model. A new procedure must
+improve useful preservation or complete work over that credible status quo.
+Screen-file replacement is a stronger existing comparator candidate with
+unverified lifecycle, content, transaction and continuation obligations.
+
+The [source clarification](../nu-passive-access-source-followup-2026-10-25.md)
+explains how property focus can occur without an accepted edit and supplies
+version-matched conditional ini-save semantics. The actual gesture, writer and
+Twizzle native source/build correspondence remain unobserved. Native-001's
+terminal failures stand; source explanations cannot fill its missing fixture.
+
+**Current handoff, updated after user steering:** the deliberate recovery
+fault-trigger branch and ordinary screen serializer/runtime persistence branch
+are **unfinished, Daybreak-only work**. Their private source candidates remain
+unaccepted; no new persistence runtime result is established. Non-Daybreak
+ChatGPT models must not continue or delegate either branch. Follow the
+[restriction record](../unfinished-daybreak-only-work-2026-10-25.md); separate
+consequential literature and synthesis remain authorized. This changes who
+may continue the unfinished work, not its scientific evidence or ranking.
+Keep recovery, diagnosis, applied
+repair and verified continuation separate, with complete R06 work accounting.
+The [search ledger](nu-background-searches-2026-09-30.md#2026-10-25-integration-s312-replay-based-debugging-and-repair)
+records the reused once-only ADI audit and the separate bounded ImGui audit.
+No new candidate, participant or native execution occurred; other B01–B12
+coverage gaps and R02/R10/R12 returns remain in force. These findings improve
+the comparison's definition without establishing Nu's empirical advantage.
+
+## 2026-10-26: Practitioner evidence and diagnostic value
+
+The [S180 complete selected reading](full-reading/S180-practitioner-beliefs.md)
+closes an accessible primary-method gap for R14/R15. It retains favorable
+retrospective associations and conditional contrasts while distinguishing
+handbook-selected propositions from beliefs actually elicited from participants.
+Training-task observations do not establish current Nu demand, causal language
+advantage or prospective guidance. The selected paper is fully read; publisher
+body, handbook originals and actual artifact-to-publication run correspondence
+remain unresolved. Its separate independent arithmetic check failed before
+reading data and remains unfinished; do not count it as reproduction.
+
+The [R14 evidence table](../nu-practice-and-task-provenance-2026-10-11.md#match-the-evidence-to-the-kind-of-claim)
+now distinguishes requests/preferences, demonstrated capability, comparative
+benefit and population prevalence. The [R04 diagnostic reconciliation](../nu-research-study-designs-2026-10-08.md#diagnostic-evidence-and-the-maintainers-decision)
+uses completed P08/S72/S231 evidence to specify the practical convention
+question and valid countercases. These are documentation and literature
+contributions, not new engine results or benefit estimates.
+
+The strongest remaining work is still a consequential practical comparison
+and its actual access, outcome and total-work evidence. S182 is a conditional
+unread follow-up, not an automatic quota. Broader discovery and named access
+gaps remain open. Current [storage](../workspace-integrity-return-2026-10-26.md)
+and [Daybreak eligibility](../unfinished-daybreak-only-work-2026-10-25.md)
+restrictions apply independently; neither turns unavailable evidence into an
+adverse scientific result or resumes returned construction.
+
+
+## 2026-10-26: R04 historical-task and reference boundaries
+
+The [two-site source-history audit](../nu-r04-history-task-audit-2026-10-26.md)
+changes R04/R14's task-eligibility rule: separate an external API change from
+a required application-local rename and from the maintainer's chosen patch.
+Retaining a local name can satisfy event adaptation, so extra enumeration edits
+cannot be assumed from a historical diff alone. Neutral body/lifetime changes
+and an out-of-match gravity repair remain real maintenance evidence. The
+inspected projectile lineage supplies no case addition after the command's
+introduction; authored positive extensions retain their authored status.
+
+Breakout's score addition and later change from a constant to the actual state
+scrutinee further require independent reference/retained-behavior validation.
+No failure was reproduced, compiler diagnostic observed or candidate effect
+estimated. This updates the [D1 proposal](../fsharp-domain-evolution-research-proposal-2026-09-16.md)
+and study designs without another full-paper credit or representative-workload
+claim. The literature checkpoint remains 289; broader research, Daybreak-only
+work and returned constructions remain unfinished under their separate limits.
+
+## 2026-10-26: R04 evaluator eligibility and authored scope
+
+The [oracle audit](../nu-r04-oracle-eligibility-audit-2026-10-26.md) identifies a
+specific B02/B12 measurement dependency. The successful pause references share
+the same case/model/control organization and local-pause schedule; their probe
+checks those choices directly. That fixed-source evidence is preserved, but it
+does not validate a final evaluator for every correct reorganization D1 allows.
+A future behavioral task must distinguish actual compatibility obligations from
+incidental reference structure. A successor that needs no union extension
+remains eligible unless a declared public contract requires one; missing the
+predicted diagnostic is not grounds for removing the assigned attempt.
+
+Current preparation therefore retains the authored pause/lifecycle question,
+with bounded transfer and no representative-workload claim. The next dependency
+is an evaluator/ordinary-access boundary that admits the promised alternatives,
+not another warning demonstration. No candidate or runtime ran. A separate
+bounded review selected no additional primary reading among the named gaps
+inspected for current decisions; S182 remains conditional and opening-only.
+Neither this disposition nor the unchanged 289-work reading count completes
+the whole-background survey. Model, storage and returned-gate restrictions hold.
+
+## 2026-10-26: S180 bounded numerical reconstruction
+
+The [independent correlation check](full-reading/S180-correlation-reconstruction.md)
+now completes its declared 150-cell disposition: 146 computed and four
+uncomputable coding-time cells, with no row deletion. For the declared broader
+`ActMin` metric, the significance-to-zero operation replaces 35/50 coefficients
+and yields exact-zero medians in four of five language groups. The B3 positive
+associations remain; none of its 50 coefficients is replaced by the rule.
+The arithmetic therefore substantiates the earlier static measurement concern
+while retaining favorable associations and the incomplete sensitivity groups.
+
+This new environment is identified and independently reviewed at its bounded
+scope. Its B4 operation order is algebraically, not necessarily bitwise,
+equivalent to the archived expression; possible tie effects remain unquantified.
+The actual publication run, full Scott-Knott reproduction, journal edition and
+causal practice recommendations remain unresolved. R14 can use this as a
+checked example of why metric definitions and reporting operations belong in
+the evidence contract. It does not supply Nu benefit or another independent
+study. The reading count stays 289; both earlier setup failures and the A:
+stop remain preserved, and no restricted/returned native branch was reopened.
+
+## 2026-10-26: R04 behavior, compatibility and unknown outcomes
+
+The [authored behavioral contract](../nu-r04-behavioral-contract-2026-10-26.md)
+now chooses ordinary standalone MMCC, a declared P pause/resume interface,
+retained progress, sequential quit/fresh play and independent effect evidence.
+Private state cases, records, entity names and local/global pause scheduling
+may differ. The initial source convention remains the treatment even when a
+successor avoids a new union case. Q2's stronger next-loop/same-pass requirements
+remain separate rather than hidden final requirements. The accompanied probe
+does not validate this standalone environment or ordinary access.
+
+Completed S226/S227 readings support visual feedback and separately scoped
+final judging while delimiting private-state, phase, audio and event coverage.
+Their useful results motivate complementary observations, not a screenshot-only
+claim of complete pause correctness. The contract now distinguishes verified
+completion, observed failure and unresolved measurement. Logical all-assigned
+outcome bounds expose the consequence of missing observations without calling
+them candidate defects or confidence intervals.
+
+This resolves a desk-level task/evaluator boundary. Actual ordinary input,
+independent effect/timing observations, comparison across a differently
+organized correct implementation, resources and candidate allocation remain.
+No paper body, runtime, candidate or restricted branch was opened. The 289-work
+reading count is unchanged; the broad survey and practical value question are
+unfinished. Another repetition of the fixed compiler probe or this contract
+would not resolve the remaining observation dependency.
+
+## 2026-10-26: public requests and ordinary configuration before mechanism value
+
+The [expanded R14 source frame](../nu-public-request-provenance-2026-10-26.md)
+adds requests by accounts outside the two dominating the earlier issue queries.
+The observed unit is an issue/account, not an independent adopter or game.
+Eight selected textual threads expose concrete fill-direction, camera,
+deployment and game/editor text needs. They include a project idea set aside,
+a deprioritized port and a reported successful Unicode render/measurement
+repair. These dispositions matter more for task eligibility than open/closed
+labels or another count of requests.
+
+At the inspected source revisions, Nu's built-in fill-bar path fixes the fill
+to the left edge; the pinned Godot control provides direction configuration,
+including a layout-dependent horizontal convention. A whole-workflow comparison
+must allow that ordinary facility and count any necessary Nu extension and
+both packages' setup/integration/verification. No rendering equivalence or
+measured work advantage follows from the source. The feature request does not
+itself supply an existing direction union for the D1 treatment; a newly authored
+representation or follow-on extension must keep that provenance.
+
+This is new bounded practice/source evidence, not another paper reading,
+population survey or automatic new study. R01's practical workflow and common
+outcome still govern promotion. Deployment and localization are conditional
+requirements, while game text, editor entry and advanced typography remain
+different outcomes. Native validation and actual value remain unresolved;
+storage/model restrictions, returned gates and the 289-work count are unchanged.

@@ -169,3 +169,32 @@ S30,S210,S249,S260,S265,S284 and S293. S144's main paper and 31-page design
 supplement are both local; its remaining selected-coverage limit is reading,
 not acquisition. These are exact residual scopes, not evidence that a method
 or research direction is absent.
+
+## S305 supplied journal reconciliation, 2026-10-18
+
+The user updated existing journal parent `VFB2TP7A` to DOI
+`10.1080/07370024.1991.9667171` and attached `54NZJ2S2` before reading.
+The [complete reading and edition comparison](full-reading/S305-problem-centered-design-journal-reading-2026-10-18.md)
+now supersedes the earlier journal access gap without changing the failed
+route history. The PDF is 2,159,372 bytes / 39 pages, SHA256
+`fbd75ba736d0ddf629d3eba15802e54ea1b26ebed2b9da6658107691697ad511`,
+MD5 `99513a6d3c10bcc329f251dc0974930f`. Two publisher leaves precede the
+37-page article, pp.319-355. All text and all 11 figures were inspected.
+
+Native Zotero 10.0.6 API reconciliation retains the `journalArticle` type,
+parent key, collection `PKLXQNEE`, 1991 date, citation key
+`lewis_problem-centered_1991`, both PDF attachments and separate report parent.
+The journal URL now points to the verified publisher page; legacy DOI
+`10.1207/s15327051hci0603&4_5` remains in Extra with the supported identity and
+formal-alias limits. Stale access-gap tags/Extra and the managed note were
+updated. Verified versions: journal 7462 to 7470, note `CEE3V4N8` 6897 to 7472,
+report `KJKJRYQA` 6875 to 7473; PDFs remain 7461 and 6868 respectively.
+The initial exact-array checks flagged reordered tag arrays only; subsequent
+canonical verification confirmed every field, tag membership and attachment,
+with all earlier receipts retained. No compensating metadata rewrite occurred.
+
+The journal adds the same S304 prototype study and removes the report appendix;
+no work/study count is added. No remote fetch or new Zotero item was needed.
+Private API snapshots, guarded write/readback receipts, metadata evidence,
+PDF renders and extraction remain in the C: recovery reconciliation directory,
+outside Git. CU-CS-480-90 remains unread.

@@ -11,7 +11,7 @@ bash scripts/linux_smoke.sh
 
 No third-party package or .NET SDK is needed for this check. The sparse Home working tree intentionally omits root `pyproject.toml` and `global.json`; do not materialize excluded files or rebuild held native branches to satisfy a historical Git blob. Windows binaries and `.artifacts/` stay in place. Both separately approved archive targets are installed as verified real directories, with original link metadata and transformation receipts in `.orchestration/evidence/`.
 
-Home HEAD `fca2547` and its WIP remain the source state. The retained GitHub clone at `2346751` is 25 commits ahead and was not merged. The complete sealed raw archive preserves the exact Home Git metadata. Seven of eight separate operational snapshots match the source; the index snapshot was captured after initial Git operations and differs. See STATUS and the snapshot audit for hashes. This structural smoke establishes neither native-runtime portability nor scientific validity.
+Home HEAD `fca2547` and its WIP were the migration's source state. On 2 November 2026 GitHub `main` `2346751`, which already contained that WIP, was merged in with the user's approval (see STATUS). The complete sealed raw archive preserves the exact Home Git metadata. Seven of eight separate operational snapshots match the source; the index snapshot was captured after initial Git operations and differs. See STATUS and the snapshot audit for hashes. This structural smoke establishes neither native-runtime portability nor scientific validity.
 
 # Nu value research
 

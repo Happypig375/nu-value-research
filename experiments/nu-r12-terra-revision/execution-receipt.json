@@ -1,0 +1,511 @@
+{
+  "date": "2026-10-18",
+  "question": "Within-Nu shared material revision with an independent local roughness requirement",
+  "disposition": "three_completed_pairs_then_storage_input_integrity_return",
+  "nu_source_commit": "064f7ae92a8506689cd91aff5e6804a375d6ef3d",
+  "original_scene_sha256": "1dff90c5679233f6b282e03bcb2f2fd7524a6e6e93a7df814a72f5260d3a421a",
+  "executed_package_sha256": {
+    ".gitattributes": "2a4b7c6df3b163321b56e58d828b38fc6263f11305b5535bcb6e6b8e57bb20b8",
+    "check_controls.py": "9f1bd650e77a1c7475f8d362e2eb97bce2cb58e8e19a376a85a275d0e3d028cc",
+    "compare.py": "83b0545c99c0adce1130db128b71b4068391f593b471d0bbfe10352792188d30",
+    "global.json": "1e23a26d555754d3c37fcf4fc27e0633e0e7b2c24e041f30c3d053227936a5cc",
+    "oracle.py": "b898a168f973345acc3738be45eb556f115990fc93458e42920b0e17f2ce6b95",
+    "Program.fs": "3cdde2b3c297aad9c4b0748d0fba26d9c1f1b683422b10d4e6e2f4dd7089d209",
+    "PROTOCOL.md": "e6576d9ae1d825c8b9f3cb029ec3f57c22fb01f5cac12057cc3ae0b8db91fc49",
+    "R12TerraFirmaProbe.fsproj": "f53414f36deed176811039e8c1a012b915fe5f7616b6a0a88b4d34b6cf3ddac8",
+    "README.md": "943cb462326c5ad88d69eaa68d1ac729934a3b00ab05bf4a3cce60001c92668d",
+    "run.py": "1d180b0a682fc51c7cff283865e40e874d59fdb7a43930ce36f97f406c085004"
+  },
+  "compiled_dll_sha256": "eb13867a896b480593d5b3eb5cb538a0a72351cfd957ce914e38c0ac32b3edff",
+  "compiled_pdb_sha256": "a2370e1ed8b6b648161410d03bfe76ccfd394af8fd6f1ae55ee81419c3482954",
+  "source_seal_sha256": "07b7d165a4f1dc9c53b18bcc5bf71e2a05062d4f76d29c95298dddf033176a9f",
+  "build_receipt_sha256": "334548ce4039185be898402b05e082372935d43faf04398556b228895fda4e0b",
+  "native_acceptance_sha256": "e222f53452b5eda392876d67d2e459f4ffd5b4e4d033b22fc53a87b2feccfd06",
+  "build_warnings": 72,
+  "build_errors": 0,
+  "source_seal_limit": "Eight original units, observer and two generated documents verified; one checksumless unknown document and inherited native dependency provenance limits remain.",
+  "synthetic_controls": {
+    "attempts": 3,
+    "final_controls": 29,
+    "final_receipt_sha256": "43bb9e0db69473bec6878c9d49bf8787e6871b43891797dd375159c2eda6d1b1",
+    "synthetic_not_native_evidence": true
+  },
+  "construction_attempts": [
+    {
+      "stage": "protocol_review",
+      "attempt": 1,
+      "result": "rejected_balanced_intermediate_lifecycle_loss_not_detected_by_endpoint_conservation"
+    },
+    {
+      "stage": "protocol_review",
+      "attempt": 2,
+      "result": "accepted_corrected_callback_integrity_and_falsifiable_prediction_boundary"
+    },
+    {
+      "stage": "runner_review",
+      "attempt": 1,
+      "result": "accepted_per_process_adapter_chronology_parent_owned"
+    },
+    {
+      "stage": "observer_review",
+      "attempt": 1,
+      "result": "accepted_source_for_construction_and_compilation"
+    },
+    {
+      "stage": "checker_controls",
+      "attempt": 1,
+      "result": "failed_control_setup_wrong_application_directory"
+    },
+    {
+      "stage": "checker_controls",
+      "attempt": 2,
+      "result": "passed_all_synthetic_controls",
+      "receipt_sha256": "dc10e46668ddba7f52d0b5a247794f343bfd4c4355c8e6862e4304293bc2e480"
+    },
+    {
+      "stage": "application_build",
+      "attempt": 1,
+      "result": "failed_FSharp_multiline_equality_parse"
+    },
+    {
+      "stage": "application_build",
+      "attempt": 2,
+      "result": "compiled_pending_source_seal_and_native_acceptance",
+      "receipt_sha256": "0cbbd8bd09205f062314e269de4444e91dc50522e4a53e1695555e89a4f0cc1c",
+      "process_seconds": 27.54699999999957
+    },
+    {
+      "stage": "metadata_inspection_and_seal",
+      "attempt": 1,
+      "result": "passed_PE_PDB_source_correspondence"
+    },
+    {
+      "stage": "checker_review",
+      "attempt": 1,
+      "result": "rejected_live_ID_collision_and_unstaged_correct_hash_Nu_path"
+    },
+    {
+      "stage": "checker_controls",
+      "attempt": 3,
+      "result": "passed_all_29_synthetic_controls",
+      "receipt_sha256": "43bb9e0db69473bec6878c9d49bf8787e6871b43891797dd375159c2eda6d1b1"
+    },
+    {
+      "stage": "application_build",
+      "attempt": 3,
+      "result": "compiled_pending_source_seal_and_native_acceptance",
+      "receipt_sha256": "334548ce4039185be898402b05e082372935d43faf04398556b228895fda4e0b",
+      "process_seconds": 33.03200000000015
+    },
+    {
+      "stage": "metadata_inspection_and_seal",
+      "attempt": 2,
+      "result": "passed_current_PE_PDB_source_correspondence"
+    },
+    {
+      "stage": "checker_review",
+      "attempt": 2,
+      "result": "accepted_bounded_corrections_and_Program_syntax_delta"
+    },
+    {
+      "stage": "current_build_review",
+      "attempt": 1,
+      "result": "accepted"
+    }
+  ],
+  "native_attempts": [
+    {
+      "ordinal": 1,
+      "case": "P-shared",
+      "arm": "L0",
+      "private_attempt": "terra-revision-P-shared-L0-01",
+      "receipt_sha256": "0f3c48475085a5dd3ac2871b56034895e9a5bb6faafaf5f0daf760683e370f20",
+      "observations_manifest_sha256": "a6dfd2f70d613b7a00660c46c5397d4e57a8bb0044b622cab43a0d46c335ea7f",
+      "started_utc": "2026-10-18T12:31:07Z",
+      "process_seconds": 91.484,
+      "exit_code": 0,
+      "timed_out": false,
+      "complete_observation_and_save": true,
+      "callback_count": 4,
+      "capture_count": 5,
+      "lifecycle_callback_count": 721,
+      "setup_writes": 0,
+      "operator_writes": 1,
+      "propagation_calls": 1,
+      "predecessor_receipt_sha256": null,
+      "observation_labels": [
+        "Loaded",
+        "Ready",
+        "Prepared",
+        "Applied",
+        "Settled"
+      ]
+    },
+    {
+      "ordinal": 2,
+      "case": "P-shared",
+      "arm": "L1",
+      "private_attempt": "terra-revision-P-shared-L1-01",
+      "receipt_sha256": "5b0587361d867196bc5fb3b6c8365de3eadef71b7f43e7a7274b5d969db695a0",
+      "observations_manifest_sha256": "20c0701ff4d10c309b595a1029f3e0944142e92a6e92f55c159e17c0351d9680",
+      "started_utc": "2026-10-18T12:36:16Z",
+      "process_seconds": 71.437,
+      "exit_code": 0,
+      "timed_out": false,
+      "complete_observation_and_save": true,
+      "callback_count": 3,
+      "capture_count": 2,
+      "lifecycle_callback_count": 241,
+      "setup_writes": 0,
+      "operator_writes": 0,
+      "propagation_calls": 0,
+      "predecessor_receipt_sha256": "0f3c48475085a5dd3ac2871b56034895e9a5bb6faafaf5f0daf760683e370f20",
+      "observation_labels": [
+        "ReopenA",
+        "ReopenB"
+      ]
+    },
+    {
+      "ordinal": 3,
+      "case": "B-shared",
+      "arm": "L0",
+      "private_attempt": "terra-revision-B-shared-L0-01",
+      "receipt_sha256": "7f60358fbe860ee2b38d5cd59a560309a07ad08de0f52ebd0e826f44ba44083b",
+      "observations_manifest_sha256": "ff162b768895e192e5c9d2ecbd474b744ebab86e52e86c96e2ffbe25cc20818c",
+      "started_utc": "2026-10-18T12:40:20Z",
+      "process_seconds": 82.047,
+      "exit_code": 0,
+      "timed_out": false,
+      "complete_observation_and_save": true,
+      "callback_count": 4,
+      "capture_count": 5,
+      "lifecycle_callback_count": 241,
+      "setup_writes": 0,
+      "operator_writes": 32,
+      "propagation_calls": 0,
+      "predecessor_receipt_sha256": null,
+      "observation_labels": [
+        "Loaded",
+        "Ready",
+        "Prepared",
+        "Applied",
+        "Settled"
+      ]
+    },
+    {
+      "ordinal": 4,
+      "case": "B-shared",
+      "arm": "L1",
+      "private_attempt": "terra-revision-B-shared-L1-01",
+      "receipt_sha256": "260df16e8070375ffcdafaa3d802be8bee7b7e42328e4ea2e276f896eba74279",
+      "observations_manifest_sha256": "470214d8cc0473714803e63e57268f3bd8f7ab9b066722f4bc9a665f3164d8c8",
+      "started_utc": "2026-10-18T12:47:33Z",
+      "process_seconds": 60.438,
+      "exit_code": 0,
+      "timed_out": false,
+      "complete_observation_and_save": true,
+      "callback_count": 3,
+      "capture_count": 2,
+      "lifecycle_callback_count": 241,
+      "setup_writes": 0,
+      "operator_writes": 0,
+      "propagation_calls": 0,
+      "predecessor_receipt_sha256": "7f60358fbe860ee2b38d5cd59a560309a07ad08de0f52ebd0e826f44ba44083b",
+      "observation_labels": [
+        "ReopenA",
+        "ReopenB"
+      ]
+    },
+    {
+      "ordinal": 5,
+      "case": "P-local",
+      "arm": "L0",
+      "private_attempt": "terra-revision-P-local-L0-01",
+      "receipt_sha256": "6642e4e90310491880a8d89597c397ef25f77ef3157576f7f20b842b9f5cb958",
+      "observations_manifest_sha256": "3bd14994823709e1a7b24929b81a6f3b3e8d289d2cbcc548c16f78e38f2ae273",
+      "started_utc": "2026-10-18T12:49:26Z",
+      "process_seconds": 45.406,
+      "exit_code": 0,
+      "timed_out": false,
+      "complete_observation_and_save": true,
+      "callback_count": 4,
+      "capture_count": 5,
+      "lifecycle_callback_count": 721,
+      "setup_writes": 1,
+      "operator_writes": 1,
+      "propagation_calls": 1,
+      "predecessor_receipt_sha256": null,
+      "observation_labels": [
+        "Loaded",
+        "Ready",
+        "Prepared",
+        "Applied",
+        "Settled"
+      ]
+    },
+    {
+      "ordinal": 6,
+      "case": "P-local",
+      "arm": "L1",
+      "private_attempt": "terra-revision-P-local-L1-01",
+      "receipt_sha256": "efb34ceac9d080386079f1164560a4acd1ab9d837361881e96ad4bdda82260f6",
+      "observations_manifest_sha256": "6df78011c7e6e1213191f32deeca1ccc150f3035851966adab12d217e9dc2759",
+      "started_utc": "2026-10-18T12:51:03Z",
+      "process_seconds": 51.234,
+      "exit_code": 0,
+      "timed_out": false,
+      "complete_observation_and_save": true,
+      "callback_count": 3,
+      "capture_count": 2,
+      "lifecycle_callback_count": 241,
+      "setup_writes": 0,
+      "operator_writes": 0,
+      "propagation_calls": 0,
+      "predecessor_receipt_sha256": "6642e4e90310491880a8d89597c397ef25f77ef3157576f7f20b842b9f5cb958",
+      "observation_labels": [
+        "ReopenA",
+        "ReopenB"
+      ]
+    },
+    {
+      "ordinal": 7,
+      "case": "B-local",
+      "arm": "L0",
+      "private_attempt": "terra-revision-B-local-L0-01",
+      "receipt_sha256": "8693f3cfdd6e57d278396f4a2cae1fcf9cecf0ef3517fb55e9b756b5332fbb0f",
+      "observations_manifest_sha256": "fbdef6abe46cbb4ba32ad303340645496748325fa52d8c60d01fed9fe6c47acd",
+      "started_utc": "2026-10-18T12:54:23Z",
+      "process_seconds": 3.468,
+      "exit_code": 2,
+      "timed_out": false,
+      "complete_observation_and_save": false,
+      "callback_count": 0,
+      "capture_count": 0,
+      "lifecycle_callback_count": 0,
+      "setup_writes": 0,
+      "operator_writes": 0,
+      "propagation_calls": 0,
+      "predecessor_receipt_sha256": null,
+      "disposition": "invalid_or_incomplete",
+      "guard_error": "Wrong fixed original scene",
+      "changed_staged_files": [
+        "Assets/Gui/Credits.nugroup",
+        "Assets/Gui/Gui.ogg",
+        "original-Scene.nugroup"
+      ]
+    }
+  ],
+  "completed_pairs": [
+    {
+      "case": "P-shared",
+      "comparison_sha256": "28cf9a60a1becc8d49823e12d535182dc2bb0107742d269bc3d10f3010e7244a",
+      "disposition": "adverse",
+      "counts": {
+        "invalid": 0,
+        "adverse": 4,
+        "lifecycle": 0
+      },
+      "finding_identities": [
+        {
+          "kind": "adverse",
+          "phase": "L1:ReopenA",
+          "name": "Game/Gameplay/Scene/Villa/Palm:current_source_history_correspondence"
+        },
+        {
+          "kind": "adverse",
+          "phase": "L1:ReopenA",
+          "name": "Game/Gameplay/Scene/Villa:current_source_history_correspondence"
+        },
+        {
+          "kind": "adverse",
+          "phase": "L1:ReopenB",
+          "name": "Game/Gameplay/Scene/Villa/Palm:current_source_history_correspondence"
+        },
+        {
+          "kind": "adverse",
+          "phase": "L1:ReopenB",
+          "name": "Game/Gameplay/Scene/Villa:current_source_history_correspondence"
+        }
+      ],
+      "tinted_palms_per_required_capture": 32,
+      "original_operator_register": 160,
+      "original_operator_unregister": 160,
+      "predicted_original_pairs": 163,
+      "prediction_divergence": {
+        "Game/Gameplay/Scene/Villa-0002/Palm": {
+          "predicted_pairs": 2,
+          "register": 1,
+          "unregister": 1
+        },
+        "Game/Gameplay/Scene/Villa-0003/Palm": {
+          "predicted_pairs": 2,
+          "register": 1,
+          "unregister": 1
+        },
+        "Game/Gameplay/Scene/Villa-0004/Palm": {
+          "predicted_pairs": 2,
+          "register": 1,
+          "unregister": 1
+        }
+      },
+      "lifecycle_measure_established": true,
+      "generated_entities_by_phase": {
+        "L0": {
+          "Loaded": 36,
+          "Ready": 36,
+          "Prepared": 36,
+          "Applied": 36,
+          "Settled": 36
+        },
+        "L1": {
+          "ReopenA": 36,
+          "ReopenB": 36
+        }
+      }
+    },
+    {
+      "case": "B-shared",
+      "comparison_sha256": "254de39c813a716b5bc7e5679cc4587d8ee95752aea27925623a423936ce885e",
+      "disposition": "passed_declared_configuration",
+      "counts": {
+        "invalid": 0,
+        "adverse": 0,
+        "lifecycle": 0
+      },
+      "finding_identities": [],
+      "tinted_palms_per_required_capture": 32,
+      "original_operator_register": 0,
+      "original_operator_unregister": 0,
+      "predicted_original_pairs": 0,
+      "prediction_divergence": {},
+      "lifecycle_measure_established": true,
+      "generated_entities_by_phase": {
+        "L0": {
+          "Loaded": 36,
+          "Ready": 36,
+          "Prepared": 36,
+          "Applied": 36,
+          "Settled": 36
+        },
+        "L1": {
+          "ReopenA": 36,
+          "ReopenB": 36
+        }
+      }
+    },
+    {
+      "case": "P-local",
+      "comparison_sha256": "50b9a823fe0ff945d3cc3fdd36486f93d221f3af747ab1a06bd72c8e58bd3922",
+      "disposition": "adverse",
+      "counts": {
+        "invalid": 0,
+        "adverse": 8,
+        "lifecycle": 0
+      },
+      "finding_identities": [
+        {
+          "kind": "adverse",
+          "phase": "L0:Applied",
+          "name": "Game/Gameplay/Scene/Villa-0002/Palm-0009:material:AlbedoOpt"
+        },
+        {
+          "kind": "adverse",
+          "phase": "L0:Settled",
+          "name": "Game/Gameplay/Scene/Villa-0002/Palm-0009:material:AlbedoOpt"
+        },
+        {
+          "kind": "adverse",
+          "phase": "L1:ReopenA",
+          "name": "Game/Gameplay/Scene/Villa-0002/Palm-0009:material:AlbedoOpt"
+        },
+        {
+          "kind": "adverse",
+          "phase": "L1:ReopenA",
+          "name": "Game/Gameplay/Scene/Villa/Palm:current_source_history_correspondence"
+        },
+        {
+          "kind": "adverse",
+          "phase": "L1:ReopenA",
+          "name": "Game/Gameplay/Scene/Villa:current_source_history_correspondence"
+        },
+        {
+          "kind": "adverse",
+          "phase": "L1:ReopenB",
+          "name": "Game/Gameplay/Scene/Villa-0002/Palm-0009:material:AlbedoOpt"
+        },
+        {
+          "kind": "adverse",
+          "phase": "L1:ReopenB",
+          "name": "Game/Gameplay/Scene/Villa/Palm:current_source_history_correspondence"
+        },
+        {
+          "kind": "adverse",
+          "phase": "L1:ReopenB",
+          "name": "Game/Gameplay/Scene/Villa:current_source_history_correspondence"
+        }
+      ],
+      "tinted_palms_per_required_capture": 31,
+      "original_operator_register": 160,
+      "original_operator_unregister": 160,
+      "predicted_original_pairs": 163,
+      "prediction_divergence": {
+        "Game/Gameplay/Scene/Villa-0002/Palm": {
+          "predicted_pairs": 2,
+          "register": 1,
+          "unregister": 1
+        },
+        "Game/Gameplay/Scene/Villa-0003/Palm": {
+          "predicted_pairs": 2,
+          "register": 1,
+          "unregister": 1
+        },
+        "Game/Gameplay/Scene/Villa-0004/Palm": {
+          "predicted_pairs": 2,
+          "register": 1,
+          "unregister": 1
+        }
+      },
+      "lifecycle_measure_established": true,
+      "generated_entities_by_phase": {
+        "L0": {
+          "Loaded": 36,
+          "Ready": 36,
+          "Prepared": 36,
+          "Applied": 36,
+          "Settled": 36
+        },
+        "L1": {
+          "ReopenA": 36,
+          "ReopenB": 36
+        }
+      }
+    }
+  ],
+  "remaining_case": {
+    "case": "B-local",
+    "L0": "invalid input before operation",
+    "L1": "ineligible and unrun",
+    "comparison_sha256": "e841d40f24204432341fd8a2518fb002b97bf2cd3f42f3fa05e56ca6731f3b20",
+    "replacement_assigned": false
+  },
+  "stop_addendum_sha256": "9ea09981909ec13f9fd406f5b50fbfd9190b1e4954785e586fa4c68bad288ee9",
+  "recovery_verification_sha256": "5412e645862a2df7a6253e0d85122216cb31ee58b00caaf68978efbf31876b65",
+  "scope_limits": [
+    "Authored requirement on one existing project artifact; fixed order and no statistical replications.",
+    "Batch/local outcome unobserved; shared batch success does not establish the local condition.",
+    "Predicted P-local failure remains adverse delivery. Raw-history preservation differs from strict current-source correspondence.",
+    "Lifecycle recording/conservation does not prove all internal/native actions emitted delivered events.",
+    "Instrumented process times exclude substantial preparation/review work; maintainer labor and model costs are unmeasured.",
+    "No visual, native lifetime, ordinary editor/agent access, practical demand, comparative authoring, or steering benefit claim.",
+    "Native series stopped for actual input integrity failure; no filesystem repair or replacement run."
+  ],
+  "outcome_review": {
+    "kind": "Independent AI evidence review followed by parent integration; not human scientific approval",
+    "reports": {
+      "P-shared prediction and Order boundary": "64c27d162f6c982f99f6e85effc977bc30ff45e8a8bcef24b86c331408423a65",
+      "B-shared and P-local revise outcomes": "51dffbbf4f4519571c12c6c75982fb0f38778313a54edfab2ea345a6d4de3977",
+      "P-local reopen and invalid B-local startup": "3dee9d1751fafafef93d44429dc7bf963b716c89ec4879d0ae1fa1fbd71f1081"
+    }
+  },
+  "host_nu_sha256": "e96cd61d188c689f7e39e2670b4d8582e26b9ea2dc95e1a15056891b7c99cd68"
+}

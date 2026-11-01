@@ -9858,3 +9858,1134 @@ Scite accepted `nu_r12_terra_revision_contract_20261018` once: **4 cited,
 four paper or whole-file readings. No new literature search, Zotero write,
 publication reading or reading-count increment is credited. Source preparation,
 synthetic checker validation and eventual native execution remain separate.
+
+### R12 revision observations and source reconciliation, 2026-10-18
+
+The [executed record](../nu-terra-firma-revision-feasibility-2026-10-18.md)
+retains seven assigned native processes: three completed revise/reopen pairs
+followed by an invalid B-local startup. P-shared and B-shared tint all 32
+palms. P-local tints 31 while retaining the selected palm's roughness and old
+albedo; its actual-save reopen preserves that adverse state. Both propagation
+reopens preserve raw histories but fail strict current-source/history
+correspondence. These scoped outcomes are distinct from visual quality,
+authoring cost, ordinary editing access or comparative benefit.
+
+The frozen lifecycle prediction of 163 pairs is contradicted coherently:
+both propagation cases record 160, with the three same-name copied `Palm`
+targets reconstructed once rather than twice. B-shared records zero operator
+pairs. Independent callback/ordinal and identity-conservation checks pass in
+the six completed processes; this does not prove complete internal/native
+event emission. No oracle, count filter, desired-outcome retry or repair was
+introduced after observing the divergence.
+
+Five selected source uses reconcile these findings at the same Nu pin
+`064f7ae92a8506689cd91aff5e6804a375d6ef3d`. Each file was compared byte for byte
+with the retained original archive:
+
+| Source and selected range | Material consequence |
+| --- | --- |
+| [Address.relate, 391–414](https://github.com/bryanedds/Nu/blob/064f7ae92a8506689cd91aff5e6804a375d6ef3d/Nu/Nu/Core/Address.fs#L391) | Matching components after a mismatched Villa still contribute to the relation; the three same-name targets produce `^/Palm`. |
+| [Propagation filter/ancestor route, 725–777](https://github.com/bryanedds/Nu/blob/064f7ae92a8506689cd91aff5e6804a375d6ef3d/Nu/Nu/World/WorldModule2.fs#L725) | The direct route filters those three targets, while ancestor propagation still rebuilds their Villa trees. This is source-supported explanation of public callbacks, not branch instrumentation. |
+| [Group save/read, 228–285](https://github.com/bryanedds/Nu/blob/064f7ae92a8506689cd91aff5e6804a375d6ef3d/Nu/Nu/World/WorldGroup.fs#L228) | Current Orders are omitted/declined while historical descriptors are retained. |
+| [Entity write/read, 2422–2482](https://github.com/bryanedds/Nu/blob/064f7ae92a8506689cd91aff5e6804a375d6ef3d/Nu/Nu/World/WorldModuleEntity.fs#L2422) | The exact observer includes current Order; the group path does not preserve it as a fresh entity's Order. No after-the-fact exclusion changes the history oracle. |
+| [EntityState.make, 1348–1370](https://github.com/bryanedds/Nu/blob/064f7ae92a8506689cd91aff5e6804a375d6ef3d/Nu/Nu/World/WorldTypes.fs#L1348) | Fresh entities receive new timestamp Orders. Independent P-shared comparison finds Order alone differs: one Palm path and all 44 Villa-tree paths at each reopen capture. |
+
+B-local's original-scene hash guard fails before callbacks or an edit. Three
+staged inputs differ from the pre-launch manifest, and the scene is no longer
+valid UTF-8. The attempt is invalid/incomplete; its dependent reopen is
+ineligible. The [integrity return](../workspace-integrity-return-2026-10-18.md)
+records healthy status flags alongside contrary byte evidence, earlier NTFS
+errors, the verified C: backup, and the stopped native series. No B-local
+success/failure on the authored material requirement can be inferred.
+
+Scite accepted `nu_r12_terra_revision_results_20261018` once: **5 cited,
+0 excluded, 0 skipped**. The inspected report has five source identities,
+`retrieved:null`, `truncated:false`, zero missing reasons and
+`retrieval_unlinked:false`. Newly inspected Address/EntityState bodies and
+materially extended filter/Order uses are explicit; unchanged earlier uses
+are not duplicated. These are selected source methods, not five papers or
+whole-file readings. No new literature search, publication reading, Zotero
+write or reading-count increment occurs. The next execution dependency is
+reliable storage and revalidated inputs; the local batch outcome, complete
+work and practical benefit remain unresolved.
+
+## 2026-10-18 R12 propagation practice and material intent
+
+**Decision:** determine whether primary Nu practice accounts ground or limit
+an authored shared-material revision with a local choice. This follows the
+[observed Terra Firma outcomes](../nu-terra-firma-revision-feasibility-2026-10-18.md)
+without changing their frozen requirement, oracle or dispositions. The
+[practice synthesis](../nu-practice-and-task-provenance-2026-10-11.md#2026-10-18-continuation-material-revision-rationale-and-observed-limits)
+credits maintainer rationale and keeps exact field granularity authored.
+
+An independent maintainer assistant used public GitHub REST API version
+`2022-11-28` and public discussion-search HTML on October 18; the parent
+inspected all selected retained threads and integrated the decisions.
+No issue, discussion or external message was posted. These sources are
+practice/design accounts, not publications, participant data or independent
+replications.
+
+**Issue retrieval:** each query below used the common frame
+`repo:bryanedds/Nu <term> in:title,body is:issue`, `sort=created`, `order=desc`,
+`per_page=100`, page 1. Each returned its reported total and
+`incomplete_results=false`; later pages were unnecessary for these exact
+queries. There were 49 retrieval positions and 34 distinct issue identities.
+
+| Query | Term | Reported total / returned |
+| --- | --- | ---: |
+| q01 | `propagation` | 7 / 7 |
+| q02 | `"entity structure"` | 1 / 1 |
+| q03 | `"entity propagation"` | 4 / 4 |
+| q04 | `prefab` | 4 / 4 |
+| q05 | `prototype` | 2 / 2 |
+| q06 | `override` | 13 / 13 |
+| q07 | `"material properties"` | 3 / 3 |
+| q08 | `propagated` | 1 / 1 |
+| q09 | `"propagation source"` | 2 / 2 |
+| q10 | `"structural propagation"` | 1 / 1 |
+| q11 | `propagateEntityStructure` | 0 / 0 |
+| q12 | `"propagation targets"` | 1 / 1 |
+| q13 | `"property propagation"` | 0 / 0 |
+| q14 | `MaterialProperties` | 3 / 3 |
+| q15 | `"local override"` | 0 / 0 |
+| q16 | `"property delta"` | 1 / 1 |
+| q17 | `propagation order` | 2 / 2 |
+| q18 | `propagation material` | 0 / 0 |
+| q19 | `PropagationSourceOpt` | 2 / 2 |
+| q20 | `PropagatedDescriptorOpt` | 2 / 2 |
+
+**Discussion retrieval:** each query used `repo:bryanedds/Nu <term>` on
+GitHub's public discussion search, default ordering (no explicit sort),
+page 1. Each returned its reported result count, with page count zero or one,
+no limited-results warning and no search errors. There were 17 retrieval
+positions and 11 distinct discussion identities.
+
+| Query | Term | Reported total / returned |
+| --- | --- | ---: |
+| d01 | `propagation` | 4 / 4 |
+| d02 | `prefab` | 0 / 0 |
+| d03 | `"entity structure"` | 0 / 0 |
+| d04 | `override` | 3 / 3 |
+| d05 | `material` | 6 / 6 |
+| d06 | `"propagation source"` | 2 / 2 |
+| d07 | `"entity propagation"` | 2 / 2 |
+| d08 | `"structural propagation"` | 0 / 0 |
+| d09 | `"MaterialProperties"` | 0 / 0 |
+| d10 | `"keyed materials"` | 0 / 0 |
+
+These are exhausted exact query ranges, not an exhaustive practice frame.
+Unqueried vocabulary, pull requests, commit messages, code/wiki histories,
+other communities, deleted/private content and support channels are outside
+this search. Current bodies may include later edits. The previous
+reload/undo/default-asset query frame was not rerun.
+
+**Reading and identity:** 13 current issue entries and all 38 declared
+comments were inspected; selected comment requests used `per_page=100`,
+page 1, with declared/returned counts equal. Two selected discussion bodies
+had no comments. Empty issue bodies remain empty, rather than being treated
+as missing detail supplied elsewhere. Discussion #1454 led to issue #1450,
+which was inspected and found unrelated to propagation. Thus the full
+considered set is **46 identities: 35 issues and 11 discussions**, including
+that one followed issue outside the 34 search results. It is not 46 complete
+readings or independent needs.
+
+Thirty-one of the 34 issue results were opened by the maintainer; three came
+from two other authors. All discussion results and all credited accounts
+are maintainer-authored. The inspected external physics question (#249)
+and external animation comment on #574 do not corroborate R12 demand.
+The selected material/delta accounts establish no documented requirement to
+update albedo while retaining roughness within one material record. Historical
+bug reports, checkboxes and release announcements do not prove fixes or
+current defects at the experimental pin; no such patch/tag lineage was
+reconstructed.
+
+**Considered decisions:** C credits the bounded claim in the practice note;
+D retains an uncompleted or nonselected dependency; N means not used for this
+R12 decision, not rejected from the whole survey. Six unchanged historical
+screens (#252, #779, #789, #900, #917, #1229) are carried forward without a new
+Scite decision. Their earlier credits/deferrals remain intact. #383 is newly
+deepened from title-only to its complete current thread. The remaining
+40 new or materially deepened decisions comprise 11 C and 29 not credited.
+
+| Identity | Actual coverage | Disposition | Decision reason |
+| --- | --- | --- | --- |
+| [Issue #7](https://github.com/bryanedds/Nu/issues/7) | Search record | N | Sample-game keyboard/controller question; matched `prototype`, not reuse. |
+| [Issue #186](https://github.com/bryanedds/Nu/issues/186) | Full, 6/6 comments | C | Prefab reuse and explicit persistent sub-entity delta map; historical local-override rationale. |
+| [Issue #234](https://github.com/bryanedds/Nu/issues/234) | Search record | N | Screen auto-selection; `override` refers to code/API context, not family overrides. |
+| [Issue #244](https://github.com/bryanedds/Nu/issues/244) | Full, 2/2 comments | N | Dispatcher/facet property-definition precedence. Adjacent terminology, but no shared family or instance revision. |
+| [Issue #249](https://github.com/bryanedds/Nu/issues/249) | Full, 3/3 comments | N | External user report about pushing entity positions to physics via `PropagatePhysics`; not ESP. It cannot supply independent R12 demand. |
+| [Issue #252](https://github.com/bryanedds/Nu/issues/252) | Search record | Prior disposition retained; no new report | Unchanged earlier screen for this question. Runtime-compiled script facets/dispatchers; matched method `override`. |
+| [Issue #255](https://github.com/bryanedds/Nu/issues/255) | Search record | D | Deferred broad vision; later specific material/delta threads address this decision. Eleven comments remain unread. |
+| [Issue #335](https://github.com/bryanedds/Nu/issues/335) | Full, 15/15 comments | C | Nested composition, explicit property-delta question, manual delta propagation, complexity/performance boundary. |
+| [Issue #338](https://github.com/bryanedds/Nu/issues/338) | Search record | N | General Nu/Elm change propagation, not ESP family revision. |
+| [Issue #345](https://github.com/bryanedds/Nu/issues/345) | Search record | N | Address structure and ownership, not source/target propagation or overrides. |
+| [Issue #383](https://github.com/bryanedds/Nu/issues/383) | Full, 3/3 comments | C | Dragging propagation sources/assets into Gaia viewport/hierarchy. No independent user report. |
+| [Issue #408](https://github.com/bryanedds/Nu/issues/408) | Search record | N | Moving Lens; `override` is unrelated. |
+| [Issue #492](https://github.com/bryanedds/Nu/issues/492) | Search record | N | Shader-parameter flattening performance, not reusable-entity material revision. |
+| [Issue #574](https://github.com/bryanedds/Nu/issues/574) | Full, 5/5 comments | C | Overlay workflow and synchronizing unchanged portions; incomplete/archived design is retained. |
+| [Issue #651](https://github.com/bryanedds/Nu/issues/651) | Search record | N | Model editor elision overrides, not entity family overrides. |
+| [Issue #656](https://github.com/bryanedds/Nu/issues/656) | Search record | N | Bullet/NaN physical propagation. |
+| [Issue #678](https://github.com/bryanedds/Nu/issues/678) | Search record | N | Affine transform propagation across physical entities, not ESP reuse. |
+| [Issue #693](https://github.com/bryanedds/Nu/issues/693) | Search record | N | Assimp hash-code report; matched `override`. |
+| [Issue #725](https://github.com/bryanedds/Nu/issues/725) | Full, 3/3 comments | C | Shared keyed-material proposal, cloning/local variation, serialization, and explicit judgment that ESP covers the need. |
+| [Issue #729](https://github.com/bryanedds/Nu/issues/729) | Full, 0 comments | C | Structural propagation checklist, history preservation, target clearing and copy controls. |
+| [Issue #739](https://github.com/bryanedds/Nu/issues/739) | Full, 0 comments | C | Dispatcher change was not propagated. |
+| [Issue #745](https://github.com/bryanedds/Nu/issues/745) | Full, 1/1 comment | C | Cut/paste propagation-source identity could be self, missing or wrong. |
+| [Issue #748](https://github.com/bryanedds/Nu/issues/748) | Full, 0 comments | C | Propagated histories disappeared on save without propagation. |
+| [Issue #779](https://github.com/bryanedds/Nu/issues/779) | Search record | Prior disposition retained; no new report | Unchanged earlier screen for this question. Compiled MMCC change propagation, different mechanism. |
+| [Issue #789](https://github.com/bryanedds/Nu/issues/789) | Search record | Prior disposition retained; no new report | Unchanged earlier screen for this question. Visual editing of model entries and method overloads. |
+| [Issue #894](https://github.com/bryanedds/Nu/issues/894) | Search record | N | ImNui processing optimization. |
+| [Issue #898](https://github.com/bryanedds/Nu/issues/898) | Search record | N | ImNui context restoration by `Process` overrides. |
+| [Issue #900](https://github.com/bryanedds/Nu/issues/900) | Search record | Prior disposition retained; no new report | Unchanged earlier screen for this question. Consolidating physics properties into a record. No family/source propagation. |
+| [Issue #917](https://github.com/bryanedds/Nu/issues/917) | Search record | Prior disposition retained; no new report | Unchanged earlier screen for this question. Model-conversion notification and tactics prompting; already part of the separate reload frame. |
+| [Issue #946](https://github.com/bryanedds/Nu/issues/946) | Full, 0 comments | C | Entity propagation could reorder children and lose user order. |
+| [Issue #983](https://github.com/bryanedds/Nu/issues/983) | Search record | N | Physics debug renderer override. |
+| [Issue #1229](https://github.com/bryanedds/Nu/issues/1229) | Search record | Prior disposition retained; no new report | Unchanged earlier screen for this question. Prototype ImSim-like ECS API. |
+| [Issue #1345](https://github.com/bryanedds/Nu/issues/1345) | Search record | N | Silk.NET dependency. |
+| [Issue #1450](https://github.com/bryanedds/Nu/issues/1450) | Full, 0 comments | N | Gaia evaluator exception output; inspected because #1454 linked “Fixed #1450,” but unrelated to propagated descriptors. |
+| [Issue #1456](https://github.com/bryanedds/Nu/issues/1456) | Search record | N | User rendering pipelines/shaders and material-property API, not family revision. |
+| [Discussion #993](https://github.com/bryanedds/Nu/discussions/993) | Full body, 0 comments | C | Release announcement says Gaia gained a Propagation Sources UI. Does not establish #383’s drag workflow or usability. |
+| [Discussion #1454](https://github.com/bryanedds/Nu/discussions/1454) | Full body, 0 comments | D | Deferred for a current-source or ordinary-access claim: the release body was fully read, but its propagated-descriptor maintenance statements have not been mapped to the R12 pin; the unrelated linked #1450 was inspected and excluded. No current defect or user benefit is inferred. |
+| [Discussion #1037](https://github.com/bryanedds/Nu/discussions/1037) | Search record | N | MMCC/Svelte change propagation, not ESP. Two comments uninspected. |
+| [Discussion #1179](https://github.com/bryanedds/Nu/discussions/1179) | Search record | N | Asset propagation scripts and particle gravity overrides; repeats the excluded asset frame. |
+| [Discussion #1029](https://github.com/bryanedds/Nu/discussions/1029) | Search record | N | Mutable-world/property semantics, separate from reusable entity family overrides. Eight comments uninspected. |
+| [Discussion #1270](https://github.com/bryanedds/Nu/discussions/1270) | Search record | N | Open-world streaming discussion; material word match is incidental. Ten comments uninspected. |
+| [Discussion #1418](https://github.com/bryanedds/Nu/discussions/1418) | Search record | N | Optional material-graph branch strategy, not shared entity-family property revision. Five comments uninspected. |
+| [Discussion #1419](https://github.com/bryanedds/Nu/discussions/1419) | Search record | N | Material-graph design. Fifteen comments uninspected. |
+| [Discussion #1446](https://github.com/bryanedds/Nu/discussions/1446) | Search record | N | Rendering-release roughness behavior, not entity reuse. |
+| [Discussion #1447](https://github.com/bryanedds/Nu/discussions/1447) | Search record | N | GLSL extension/material graph. One comment uninspected. |
+| [Discussion #1463](https://github.com/bryanedds/Nu/discussions/1463) | Search record | N | User-defined rendering/material API. |
+
+Comments on the nonselected discussion records #1037, #1029, #1270, #1418,
+#1419 and #1447 remain uninspected (reported counts 2, 8, 10, 5, 15 and 1).
+No lack-of-evidence or current-capability verdict is inferred from them.
+The release statements in #1454 remain deferred for any source-pin or
+ordinary-access claim; following its unrelated #1450 link supplies neither.
+
+Raw responses, current URLs, exact encoded endpoints and hashes remain
+private in `nu-propagation-practice-20261018/` under the C: recovery root.
+The source manifest's initial path derivation dropped two leading characters
+from each of 60 relative paths. Its preserved correction changes only path
+metadata: `source-bytes-manifest-02.json` verifies all 60 byte/size/hash entries
+(SHA-256 `f5e48a096cd85287a3931465a9727525cbfa473c2479e07c49417a996fc59d72`).
+The corrected full artifact manifest verifies 71 files
+(`fbe301cb9582f170f84ccf75bbadaf0959150328909074829da6e5632e274147`).
+The parent rechecked both manifests and selected comment counts. The metadata
+bug and correction are retained; they supply no evidence of C: storage damage.
+No copyrighted response bodies or extraction dumps enter Git.
+
+This segment adds no literature search through Scite, paper reading, Zotero
+write or publication-reading count. Its consequential change is a specific
+maintainer rationale with an explicit authored field policy, while preserving
+unknown demand and benefit. Reliable storage, the missing batch/local outcome,
+ordinary access and complete work remain the next practical dependencies.
+
+Scite accepted `nu_r12_propagation_practice_20261018` once: **11 cited,
+29 excluded/not credited, 0 skipped**. Its inspected report contains 40
+screened identities, `retrieved:null`, `truncated:false`, zero missing reasons
+and `retrieval_unlinked:false`. The 15 `full_text` entries are the complete
+current issue/discussion entries described above; the other 25 are search
+screens. The service classification does not turn these into papers, a demand
+sample or a systematic-review completeness certificate. The six unchanged
+historical decisions were not resubmitted.
+
+## 2026-10-18 S305 supplied journal and DOI reconciliation
+
+**Decision:** resolve the existing journal edition and determine whether the
+1990 report-only interpretation survives the final body. Reuse registered
+journal `VFB2TP7A` and report `KJKJRYQA` in collection `PKLXQNEE`; no new work
+identifier, duplicate item or independent-study count is added.
+
+The user changed the journal DOI to `10.1080/07370024.1991.9667171` and attached
+PDF `54NZJ2S2` before reading. Native Zotero 10.0.6 API was available. Both DOI
+URL opens failed through the web tool. Exact web queries
+`"10.1080/07370024.1991.9667171"` and `"10.1207/s15327051hci0603"` returned 18
+positions: the matching publisher record and 17 incidental DOI-stem/reference
+or aggregation hits, excluded only from the exact identity screen. They were
+not opened as body readings or evaluated for research merit. No broad discovery
+or thematic saturation follows; no Scite search was called in this segment.
+
+Primary Crossref metadata for the legacy DOI gives the exact title, three
+authors, HCI volume 6, pp.319-355 and print date 1991-09-01, with issue3 and an
+empty relation object. The publisher identifier's Crossref endpoint returned
+404. The supplied PDF cover and [publisher page](https://www.tandfonline.com/doi/abs/10.1080/07370024.1991.9667171)
+give the 10.1080 identifier, same article identity, issue3-4 and online22June2011.
+Treat both metadata identities as the same journal article, preserving the
+missing formal registry alias, issue discrepancy and unavailable legacy-file
+byte comparison. The print year remains1991.
+
+**Actual coverage:** [complete journal and report reconciliation](full-reading/S305-problem-centered-design-journal-reading-2026-10-18.md),
+all39 PDF text/visual pages (two publisher leaves plus37 article pages319-355),
+all11 figures, full method, prototype check, limitations and references.
+2,159,372bytes; SHA256
+`fbd75ba736d0ddf629d3eba15802e54ea1b26ebed2b9da6658107691697ad511`;
+MD5 `99513a6d3c10bcc329f251dc0974930f`. The prior complete report/S304 notes
+were reused for the material comparison, rather than blindly rereading their
+PDFs. Parent verification checked the identity cover and printed pp.346-348,
+351-352 against the images. Native before-reading versions were journal7462,
+PDF7461, report6875 and report PDF6868.
+
+**Evidence disposition:** the final retains the30 analytical walkthroughs,
+favorable OpsTrains ranking and reserve-task/shallow-programming limits. It
+adds the same six-person prototype study reported fully in S304 and explicitly
+qualifies walkthrough prediction; it removes the report's full Bunsen appendix.
+Keep the report as the fuller materials edition and the journal for the final
+methodological account. No independent cohort, new S identifier or increase
+from the286-work checkpoint follows. CU-CS-480-90 remains unread.
+
+Guarded native writes corrected the URL, stale gap tags/Extra and managed note,
+while preserving keys, collections, dates/types, citation key and both PDFs.
+Final verified versions: `VFB2TP7A`7470, `CEE3V4N8`7472, `KJKJRYQA`7473;
+PDFs remain7461/6868. Strict tag-array order comparisons initially failed
+because Zotero reordered identical tag members; readback then verified every
+proposed and retained field using unordered tag membership. All earlier
+receipts and the final verification are retained privately. No JavaScript
+window, computer use, remote acquisition, purchase or additional item was used.
+
+Scite report `nu_s305_journal_reconciliation_20261018` records21 considered
+references:4 credited identity/edition/lineage sources and17 incidental
+nonmatching search hits excluded from this identity task. The report has zero
+skips or missing reasons, no truncation and no retrieval-linkage warning;
+answer-scoped retrieved count is null. These are source decisions, not21
+papers read or independent studies. Private raw metadata, API receipts,
+extraction/renders and citation report remain under the C: recovery directory
+`s305-reconciliation-20261018/`, outside Git.
+
+## 2026-10-18 R12 retained-history follow-up
+
+This segment reuses the already credited Nu pin, completed S254 reading and
+R09 sequence methods for a consequential later-revision question. There was
+no external search, new source identity, publication reading, PDF acquisition
+or Zotero change. No unchanged historical screen was resubmitted to Scite.
+
+A bounded assistant parsed all four actual saved L0 endpoints and their
+Settled/Ready observations, binding receipts, descriptors and saved bytes.
+Selected pinned property/default, child and ancestor propagation branches,
+RigidModel facet/default definitions and the prior address audit determine
+which material comparison would apply. The parent verified the decisive
+source branches and identities and compared five critical properties on all
+32 palms plus Villa between each actual save and its Settled descriptor.
+This is desk inference, not a second revision or a complete reading of Nu.
+
+The [integrated history audit](../nu-reuse-and-authoring-contract-2026-10-11.md#2026-10-18-retained-history-audit-a-conditional-switching-prediction)
+predicts that a later distinct public-propagation tint would reach 32/32 palms
+from P-shared, 31/32 from P-local, and only the source (1/32) from either batch
+endpoint. Batch's missing old material entries invoke comparison with the
+all-unset default, so its existing tint is retained as a whole-property local
+change. Nested Villa routes do not remove that distinction. The completed
+batch cases remain passing; continued batch use is a different policy from
+switching to propagation.
+
+Private source/endpoint derivation, exact bindings, parent acceptance and
+three parser-only failed attempts are retained under the C: recovery root's
+`r12-history-followup-20261018/`. No frozen input, checker or native artifact
+changed. Next choose continued-use, repair and switching policies explicitly
+and account for construction/conversion work before any additional execution;
+this result supplies neither a workload prevalence estimate nor benefit.
+
+## 2026-10-23 development history comparators and merge methods
+
+### Decision, source scope and actual coverage
+
+This segment asks which practical improvement is worth constructing after the
+R12 delivery results, what credible ordinary alternatives already provide, and
+which state/history questions transfer beyond games. It implements the user's
+request for many parallel assistants: ten bounded maintainer scopes, with
+parent integration and critical-source checks. They are not experimental
+candidates, independent adopters, participant evidence or replications.
+
+The [development-history audit](../nu-development-history-audit-2026-10-23.md)
+and [status-quo/transfer audit](../nu-status-quo-and-transfer-audit-2026-10-23.md)
+own the consequential claims and exact source links. Private source snapshots,
+selected ranges, query records, retrieval failures and hashes are retained at
+`C:/Users/hadri/nu-value-recovery/20261018-205753-integrity-stop/source-comparisons-20261023/`.
+The working A: checkout was read-only; no runtime, build, shader, actor process,
+browser application or model/participant experiment ran.
+
+| Scope | Discovery and selected understanding | Disposition / remaining limit |
+| --- | --- | --- |
+| Nu propagation origin | Public Nu history and first wiki Git edition; introducing `e6488bfd`, override correction `84bcc229`, first wiki `f3f7ad98`, #725/#729 and selected earlier rationale; exact pin property/descriptor branches. | Whole-property override is documented. Independent record-field inheritance is authored; no located record establishes an explicit debate/rejection of nested merging. Bounded test-path/term search does not establish absence of all tests. |
+| Nu propagation repair | Complete four selected issue/timeline records (#739/#745/#748/#946), exact patches/parents, former-commit mappings, sibling comparison, first containing releases and pin save/read paths. #748 commit search `repo:bryanedds/Nu #748` and local history grep returned zero. | Accepted repairs are at the pin. #748 remains temporal/source correspondence; #946's linked sibling is not an ancestor. Source lineage is not runtime correctness or a new unfixed task. |
+| Nu ordinary history access | GitHub issue searches `repo:bryanedds/Nu TERM in:title,body is:issue`, `per_page=100`, for `undo`, `redo`, `history`, `snapshot`, `timeline`, `interactive`, `inspect`, `evaluation`, `restore point`: 17, 13, 2, 5, 0, 9, 4, 0, 0 returned positions, no pagination. Selected bodies/comments/timelines and source lineage were read, not all result bodies. | Passive property inspection has a source-supported route. Three discussion web searches used `undo|redo|snapshot`, `Interactive|inspect|evaluation`, `history|timeline`; #1029 direct public statements were considered, its embedded copied Discord transcript excluded. No independent demand or runtime/agent-access result. |
+| Nu/Prime live-model evolution | `gh search issues "reload" --repo bryanedds/Nu --include-prs --limit 100`, selected complete issues including #385/#917/#953/#1222 and adverse cases. The original returned count/total/page metadata was not retained, so coverage beyond those selected bodies is unknown. Exact queries for `"default model"`, `"model conversion"`, `"initial model" reload`, `"soft-convert"`, `state reload code` supplied no extra issue; Prime `missing default record conversion` returned none. A discussion keyword scan and selected release/source readings were performed; repository `totalCount=66` is known, but returned nodes/page coverage is unrecorded, so all-66 screening is not claimed. | Intended state retention is supported, reward 200 is authored. Successful defaulting, fallback reset and restart/reconstruction differ. Pin Prime 11.5.1 remains package-bound; 11.5.5 was checked at its repository release parent without a new package/PDB binding. Unsupported CLI flags/fields and an empty OR query were corrected and retained. The later query clarification supersedes the older coverage implication without rerunning the original search. |
+| Godot ordinary material workflows | Engine 4.7.2 tag `ed1daf0b`, separate 4.7 docs `9adca4c1`; complete non-truncated path/blob inventories and selected resource duplication, scene instancing, shader and per-instance parameter bodies. Retained source hashes match Git blobs. | Shared-plus-unique materials require continued two-point tint updates; a shared shader with per-instance roughness is a credible alternative with translation/equivalence work. Neither was rendered or reopened. |
+| Unity ordinary variants | English 6.0 API/prefab/save pages, official Chinese 6000.0.65f1 Material Variant pages and matching managed source `9674e068`; older English 2022.1 context remains separately dated. | Per-property inheritance is an ordinary comparator. English 6.0 manual failures were not filled with an invented edition. Native serialization/rendering is outside the managed-source evidence. Retried locked downloads remain acquisition history. |
+| Unreal ordinary material instances | Eleven recorded official-domain web queries, nine selected UE 5.6 documentation pages and six historical/current issue accounts. Selected nested Material Instance Constant and override/save routes; Blueprint and Dynamic Material Instance boundaries separate. | Selective parameter inheritance is ordinary. UE-88414 is historical equal-value delta-serialization context, not current material failure. Issue HTML downloads are application shells; readable issue-extractor facts are retained separately. No entitlement/account/install was used. |
+| Redux history/replay | Extension 3.2.12 `a857d4a4`, core 5.0.1 `50b01021`; selected instrument/monitor/reducer/dispatch bodies, relevant maintainer tests and official docs. | Inspector selection preserves application history but still notifies subscribers. Changed-code replay does not restore complete browser/external state. Ticket scenario remains authored, with no selected existing application or runtime result. |
+| XState persistence/migration | Stable 5.33.3 `6a85c405`, separate 6.0.0-alpha.70 `c628b91f`, npm release identity, selected persisted/restore/version/child/timer source and tests, complete alpha persistence/backend guides and schema, current official persistence page, #5331 and all three comments. | Stable application-owned snapshot transformation is the first ordinary comparator; event sourcing depends on available history. Alpha migration/timer facilities are future references. Whole-envelope semantic correspondence, accepted events and effects still need independent observations. |
+
+The source-specific notes give exact inspected ranges rather than claiming
+complete engine/repository understanding. The parent checked the decisive Nu
+whole-symbol, property getter/setter, group history and conversion/default
+branches; accepted versus abandoned #946 ancestry; official variant/instance
+documentation; and selected Redux/XState replay/restore paths. These checks
+support desk conclusions only. Test searches and inspected maintainer tests
+were not executed experiments.
+
+### Merge and correspondence recall
+
+The literature assistant reused completed reconstructions S284 LevelMerge,
+S285 SceneGit, S286 NodeGit, S87 Denicek, S102 Cambria, S103 BiDEL and S108
+blended-model versioning. Their existing edition/visual/artifact limits remain;
+this is no additional body-reading credit.
+
+The installed paper-search script used years **1990–2026**, `max_papers=10` per
+source/query, and these exact queries:
+
+1. `three-way merge structured configuration local override common ancestor`
+2. `model merge atomic coupled properties conflict`
+3. `prefab inheritance base revision instance override`
+
+The retained export contains 50 source occurrences: 20 arXiv and 30 Crossref.
+Three exact normalized-title merges produce 47 discovery groups. All groups
+received an available-level decision: 27 had supplied abstracts read in full,
+20 initially had title/metadata only. Later exact lookups supplied abstracts
+for XML merge and process inheritance, yielding 29 abstract-screened groups
+and 18 title/metadata-only groups. This is neither 47 bodies read nor 47
+independent works. Differently titled process-inheritance records and the
+domain-merge journal/SSRN editions retain explicit lineage limits.
+
+Failures constrain recall: arXiv returned partial results alongside 429/503
+retry exhaustion; DBLP failed JSON parsing, OpenAlex returned 401, Semantic
+Scholar returned 403, and OpenReview lacked its optional client. The CLI's
+Windows output encoding failed after its JSON export completed. The exported
+records, including remaining entries and abstracts, were then screened. These
+route failures establish no absence of relevant literature.
+
+One exact Scite call requested **`limit:20`, `offset:0`**, for five DOIs and
+returned `count=total=5`; no further page existed for that exact set:
+
+| Source identity | Actual coverage | Decision |
+| --- | --- | --- |
+| Lindholm, *A three-way merge for XML documents*, `10.1145/1030397.1030399` | Crossref/Scite metadata and abstract, official ACM abstract; no body | Credited as an ordered-tree merge predecessor at abstract level. Completed scene-merge methods are closer to the immediate Nu integration decision. |
+| Hofmann, Pierce and Wagner, *Edit lenses*, `10.1145/2103656.2103715` | Exact metadata/editorial check and web abstract; no body | Deferred unless a formal edit/correspondence-law claim becomes consequential. Scite's new-edition notice points to `10.1145/2103621.2103715`; do not count both as studies. |
+| Yang, *Process inheritance and instance modification*, `10.1145/958160.958196` | Exact abstract/metadata; no body | Not credited for R12 record-field inheritance. Related proceedings/abstract identifiers are one process-reuse lineage. |
+| Zadahmad and Syriani, *Domain-specific conflict resolution and model merge*, `10.1016/j.jss.2025.112694` | Metadata only; no abstract/body credited | Deferred for a possible general domain-specific resolution claim; related SSRN `10.2139/ssrn.5236127` is not independent evidence. |
+| Kegel et al., *A Delta-Oracle for Fast Model Merge Conflict Estimation using Sketch-Based Critical Pair Analysis*, `10.1145/3652620.3688341` | Metadata/access only; no body | Deferred: larger-scale conflict estimation does not supply this case's completed-delivery semantics. |
+
+No retraction, correction or concern was reported for this exact set; the
+edition notice is retained. Of the 47 broad groups, one was credited at abstract
+level, two were deferred and 44 were not credited. The row-level ledger records
+every occurrence alias, stage and reason, including scope mismatch and
+duplicates. No new paper body was selected. Native Zotero 10.0.6/schema 44 was
+probed read-only and exact DOI/title queries checked records; no library write,
+PDF acquisition or reading-index increment occurred. Registration before any
+later selected reading remains required.
+
+### Audit and design consequence
+
+The original literature audit `r12_merge_literature_20261023` accepted 12
+decisions (8 credited, 4 excluded). Parent review found that its original
+summary omitted broad-discovery decisions. The nonduplicating supplement
+`r12_merge_discovery_supplement_20261023` accepted the remaining 43 exclusions
+(39 off-topic, 3 out-of-scope, 1 duplicate). Both inspected reports show zero
+skipped/missing-reason decisions, no truncation and no unlinked warning. Their
+combined 55 records comprise seven reused readings, 47 discovery groups and
+one additional Edit Lenses screen; they are not 55 newly read papers.
+
+The separate software/history audit `r12_software_history_sources_20261023`
+accepted 69 decisions (66 credited, 3 superseded Unity-edition exclusions).
+Parent review identified 14 omitted, actually read issue-body exclusions;
+`r12_software_history_exclusions_supplement_20261023` recorded these once
+(5 history-access and 9 reload-history scope exclusions), without resubmitting
+the 69 or the literature records. The combined software trail is **83 unique
+decisions: 66 credited and 17 excluded**. Both inspected reports have zero
+skipped/missing-reason entries, no truncation and no linkage warning;
+answer-scoped retrieval counts are null. Source-body stages preserve selected
+ranges and do not mean complete repository readings. Pinned implementation
+lineages group connected files/commits; title-only inventory hits without a
+substantive decision remain unexamined, not implied exclusions. #629 and #748
+retain unestablished exact issue-to-fix links.
+
+Private `merge-literature/software-source-decisions.json` and the supplement
+bind every decision, provenance and coverage. The later
+`reload-history/queries.md` clarification has SHA-256
+`645fc59447bfb0d90a0145e6cc7406ae630814b1428a8df4e10ecda7963407cf`;
+it supersedes the earlier note's embedded query-ledger hash and all-66 scan
+implication. No repeated unchanged historical screen is claimed as new discovery.
+
+Prepare the [bounded R12 field-policy comparison](../nu-status-quo-and-transfer-audit-2026-10-23.md#the-intervention-to-prepare-next)
+against the working batch helper and public propagation with explicit repair.
+Existing engines and merge methods preclude a capability/novelty claim based
+only on combining independent property edits. Require declared intent,
+meaningful constraints, actual saved predecessors and complete work. Redux
+and XState add portable contract questions, not executed transfer. Continue
+consequential literature if a stronger claim or selected application needs it;
+this segment neither closes the broad survey nor resumes the R02/R10 returns.
+
+## 2026-10-23 XState application and material-policy follow-up
+
+**Decision:** strengthen the [ordinary R12 helper](../nu-material-intent-baseline-2026-10-23.md)
+rather than invent a distinct treatment from equivalent machinery, and bind a
+real application for the [XState transfer question](../nu-xstate-practice-case-2026-10-23.md).
+The ten parallel scopes supplied source/design evidence, not ten independent
+empirical cases. Completed merge/correspondence readings were reused; no new
+paper body, PDF acquisition or Zotero operation was needed for these decisions.
+
+The XState assistant queried GitHub REST Search Issues unauthenticated, page 1,
+`per_page=100`. Retained responses have `incomplete_results=false`, which does
+not make a capped first page complete. These are returned positions, not unique
+applications, paper reads or independent failures:
+
+| Exact query | Reported total | Returned | Disposition |
+| --- | ---: | ---: | --- |
+| `"getPersistedSnapshot" is:issue -repo:statelyai/xstate` | 22 | 22 | Screened for concrete applications. |
+| `"persisted snapshot" xstate is:issue -repo:statelyai/xstate` | 122 | 100 | Capped/noisy; narrowed, remaining page not read. |
+| `xstate migration snapshot is:issue -repo:statelyai/xstate` | 405 | 100 | Capped/noisy; narrowed, later positions unexamined. |
+| `xstate "state machine changes" is:issue -repo:statelyai/xstate` | 60 | 60 | Screened. |
+| `xstate "persisted state" upgrade is:issue -repo:statelyai/xstate` | 19 | 19 | Screened. |
+| `xstate snapshot "schema version" is:issue -repo:statelyai/xstate` | 81 | 81 | Screened. |
+| `xstate "persisted state" is:issue created:<2025-01-01 -repo:statelyai/xstate` | 41 | 41 | Older evidence; followed the #941 boundary. |
+| `"getPersistedSnapshot" is:issue created:<2025-01-01 -repo:statelyai/xstate` | 2 | 2 | Screened. |
+| `xstate "machine changes" persistence is:issue created:<2025-01-01 -repo:statelyai/xstate` | 1 | 1 | Screened. |
+
+Aipictors-specific page-1 terms and return counts were `xstate` 0,
+`generation.state` 1, `stately` 1, `localStorage generation` 1, `設定 復元` 2,
+`状態 永続化` 1 and `設定 消える` 0. Two three-query web batches returned
+13 combined persistence/migration entries and 29 combined #941/PouchDB/reporter
+entries; overlap is not independent evidence. Exact queries/responses and
+selected issue/PR bodies are retained privately. Root's later browser re-open
+of Showtime #150/#152 returned cache misses; the already retrieved GitHub API
+bodies and pinned source, inspected locally by root, support the record.
+
+Showtime #150/#152 is retained for a concrete partial-record schema/reset
+decision. Its reported relaunch failure has unverified causes; the machine
+bytes are identical across the selected persistence repair. A separate machine
+shape change is needed only for a changed-machine claim, and practical
+cross-version preservation intent remains unresolved. Aipictors supplies
+configuration persistence and subsequent context evolution without an observed
+migration failure; Node-RED supplies definition/tool migration burden rather
+than durable runtime migration; XState #941 supplies upstream break reports
+without a bound public affected application. The unbuilt lineup prototype was
+excluded from an existing-workflow case. No selected application ran.
+
+The one-time `xstate-practice-20261023` audit accepted 13 retained/cited and one
+excluded software source, with zero skipped records. `citation_report` returned
+14 screened, `retrieved=null`, `truncated=false`, no missing reasons and no
+retrieval-link warning. The exclusion is the unbuilt prototype, not a quality
+judgment about all small or AI-assisted repositories. Exact source identities,
+coverage and decisions are in private `xstate-practice/evidence.md` and its
+structured records.
+
+The R12 follow-up inspected new decision-critical ranges within the existing
+Nu pin: material option/default/render meaning, declared property persistence,
+facet discovery, setter/save failure boundaries, and semantic sibling order.
+The `nu-material-intent-source-20261023` audit records 11 credited software
+files, zero excluded/skipped; the report has 11 screened, `retrieved=null`, no
+missing reasons, no linkage warning and `truncated=false`. This is selected
+source reading, not eleven papers or full-repository coverage. Unchanged
+historical paper screens were not reported again.
+
+The exact material and order source archives hash to
+`28c0b9e9019629fd70fee49a99039e6cbd4941e0730b5d9a6883b7ce65774a83`
+and `250f6bf1446ae95e346d662841d99f592c6154e733ee09c2b91117ca6f9c70c7`.
+The private evidence root is
+`C:/Users/hadri/nu-value-recovery/20261018-205753-integrity-stop/r12-intent-policy-20261023/`.
+Component construction is separately accounted there. No Scite literature
+search was repeated for an already-resolved elementary method; future searches
+still request `limit:20` and follow a consequential missing claim. Neither the
+source audit nor a later passing component closes the broad survey or proves
+practical benefit.
+
+## 2026-10-23 non-game evolution and compatibility-cutoff screen
+
+**Decision:** find a public non-game application with an actual machine/context
+or stored-schema change and a demonstrated requirement to retain pre-change
+progress. This follows the conditional Showtime case; it does not repeat its
+source audit or count previously read Aipictors material again.
+
+The assistant ran these exact web queries in two combined screens:
+
+| Batch | Exact query |
+| --- | --- |
+| 1 | `site:github.com/issues xstate persisted state migration old snapshots application` |
+| 1 | `site:github.com/issues "getPersistedSnapshot" migration schema` |
+| 1 | `site:github.com/issues xstate "context" "migration" persisted` |
+| 1 | `site:github.com/issues xstate localStorage schema version migration` |
+| 2 | `site:github.com/issues xstate "existing" "persisted state" migration progress` |
+| 2 | `site:github.com xstate "getPersistedSnapshot" "migrate" application` |
+
+Batch one returned 15 indexed positions and batch two returned 12; all 27 were
+screened, representing 26 distinct URLs because one gist repeated. The retained
+`coverage-note.md` binds every position and disposition. The interface exposed
+neither per-query totals/allocations nor further pages. These are two bounded
+screens, not complete query populations or a GitHub census. Many entries were
+generic mechanisms or unrelated migration reports, so the result does not
+establish lack of demand. Exact linked issue, comment, commit and code follow-ups
+are listed in the private ledger; selected ranges are not full-repository reading.
+
+[Harny](../nu-xstate-practice-case-2026-10-23.md#actual-runtime-evolution-with-an-explicit-compatibility-cutoff)
+is the strongest actual evolution case: XState/schema v2 changes to a
+declarative v3/v4 runtime with human pause/resume, but production pre-change
+resume was unimplemented and old schemas are deliberately non-resumable. It is
+credited for that policy and excluded from a *required preservation* task.
+XState #3092 accepts detection/reset after a state rename; #5178 is a
+same-machine history-restoration reproduction. StateAlchemist provides a
+library mechanism rather than application demand; the pecking-order prototype
+reports restoration loss but is a game case without an inspected evolution
+lineage. No eligible application was found in this screen.
+
+The one-time `xstate-evolution-20261023` audit accepted 21 credited and 26
+excluded source records, zero skipped. The report has 47 screened,
+`retrieved=null`, `truncated=false`, no missing reasons and no retrieval-link
+warning; 23 records describe selected issue/code content and 24 only indexed
+screening. Sources credited for adverse/context evidence are still ineligible
+as the proposed migration task. These source records are neither 47 papers nor
+47 independent cases. The converted #3091 mirror and the rediscovered #941
+entry are explicitly duplicate routes; unchanged historical Aipictors decisions
+were omitted.
+
+Evidence is under
+`A:/nu-value-execution/20261023-material-intent/xstate-evolution/`.
+The source note hashes to
+`9cb511a948172e4da802efd5749c98602200ed2f6bb8a4b18592f527d5a7e583`;
+its 35 retained source-file hashes all verify. Parent inspected four decisive
+reader/runner/ADR/test bodies and checked their exact Git commit contents, plus
+Harny #20's primary issue. Browser opens of the two code pages returned cache
+misses; retained exact Git blobs supplied those bodies. No application/test ran,
+new paper/PDF was read, or Zotero operation occurred. A later comparison needs
+a concrete retention obligation; additional search is justified when a lead
+can supply it, not merely to enlarge this bounded list.
+
+## 2026-10-23 selective-material practical-demand check
+
+**Decision:** determine whether the inspected Nu lineage supplies an actual
+beneficiary, consequential selective-material workflow choice and real
+incremental family-revision history. This supports the conditional R01/R12
+comparison; it does not retest the elementary material policy or count a
+maintainer proposal as an observed adopter episode.
+
+GitHub REST issue searches used API version `2022-11-28`, the query pattern
+`repo:bryanedds/Nu is:issue <term> in:title,body`, creation-date descending,
+`per_page=100`, page 1. The exact substituted terms and coverage were:
+
+| Term | Reported / returned |
+| --- | ---: |
+| `material` | 17 / 17 |
+| `albedo` | 2 / 2 |
+| `roughness` | 6 / 6 |
+| `shared material` | 1 / 1 |
+| `keyed materials` | 1 / 1 |
+| `MaterialProperties` | 3 / 3 |
+| `material propagation` | 0 / 0 |
+| `material override` | 0 / 0 |
+| `material inheritance` | 0 / 0 |
+| `material revision` | 0 / 0 |
+
+All responses set `incomplete_results=false` and fit on their first page.
+Thirty result positions represent twenty-two distinct issues, all opened by
+`bryanedds`. Titles and current bodies were screened; selected complete
+body/comment follow-ups cover #186, #383, #548, #574, #699, #725 and #729,
+with the retained timelines and #383's linked commit/discussion #993 checked
+as relevant. Other result comments were not all read. The engine/wikiedition
+lineage reuses its earlier exact-source audit and is not newly credited here.
+
+[#725](https://github.com/bryanedds/Nu/issues/725) supports shared material
+revision as a maintainer design concern and the later judgment that ESP
+covered it. No inspected thread supplies the required field-selective intent
+and beneficiary revision sequence. [#186](https://github.com/bryanedds/Nu/issues/186)
+and [#548](https://github.com/bryanedds/Nu/issues/548) retain contrary or
+conditional motivation; an unrelated outside skeletal-animation comment in
+#574 is not independent demand for this task. The
+[practice synthesis](../nu-practice-and-task-provenance-2026-10-11.md#2026-10-23-practical-task-eligibility-checks)
+keeps Terra Firma authored and requires a distinct practical comparison.
+No absence claim extends beyond these lexical issue searches and selected
+follow-ups; private/deleted support, other communities, unqueried terms and
+unread comments remain outside coverage.
+
+Evidence is under
+`A:/nu-value-execution/20261023-material-intent/value-preparation/material-demand/`.
+The source note SHA-256 is
+`418289248a82d490d294516e99a36e76d4141640ad31d312585ad1de49ef3f09`;
+the thirty-one-snapshot manifest SHA-256 is
+`7b213d542453d1a065de5edeb905882c8b2c3ec78bf893ae01095f73fa311037`.
+Parent checked all ten response counts, deduplicated identities/authors and
+the decisive #725/#548 bodies/comments. No new paper/PDF, Zotero action,
+native execution, contact or participant/candidate allocation occurred.
+
+The once-only `nu_r12_material_demand_20261023` audit records eighteen new
+decisions: two credited (#548/#699), sixteen excluded, zero skipped. Four
+unchanged prior decisions among the twenty-two issue identities were not
+resubmitted (#492/#725/#900/#1456). Seventeen new records have current issue
+bodies; #1175 has an empty body and remains title-only coverage. The seven
+selected contextual thread reads and reused commit/wiki/discussion evidence
+are separately accounted, not added to the new-decision denominator.
+`citation_report` returns eighteen screened, `retrieved=null`,
+`truncated=false`, no missing reasons and no linkage warning. The report
+manifest SHA-256 is
+`a2b2c36ffc3a7708793ff15625bf08845b28d9ce56ce0ebec69935c85b811180`.
+
+## 2026-10-23 parallel recovery, evolution and transfer source audit
+
+The completed bounded source work refines practical tasks and ordinary
+comparators across R03/R04/R05/R06 and non-game transfer. It adds no scholarly
+full-reading credit. Decisive findings and edition limits are integrated in
+the [history access record](../nu-history-question-access-2026-10-18.md#2026-10-23-recovery-demand-and-the-next-comparison),
+[practice record](../nu-practice-and-task-provenance-2026-10-11.md#2026-10-23-a-real-api-rename-and-a-qualified-lifetime-case),
+[replay comparison](../nu-status-quo-and-transfer-audit-2026-10-23.md#a-concrete-replay-failure-and-a-migration-obligation)
+and [Camunda case](../nu-workflow-migration-transfer-2026-10-23.md).
+
+| Segment | Actual coverage | Remaining boundary |
+| --- | --- | --- |
+| Nu recovery demand | Four complete GitHub result sets: Nu `history` 2/2, `undo` 17/17, `debug state` 8/8; Redux DevTools `replaceReducer history` 3/3. Selected issue bodies/comments and Nu #151's four-commit lineage read. | Maintainer rationale and a historical authored fault are not independent demand, current runtime success or actual named predecessor roots. |
+| Camunda transfer | Fifteen directly retrieved primary endpoints; versioned 8.8 documentation, release notes, selected issues and forum demand. Twenty-one archived source files include exact variants. | Three final web queries are named but result positions/counts were not archived; earlier discovery requests are missing. No reproducible complete web-screen claim. |
+| Redux/NgRx replay | Selected issue/code endpoints, including NgRx #919 and pinned current DevTools import/recomputation. Redux #378/#559 reused once at their stronger reading extent. | One web result page lacks complete positions/counts; PR #955 timed out, StackBlitz remains link-only, and no exact historical app/export was recovered. |
+| R05 event lifetime | Exact issue/API, commit and pinned-source readings; #1055's qualified retention report and #521's manual-unsubscription rationale. | No broad lexical coverage claim; linked profiler image and `CharacterVirtual.Dispose` internals uninspected. No demonstrated leak or executed detach comparison. |
+| R04 evolution | Named API-query counts plus a local screen of fifteen nonmerge touch commits and thirteen union-bearing files; exact selected rename, predecessor and release bound. | Four older TimeUpdate search SHAs and thirteen nonselected history-screen SHAs were not individually enumerated in the handoff. The selected exact-source audit is narrower than all raw discovery. |
+
+Under `research-loop-and-scite.md` section 6, the coherent new/changed decision
+set was reported **once**, including primary GitHub/documentation sources even
+where retrieval did not use Scite. Answer `nu-parallel-source-audit-20261023`
+contains **74 unique source URLs: 47 cited, 27 excluded (6 deferred and 21 not
+selected)**. Sixty records carry full-text-stage coverage with their actual
+selected ranges documented; fourteen are title/abstract stage. Forty-five
+work-family keys are deduplication bookkeeping, not independent studies.
+Exclusion reasons are fourteen out-of-scope, eleven off-topic and two duplicate.
+
+Unchanged historical decisions were omitted. Nu #151 advances from title-only
+deferral to credited body/lineage evidence; shared Redux #378/#559 URLs occur
+once; source versions and a single issue's commit chain are not replications.
+S311 and reused debugger-method readings are excluded from this segment.
+
+The exact request SHA-256 is
+`383e40da626be4ccdb0c9bc8fd82ae1cb39b4a9744b91b1f21b2120f34a7fa20`.
+`report_citations` accepted all 74 with zero skips. `citation_report` returned
+74 screened, the same 47/27 split, `retrieved=null`, `truncated=false`, no
+missing reasons/linkage warnings and no field/membership mismatch. Verification
+SHA-256 is `ed28f8922cd0cc297bac8f245a641927e38de928dd6e1cef9525f3d332f0727a`.
+Full receipts and source-level coverage are private under
+`A:/nu-value-execution/20261023-material-intent/value-preparation/parallel-source-audit/`.
+Do not resubmit that answer ID or call these 74 records a field-complete search.
+
+Parent integration preserves three consequential corrections: existing manual
+migration is Camunda's baseline when current instances must change; a soundly
+observed contact regression in a detach treatment would be valid adverse
+evidence; missing historical replay artifacts make a case ineligible or
+inconclusive, rather than falsifying the mechanism. No source audit launched
+an application or allocated experimental candidates or participants.
+
+## 2026-10-23 S311: partial traces, estimated dependencies and repair limits
+
+The focused search asks whether historical/partial execution evidence changes
+diagnosis or repair after capture, access, uncertainty and verification are
+counted. Existing S42/S66/S246/S247/S310 were checked and reused without new
+reading credit.
+
+Eight saved paper-search calls covered 2024–2026. The broad four-query union
+returned 60 arXiv and 60 Crossref records, six single-query calls returned
+15+15 each, and the exact RecovSlicing call returned 10+10. Deduplication gives
+166 records; an overinclusive lexical inventory retains 114, which is not a
+claim of 114 completed semantic decisions. DBLP failed JSON decoding, OpenAlex
+returned 401, Semantic Scholar 403, and the OpenReview client was unavailable.
+Only arXiv/Crossref returned records; no six-database coverage is claimed.
+
+Scite requested `limit:20`, `offset:0`. Two exact-title batches returned 7
+and 7 records; `time-travel debugging` title search returned 8, `omniscient
+debugging` returned 2, and an exact four-DOI lookup returned 4. These exact
+sets were exhausted. A noisy broad term query returned only the first 20 of
+5,669,428 reported matches and was reformulated, not paginated or presented
+as field coverage. No editorial notice appeared in the exact screens.
+
+Nine actual candidate decisions were made: one selected full reading and
+eight deferred title/abstract decisions. The selected work is
+[S311, Pei et al., arXiv:2508.18721v5](full-reading/S311-partial-trace-dependency-estimation.md).
+The remaining leads are ADI (10.1145/3797126 / arXiv:2604.24212), size-limited
+near-omniscient traces (10.1016/j.scico.2024.103117), interactive runtime repair
+comparison (10.1145/3720510), AgentStepper, IcedTea, Scopeo, SpaceTime
+Programming and debugging-strategy choice. Their abstracts locate possible
+methods; they establish no full-body conclusions here. Scopeo also has
+selected Scite excerpts, without full-reading credit.
+
+S311 was registered before selected reading as a Zotero `preprint` in
+`PKLXQNEE`, with repository arXiv and versioned archive ID. Final parent
+`YNG9EI88` v8260 includes a subsequent creator-capitalization correction;
+attachment `HCLDBPF3` v8259 is the exact official v5 PDF. The requested remote
+Zotero integration's local collect/review/attach route verifies downloaded and
+stored bytes: 15 pages, 1,940,313 bytes, SHA-256
+`67dc6d169c39e5b89a147e2c77ee05b7edb2f6d0c9824476b0e0811913150855`.
+All pages were read textually and visually, including ten figures, six tables,
+three algorithms, Appendix A and 58 references. Parent checked selected
+decisive result/definition pages; the delegated reading supplies full coverage.
+The linked artifact requires Google sign-in, so code/rows/model logs remain
+unread and no reproduction occurred. Template placeholders are not journal or
+conference metadata.
+
+The result supports one automatic regression-localization pipeline using
+estimated missing edges; it supplies no retained predecessor root or delivered
+repair. The [reading note](full-reading/S311-partial-trace-dependency-estimation.md)
+preserves the 489/835 selection, 60-minute failures, 8,370-versus-8,300
+discrepancy and missing complete work. It changes the R03 information-policy
+boundary without changing the R06 observations. The reading checkpoint is
+**287 = 13 P + 3 A + 271 S**, with the broad survey still open.
+
+Once-only answer `r03_r06_history_next_20261023` records nine screened, one
+included full-text decision and eight excluded title/abstract decisions.
+Reporting skipped zero; `citation_report` has no missing reasons/linkage
+warning, no truncation and `retrieved=null`. Receipt SHA-256 is
+`79d0d2a7e639628abe733902bfcfc968e69eeaf1e2b0e49c7f8d49c235614c18`.
+Private query, acquisition, Zotero and reading receipts are under
+`value-preparation/history-literature-next/` in the current A: execution root.
+ADI is the highest-priority unread body if a coding-agent/tool comparison is
+selected: create/reuse its exact-edition Zotero record before reading. It is
+not yet acquired/read and does not delay the already frozen passive-access
+feasibility protocol. No further branch is opened before this handoff.
+
+## 2026-10-25 integration: S312 replay-based debugging and repair
+
+This completes the selected ADI follow-up identified above; the earlier
+metadata-only status is historical. Selection/acquisition/full reading took
+place on October 23, and this segment integrates the retained packet rather
+than claiming a second reading or new broad discovery.
+
+Exact DOI Scite searches requested `limit:20, offset:0` and returned two alias
+records with no reported editorial notices. Selected arXiv:2604.24212v1 is
+[S312](full-reading/S312-adi-agent-repair.md); DOI 10.1145/3797126 is its related
+publication lineage, not an independently read work. Zenodo v1 DOI
+10.5281/zenodo.19728388 was inspected as a separate research artifact. Current
+GitHub main was context only; the publication artifact governs the reported
+code discrepancy. This exact work/edition screen establishes no field coverage.
+
+Before body reading, the native Zotero/API and existing acquisition workflow
+registered `B6V8URKN` v8273 as a preprint in `PKLXQNEE`, with arXiv repository
+and versioned archive ID. PDF `M9CEPSUX` v8276 has 22 pages, 2,272,386 bytes and
+SHA-256 `06142ac31471ab675fcb8351751533207615b9b502560acfc83d30112394f7e1`.
+Downloaded, staged and stored bytes match in the retained receipts. The worker
+read all pages and visuals, including nine figures, four tables, Algorithm 1
+and 62 references. Published-version byte equivalence was not checked.
+
+The once-only Scite answer `adi_s312_reading_20261023` records four screened,
+three included and one duplicate-excluded decision. `citation_report` is not
+truncated, has no missing reasons or linkage warning, and reports
+`retrieved=null`. The audit is reused, not resubmitted. Its retained report
+SHA-256 is `41d6c3f3e32fefd5ea9879ea578abdd6eebafe2bd794d38b48f1dbdf16a35858`.
+The private packet is `value-preparation/adi-reading-next/`; its 16-entry
+manifest verifies at SHA-256
+`97f14b7076ced27186752cfabbdeebd0699524419aa5651bcbb405e627b7096c`.
+
+The selected paper contributes ordinary-tool/PDB/ADI repair comparisons under
+common paper-reported benchmark/model/budget conditions,
+a replay-versus-retained-state distinction and incomplete total-work accounting.
+The exact artifact preserves aggregate FramePilot results but lacks trajectories
+and comparator bundles and contains unresolved submitted-ID and temperature
+discrepancies. Integration review additionally found materially different
+deposited workflow prompts, precluding a clean trace-information contrast.
+All three principal query modules set 0.7 versus the paper's 0; executed settings
+remain unbound. No experiment or model execution was performed. The reading
+checkpoint becomes **288 = 13 P + 3 A + 272 S**; broad coverage is still open.
+The next consequential dependency is a practical recovery/repair question
+with actual state and a credible ordinary comparator, not another search page
+as a substitute for missing observations.
+
+## 2026-10-25 bounded ImGui upstream-reference audit
+
+The [source follow-up](../nu-passive-access-source-followup-2026-10-25.md)
+uses the saved `v1.91.5-docking` tag chain, pinned cpp/header and local package
+nuspec to clarify conditional ini-saving behavior. Five directly considered
+source units were reported once as `imgui_source_audit_20261025`: five included,
+zero excluded/skipped, with `retrieved=null`, no truncation, no missing reasons
+and no linkage warning. They represent one tag identity chain, one upstream
+source edition and wrapper metadata, not five independent studies.
+
+No new discovery search or paper reading occurred. The saved acquisition
+manifest preserves four remote endpoints/statuses and exact bytes, but not
+the wider historical discovery result list or per-query counts; that coverage
+remains unspecified. Selected C++/header ranges establish default cwd-relative
+ini behavior and conditional shutdown save. Exact Twizzle native build and
+actual file-writer correspondence remain unresolved. This audit does not
+amend the failed native-001 output boundary.
+
+Private evidence is under `value-preparation/imgui-source-audit-20261025/`.
+The evidence and coverage hashes are respectively
+`a6785688bc4e8c3a169f109f72fc927c7503d4c38ebcfc496f362c031f498334` and
+`235ad68107346cede6fb1d57a540828fc6d45e7e415affb3540f802f80f74411`.
+Earlier source and S312 audits were not resubmitted. Reused recovery-target
+source synthesis adds no new retrieval decision or reading credit.
+
+## 2026-10-26 continuation: S180 full reading, bounded artifact audit and source decisions
+
+Selected for the consequential R14/R15 gap identified by the current reading
+audit, S180 was already in collection `PKLXQNEE`. Native Zotero 10.0.6 local API
+verification preceded reading: journal parent `Z5ADDDFA` v4247, related arXiv
+v4 attachment `VLAA2F7Q` v4237. No duplicate, type correction or attachment
+change occurred. A journal record may correctly carry a preprint attachment.
+The [full-reading note](full-reading/S180-practitioner-beliefs.md) binds all
+32 text/visual pages, nine figures, six tables and exact PDF hash. No VOR bytes
+were acquired; direct arXiv abstract and journal DOI opens failed in this
+session, without invalidating the already verified local selected body.
+
+One exact-DOI Scite query requested `limit: 20`, `offset: 0`, returned 1/1
+record and verified journal identity. A prior call failed schema validation
+because user_intent was too long and retrieved nothing. The successful response
+contained no editorialNotices field; no-correction status is not verified.
+No citation graph was screened. P08/S72/S231 and S160 were reused from completed
+notes, with no duplicate historical citation decisions or reading credit.
+
+The official Zenodo API returned HTTP 200; its linked 5,006,908-byte v1.0.0 ZIP
+matched recorded MD5 and observed SHA-256
+`ffd1d09150dd3eede84bcb1dd5f4b3e7dc1656d7f38369b72f33deace23fdfb1`.
+DOI/HTML opens failed. The [artifact audit](full-reading/S180-practitioner-beliefs-artifact.md)
+records 58 entries, selected-data denominators, retained method discrepancies
+and unresolved actual-run correspondence. No supplied code ran. A separately
+planned independent arithmetic check failed before data access, first for
+missing SciPy and then damaged installed source; it is unfinished, not a
+reproduction. Official SciPy 1.14.1 method documentation was read for that plan.
+The [integrity return](../workspace-integrity-return-2026-10-26.md) records the
+subsequent storage state and successful bounded preservation.
+
+A single handbook identity query (exact text and routes in the artifact audit)
+returned 11 visible occurrences representing nine durable URLs. Fraunhofer and
+WorldCat snippets support identity only; Fraunhofer body access was denied.
+Five duplicate bibliographic/author pages and two third-party body routes were
+excluded; the latter were never opened. Three signed-URL occurrences collapse
+to one durable object; transient credential-bearing queries are not retained
+in public notes. The handbook body and original five belief works remain unread.
+
+Completed source-decision audit:
+`s180_practitioner_beliefs_reading_20261025`, submitted once. Its inspected
+citation_report has 13 decisions: 6 credited sources/routes and 7 exclusions
+(5 duplicate, 2 out_of_scope), zero missing reasons, no truncation and
+retrieval_unlinked=false. Answer-scoped retrieved count is null. These are
+source decisions, not six studies or three full-paper readings: the article,
+archive and method documentation have different evidence roles. Full-work
+count increases only once, to 289 = 13 P + 3 A + 273 S.
+
+The consequence is separating reported requests/preferences, operationalized
+predictions and observed outcomes; this does not refute requests or establish
+current Nu demand. S182 remains opening-only and conditional on a distinct
+consequential method question. No new experimental allocation, field-completion
+claim or Daybreak-branch continuation follows.
+
+
+## 2026-10-26: R04 historical task eligibility and reference-source audit
+
+Decision: determine whether the two proposed Nu convention sites have actual
+successor requirements that distinguish enumeration from an equivalent catch-all,
+and whether the maintainer's chosen change is the only valid task solution.
+The [source audit](../nu-r04-history-task-audit-2026-10-26.md) gives exact
+commit/blob links, path boundaries, body coverage and design consequences.
+
+Public GitHub API path queries requested `per_page=100`. Breakout returned
+15 current-path records, 39 predecessor-path records and 4 factored-dispatcher
+records (58 occurrences, 56 distinct commit IDs); all page-2 requests returned
+zero. Domain declarations were inspected in 54 main-file snapshots and four
+existent companion snapshots. The first extraction's missed indented types and
+factored dispatcher were corrected and retained as an audit limitation, not
+reported as absent types. Fourteen current-path patches were read completely;
+older source review was limited to the stated declarations and consequential
+state/score/follow-up ranges. The pinned source matches its last path revision
+by hash. An initial web-page open failed with a cache miss; the API route worked.
+
+The independent projectile audit followed six named paths with page-1 returns
+15, 5, 13, 34, 59 and 81; all page-2 requests returned zero. The first three had
+all scoped patches read, the next two had respectively 20 and 31 matching
+projectile hunks read, and the last had metadata only. The earlier Games/ path
+was not followed. The parent's review verified the decisive rename and complete
+parent/successor Bullet source, the gravity patch and the previous time-advance
+example; it narrowed equivalence to ordinary declared values. No CLR-null,
+compiler or runtime equivalence is established. Five associated-PR checks and
+three exact issue searches returned zero; they do not establish absence of
+other discussion. Exact queries, recoverable IDs and coverage limits remain in
+the two private packets. Six pinned metadata responses were re-fetched solely
+to recover identifiers for the source log; counts matched and no source body
+was re-screened in that recovery.
+
+The practical correction is material: a new engine event name does not require
+a new local message name. The additional explicit-handler rename is conditional
+on the actual local vocabulary contract; otherwise retaining the old local
+name is an eligible alternative. The history also retains neutral and out-of-match
+work, authored positive-extension status, and Breakout's score patch followed
+by a later state-scrutinee correction. Historical source cannot substitute for
+independent new/retained behavior validation. No source variant or experiment
+was constructed.
+
+The once-only Scite provenance segment
+`r04_historical_task_eligibility_20261026` normalized source decisions by Nu
+repository revision across the inspected paths. Its inspected citation_report
+accepted 266 decisions: 143 credited for selected source coverage and 123 not
+credited beyond metadata (`out_of_scope`). No reasons are missing, no decisions
+were skipped, the report is untruncated, and retrieval_unlinked=false.
+Answer-scoped retrieved count is null. The 265 path-query occurrences overlap;
+additional pinned/parent revisions were directly inspected. These figures are
+repository-source audit units, not papers, representative tasks, independent
+studies or a whole-commit review. Selected-code `full_text` audit labels retain
+the narrower declaration/hunk/file coverage in their reasons.
+
+No Scite literature search, citation-graph screen, Zotero operation or new
+full-paper reading occurred. The 289-work reading count and all empirical
+benefit, model/storage, returned-gate and allocation limits remain unchanged.
+
+## 2026-10-26: R04 fixed-oracle eligibility audit
+
+Decision: determine whether the completed pause probe can directly score the
+correct source organizations admitted by D1. Read five published repository
+objects at `782be65a0ca319683a303908e372c5f86a8a7868`, using Git after the sparse
+documentation checkout's filesystem search correctly reported the experiment
+directory absent. No A: reads/writes or source execution followed. The
+[audit](../nu-r04-oracle-eligibility-audit-2026-10-26.md) records exact source
+links, selected line ranges, conclusions and limits; private hashes and the
+prospective question are retained in `r04-oracle-eligibility-20261026/`.
+
+The source establishes typed model/case, control/name and scheduling bindings.
+Those support the fixed reference check but require an explicit compatibility
+decision before reuse as an ordinary maintenance evaluator. The proposal now
+retains an authored behavioral scope and permits a correct successor without a
+union extension where the actual contract allows it. Frozen probes, observations
+and failed attempts are unchanged. No alternative implementation, build or
+candidate failure was produced.
+
+The once-only segment `r04_oracle_eligibility_20261026` credits five source files
+for the stated selected/full-file coverage. `citation_report` reports five
+included, zero excluded/skipped/missing reasons, truncated=false and
+retrieval_unlinked=false; answer-scoped retrieved count is null. These are
+repository-source decisions, not five papers or independent experiments.
+Existing completed readings were reused without resubmitting their decisions.
+No literature search, Zotero operation or new full-paper reading occurred.
+
+A bounded Sol High audit of existing gap notes selected no additional primary
+reading among S182, S221 and the fuller S152/S153 sources for the current
+decisions. The parent required correction of an overbroad no-gap statement,
+section references and an unverified current-access implication. Both revisions
+are retained privately in `remaining-method-dependency-20261026/`. S182's
+historical holdings do not prove current healthy access; any future selected
+reading must verify its record/version and bytes in a permitted healthy
+location. This is a conditional queue decision, not survey completion or
+absence of other consequential literature. Reading count remains 289.
+
+## 2026-10-26: S180 unchanged independent arithmetic on verified C: inputs
+
+The [numerical record](full-reading/S180-correlation-reconstruction.md) completes
+the earlier declared check in a separate C: calculation directory. The preserved
+plan, script and official v1.0.0 ZIP matched their prior identities and two C:
+source reads. C: reported Healthy/OK; no A: input or failed installation was
+used. Official PyPI release metadata supplied the exact NumPy 2.2.6 and SciPy
+1.14.1 Windows CPython 3.12 wheels. Their hashes matched, all 2,393 unchanged
+wheel members matched installed bytes, and all 2,401 hashed installed RECORD
+entries were accounted for after a retained two-launcher path-verification
+failure and explicit location correction. Unhashed bytecode was bypassed;
+the two RECORD files' own entries remained unhashed. This is scoped environment
+verification, not certification of the whole drive or historical software.
+
+One successful preflight checked version-specific API behavior without reading
+study data. One unchanged analysis invocation then produced all 150 declared
+cell statuses: 146 correlations and four nonpositive-coding-time cells retained
+as uncomputable. Each computed rho passed the same script's second
+average-rank/Pearson implementation. The B4 `ActMin` rule replaced 35/50
+coefficients; four language medians became zero. B3 had no replacements.
+All raw values and invalid dispositions remain private. No archived program,
+Scott-Knott workflow, Nu process or candidate was executed.
+
+A separate Sol High AI maintainer reconciled all stored cells, p-rule values,
+15 summaries, current hashes, attempt records and selected archived method
+source without rerunning correlations. The parent applied corrections for
+script-calculated rank checks, unhashed RECORD/bytecode coverage and floating
+operation order. Stable developer-language identity relies on the accepted
+same-byte static audit rather than a new script assertion. The result hash was
+verified after execution and against the stdout summaries, not sealed inside
+the original process receipt. The unchanged `60 * LOC / time` expression need
+not be bitwise identical to archived `LOC / (time / 60)`; no post-outcome
+sensitivity was run. Historical figure/command correspondence remains unknown.
+
+The once-only `s180_correlation_reconstruction_20261026` source segment credits
+four provenance units: the exact archive, reopened SciPy method documentation,
+and two official package release identities. The inspected report has four
+included, zero excluded/skipped/missing reasons, truncated=false,
+retrieval_unlinked=false and retrieved=null. It is not four papers or a repeated
+literature screen. No Scite literature query, new full-paper reading or Zotero
+operation occurred; library/reading counts are unchanged. Both prior pre-data
+failures, the corrected C: validation failure, full output and review remain
+under the recorded calculation/preservation roots. This resolves that bounded
+arithmetic task, not practical Nu value or the broader survey.
+
+## 2026-10-26: R04 behavioral/compatibility decision using completed methods
+
+Decision: state the authored pause family without importing its reference's
+private case/model/control/schedule choices into a later maintenance outcome.
+The [contract](../nu-r04-behavioral-contract-2026-10-26.md) selects standalone
+MMCC, ordinary P pause/resume, retained progress, sequential quit/new play and
+independent effects. The stronger Q2 next-loop/same-pass requirements remain
+separate. Initial-assignment analysis includes valid strategies without a new
+case. Observed failures and unresolved measurements stay distinct; all-assigned
+logical bounds are not a replacement for credible observation or inference.
+
+One Sol High AI maintainer reused the completed S226/S227 method notes and
+selected published R04 contracts. The parent verified S226 note lines 5-32,
+48-58 and 62-67, S227 v2 lines 15-39 and 65-95, and the decisive R04/D1
+boundaries. The worker also read S227 v1 release lines 69-73 for historical
+project/gallery URLs only. No primary body or artifact was re-acquired,
+revalidated or newly read. Two initial parent note-display commands encountered
+Windows stdout encoding errors; explicit UTF-8 output completed those selected
+reads without a file mutation or application run.
+
+A subsequent bounded prose review corrected an ambiguous resume-control phrase,
+made resumed consequences external rather than private event counts, separated
+candidate resource failures from administration missingness, stated the complete
+outcome partition and distinguished S226 reference/starter construction from
+independent calibration. Parent acceptance and the private decision/review
+packet remain in `value-preparation/r04-behavioral-contract-20261026/` under
+the current C: preservation root. This is AI maintainer review, not a human
+review, validated observer or independent full-paper reading.
+
+The once-only segment `r04_behavioral_contract_20261026` records eight pinned
+repository-note decisions: seven included and one historical-v1 release
+provenance noncredit. The inspected report has zero skipped entries or missing
+reasons, truncated=false, retrieval_unlinked=false and retrieved=null. Its
+`full_text` labels refer to the stated full/selected repository-note coverage,
+not new full-paper reads. There was no Scite literature query, citation-graph
+screen or Zotero operation, and no repeated submission of old paper decisions.
+Reading count remains 289. The current checkout is documentation/source synthesis
+only; no Nu environment, candidate run or restricted/returned work was resumed.
+
+## 2026-10-26: broader public-account frame and a configurable UI requirement
+
+Decision: find concrete requested outcomes outside the two accounts dominating
+the earlier Nu issue queries, without calling another issue count adoption
+evidence. The [source record](../nu-public-request-provenance-2026-10-26.md)
+binds the findings and consequences. Initial GitHub REST search through the
+existing CLI used `repo:bryanedds/Nu is:issue -author:bryanedds -author:Happypig375`,
+creation date descending, per_page=100, page=1. It returned 57/57 reported
+matches with incomplete_results=false and 33 author-account identities. This
+exhausts that query at retrieval, not the repository or independent users.
+All titles/metadata were screened. Seven query threads and linked #356 received
+complete body/comment-text reading: eight bodies, 33 comments. Fifty queried
+bodies remain unreviewed; screenshots, linked pages/fonts/examples and issue
+patches were not inspected. No participant or current-runtime evidence follows.
+
+Available GitHub connector tools supplied subsequent issue/comment and pinned
+source reads. Normalized comments omitted timestamps, so ordinary approved
+REST GET responses supplied those metadata, without adding reading units.
+The code query `FillBarDispatcher FillInset Fill` requested topn=20 and returned
+zero; reformulated `FillBar`, topn=20, returned five excerpts, without a total
+coverage count. The Nu facet at two explicit revisions has identical selected
+lines 842-904 but different complete files. Pinned Godot XML was read completely
+(63 lines); progress-bar C++ at 69-151, 201-210 and 261-280 supplies the four-mode
+and RTL boundary. All four acquired file contents match Git blob SHA-1s, with
+SHA-256 and selected-span identity retained privately. No source was executed.
+
+An official-documentation two-query web batch returned 12 visible positions in
+aggregate; per-query allocation was not supplied. Direct 4.7 and 4.3 ProgressBar
+page opens succeeded. The 4.7 page corroborates the pinned source; older,
+translated, unstable and TextureProgressBar discovery pages receive no selected
+comparator credit. This is a bounded API lookup, not a literature search.
+The reused S266 note informed gap selection, but its exact longitudinal
+dataset question remains conditional and no current release/access recheck
+was made. No new primary paper reading or Zotero operation occurred.
+
+One Sol High maintainer read the five platform/text threads. Parent correction
+kept R01 broad rather than a fixed moving-platform task, limited dated support/
+obstacle reports, and made uninspected images/links explicit. The original
+package is preserved. A subsequent independent prose review accepted the new
+source note; parent checked decisive text, counts, source identities and manual
+semantics. None is human sign-off or implementation validation.
+
+The **local** considered set for `r14_public_request_frame_20261026` has 81 source
+units: 13 credited and 68 uncredited, including unreviewed issue bodies,
+discovery snippets, other documentation editions and the conditional reused
+note. These are not 81 papers or a field screen. One `report_citations` request
+and one `citation_report` read both failed with HTTP 401 `token_expired`.
+Remote recording/report status is unverified. Full input and error receipts are
+saved in `value-preparation/r14-external-accounts-20261026/`; the user was asked
+to restore the existing Scite connection. After restoration, inspect this
+answer ID before submitting the saved set to avoid duplicates. No skipped,
+missing-reason, truncation or linkage success is claimed while the audit is
+pending. The local research record is published with that limit. Reading count
+remains 289; all model/storage/returned-gate/allocation restrictions are unchanged.

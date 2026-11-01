@@ -2,7 +2,7 @@
 
 **Assignment, 2026-10-08:** prepare the plausible research directions together, prioritize them by research value, and continue literature work when it can change a question, comparison or interpretation. This replaces the immediate requirement to choose only one direction before further preparation. It does not select a favorable answer or reopen experimental execution.
 
-The central question is **when Nu's combination of representations, coordination, history and development tools changes the cost and correctness of real software evolution**. The highest-value result would identify useful conditions of benefit and their costs, including conditions where a credible alternative works better. Whole-package value, the MMCC/ImSim choice and a source convention such as D1 answer different questions. They belong in one agenda with separate comparisons.
+The central question is **how to improve the correctness and total work of evolving stateful interactive software, starting from Nu's representations, coordination, history and development tools**. The intended result is an evaluated improvement with useful conditions of benefit and explicit costs, including conditions where a credible alternative works better. Whole-package value, the MMCC/ImSim choice and a source convention such as D1 answer different questions. They belong in one agenda with separate comparisons.
 
 This agenda covers **21 currently plausible directions**, including less mature extensions and the user-added R21 steering question. It is a revisable map, not a claim that every possible idea has been enumerated or a commitment to run 21 studies. [PLAN](../PLAN.md) owns authority. The [B01–B12 survey](literature/nu-background-survey-2026-09-30.md), [reading index](literature/full-reading/INDEX.md) and [search ledger](literature/nu-background-searches-2026-09-30.md) retain source coverage and gaps.
 
@@ -10,12 +10,234 @@ This agenda covers **21 currently plausible directions**, including less mature 
 
 **Current evidence and authority, 2026-10-15:** the user has authorized confident local construction and experiments, as recorded in [PLAN](../PLAN.md). The [current readiness table](#readiness-and-next-actions-for-all-directions) below now incorporates the completed bounded probes and owns the next actions. It supersedes earlier held/unverified wording in the direction cards for the linked executed cases and completed selected readings; exact residual edition/artifact gaps remain in the reading index. Those cards preserve the comparisons and their design rationale. Mechanism feasibility does not establish agent maintenance, human productivity or net adoption value; the priority ranking remains unchanged. Candidate/model experiments, recruitment, new accounts, OAuth staging and H execution remain unallocated.
 
+## 2026-10-19 objective: improve evolution of stateful software
+
+The user's refinement changes the intended endpoint: develop and evaluate a
+useful improvement over a credible existing workflow for evolving stateful
+interactive software. Nu supplies concrete mechanisms, artifacts and hypotheses.
+The eventual contribution may improve Nu, another implementation, or a portable
+method. Demonstrating features and documenting tradeoffs are foundations; the
+research programme should pursue a better capability, more reliable completed
+change, or lower total work under stated constraints.
+
+A positive effect is an objective to test, never an acceptance rule for data.
+Retain failed interventions, nulls, adverse findings and cases where an ordinary
+alternative wins. If a proposed improvement fails, use the result to revise or
+redirect the design without rewriting its original requirement or outcome.
+Novelty and useful effect need separate evidence; neither follows from a Nu
+implementation or from using a different application domain.
+
+### Establish the status quo for the decision
+
+There is no single status quo across all 21 directions. Identify the beneficiary,
+practical change, existing tools and relevant costs before selecting a comparator.
+
+| Comparison level | Candidate status quo | Evidence needed before selection |
+| --- | --- | --- |
+| Game-development workflow | Relevant Unity, Unreal, Godot or existing project workflow | Match the target task, assets, deployment needs, ordinary tools and allowed assistance. Credit idiomatic solutions and shipped facilities. These engines are candidates, not an established ranking or a requirement to build three ports. |
+| Mechanism within a workflow | A credible batch/helper, reconstruction, replay, undo or explicit migration policy | Require the same intended outcomes and count construction, integration, verification, failure and repair. Select the relevant ordinary alternative; do not manufacture a weaker baseline by removing useful tooling. |
+| Improved intervention | The supported existing workflow plus the proposed change, with a credible alternative where needed | Separate the contribution of the intervention from language, engine, tooling and familiarity differences. Use an ablation when necessary for a component claim; a package comparison estimates the package. |
+| Transfer beyond games | An ordinary implementation of the selected non-game stateful task | Verify its actual state, event, identity, scheduling and effect contracts. A framework name or the observation that games have states does not establish an equivalent baseline. |
+
+The [existing Godot audit](nu-comparator-and-convention-audit-2026-10-11.md)
+provides inspected facilities at its recorded pin, not universal status-quo
+selection. Unity/Unreal or non-game alternatives require their own relevant
+primary-source/tooling investigation when the task makes them consequential.
+
+### Use development history as supplementary evidence
+
+Extend the [practice and task record](nu-practice-and-task-provenance-2026-10-11.md)
+with linked issues, discussions, pull requests, parent/child commits, tests and
+release history. Trace the actual need and beneficiary, proposed alternatives,
+implementation decision, later repairs or reversals, and the behavior present
+at the research pin. A commit message or closed issue alone establishes neither
+successful behavior nor saved work. Maintainer rationale remains distinct from
+independent adopter demand. Preserve withdrawn reports and adverse designs.
+
+For a historical change, bind the relevant predecessor and successor before
+calling it a reconstructed task. If its workaround is already present, label
+the research task as an adaptation rather than replaying a supposed current
+defect. Keep any reference solution or fixing patch outside experimental
+candidate information when the later protocol requires that separation.
+
+### Generalize a mechanism through tested contracts
+
+The broader candidate problem is changing state representations, transitions
+or configuration while preserving intended ongoing behavior at acceptable cost.
+Possible transfer settings include a stateful UI, workflow tool or simulation;
+none is selected or claimed equivalent yet. Map the state, identities, queued
+work, scheduling and external effects explicitly. An abstract state machine can
+omit precisely the integration costs and irreversible effects that matter.
+
+First explain a mechanism and its conditions in the Nu case. Then formulate a
+portable intervention or prediction and test it on a consequential non-game
+case with its ordinary comparator. Report which assumptions transfer and which
+require application-specific work. A renamed game fixture or a second cosmetic
+variant is not evidence of generality.
+
+### Next consequential preparation
+
+1. Trace the issue/commit lineage behind one practical need among the current
+   R12 revision and R03/R10 recovery/evolution cases, including contrary accounts
+   and the state of the feature at the pin. Prioritize a gap that can change
+   the task or intervention, not another description of an understood branch.
+2. Select the beneficiary's decision and credible baseline; use literature to
+   specify correctness, total work, meaningful improvement and rival explanations.
+3. Design the proposed improvement and its falsifiers. Existing mechanisms,
+   an adaptation, a hybrid workflow or a new method are eligible; none is presumed
+   better. Preserve ordinary tool access and all assigned work in the comparison.
+4. Select a non-game transfer case only when the proposed mechanism has a
+   clear portable contract worth testing. Continue literature and development
+   history where they can change these choices.
+
+This refinement retains the 21 direction IDs and their evidence. It adds no
+candidate/model or participant allocation, new account or purchase. Confident
+local work retains PLAN's existing authority and prospective checks; the R02
+input and R10 migration returns remain stopped. Human steering stays a future
+measurement question. No new search, source-lineage reconstruction, baseline
+validation or experiment is claimed by this planning update.
+
+## 2026-10-23 evidence-led continuation
+
+The [development-history audit](nu-development-history-audit-2026-10-23.md)
+resolves the selected R12/R03/R10 source questions. Nu's whole-property
+override is a documented abstraction; the specific record-field requirement
+remains authored. Historical repairs already present at the pin are not new
+unfixed tasks. Ordinary property inspection has a source-supported path that
+avoids Interactive's snapshot, while actual UI/access still needs validation.
+Live-model evolution is an intended use, but the reward-200 mapping is not a
+public initializer guarantee.
+
+The [ordinary-workflow audit](nu-status-quo-and-transfer-audit-2026-10-23.md)
+changes the comparison. Unity and Unreal already express selective material
+inheritance; Godot supports both a shared-plus-unique workflow and a shared
+shader with per-instance values. Known merge literature supplies relevant
+methods. The [material-intent follow-up](nu-material-intent-baseline-2026-10-23.md)
+finds that the proposed mode table and field update are themselves a credible
+ordinary helper. Its [pure reference component](../experiments/nu-r12-material-intent/RESULTS.md)
+now passes the declared explicit-intent, immediate-release and JSON-pairing
+controls; supplied material maps have not undergone native serialization. A later Nu
+integration must improve capability or complete work beyond it; a baseline
+denied the same helper or intent information is invalid. Charge representation,
+metadata, verification, failed work and conversion. Actual Nu continuation is a
+separate acceptance gate. This does not rank R12 above every Band A question
+or establish a new algorithm.
+
+Redux and XState supply two concrete non-game mechanism references, with
+different reconstruction/effect boundaries. Ordinary XState snapshot
+transformation must be credited before testing any additional migration
+checks; event sourcing is an alternative when usable history exists. The
+proposed ticket/approval scenarios remain authored shapes. The
+[Showtime follow-up](nu-xstate-practice-case-2026-10-23.md) now binds a real
+partial-record persistence change and self-reported relaunch failure; it
+leaves machine-change causality and useful cross-version preservation intent
+unresolved. These are preparation results,
+not transfer experiments or reopened R10 construction. Human steering remains
+future work; all 21 direction IDs and the existing allocations/returns remain.
+
+### Preparation priority after the material construction return
+
+The [material construction return](nu-material-intent-baseline-2026-10-23.md#native-construction-return-at-gate-008)
+stops the native helper at five failures; no native sequence ran. Ordinary
+continuation does not reopen it. Prioritize the following independent
+comparisons for preparation. This orders current research value and readiness,
+not predicted effect sizes, and does not change the 21 direction IDs or
+candidate/participant allocation.
+
+| Preparation order | Practical decision and credible alternative | Consequential next dependency and falsifier |
+| --- | --- | --- |
+| 1: R03 with R06 | Whether a recovery procedure preserves required editing-session work and supports verified continuation more reliably or with less total work than ordinary Gaia recovery/F7 checkpoints or an eligible reconstruction route. Diagnosis and code repair are separate possible endpoints. | Name the actual exception boundary and required K/G/F target before construction. Establish caller-visible state changes, ordinary access and common outcome; count capture, retention, integration, failures and verification. If ordinary recovery meets that outcome with equal or less complete work, an added mechanism has no demonstrated advantage on that task. |
+| 2: R04 | Whether explicit current-case enumeration earns its warning/edit burden relative to a valid exhaustive catch-all with the same ordinary compiler, context and tests. | Bind a practical successor requirement and ordinary information policy. Later all-assigned completion and work, not another compiler probe, must discriminate the conventions. Equal/better catch-all completion, ignored warnings or mechanically compiling but wrong repairs narrow the claim to diagnostic availability. Candidate execution remains unallocated. |
+| 3: conditional R01 informed by R12 | Whether a developer should adopt or retain Nu's selective-material workflow over the ordinary workflow in that developer's actual engine/project. | Bind a beneficiary, consequential workflow choice and incremental revision history before selecting one comparator. Count setup, asset/selection/helper work, editing, repair and verification. An ordinary engine providing the same saved/rendered result with equal or less complete work defeats the proposed advantage. Do not build three ports merely because three engines were surveyed. |
+
+The [history access record](nu-history-question-access-2026-10-18.md#2026-10-23-ordinary-inspection-and-history-lineage)
+supports the passive route at source level; the retained stale-position episode
+still lacks its original predecessor names and is not confirmed diagnosis
+ground truth. The [cost series](nu-recovery-cost-feasibility-2026-10-15.md#comparison-and-interpretation)
+has mixed readiness results and unequal payload scopes. These make complete
+repair work consequential without supplying a benefit estimate. R04 already
+has [compiler evidence](nu-application-diagnostic-feasibility-2026-10-15.md)
+and a [bounded behavioral oracle](nu-pause-runtime-feasibility-2026-10-15.md);
+repeat demonstrations would not resolve task/solver validity.
+
+R01 retains the greatest direct adoption potential and the largest unresolved
+workload burden. The [ordinary engine alternatives](nu-status-quo-and-transfer-audit-2026-10-23.md#a-credible-status-quo-for-the-material-task)
+must receive their sufficient native facilities. Further baseline repetitions
+or mode-table variants are not the next research contribution. The
+[Showtime/Harny cases](nu-xstate-practice-case-2026-10-23.md) do not establish a
+cross-version preservation obligation, so they do not yet select a non-game
+migration experiment. R02/R10/R12 returns remain in force. New consequential
+primary evidence can change this order; no broad-survey completion is implied.
+
+The completed parallel follow-up sharpens these priorities. The
+[R03 passive-access attempt](nu-passive-access-observation-2026-10-23.md)
+completed accepted package preparation and one native launch. Its single
+submitted drag left the required second state absent; no C0-C3 or Undo/Redo
+observation followed. An unexpected Gaia imgui file separately failed the
+frozen output boundary. Ordinary property selection/viewing has partial
+evidence, while access around an actual history branch remains unresolved.
+The assignment is consumed; source-only clarification may inform a distinct
+future question, not a retry or retrospective protocol change. Nu
+[#151's recovery lineage](nu-history-question-access-2026-10-18.md#2026-10-23-recovery-demand-and-the-next-comparison)
+supplies a concrete maintainer rationale, but no eligible actual-root repair
+trial or independent adopter evidence. [S311](literature/full-reading/S311-partial-trace-dependency-estimation.md)
+adds a useful adverse boundary: inferred dependencies may aid localization
+but cannot replace missing actual predecessor evidence.
+[S312 ADI](literature/full-reading/S312-adi-agent-repair.md) now supplies reported
+agent-repair comparisons under common benchmark/model/budget conditions.
+Deposited prompts differ materially; interface, prompt/workflow and rerun
+changes form a bundle. Its traces come from re-execution, so the favorable
+reported counts do not resolve this attempt's missing fixture evidence.
+
+The [recovery-target analysis](nu-recovery-target-and-serialization-2026-10-25.md)
+now separates editing-session recovery from diagnosis/repair and distinguishes
+last editor snapshot K, last good simulation G and handler-entry F. Gaia's
+ordinary history/F7 facility is part of the status quo. Group files omit the
+screen model; screen-file replacement is a stronger unverified comparator.
+The subsequent deliberate fault-trigger branch and ordinary screen
+serializer/runtime persistence branch are both **unfinished, Daybreak-only
+work** under the [latest user restriction](unfinished-daybreak-only-work-2026-10-25.md).
+Their private candidates remain unaccepted. Non-Daybreak ChatGPT models must
+not continue or delegate either branch. Ordinary persistence scope and
+destination/selection/content policy remain future dependencies for an eligible
+model; they are not demonstrated baseline capabilities. Separate literature
+and synthesis remain authorized, without changing the scientific ranking.
+The [UI/output source follow-up](nu-passive-access-source-followup-2026-10-25.md)
+clarifies focus versus edit and conditional ini saving while preserving the
+failed attempt and its unobserved gesture/writer.
+
+The [authentic R04 API rename](nu-practice-and-task-provenance-2026-10-11.md#2026-10-23-a-real-api-rename-and-a-qualified-lifetime-case)
+is a source-maintenance burden case where a valid catch-all can avoid a named
+consumer edit **if the local case rename is required**; engine-event adaptation
+alone may retain the local name. It adds no new gameplay requirement. Preserve it as a boundary
+case rather than recasting it as a favorable semantic diagnostic task. The
+qualified R05 event-lifetime report remains a source hypothesis requiring
+actual roots, disposal and live-contact evidence.
+
+The [October 26 R04 history audit](nu-r04-history-task-audit-2026-10-26.md)
+and [oracle eligibility audit](nu-r04-oracle-eligibility-audit-2026-10-26.md)
+now select an explicitly authored behavioral question for current preparation.
+The completed pause references validate their clause contrast under shared
+case/model/control/schedule choices. A future maintenance evaluator must also
+admit the correct organizations promised by D1, including a successor that
+meets the task without a union extension when no public contract requires one.
+That evaluator/access dependency, task coverage and allocation remain; another
+compiler demonstration or equal weighting of invented cases cannot resolve them.
+
+For non-game transfer, [Camunda](nu-workflow-migration-transfer-2026-10-23.md)
+now supplies explicit running-instance preservation demand. When running
+instances must change, its supported manual migration/validation is the
+ordinary baseline; old-version completion is valid only when that policy
+meets the requirement. A novel, useful improvement beyond existing facilities
+is still to be specified. This strengthens task selection without raising
+transfer above the immediate R03/R06 access dependency or reopening R10.
+
 ## How the priorities are chosen
 
 Priority is an ordinal research judgment, not an estimated effect size or a computed score. It considers:
 
 - **Decision value:** who could make a consequential development, tooling or adoption decision from the answer?
-- **Connection to Nu:** does an inspected capability motivate the question, or would the study first require an unverified new capability?
+- **Mechanism grounding and transfer:** does an inspected Nu capability or credible alternative motivate the intervention, what new capability needs validation, and which assumptions could transfer beyond the initial application?
 - **Unresolved knowledge:** what would be learned beyond the closest existing method or comparison? A Nu port or a low publication count alone is insufficient.
 - **Discrimination:** can credible alternatives, meaningful outcomes and rival explanations be distinguished? Useful nulls, adverse findings and crossovers count as valuable answers.
 - **Evidence cost and transfer:** what preparation, source access, participants, engineering and replication would be needed, and how narrowly would the answer apply?
@@ -108,7 +330,7 @@ Band A deserves the most preparation now. Band B receives actionable designs and
 
 Compare newcomers and experienced users within separately defined populations, with an authentic onboarding/support policy. Measure learning effort, correct changes, delayed retention and transfer to a new task; keep preferences and comprehension questions secondary. S300/S301 show why understanding, structure-conformity scores and partial progress cannot be substituted for completed change. S39/S40 and S255–S259 preserve positive and contrary representation results.
 
-The [2026-10-11 learning and role contract](nu-learning-and-role-contract-2026-10-11.md) now specifies prerequisites, preparation, assistance, all-assigned outcomes and the distinction between onboarding and trained productivity. [S38](literature/full-reading/S38-cognitive-dimensions.md) is fully read: use its dimensions as qualitative, task-specific mechanisms, not a validated learning score. Its supplied-target editing result has a narrower scope than independent maintenance solving. [S307](literature/full-reading/S307-programming-walkthrough-draft.md) now reconstructs the qualitative procedure in an explicitly marked archived draft and supplies a candidate decision/knowledge/assistance inventory for the existing R11/R12 roles. The [completed S304/S305-report/S306 readings](literature/full-reading/S304-S306-walkthrough-edition-access.md) now resolve the selected user-protocol and final-method gaps, preserving overlapping accounts and assistance. S305's later journal correspondence remains unread. Neither the draft nor final method validates readiness; select the practical role/task before later measurement work. The human comparison remains deferred pending a practical beneficiary, task/access validity and reliable outcomes. The [S308 engine-API study](literature/full-reading/S308-engine-api-metrics-access.md) and its [S309 metric origin](literature/full-reading/S309-structural-api-usability.md) are now completely read. S308's historical C++ file scores and S309's Java structural/face checks supply no observed developer outcomes. Changed AESI/documentation definitions and unresolved formula/calculator/aggregate correspondences preclude treating shared metric names as cross-language validation. Specify the task-facing interface and language/tool mapping before using a structural descriptor; this evidence does not validate a Nu usability or learning score. Redirect if a supposed language effect is only unequal preparation or the claimed outcome is a preference score.
+The [2026-10-11 learning and role contract](nu-learning-and-role-contract-2026-10-11.md) now specifies prerequisites, preparation, assistance, all-assigned outcomes and the distinction between onboarding and trained productivity. [S38](literature/full-reading/S38-cognitive-dimensions.md) is fully read: use its dimensions as qualitative, task-specific mechanisms, not a validated learning score. Its supplied-target editing result has a narrower scope than independent maintenance solving. [S307](literature/full-reading/S307-programming-walkthrough-draft.md) now reconstructs the qualitative procedure in an explicitly marked archived draft and supplies a candidate decision/knowledge/assistance inventory for the existing R11/R12 roles. The [completed S304/S305-report/S306 readings](literature/full-reading/S304-S306-walkthrough-edition-access.md) now resolve the selected user-protocol and final-method gaps, preserving overlapping accounts and assistance. The [S305 journal reconciliation](literature/full-reading/S305-problem-centered-design-journal-reading-2026-10-18.md) now adds the same S304 user check and explicit walkthrough-prediction limits, with no independent-study increment. Neither the draft nor final method validates readiness; select the practical role/task before later measurement work. The human comparison remains deferred pending a practical beneficiary, task/access validity and reliable outcomes. The [S308 engine-API study](literature/full-reading/S308-engine-api-metrics-access.md) and its [S309 metric origin](literature/full-reading/S309-structural-api-usability.md) are now completely read. S308's historical C++ file scores and S309's Java structural/face checks supply no observed developer outcomes. Changed AESI/documentation definitions and unresolved formula/calculator/aggregate correspondences preclude treating shared metric names as cross-language validation. Specify the task-facing interface and language/tool mapping before using a structural descriptor; this evidence does not validate a Nu usability or learning score. Redirect if a supposed language effect is only unequal preparation or the claimed outcome is a preference score.
 
 ### R08 Coding agents and tool support
 
@@ -140,7 +362,9 @@ Measure correct integrated outcomes, unresolved conflicts, total team effort and
 
 Compare reusable mechanics, asset/configuration families or domain-specific authoring with a credible ordinary implementation. Separate creating a supported variant from extending the representation to express a new requirement.
 
-Measure behavioral validity, authoring/change effort and amortized construction/integration/extension cost. S255–S259 show prepared-tool gains, nulls and overlap between datasets; [S263/S264's published generation methods](literature/full-reading/S263-S264-phylogenetic-generation-reading-2026-10-15.md) are now read, with bundled guidance/manual integration, a nearly null seed-selection-only contrast and overlapping conference/journal data. The [2026-10-11 reuse contract](nu-reuse-and-authoring-contract-2026-10-11.md) now selects a quiescent, editor-authored persistent entity tree, separating configuration, family revision and vocabulary extension. Nu has value/default and name-based reconciliation plus target reconstruction; it does not automatically preserve author intent, runtime lifetime or concurrent edits. The proposed button-family case needs practical value, an ordinary helper/composition comparator and validated input/property/history access before construction. Follow generation methods if that different comparator becomes consequential. Redirect if only visual appeal, generated volume or family similarity is observed. Distinct editions of one dataset are not replications.
+Measure behavioral validity, authoring/change effort and amortized construction/integration/extension cost. S255–S259 show prepared-tool gains, nulls and overlap between datasets; [S263/S264's published generation methods](literature/full-reading/S263-S264-phylogenetic-generation-reading-2026-10-15.md) are now read, with bundled guidance/manual integration, a nearly null seed-selection-only contrast and overlapping conference/journal data. The [reuse contract](nu-reuse-and-authoring-contract-2026-10-11.md) separates configuration, family revision and vocabulary extension. Its [Terra Firma revision series](nu-terra-firma-revision-feasibility-2026-10-18.md) now observes both shared operators delivering the tint and propagation missing one target's tint while preserving its local roughness. Recorded reconstruction and exact history-correspondence limits are separate from native lifetime and authoring benefit. The first batch/local attempt failed input integrity before editing. Its later revalidated continuation and actual-save reopen deliver all 32 tints while preserving local roughness and the declared old histories, with no operator lifecycle callbacks. All four pairs are now observed; the invalid startup remains retained. Later revision and complete-work consequences remain untested. Preserve ordinary batch/helpers/composition as valid alternatives, with selection, construction, verification and any repair counted. Follow generation methods only if that different comparator becomes consequential. Redirect if only visual appeal, generated volume or family similarity is observed. Distinct editions of one dataset are not replications.
+
+The [practice continuation](nu-practice-and-task-provenance-2026-10-11.md#2026-10-18-continuation-material-revision-rationale-and-observed-limits) now supplies a specific maintainer rationale for shared material revision and local choices. The exact tint/roughness field policy remains authored: the sources do not promise field-wise merging within a material record. Preserve that distinction when interpreting the adverse delivery and selecting a practical repair comparison; independent demand and total benefit remain unresolved. The [retained-history audit](nu-reuse-and-authoring-contract-2026-10-11.md#2026-10-18-retained-history-audit-a-conditional-switching-prediction) now predicts a specific B-to-P switching limitation from the actual saves; it does not make continued batching fail. Separate continued-use, repair and switching policies in the next comparison.
 
 ### R13 Interaction composition and guarantees
 
@@ -151,6 +375,19 @@ S298 provides data-compatible interaction substitution with configured runtime c
 ### R14 Practice and adoption relevance
 
 Use existing primary studies and passive repository/source inspection to identify recurring changes, constraints, support needs and reasons to adopt or abandon a workflow. A later empirical study would need a justified sample and its own authorization; observations/interviews remain held. This direction supplies sampling and cost boundaries for R01–R13; another list of reported complaints is not automatically a standalone contribution.
+
+The [2026-10-26 public-request continuation](nu-public-request-provenance-2026-10-26.md)
+expands the initial account frame and checks concrete UI/deployment/text needs.
+The fill-direction request is a conditional whole-workflow extension/configuration
+case: the inspected Nu path fixes direction, while pinned Godot exposes ordinary
+configuration. It is not a mined extension of an existing Nu direction union,
+a new standalone research contribution or a replacement for R04. Camera demand
+changes within its thread; a reported historical CJK repair remains positive
+evidence while Gaia text entry is a distinct reported concern. R01 remains a
+broad conditional adoption question, not a fixed moving-platform-only task.
+Promote a new case only when a consequential workflow decision and common outcome
+justify it; do not infer prevalence or implementation from account counts or
+issue status. The review authorizes no port, observer, candidate or returned work.
 
 S250–S252, S267–S271 and S288–S290 supply situated practice evidence. The [R14 provenance record](nu-practice-and-task-provenance-2026-10-11.md) now links the proposed families to public requests, source and those methods, with beneficiaries and omitted work explicit. Corrected issue reports prevent two false bug-task selections; mixed history accounts challenge assumed demand, and existing scripts qualify an automation-absent asset comparison. Keep the set purposive and distinguish authored/adapted requirements from current defects. Next choose a practical decision before separately authorized feasibility; asset/engine-upgrade work is a conditional total-work case. [S266's completed preprint reading](literature/full-reading/S266-game-development-problems-reading-2026-10-15.md) now supplies source-conditioned task discovery and the shared-corpus lineage. Exact longitudinal magnitudes still require the promised row-level release, denominator reconciliation and document-level/source-balanced analysis; the paper reading does not establish prevalence. Continue the retained practice search from offset 100 when an independent coverage gap needs it. No participant contact or recruitment occurs under this agenda.
 
@@ -202,7 +439,9 @@ Preserve two future policies: **steering-only**, where people specify/inspect/di
 
 ## Readiness and next actions for all directions
 
-**Updated 2026-10-15.** These dispositions separate observed mechanism evidence, remaining research dependencies and execution authority. The linked execution records own exact scope, all attempts and adverse results; a passed probe is not a completed direction. **Conditional** identifies a consequential dependency; **deferred** preserves a future question or existing hold. The [study packet](nu-research-study-designs-2026-10-08.md) owns the proposed comparisons and shared accounting, while [PLAN](../PLAN.md) owns authority.
+**Updated through 2026-10-18.** These dispositions separate observed mechanism evidence, remaining research dependencies and execution authority. The linked execution records own exact scope, all attempts and adverse results; a passed probe is not a completed direction. **Conditional** identifies a consequential dependency; **deferred** preserves a future question or existing hold. The [study packet](nu-research-study-designs-2026-10-08.md) owns the proposed comparisons and shared accounting, while [PLAN](../PLAN.md) owns authority.
+
+**Execution prerequisite:** the [October 18 storage-integrity return](workspace-integrity-return-2026-10-18.md) takes precedence over the native next actions below. Establish reliable execution storage and revalidate exact inputs before a prospectively bound continuation. Work on the verified C: publication copy can continue; neither documentation nor a healthy volume status clears that runtime boundary. The separate R02/R10 five-failure returns remain in force.
 
 | ID | Disposition | Consequential dependency | Next action / promotion condition |
 | --- | --- | --- | --- |
@@ -212,12 +451,12 @@ Preserve two future policies: **steering-only**, where people specify/inspect/di
 | R04 | [Actual compiler contrast](nu-application-diagnostic-feasibility-2026-10-15.md) and [bounded pause/lifecycle oracle](nu-pause-runtime-feasibility-2026-10-15.md) exercised | The added explicit case emits warning-only FS0025; four references pass and five frozen faults are detected under the functional accompanied harness, not an ordinary agent workflow | Carry the demonstrated semantic/temporal obligations into supported input and standalone references. Preserve valid catch-alls, warning-free behavioral failure and the retained reconstruction/setup failure; diagnostic exposure and D1 maintenance benefit remain unmeasured. |
 | R05 | [Stub-world delivery](nu-event-feasibility-2026-10-15.md) and the R04 executable oracle provide bounded evidence | Selected priority/Resolve/unsubscribe traces and frozen-fault detections do not establish general oracle sensitivity, input delivery or independent external validity | Validate the actual trigger and observation phase for the next selected requirement. Preserve event order, exercise evidence, source-fault lineage and missingness; count observer construction and its overhead. |
 | R06 | [Twelve-process component series completed](nu-recovery-cost-feasibility-2026-10-15.md); practical cost-benefit conditional | History acquisition is faster in all six pairs, direct history recovery slower in all six, and readiness differences have both signs; retained payload scopes differ | Preserve the original unexplained reconstruction timeout and separate later diagnostic. A further cost study needs a consequential workload boundary and matched useful work; these timings do not estimate a pure persistence effect, retained/native memory or developer savings. |
-| R07 | Preparation/outcome and candidate knowledge inventory specified; human comparison deferred | Practical role/task, supported access and validated measurement; S305 journal correspondence remains unread | Use the [completed S304/S305-report/S306 readings](literature/full-reading/S304-S306-walkthrough-edition-access.md) with their shared lineage and assistance limits. Select the consequential role/task; neither the qualitative final method nor an analyst inventory validates a readiness score. |
+| R07 | Preparation/outcome and candidate knowledge inventory specified; human comparison deferred | Practical role/task, supported access and validated measurement; S305 final edition resolved, supplement/raw materials conditional | Use the [completed S304/S305-report/S306 readings](literature/full-reading/S304-S306-walkthrough-edition-access.md) with their shared lineage and assistance limits. Select the consequential role/task; neither the qualitative final method nor an analyst inventory validates a readiness score. |
 | R08 | Information/feedback/accounting contract prepared; execution held | Reconcile intended tool/edit/observation authority with the retained no-tools controller | Use ordered behavioral observations and separately resourced final scoring. A workflow/feasibility decision precedes any implementation; S227 v2 is conditional on selecting its GUI method. |
 | R09 | Sequence/lineage and Q2 behavior policies specified; execution conditional | Practical durability question, common baseline, input/observation access and deadline/watchdog validity | Use actual inherited histories with explicit active/retired obligations and failure/missingness accounting. Validate Q2's phase/clock/effect contract separately; keep reference/rescue branches distinct. Promote for a meaningful durability decision. |
 | R10 | [Unchanged-schema preservation](nu-live-reload-feasibility-2026-10-15.md) passed; [initializer-only schema reload](nu-schema-reload-feasibility-2026-10-16.md) preserved old state but failed the required new-field mapping | Actual FSI conversion installed reward 0 despite initializer 200; live/fresh scores were 100/300 after the declared hit. Both reward-specific continuations passed. Explicit migration, effects and practical savings remain unmeasured | The separate [explicit-migration comparison](nu-schema-migration-feasibility-2026-10-16.md) has stopped after the objective-control return threshold was exceeded. Preserve its uncompiled current draft; ordinary continuation does not resume that gate. Preserve fully observed failures, actual inherited values, exact live/fresh checkpoint provenance and all construction/verification/reconstruction work. Do not repair or relabel the initializer-only result. |
 | R11 | Artifact/role contract specified; team comparison deferred | Practical collaboration decision, actual treatment/comparator and save/load/observation feasibility | Use the scene-name/F# handle case and total-team accounting; distinguish textual, reference, behavioral and stale-editor outcomes. No dedicated Nu merge treatment or human effect is established. |
-| R12 | [Public propagation fixture](nu-propagation-feasibility-2026-10-18.md) passed once in a functional stub world | Practical family-change decision, ordinary comparator, Gaia/save/input access and authoring benefit remain separate | Use the observed override, local-deletion and source-deletion rules; returning to an old value does not pin intent, and the target is recreated. Select a consequential revision with a credible helper/composition comparator and count complete work. Follow S263/S264 only for a selected generation comparator. |
+| R12 | [Terra Firma preservation prerequisite](nu-terra-firma-reopen-feasibility-2026-10-18.md) and [four revision/reopen pairs](nu-terra-firma-revision-feasibility-2026-10-18.md) completed across nine processes, including the retained invalid startup | Both batch cases and P-shared deliver all 32 tints; P-local retains roughness but misses one tint. Propagation records 160 managed reconstruction pairs versus predicted 163 and separate Order-only fresh history findings. Ordinary Gaia editing access, complete work and practical benefit remain unmeasured | The [revalidated continuation](nu-terra-firma-revision-continuation-2026-10-18.md) resolves the missing B-local outcome. For a practical comparison, specify completion/repair and history consequences and count selector/helper construction, verification and all failures. Preserve all nine attempts and actual adverse reopens; another passing cosmetic variant cannot establish authoring value. |
 | R13 | Local interaction contract specified; standalone study conditional | Coherent host input, scheduling/effect assumptions and consequential verification value | Use the paddle replacement/alias contract for R02/R05. Promote only if preservation or total verification effort warrants a richer boundary; no checker or theorem transfer is established. |
 | R14 | Provenance frame prepared; broader adoption coverage conditional | Practical beneficiary, eligible task and population scope | Apply the family/evidence map and corrected issue histories to the selected case. Asset upkeep is a conditional total-work extension; preserve missing roles and source dependence. Use S266's completed source-conditioned reading; exact expanded-corpus claims still need released rows and reconciled denominators. |
 | R15 | Deferred D2 | Meaningful prospective choice and pre-outcome information | Retain the selector history; promote only after R01/R02 expose a practical predictable trade-off and D2 is explicitly reopened. |
@@ -245,7 +484,7 @@ Preserve favorable, null, adverse and interaction results. Existing E/H results 
 1. **Use the completed R01–R06 design packet.** The current emphasis is mechanisms/costs plus bounded agent maintenance, with R14 supplying practice/task provenance. R01 retains eventual adoption value; human steering is a future R21 question. No mandatory human/agent/team factorial follows.
 2. **Use the resolved source boundaries before any build.** The [2026-10-11 audit](nu-source-contracts-and-scenarios-2026-10-11.md) supplies R02 ownership/order/identity/effects, a verified historical issue/patch, R03's real history/reference/access boundary and R05/R06 trace/cost specifications. The [history application contract](nu-history-application-contract-2026-10-11.md) now selects R03's functional MMCC/Gaia subset and B0/B1 observations. The task-diversity audit adds common platform requirements and a second application/site. The platform contract now resolves Nu route/configuration and common semantics, with phase/identity/cost limits. The linked October 15 execution records and current table above now resolve selected carrying, history, diagnostic, oracle and cost questions. Use their remaining boundaries for the next confident construction, especially supported input before standalone pause/exit references. Source sketches, measured subcontracts and historical fixes do not establish full baseline equivalence or candidate allocation.
 3. **Maintain all other dispositions above.** Use their cards to identify beneficiaries, outcomes and conditions for promotion. Resolve consequential accessible gaps without waiting for every human/access-limited direction. A newly found close or adverse source can reorder the agenda.
-4. **Read where the answer can change the design.** S42's previously queued publication and selected artifact are now reconstructed. S38 now supplies a complete framework/edition reading and R07 has preparation/role/outcome boundaries. S304, S305's report and S306 now supply the selected original/final methods, with S305's journal correspondence still unread. S227 v2, S263/S264 and S266 have also been read; use the [reading index](literature/full-reading/INDEX.md) for exact coverage, shared datasets and remaining artifacts/edition limits. R08's information/feedback contract remains specified while ordinary tool/edit/observation compatibility is unverified. Completed reading does not validate an instrument, establish independent replications or remove source/time confounding from a prevalence claim. Exact temporal, live-state and comparator gaps remain attached to the directions that need them. Resolve accessible consequential gaps without waiting for a fixed batch to finish or for denied sources to become available.
+4. **Read where the answer can change the design.** S42's previously queued publication and selected artifact are now reconstructed. S38 now supplies a complete framework/edition reading and R07 has preparation/role/outcome boundaries. S304, both S305 report/journal editions and S306 now supply the selected original/final methods; S305's journal adds the same S304 prototype check and no independent cohort. S227 v2, S263/S264 and S266 have also been read; use the [reading index](literature/full-reading/INDEX.md) for exact coverage, shared datasets and remaining artifacts/edition limits. R08's information/feedback contract remains specified while ordinary tool/edit/observation compatibility is unverified. Completed reading does not validate an instrument, establish independent replications or remove source/time confounding from a prevalence claim. Exact temporal, live-state and comparator gaps remain attached to the directions that need them. Resolve accessible consequential gaps without waiting for a fixed batch to finish or for denied sources to become available.
 5. **Promote C directions by evidence.** A verified capability, an actual stakeholder/workload need, or a close method that exposes an important unanswered question can raise their priority. Generic novelty claims, attractive feature names and raw citation counts cannot.
 
 Searches are targeted to missing mechanisms, comparators, methods, contrary results and edition changes. Use aliases across relevant communities and follow primary sources. Scite requests remain `limit:20`; native Consensus requests remain `page_size:100` when used. Continue useful pages by actual returns and reformulate noisy queries; log unopened continuations and denied routes. Abstract/title screens locate reading candidates and do not establish effect, absence or full understanding. Create/reuse Zotero records before selected reading, preserve preprint types and edition lineage, and report considered decisions once after historical deduplication.

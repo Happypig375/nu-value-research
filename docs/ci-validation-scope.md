@@ -143,3 +143,65 @@ failed Windows job was retried once after the workflow finished; the initial
 timeout remains an unexplained failed check. No scientific trial was rerun.
 Original job logs, the local test receipt and both CI attempts are retained
 privately under `.artifacts/r10-schema-20261016/ci/`.
+
+## R12 Terra Firma revision publication, 2026-10-18
+
+The package and result publication
+`aaacd5703f710748e80e00936e6355cd1b029413` selected the full route.
+[Run 39130754669](https://github.com/Happypig375/interactive-software-evolution/actions/runs/39130754669)
+passed scope checks, Linux validation (9m02s), and Windows validation
+(15m15s), all on the first attempt. The separate maintenance job and optional
+E2 baseline were skipped under that route. The unchanged historical suite's
+success validates the repository checks at this head; it does not complete
+the [R12 local-condition comparison](nu-terra-firma-revision-feasibility-2026-10-18.md)
+or resolve the [workspace integrity return](workspace-integrity-return-2026-10-18.md).
+No native experiment ran from the temporary C: publication checkout.
+
+## Revalidated R12 continuation and S305 reconciliation, 2026-10-18
+
+The combined publication `3f1d95b00e887c2305662b853b9828570325aff8`
+selected the full route because its changes include experiment results and
+the continuation receipt. [Run 39140422091](https://github.com/Happypig375/interactive-software-evolution/actions/runs/39140422091)
+passed scope checks, full Linux validation (14m37s) and full Windows validation
+(16m30s), all on the first attempt. The separate maintenance job and optional
+E2 baseline were skipped under that route.
+
+This validates repository checks at that commit. The
+[R12 execution record](nu-terra-firma-revision-feasibility-2026-10-18.md) and
+[continuation receipt](../experiments/nu-r12-terra-revision/continuation-receipt.json)
+own the separate native evidence, including the retained invalid startup.
+The [S305 journal reconstruction](literature/full-reading/S305-problem-centered-design-journal-reading-2026-10-18.md)
+owns reading coverage and edition limits. CI neither establishes scientific
+benefit nor resumes the R02/R10 returns.
+
+## R12 material-intent component publication, 2026-10-23
+
+The component and source-evidence publication
+`ac828becb971d6be75bf148adff6613065b6aadf` selected the full route for its sixteen
+changed paths. [Run 39916970418](https://github.com/Happypig375/interactive-software-evolution/actions/runs/39916970418)
+passed scope checks and the full Linux and Windows jobs on the first attempt.
+The new ordinary R12 material-intent control step passed on both platforms.
+Maintenance and the optional E2 baseline were skipped under the full route.
+
+Local checks passed eleven routing tests, the exact new root-invoked .NET
+command, strict UTF-8, whitespace and 27 introduced local links/anchors. The
+component's separate [construction record](../experiments/nu-r12-material-intent/RESULTS.md)
+retains two failed builds, the failed fixture, the accepted 54 positive and
+27 expected-rejection checks, and independent review. No Nu engine process,
+participant, task-solving model candidate or native persistence experiment is
+validated by these repository checks. R02/R10 remain stopped.
+
+## R12 native protocol publication, 2026-10-23
+
+The four-path protocol and agenda publication
+`0ecf2414d005b2df6e67f5ccd0ca7c4f8ea611a1` selected full validation because
+the [frozen protocol](../experiments/nu-r12-material-intent-native/PROTOCOL.md)
+is under `experiments/`. [Run 39925993293](https://github.com/Happypig375/interactive-software-evolution/actions/runs/39925993293)
+passed scope, Linux (15m06s) and Windows (16m50s) on its first attempt.
+The separate maintenance job and optional E2 baseline were skipped.
+Local strict UTF-8, whitespace and all 17 introduced local links/anchors passed.
+
+The native implementation was not in this commit. Its local build, control
+results, independent readiness review and any later Nu execution require their
+own evidence. Full repository CI does not accept that package or establish
+persistence, comparative benefit or survey completion.

@@ -4,6 +4,22 @@
 
 The most consequential addition is **asset and engine-upgrade work**. Existing code-focused cases can miss copying, configuration, customized defaults, derived representations and integration. Preserve that gap when interpreting a result; promote an asset case only when it changes a practical decision and its common behavior can be specified. Gameplay history also needs a particular beneficiary and avoided reconstruction burden, rather than a general claim that developers need undoable gameplay.
 
+**2026-10-26 account-frame expansion:** the
+[new public-request review](nu-public-request-provenance-2026-10-26.md) screens
+57 issues from 33 account identities other than the two dominating the earlier
+queries, then reads seven selected threads and one linked thread in text. These
+are not independent people/projects; the CJK threads share one contributor
+account. Fill
+direction supplies an authentic feature request, while the inspected Nu facet
+has no existing direction union for a mined D1 extension. Pinned Godot already
+exposes direction configuration, so later whole-workflow work must count
+necessary extension as well as ordinary configuration and integration. Camera
+rotation's immediate project demand was set aside; the text threads preserve
+both a reported repair and remaining dated editor concerns. Treat these as
+conditional provenance/cost leads, not current defects, new mandatory arms or
+evidence of comparative value. The stronger source frame does not replace
+actual beneficiary, version, access and common-outcome requirements.
+
 ## Evidence and units
 
 Three GitHub searches cover `reload` in issue titles/bodies, `undo` in titles/bodies and `asset` in titles, within `bryanedds/Nu`. Each requests 100 results on page 1, ordered by creation date descending. They return 38, 17 and 28 positions, respectively, all with `incomplete_results=false`: **83 positions, 71 distinct issues**. All titles were screened; fourteen complete bodies and their twelve comments were read. These exact query ranges are exhausted, not the repository, other spellings, discussions, pull requests or the wider population. Seventy issues were opened by `bryanedds`, one by `Happypig375`; issue counts therefore cannot stand for independent users or a demand ranking.
@@ -11,6 +27,34 @@ Three GitHub searches cover `reload` in issue titles/bodies, `undo` in titles/bo
 The selected current wiki page and two propagation scripts were read in full. Nu code remains pinned to `064f7ae92a8506689cd91aff5e6804a375d6ef3d`; the separately versioned wiki is pinned to `263b0a2c898ef8ae711b669cb9db2c345c69df7d`. The [search ledger](literature/nu-background-searches-2026-09-30.md) records access, exact coverage, hashes and dispositions. No new paper/PDF reading, Zotero write, source execution or participant observation is credited.
 
 An issue is a public account or proposal. Its body, comments, patch, affected release and observed behavior are different evidence. A closed label does not establish a fix, and an open request does not establish that a capability is absent at the research pin. Retain issue/thread identity across derived tasks; a withdrawn report remains useful counterevidence to its title.
+
+### Match the evidence to the kind of claim
+
+The [S180 selected-edition reading](literature/full-reading/S180-practitioner-beliefs.md)
+adds an important qualification to belief-versus-outcome comparisons. Its five
+propositions were selected from an earlier handbook for compatibility with
+retrospective PSP training data; the 1,356 trainees were not asked whether they
+held those beliefs. A result about those operationalized propositions is not a
+measurement of current practitioner belief, independent demand or task frequency.
+The existing [S160 reconstruction](literature/full-reading/S160-belief-and-evidence.md#consequence-for-nu-and-d1)
+likewise keeps reported coordination concerns distinct from its selected
+repair-count outcome. Neither work licenses treating a user's desired outcome
+as a factual prediction that a different metric can refute.
+
+| Claim in a source or proposed task | What can support it | What does not follow |
+| --- | --- | --- |
+| A person requests a behavior or reports a preference/constraint | Identified account, role, context and exact intended outcome; preserve whether our task is authored or adapted. | One request does not establish prevalence or a comparative benefit. An unrelated null association does not invalidate the request. |
+| A mechanism can deliver that behavior | Relevant implementation/version and observations covering the stated state, identity, timing and effect boundary. | The author's confidence, issue status or a related paper cannot substitute for those observations. |
+| An intervention improves correctness or total work | A credible comparison of the same useful outcome, with setup, failures, verification and repair accounted for. | A reported preference, structural metric, conditional association or successful demonstration alone does not establish the effect. |
+| The need or effect is common in the target population | A stated sampling frame and source/person/project lineage, with the relevant denominator and coverage limits. | Repeated reports by one maintainer, more papers from one dataset or repeated model calls are not independent population coverage. |
+
+For a selected task, retain the original account separately from our
+operationalized requirement and any empirical prediction. State the observation
+that could challenge the prediction, and identify outcomes omitted by its
+measurement. The task can remain a legitimate bounded case even when its
+population frequency is unknown. Conversely, a valid task and favorable local
+result do not establish an adoption recommendation. This refines the existing
+eligibility record; it creates no participant instrument or new experiment.
 
 The completed practice readings contribute complementary, bounded evidence:
 
@@ -106,3 +150,255 @@ whole-record comparison predicts a potentially adverse field-update case;
 it does not establish a runtime failure. These additions prepare local
 feasibility without allocating candidates or participants or resuming the
 returned R02/R10 gates.
+
+## 2026-10-18 continuation: material revision rationale and observed limits
+
+The [unchanged Terra Firma scene](nu-terra-firma-reopen-feasibility-2026-10-18.md)
+and [four revision/reopen pairs](nu-terra-firma-revision-feasibility-2026-10-18.md)
+now supply the native observations that were still missing in the preparation
+entry above. Both shared cases deliver the tint; propagation with the selected
+local roughness preserves that choice but misses the same palm's tint. The
+first batch/local attempt fails input integrity before editing and has no
+material outcome. Its later revalidated continuation delivers all 32 tints and
+preserves local roughness, declared configuration, links and old histories.
+Preserve the invalid startup and its ineligible reopen alongside the separate
+accepted continuation in the [integrity record](workspace-integrity-return-2026-10-18.md).
+
+A new bounded public-source check supplies a closer **maintainer rationale**
+for this task. It does not turn the particular tint/roughness requirement into
+an external request. The [search ledger](literature/nu-background-searches-2026-09-30.md#2026-10-18-r12-propagation-practice-and-material-intent)
+records exact retrieval ranges, reading depth and considered-source decisions.
+
+| Primary account and coverage | Consequence for R12 | Limit |
+| --- | --- | --- |
+| [#725](https://github.com/bryanedds/Nu/issues/725), body and three comments | A shared-material proposal would make one edit affect referring entities, while requiring cloning and serialization support. The maintainer later judged entity-structure propagation sufficient for that need. This directly grounds shared material revision as an intended use. | A maintainer's design judgment supplies neither observed user work nor a promise about preserving one field while changing another. |
+| [#186](https://github.com/bryanedds/Nu/issues/186), body and six comments | Persistent edits to prefab children were explicitly discussed as deltas applied after instantiation. | The design changed, and the maintainer also reported no personal need for that general feature. Retain this contrary account; do not infer demand from the initial proposal alone. |
+| [#335](https://github.com/bryanedds/Nu/issues/335), body and fifteen comments; [#574](https://github.com/bryanedds/Nu/issues/574), body and five comments | Nested composition retained a property-delta problem; manual delta updates and synchronizing unchanged portions were proposed. These accounts justify making shared versus local intent explicit. | These are historical alternatives, including incomplete/archived work and a later change of approach. Their complexity/performance expectations are not comparative measurements. The external comment on #574 concerns skeletal animation, not this need. |
+| [#729](https://github.com/bryanedds/Nu/issues/729), complete checklist, no comments | The intended propagation workflow includes retaining existing history on entity read, managing targets and distinguishing linked from unlinked duplication. | Checklist completion does not establish current source correspondence or behavior. |
+| [#739](https://github.com/bryanedds/Nu/issues/739), [#745](https://github.com/bryanedds/Nu/issues/745), [#748](https://github.com/bryanedds/Nu/issues/748), [#946](https://github.com/bryanedds/Nu/issues/946), complete current titles/bodies and #745's one comment | Historical reports concern missed dispatcher changes, incorrect propagation links, history loss on save and child reordering. Keep these obligations separate from successful material delivery. | At the October 18 checkpoint, fixing-patch lineage was untraced. The [October 23 audit](nu-development-history-audit-2026-10-23.md#r12-repairs-at-the-pin-and-persistence-routes) now binds the repairs/follow-ups and distinguishes an abandoned #946 sibling; #748 retains only temporal/source linkage. The reports do not show defects remaining at the pin. Original strict Order/history failures remain, while observed child order requires a separate sequence observation. |
+| [#383](https://github.com/bryanedds/Nu/issues/383), title and three comments; [discussion #993](https://github.com/bryanedds/Nu/discussions/993), complete release body, no comments | A requested drag workflow and an announced Gaia Propagation Sources UI make authoring access and selection work explicit dependencies. | The release does not demonstrate the requested drag workflow or its usability. Public mechanism calls do not measure ordinary editor work. |
+
+**The exact field policy remains authored.** None of these accounts specifies
+that a local `RoughnessOpt` change inside `MaterialProperties` must permit a
+later shared `AlbedoOpt` change inside that same record. The experiment
+prospectively required that combination. Its missed tint is valid adverse
+delivery against that requirement, not proof that Nu violated a documented
+field-wise merge promise. Whole-material overrides are a plausible alternative
+policy; a practical comparison must expose the chosen intent and count any
+translation, selection and repair needed to deliver it. The later source
+search does not retroactively change the frozen requirement or oracle.
+
+All credited accounts are authored by the Nu maintainer. The search examined
+34 distinct issue results and 11 distinct discussion results, plus one linked
+issue; 13 complete issue threads (38 comments) and two complete discussion
+bodies were inspected. The parent checked the decision-critical retained
+texts. This narrows a provenance gap without establishing independent demand,
+prevalence, authoring savings or steering effectiveness. Current bodies can
+include later edits; unqueried vocabulary and other communities remain outside
+this frame. The general prefab maintenance accounts in the already-read S254
+remain separate evidence, not independent corroboration of this exact Nu task.
+
+**Next:** retain the material case as an authored task on an existing artifact
+with a specific maintainer rationale. The bounded storage prerequisite and
+batch/local delivery question are now resolved. Bind a practical repair or
+completion comparison with complete work and later history obligations before
+any additional execution. Creating more cosmetic variants or counting related
+issues will not resolve demand or benefit. The new evidence does not resume
+the R02/R10 returns, authorize candidates or participants, or certify broader
+propagation behavior.
+
+## 2026-10-19 development-history follow-through
+
+The [refined objective](nu-research-agenda-2026-10-08.md#2026-10-19-objective-improve-evolution-of-stateful-software)
+promotes relevant repository history as supplementary evidence for selecting
+an improvement and its baseline. For each consequential lineage, record:
+
+- The originating need, reporter/beneficiary, complete relevant discussion and
+  contrary or withdrawn accounts.
+- Introducing/changing/reverting commits, their exact parents and diffs,
+  linked pull requests/tests, and the affected release or research pin.
+- The behavior actually reproduced before and after, with unexecuted claims
+  marked as source inference; a commit title is not a behavior check.
+- Existing workaround and alternative workflows, their observed or still
+  missing costs, and whether the research task is historical or adapted.
+
+Prefer lineages that can change R12's revision/override requirement or R03/R10's
+recovery/evolution task. Existing maintainer-only accounts do not establish
+independent demand, and the already-present #1145 workaround remains an
+adaptation boundary. The later comparator must follow the practical decision;
+Unity, Unreal, Godot and non-game implementations are candidate contexts until
+relevant support and ordinary workflows are inspected. This addition records
+future evidence requirements, not a new history search, experiment or source
+reading. It does not resume the R02/R10 returns.
+
+## 2026-10-23 source-history consequences
+
+The [completed bounded history audit](nu-development-history-audit-2026-10-23.md)
+now follows those selected lineages. #725 and the first ESP implementation/wiki
+support shared editing and whole-Nu-property override preservation, without a
+promise of independent nested material fields. #739/#745/#946 have repairs at
+the pin; #748's history change remains a source/temporal association. Group
+saves retain propagation history, while standalone entity exports omit it.
+These routes and actual child sequence now constrain any prospective task;
+they do not erase the original strict Order/history result.
+
+#385/#917 support live-model evolution and developer conversion assistance.
+Successful type-default conversion, fallback reset and explicit reconstruction
+remain separate ordinary outcomes. No located public requirement specifies
+the authored reward-200 mapping. R03's property panel supplies a narrower
+ordinary inspection candidate than Interactive, with runtime/agent access still
+unobserved. These remain maintainer/project accounts, not independent adopters
+or prevalence estimates.
+
+The [comparator audit](nu-status-quo-and-transfer-audit-2026-10-23.md) makes the
+next decision concrete: can a bounded material-field policy improve required
+delivery or complete work beyond an ordinary helper and existing inheritance
+facilities? Bind actual baseline capability, intent information, repair and
+saved-state continuation. A later non-game task also needs an existing artifact
+and practical failure; the Redux ticket and XState approval shapes are authored
+until that evidence is supplied. No runtime or participant result is added.
+
+## 2026-10-23 practical-task eligibility checks
+
+The retained R04 tasks do not yet supply an authentic successor request at an
+eligible explicit-case/catch-all site. Breakout `Paused` and `ReadyToServe`,
+and Blaze Vector projectile renewal, remain authored successors at real source
+sites. [Nu #1145](https://github.com/bryanedds/Nu/issues/1145) is a real
+quit/pause report, but its inspected Breakout change is an ImSim unpause-on-quit
+guard, already present at the research pin. Adding an MMCC `Paused` case would
+change that historical task. The authentic platform/jumping requests likewise
+do not naturally reach either retained R04 match. This is a bounded finding
+about the inspected tasks, not absence of eligible Nu work.
+
+R04 can advance with a request whose representation naturally reaches such a
+site, or an explicitly selected authored case for a local convention decision.
+The latter retains its narrower provenance. Both arms need the same ordinary
+source navigation, compiler, development tests and permitted observations;
+final scoring and successor solutions remain separate. Another FS0025 probe
+would not resolve this task gap, and no candidate execution is allocated.
+
+A fresh material-specific GitHub issue screen examined thirty result positions
+across twenty-two unique issues, all opened by the repository owner. The ten
+queries covered material, albedo, roughness, shared/keyed materials,
+`MaterialProperties`, and material propagation/override/inheritance/revision.
+Each reported complete results fitting on its first 100-result page. Complete
+selected threads were followed for #186, #383, #548, #574, #699, #725 and #729;
+comments on every other result were not read. The search ledger records this
+frame separately from earlier propagation searches.
+
+[#725](https://github.com/bryanedds/Nu/issues/725) remains the strongest
+material-demand lead: the owner proposed shared keyed materials, reconsidered
+the feature after ESP, and closed it because ESP was sufficient for that need.
+It supports shared-edit design motivation. It does not bind a user's project,
+field-selective intent or actual incremental revision sequence. Earlier
+[#186](https://github.com/bryanedds/Nu/issues/186) records the owner's lack of a
+personal use for the broad prefab proposal; [#548](https://github.com/bryanedds/Nu/issues/548)
+explicitly ties worthwhile material-editor work to an actual game. These
+qualify broad demand claims without negating #725's later, narrower rationale.
+
+Terra Firma therefore remains an authored conformance task on an existing
+artifact, motivated by maintainer design evidence. Its saved propagation
+history, the engine's commit history and a beneficiary's revision history are
+different evidence. The new screen does not supply the last of these. The
+ordinary helper remains a credible comparator for any distinct Nu integration;
+another equivalent helper, more fields or three engine ports would not fill
+the practical-workload gap. Continued comparison must count intent/selection
+setup, save/reopen, verification, failed delivery, repair and later revision.
+
+Private audit notes under
+`A:/nu-value-execution/20261023-material-intent/value-preparation/` have
+SHA-256 `8c49ccdb3970808873593b7fe91edd23c0962382a6310512aa7f71a7f0558d96`
+(R04) and `418289248a82d490d294516e99a36e76d4141640ad31d312585ad1de49ef3f09`
+(material demand). The latter's thirty-one archived source snapshots are bound
+by manifest SHA-256
+`7b213d542453d1a065de5edeb905882c8b2c3ec78bf893ae01095f73fa311037`.
+No new scholarly reading, independent adopter sample, contact, native result
+or participant/candidate allocation is established.
+
+## 2026-10-23 a real API rename and a qualified lifetime case
+
+The post-pin [time-advance commit](https://github.com/bryanedds/Nu/commit/89e4dc7969c523c324109c9fb78e6989eb56d069)
+and [v20.1.0 release](https://github.com/bryanedds/Nu/releases/tag/v20.1.0)
+supply an authentic API migration. In Breakout MMCC, the message case changes
+from `TimeUpdate` to `AdvanceTime`, the engine event from `TimeUpdateEvent` to
+`TimeAdvanceEvent`, and the explicit handler adopts the new message name while
+retaining its increment body. The immediate predecessor's Breakout source is
+byte-identical to the selected study pin at this site.
+
+With exactly four predecessor cases and the other three handled explicitly,
+replacing only the final `TimeUpdate` pattern by `_` is equivalent for ordinary
+values of the declared cases. After the
+rename that catch-all remains valid, while enumeration adds a named consumer
+to repair. This supplies a conditional potentially adverse boundary case for
+enumeration's maintenance burden **if the local message rename is required**.
+An engine-event upgrade alone permits retaining the local `TimeUpdate` name
+and changing its subscription, so the historical diff does not establish a
+mandatory handler edit. The [history audit](nu-r04-history-task-audit-2026-10-26.md#rename-burden-depends-on-the-local-requirement)
+records the same distinction for the projectile command migration. It is a
+nomenclature/API change, not a new gameplay behavior or an external user's feature request. A future comparison
+still needs the supported successor event, time-increment and other-branch
+observations; compilation alone would not establish those. The maintainer
+patch remains provenance/scoring evidence outside candidate input. No task or
+candidate run is allocated here.
+
+For R05, [Nu #1055](https://github.com/bryanedds/Nu/issues/1055) motivates a
+different conditional case: retired Jolt character handlers after reconstruction.
+The maintainer reports possible accumulation and also notes that an orphaned
+reference cycle may be collectible. The pinned Terra Firma character reaches
+three anonymous `CharacterVirtual` event attachments; its Nu destroy/clear paths
+dispose without explicit detach. That does not establish the wrapper's internal
+disposal behavior or a leak.
+
+An authored discriminator could compare current disposal with stored delegates
+explicitly detached before disposal, observing actual sentinel replacement,
+weak-reference collection, retention roots and live contact behavior. The
+existing [manual-unsubscription change](https://github.com/bryanedds/Nu/commit/84bcc6d3b098f19d69c327295bb060d399a374f7)
+is an ordinary lifecycle precedent, not proof that this different wrapper needs
+the same treatment. Collection in the current condition or a shared non-event
+retention root would challenge the ownership explanation. A treatment that
+breaks contact behavior is adverse delivery, not invalid data to discard.
+Scene, edit, phase, cycle count and observation authority remain unbound;
+no construction follows merely from the issue being open.
+
+The private `domain-evolution-next/` and `event-next/` notes retain the exact
+source ranges, search coverage and contrary evidence under the current A:
+execution root. The latter's parent addendum corrects adverse-versus-invalid
+classification. These cases supplement the [recovery rationale](nu-history-question-access-2026-10-18.md#2026-10-23-recovery-demand-and-the-next-comparison)
+and [workflow-migration case](nu-workflow-migration-transfer-2026-10-23.md);
+they do not displace the current ordinary-access preparation or reopen any
+returned construction.
+
+
+## 2026-10-26 historical patches and task eligibility
+
+The [R04 history audit](nu-r04-history-task-audit-2026-10-26.md) follows both
+application sites through their path and declaration changes. It retains
+conditional rename burden, real neutral/body/out-of-match work, and the absence
+of an authenticated projectile case-extension requirement in that bounded
+history. Renewal, cancellation and serve-preparation remain authored. Breakout's
+score addition and later scrutinee change also show why a maintainer patch
+cannot be adopted automatically as a complete reference solution.
+
+Add the required external contract and any required local vocabulary to the
+existing eligibility record, separately from the chosen historical diff.
+Permit unchanged local names when they satisfy the actual requirement. Preserve
+intermediate versions and later corrections, and independently establish new
+and retained behavior. This changes task selection and interpretation, not
+experimental allocation, runtime evidence or the Daybreak-only restrictions.
+
+## 2026-10-26 measured variables and reporting rules
+
+The [S180 independent reconstruction](literature/full-reading/S180-correlation-reconstruction.md)
+now numerically checks the earlier static concern: under its declared broader
+time metric, the significance-to-zero rule replaces 35/50 coefficients and makes
+four language medians exactly zero. Its B3 positive associations remain and four
+coding-time sensitivity cells remain uncomputable. The new results do not bind
+the historical publication run or establish a causal practice recommendation.
+
+For the selected Nu task, record the actual measured variable and reporting
+operation alongside its beneficiary, denominator and source lineage. A
+thresholded zero cannot by itself justify a no-association or equivalence claim;
+changing a time denominator changes the measure. Preserve raw observations and
+invalid dispositions rather than silently selecting complete cases. This is
+methodological support for the existing evidence rule, not a new Nu task,
+population estimate, independent cohort or experimental allocation.

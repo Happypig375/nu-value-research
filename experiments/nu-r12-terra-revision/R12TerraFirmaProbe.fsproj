@@ -1,0 +1,84 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+    <NuHostRoot Condition="'$(NuHostRoot)' == ''">$(MSBuildProjectDirectory)\..\..\.artifacts\r05-events-20261015\bin\Release\net10.0</NuHostRoot>
+    <ServerGarbageCollection>True</ServerGarbageCollection>
+    <TieredPGO>True</TieredPGO>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <AppConfig>$(TerraSourceRoot)/App.config</AppConfig>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(TerraSourceRoot)/Assets.fs" />
+    <Compile Include="$(TerraSourceRoot)/Constants.fs" />
+    <Compile Include="$(TerraSourceRoot)/Simulants.fs" />
+    <Compile Include="$(TerraSourceRoot)/Events.fs" />
+    <Compile Include="$(TerraSourceRoot)/Character.fs" />
+    <Compile Include="$(TerraSourceRoot)/Gameplay.fs" />
+    <Compile Include="$(TerraSourceRoot)/TerraFirma.fs" />
+    <Compile Include="$(TerraSourceRoot)/TerraFirmaPlugin.fs" />
+    <Compile Include="Program.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Nu">
+      <HintPath>$(NuHostRoot)\Nu.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Nu.Math">
+      <HintPath>$(NuHostRoot)\Nu.Math.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Nu.Spine">
+      <HintPath>$(NuHostRoot)\Nu.Spine.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Prime">
+      <HintPath>$(NuHostRoot)\Prime.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="FParsecCS">
+      <HintPath>$(NuHostRoot)\FParsecCS.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="AssimpNet">
+      <HintPath>$(NuHostRoot)\AssimpNet.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="BulletSharpPInvoke">
+      <HintPath>$(NuHostRoot)\BulletSharp.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="OpenGL.Net">
+      <HintPath>$(NuHostRoot)\OpenGL.Net.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="TiledSharp">
+      <HintPath>$(NuHostRoot)\TiledSharp.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <PackageReference Include="Aether.Physics2D" Version="2.2.0" />
+    <PackageReference Include="AstcEncoderCSharp" Version="5.3.1-alpha.0.4" />
+    <PackageReference Include="Box2D.NET" Version="3.1.1.557" />
+    <PackageReference Include="BCnEncoder.Net" Version="2.2.1" />
+    <PackageReference Include="DotRecast.Recast.Toolset" Version="2026.1.1" />
+    <PackageReference Include="JoltPhysicsSharp" Version="2.19.5" />
+    <PackageReference Include="Magick.NET-Q8-AnyCPU" Version="14.14.0" />
+    <PackageReference Include="Pfim" Version="0.11.4" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="10.0.1" />
+    <PackageReference Include="System.Drawing.Common" Version="10.0.1" />
+    <PackageReference Include="Twizzle.ImGui-Bundle.NET" Version="1.91.5.2" />
+    <PackageReference Include="ppy.SDL3-CS" Version="2026.302.0" />
+    <PackageReference Include="ppy.SDL3_ttf-CS" Version="2026.302.0" />
+    <PackageReference Include="ppy.SDL3_image-CS" Version="2026.302.0" />
+    <PackageReference Include="ppy.SDL3_mixer-CS" Version="2026.302.0" />
+    <PackageReference Update="FSharp.Core" Version="10.1.300" />
+    <Content Include="$(NuHostRoot)\**\*">
+      <Link>%(RecursiveDir)%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Target Name="RequireSealedNuHost" BeforeTargets="ResolveReferences">
+    <Error Condition="!Exists('$(NuHostRoot)\Nu.dll')" Text="NuHostRoot must name the accepted sealed R03/R05 host directory containing Nu.dll." />
+  </Target>
+</Project>

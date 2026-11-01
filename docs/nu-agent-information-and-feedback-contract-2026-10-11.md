@@ -86,3 +86,23 @@ world-history access. Continue actual Nu tool/phase-access and independent-score
 feasibility under PLAN's current local-work authority. Candidate/model
 allocation, backend, transport and security decisions remain separate. This
 reading neither executes a GUI agent nor validates the proposed Nu workflow.
+
+## 2026-10-25: an agent-repair method with a replay boundary
+
+[S312 ADI](literature/full-reading/S312-adi-agent-repair.md) now supplies a
+completed selected method: ordinary file/shell, low-level PDB and function-trace
+configurations under common paper-reported benchmark/model/budget conditions.
+Their deposited prompts differ materially; this is a bundled workflow comparison.
+Reported
+held-out patch resolution favors ADI in all four models; PDB is mixed. Agent
+self-reported success is a different, more favorable endpoint in the deposit.
+The independent final score must therefore remain separate from development
+feedback and stopping, as required above.
+
+The added condition includes rerunning an authored reproducer, tool prompts
+and navigation as well as trace information. It is not passive retained-history
+access. Future comparison must count reproduction failures, reruns, interface
+construction and verification and retain full task denominators. The artifact
+cannot reconstruct missing comparator trajectories or resolve the temperature
+setting used in each run. This paper supports a method and a bounded result;
+it neither validates Nu tool access nor allocates any candidate/model run.

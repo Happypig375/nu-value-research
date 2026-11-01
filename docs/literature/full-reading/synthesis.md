@@ -2,7 +2,7 @@
 
 **Original .NET methods and runtime continuation, 2026-10-15:** [S218](S218-redac-cyclic-reconfiguration.md) and [S219](S219-gui-updates-access.md) now have complete publisher/served-PDF text and visual readings. ReDAC separates guarded cyclic-call quiescence from state transfer and measures nonzero wrapper cost. The GUI method transfers a controlled object graph, delegates and GUI/native routing, with unspecified field/rollback policies and no performance experiment. The original ReDAC progress wording is narrower than its earlier extraction. These are predecessors, not Nu outcomes. The [bounded R10 pair](../../nu-live-reload-feasibility-2026-10-15.md) now preserves one halted seven-field checkpoint across a reward-rule reload, installs actual FSI model/dispatcher types and matches fresh reconstruction after one declared brick hit. Its bridge, compile-mode, sampled-input and external-effect limits prevent a general migration, cost or benefit claim. The [current index](INDEX.md) records 271 complete works; ten more acquired PDFs have returned readings awaiting integration.
 
-**Current continuation, 2026-10-15:** the [updated background map](../nu-background-survey-2026-09-30.md#2026-10-15-continuation-completed-methods-and-bounded-mechanism-evidence) integrates complete S253/S254, S263/S264, S266, S285 and S304–S306 readings at their exact editions. Ordinary tools and prefab reuse supply credible benefits and costs; expert-guided generation is bundled, and reused datasets do not constitute replication. SceneGit supplies a reconstructed method and favorable scoped results, without observed user conflicts or comparative total work. Walkthrough protocols preserve shared ChemTrains evidence, changing assistance and qualitative prediction limits. S305 is complete only at its 1990 report edition; the journal remains unavailable. S266 supplies source-stratified task profiles with source/time confounding and unreconciled denominators. The subsequently completed [S205 dissertation](S205-jescala-dissertation-access.md) resolves the fuller coordination-method gap while preserving S142 overlap and reported-percentage discrepancies.
+**Current continuation, 2026-10-15:** the [updated background map](../nu-background-survey-2026-09-30.md#2026-10-15-continuation-completed-methods-and-bounded-mechanism-evidence) integrates complete S253/S254, S263/S264, S266, S285 and S304–S306 readings at their exact editions. Ordinary tools and prefab reuse supply credible benefits and costs; expert-guided generation is bundled, and reused datasets do not constitute replication. SceneGit supplies a reconstructed method and favorable scoped results, without observed user conflicts or comparative total work. Walkthrough protocols preserve shared ChemTrains evidence, changing assistance and qualitative prediction limits. S305 was complete at its report edition at that checkpoint; the [October 18 journal reconciliation](S305-problem-centered-design-journal-reading-2026-10-18.md) now closes the final edition and adds the same S304 prototype check, with explicit limits to walkthrough predictions. S266 supplies source-stratified task profiles with source/time confounding and unreconciled denominators. The subsequently completed [S205 dissertation](S205-jescala-dissertation-access.md) resolves the fuller coordination-method gap while preserving S142 overlap and reported-percentage discrepancies.
 
 Confident local construction is now authorized. The dated [R04](../../nu-diagnostic-feasibility-2026-10-15.md), [R10](../../nu-conversion-feasibility-2026-10-15.md), [R05](../../nu-event-feasibility-2026-10-15.md), [R01](../../nu-platform-feasibility-2026-10-15.md) and [R03](../../nu-history-feasibility-2026-10-15.md) records own actual outcomes and attempts. These probes distinguish diagnostic, mapping, ordering, contact and recovery obligations; they do not estimate agent or human benefit. Older blanket construction holds below are historical. Candidate/model allocation and future human steering remain separate.
 
@@ -1241,9 +1241,9 @@ keep live scene size, cumulative creation, retention and tail latency distinct.
 
 The next informative work is the already prepared application-level
 pause/lifecycle validation and a practical recovery/repair comparison with
-complete work accounting. Missing supplements, exact builds, raw data and
-S305's final journal edition remain source-specific dependencies when a claim
-requires them. They do not erase the reconstructed positive results or resolve
+complete work accounting. Missing supplements, exact builds and raw data remain
+source-specific dependencies when a claim requires them; the later S305 journal
+reconciliation closes its final-edition gap. They do not erase the reconstructed positive results or resolve
 Nu's still-unmeasured benefit. Human collaboration, learning and steering
 effects remain future empirical questions.
 
@@ -1347,3 +1347,60 @@ access. Added causal instrumentation must be counted and identified as a
 treatment change. A further identical recovery witness would not resolve
 practical debugging value; R02/R10 returns and candidate/participant allocations
 remain unchanged.
+
+### S311: estimated missing dependencies are a distinct treatment
+
+[RecovSlicing](S311-partial-trace-dependency-estimation.md), at arXiv v5,
+estimates dynamic data dependencies omitted from a partial Java execution
+trace. Its integration improves a reported automatic regression-localization
+endpoint on 489 selected Defects4J bugs; it does not execute or verify repairs.
+The estimator is fallible, the benchmark excludes long traces, and its linked
+artifact remains access-limited. A possible rescue arm must label inferred
+edges separately from observed predecessor state and count instrumentation,
+synthesis, model calls, failures and verification. It cannot retrospectively
+supply the missing R03 root or turn the R06 component timings into total work.
+
+### S312: replay-derived traces reach a repair endpoint
+
+[ADI](S312-adi-agent-repair.md), read at arXiv v1, reports higher held-out
+SWE-bench repair counts than ordinary-tool and PDB configurations across
+four models; PDB is mixed and adverse for two. This extends the preceding
+localization evidence to applied patches tested independently of agent
+self-reports. The paper reports common benchmark/model/budget conditions; exact deposited
+prompts differ materially. The comparison bundles trace information,
+implementation, workflow and reruns, with no reported repeated-run uncertainty.
+
+ADI regenerates selected function traces from a reproducer. It therefore
+cannot supply an absent historical root or establish native-world preservation.
+The deposit's missing trajectories/comparator bundles and paper/code temperature
+discrepancy bound reconstruction. API spend and selected tracing runtime omit
+integration and complete maintenance work. Use these ordinary comparator families and
+endpoint distinctions for R08/R03/R06; do not import their effect sizes or
+costs into the Nu case or count the artifact as another study.
+
+## 2026-10-26: Practitioner claims and the useful comparison
+
+[S180](S180-practitioner-beliefs.md) supplies a complete selected primary
+method, including favorable defect associations and conditional language
+contrasts. Its five propositions were selected from a handbook for compatibility
+with 1995-2006 PSP training data, rather than elicited from the 1,356 selected
+trainees. Repeated task rows, self-selected language and distinct outcome
+constructs limit transfer. Retained source paths differ from the paper's
+stated denominator and statistical method, without proof that those paths
+produced the publication. The [audit](S180-practitioner-beliefs-artifact.md)
+keeps these limits separate from its failed, unfinished arithmetic check.
+
+For [R14](../../nu-practice-and-task-provenance-2026-10-11.md), preserve the
+original reported need, our behavioral requirement, an empirical prediction
+and the actual outcome separately. A request can justify a bounded case
+without establishing population frequency; an association on another metric
+does not invalidate that request. R15 still needs prospective decision value.
+
+The updated [R04 design](../../nu-research-study-designs-2026-10-08.md)
+reuses P08/S72/S231's favorable, null and adverse results. It asks whether an
+explicit enumeration convention improves complete maintenance outcomes over
+an equivalent catch-all at common resources. Distinct-case, default-correct,
+no-extension and authentic-rename requirements expose different diagnostic
+opportunities. Their task frequencies are unknown. Compiler success and
+warning exposure remain mechanisms, not maintenance benefit or pure causal
+mediators. No new candidate run is authorized or reported.
