@@ -1,23 +1,34 @@
 # Status and continuation plan — 1 November 2026 (HKT)
 
-## More October packages reproduce on Linux — Claude Opus (2 November 2026, ~02:50 HKT)
+## October packages reproduce on Linux — Claude Opus (2 November 2026, ~03:10 HKT)
 
-**Conclusion:** three more frozen native packages from 15 October reproduce unchanged on this server. With R04 earlier today, that makes four. This server is now a working environment for the pinned Nu revision, not just in principle. Each check had its protocol committed before any build or run.
+**Conclusion:** every retained October native package I have checked reproduces unchanged on this server: R04, R03 B0/B1, R10 live reload, R02 lifecycle, R06 and six small probes. This server is now a working environment for the pinned Nu revision. Each check had its protocol committed before any build or run.
 
 | Package | Result | Record |
 | --- | --- | --- |
 | R03 history pair (B0 undo restore, B1 twenty-step continuation) | All four runs pass. **B1's twenty steps are bit-for-bit identical to Windows** in both arms. B0 reached a different (random) checkpoint and restored it exactly. | [doc](docs/nu-r03-linux-reproduction-2026-11-02.md) |
-| R10 live code reload (F# Interactive recompiles a running game) | Pass at the first attempt; **every compared field equals Windows**, including the generated type name `FSI_0005`. | [doc](docs/nu-r10-live-reload-linux-reproduction-2026-11-02.md) |
-| R02 standalone lifecycle (both unchanged Breakout games, Play/Quit/Play) | Both pass at the first attempt; **callback counts (485/487) and event sequences equal Windows**. Only clock units and the random ball differ. | [doc](docs/nu-r02-lifecycle-linux-reproduction-2026-11-02.md) |
+| R10 live code reload | Pass at the first attempt; **every compared field equals Windows**, including the generated type name `FSI_0005`. | [doc](docs/nu-r10-live-reload-linux-reproduction-2026-11-02.md) |
+| R02 standalone lifecycle (both unchanged Breakout games) | Both pass; **callback counts and event sequences equal Windows**. | [doc](docs/nu-r02-lifecycle-linux-reproduction-2026-11-02.md) |
+| R06 recovery-cost series (Gaia snapshot/undo vs serialize/set) | **All 14 processes pass, including the feasibility run that timed out on Windows.** "Snapshot is faster to take" replicated in 6/6 pairs. "Undo is slower to apply" held in only 5/6 (one pair was a 0.02 ms tie), so the Windows 6/6 was not a rule. Request-to-ready stays mixed. | [doc](docs/nu-r06-linux-reproduction-2026-11-02.md) |
+| Small probes: R04 compiler and application diagnostics, R05 events, R10 Prime conversion, R12 propagation, R01 Box2D platform | All six reproduce. **R01's physics traces are byte-identical to Windows** (after line endings). R05/R12 ran the Windows-built Nu binaries with identical observations. | [doc](docs/nu-small-probes-linux-reproduction-2026-11-02.md) |
 
-- **Failures, all kept:** one, B0 history attempt 01. My new display wrapper `scripts/linux_nu_env.sh` used the wrong X cookie file; I fixed the wrapper, not the package.
+- **Findings worth knowing:**
+  - The Windows and Linux .NET SDK 10.0.302 ship **different FSharp.Core 10.1.302 packages** under the same version, with different DLLs inside. Locked restores fail on Linux unless the cache is seeded from the Windows cache.
+  - Nu's entity `Order` numbers and engine tick times come from the system clock, which runs 100× faster on Linux, so they differ across platforms.
+  - PLAN's sentence "direct history recovery is slower in every pair" (R06) describes the Windows sample. On Linux it held in 5 of 6 pairs. I have not edited PLAN; the user may want to soften that sentence.
+- **Failures, all kept:**
+  - B0 history attempt 01: my display wrapper used the wrong X cookie.
+  - R10-conversion attempt 01: the FSharp.Core hash mismatch above.
+
+  Both were fixed in the environment only.
 - **Deviations, stated in the docs:**
-  - R02's manifest files differ from Windows only by line endings: all 3,240 rows are identical.
-  - R02's build script needed a `powershell` command, supplied by a per-user PowerShell 7.4.6 (official tarball, hash checked).
-  - R02's build acceptance had no second reviewer.
-- **None of this touches** the stopped R02 input draft, the R10 schema-migration draft, R12 material-intent, R03 native-001 or the Daybreak branches. These checks measure no benefit.
-- **Scratch:** the build trees (16.5 GB) were deleted, which is logged in each evidence folder's `DELETIONS.log`. Evidence is in `.artifacts/{r03-linux-reproduction,r10-live-reload-linux,r02-lifecycle-linux}-20261102/`.
-- **Next, unless told otherwise:** the same check for the R06 recovery-cost series, then the small compile/probe packages (R01, R04 diagnostics, R05, R10 conversion, R12 propagation). The real-keyboard input check proposed earlier is on hold pending NEEDS-HUMAN item 7, because it may overlap the stopped R02 input gate.
+  - per-user PowerShell 7.4.6 for the `powershell` calls;
+  - per-user .NET 8.0.33 runtime for R01;
+  - build receipts for R02/R06 accepted by me without a second reviewer;
+  - R02 manifests differ from Windows only by line endings.
+- **Not touched:** the stopped R02 input draft, R10 schema-migration and R12 material-intent drafts, R03 native-001 and the Daybreak branches. These checks measure no benefit.
+- **Scratch:** all build trees (about 33 GB) deleted, logged in each evidence folder's `DELETIONS.log`. Evidence: `.artifacts/*-linux-*20261102/` and `.artifacts/small-probes-linux-20261102/`.
+- **Still to check:** the R10 initializer-only schema reload and the R12 Terra Firma packages, which are larger and need their own protocols. The real-keyboard input check is on hold pending NEEDS-HUMAN item 7.
 
 ## Daybreak-only branches — Kimi K3 session (2 November 2026)
 
