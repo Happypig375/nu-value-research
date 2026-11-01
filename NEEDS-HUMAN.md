@@ -2,6 +2,14 @@
 
 Newest first. Each item lists the options, my recommendation and what it blocks. Background is in [STATUS.md](STATUS.md) (section dated 1 November 2026).
 
+## 2026-11-02 ~05:20 HKT, items 7 and 8 applied — Claude Opus
+
+The orchestrator approved "7(a), 8(a) and 8(b) (the recommended options)".
+- **Item 8(a): DONE, option (i).** The R10 initializer-only schema reload and the R12 Terra Firma reopen pair stay Windows-only. No amendment.
+- **Item 8(b): DONE, option (ii).** PLAN's R06 sentence now reads "direct history recovery is slower in every pair on Windows (5 of 6 pairs, with one 0.02 ms tie, in the 2 November Linux reproduction)", with a link to the Linux record.
+- **Item 7: STILL OPEN; the approval contradicts itself.** Item 7 has no parts, so "7(a)" means option (a): run a fresh input check. But my recommended option for item 7 was **(b)**: wait for an explicit user decision, because the check may count as reopening the stopped R02 input gate. The orchestrator's own notes call this "my approval" of the recommended options. Option (b) asks for the user's own decision, which an orchestrator approval of "the recommended option" does not give. So I have **not** run the input check.
+  - **To unblock:** the user says either "item 7: run the fresh check (a)" or "item 7: skip (c)". With (a), I commit a protocol first, leave the returned R02 draft unread and label the check as new work, not the R02 gate.
+
 ## 2026-11-02 item 8 — Claude Opus
 
 ### 8. Two small decisions from the Linux reproductions (neither blocks anyone)

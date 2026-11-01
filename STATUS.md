@@ -1,9 +1,8 @@
 # Status and continuation plan — 1 November 2026 (HKT)
 
-**NO INDEPENDENT WORK LEFT for the Claude session (2 Nov 2026, ~03:15 HKT).** Every retained October package that can run unchanged here now reproduces on Linux; the details are in the section just below. What would unblock more work:
-- **NEEDS-HUMAN item 7:** may I run a fresh real-keyboard input check, or does it count as reopening the stopped R02 input gate?
-- **NEEDS-HUMAN item 8:** (a) whether to amend the two Windows-bound packages to run here; (b) a one-sentence PLAN correction for R06.
-- **Daybreak branch B:** one rebuild and three runs are left for a Kimi session, which needs more Copilot credit.
+**NO INDEPENDENT WORK LEFT for the Claude session (2 Nov 2026, ~05:20 HKT).** Every retained October package that can run unchanged here now reproduces on Linux; the details are in the section just below. The orchestrator's approvals of NEEDS-HUMAN item 8 are applied: the two Windows-bound packages stay Windows-only, and PLAN's R06 sentence now gives the Linux result too. What would unblock more work:
+- **NEEDS-HUMAN item 7:** the approval said "7(a)" but also "the recommended option", which was (b): let the user decide. I need the user's own answer on whether to run a fresh real-keyboard input check, because it may count as reopening the stopped R02 input gate.
+- **Daybreak branch B:** Kimi K3 is finishing it in its own session. I don't touch those files.
 - **Other new R-series experiments:** PLAN ties these to a practical comparison or decision that the user has not chosen. More literature work is authorized, but no open decision currently depends on it.
 
 The recent commits are local; the nightly job pushes `main`.
@@ -23,7 +22,7 @@ The recent commits are local; the nightly job pushes `main`.
 - **Findings worth knowing:**
   - The Windows and Linux .NET SDK 10.0.302 ship **different FSharp.Core 10.1.302 packages** under the same version, with different DLLs inside. Locked restores fail on Linux unless the cache is seeded from the Windows cache.
   - Nu's entity `Order` numbers and engine tick times come from the system clock, which runs 100× faster on Linux, so they differ across platforms.
-  - PLAN's sentence "direct history recovery is slower in every pair" (R06) describes the Windows sample. On Linux it held in 5 of 6 pairs. I have not edited PLAN; the user may want to soften that sentence.
+  - PLAN's sentence "direct history recovery is slower in every pair" (R06) described the Windows sample. On Linux it held in 5 of 6 pairs. PLAN now says so (NEEDS-HUMAN item 8(b), approved).
 - **Failures, all kept:**
   - B0 history attempt 01: my display wrapper used the wrong X cookie.
   - R10-conversion attempt 01: the FSharp.Core hash mismatch above.
@@ -36,7 +35,7 @@ The recent commits are local; the nightly job pushes `main`.
   - R02 manifests differ from Windows only by line endings.
 - **Not touched:** the stopped R02 input draft, R10 schema-migration and R12 material-intent drafts, R03 native-001 and the Daybreak branches. These checks measure no benefit.
 - **Scratch:** all build trees (about 33 GB) deleted, logged in each evidence folder's `DELETIONS.log`. Evidence: `.artifacts/*-linux-*20261102/` and `.artifacts/small-probes-linux-20261102/`.
-- **Windows-bound, not reproduced unchanged:** the R10 initializer-only schema reload (its sealer refuses any OS but Windows; not attempted) and the R12 Terra Firma reopen pair. Terra Firma's asset stage checks a Windows-only read-only attribute, although its 251 assets came out byte-identical to Windows ([doc](docs/nu-r12-terra-firma-linux-reproduction-2026-11-02.md)). See NEEDS-HUMAN item 8. The real-keyboard input check is on hold pending item 7.
+- **Windows-bound, not reproduced unchanged:** the R10 initializer-only schema reload (its sealer refuses any OS but Windows; not attempted) and the R12 Terra Firma reopen pair. Terra Firma's asset stage checks a Windows-only read-only attribute, although its 251 assets came out byte-identical to Windows ([doc](docs/nu-r12-terra-firma-linux-reproduction-2026-11-02.md)). They stay Windows-only (NEEDS-HUMAN item 8(a), approved). The real-keyboard input check is on hold pending item 7.
 
 ## Daybreak-only branches — Kimi K3 session (2 November 2026)
 
