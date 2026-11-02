@@ -161,3 +161,21 @@ The unchanged paddle rule, applied to the settled diagnostic frame, found the pa
 - **Settling:** after the signature first matches, the harness takes screenshots 0.5 s apart until the paddle colour at its start position agrees within 8 per channel in two of them (up to 10 s). The first gameplay screenshot used for the paddle colour and the no-input control is the settled one.
 
 Nothing else changes. Known waste that is not fixed: the Title rule can fire on the black loading screen. The 3-click allowance already covers that. Attempts so far: 01 invalid, 02 invalid, 03 fail. **Two more unresolved failures would trigger the stop rule.**
+
+## Amendment 4 (2 November 2026, ~21:05 HKT, before attempt 05): a stricter "settled" test
+
+**What happened in attempt 04 (INVALID, counted toward the stop rule).**
+- Play click 1 again landed on the black loading screen.
+- Click 2 started gameplay, and the corrected signature matched at 72.6 s (27 lit bricks, 8 in the top rows).
+- The amendment-3 settle test passed at once: the paddle read grey 127 in two screenshots 0.5 s apart. At this frame rate **the screen had not changed between them**, so the fade was still under way.
+- At that grey the paddle could not be told from the darkened background. The paddle was not found at x = 0, so the run was invalid before any key was sent.
+
+**Change.** "Settled" now means:
+- the gameplay signature holds;
+- **every channel of all 7 paddle start samples is ≥ 240**. The paddle image is white: the settled diagnostic frame reads (255, 255, 255), as do the life sprites.
+
+The check repeats every 0.5 s for up to 30 s.
+
+**Checked against all 17 saved screenshots** (diag-03, the capture self-test, attempts 03 and 04): only the fully faded-in diagnostic frame counts as settled. On it the unchanged paddle rule finds x = −0.25 and 5 lives. Every fade frame (59 … 212 grey) and both attempt-04 frames are rejected.
+
+Nothing else changes. Attempts so far: 01 invalid, 02 invalid, 03 fail, 04 invalid. **Attempt 05 is the last one before the stop rule applies.** If it fails, I stop and report.

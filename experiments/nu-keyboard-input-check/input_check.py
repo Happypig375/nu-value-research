@@ -366,14 +366,16 @@ def run(children):
                     emit("gameplay-reached", label=label, clicks=attempt, signature=sig)
                     # Amendment 3: gameplay fades in; wait until the paddle colour at its start position is
                     # the same (within 8 per channel) in two screenshots 0.5 s apart, for up to 10 s.
-                    prev, settle = s, time.monotonic()
-                    while time.monotonic() - settle < 10:
+                    # Amendment 4: that test passed mid-fade (the frame did not change in 0.5 s). Settled now
+                    # means every channel of all 7 paddle start samples is >= 240 (the paddle image is white),
+                    # with the gameplay signature, checked every 0.5 s for up to 30 s.
+                    settle = time.monotonic()
+                    while time.monotonic() - settle < 30:
+                        samples = [s.px(vx, -160) for vx in (-24, -16, -8, 0, 8, 16, 24)]
+                        if gameplay_signature(s)[0] and all(min(c) >= 240 for c in samples):
+                            break
                         time.sleep(0.5)
                         s = shot()
-                        r1, r2 = paddle_reference(prev)[0], paddle_reference(s)[0]
-                        if r1 and r2 and diff(r1, r2) <= 8 and gameplay_signature(s)[0]:
-                            break
-                        prev = s
                     else:
                         emit("gameplay-not-settled", label=label)
                     shots[label] = s
