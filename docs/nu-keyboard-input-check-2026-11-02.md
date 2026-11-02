@@ -118,3 +118,26 @@ A passive diagnostic (`diag-01`: `xwininfo` and `xprop` only, no input sent, gam
 - SDL3 stores its `WM_NAME` with type `UTF8_STRING`, and the Xlib call `XFetchName` returns only names of type STRING.
 
 **Change.** The window name is now read with `XGetWMName`, which returns the raw bytes of `WM_NAME` whatever its type. The rule itself is unchanged: the window must be named exactly `Breakout Mmcc` and be 1280×720. No judging rule, threshold or step changes.
+
+## Amendment 2 (2 November 2026, ~20:30 HKT, before attempt 03): how screenshots are captured
+
+**What happened in attempt 02.** The window was found at 2 s: 1280×720 at +320+180. Then the first screenshot was rejected as an "unexpected xwd format" (24 bits per pixel), and the harness stopped. The run is **invalid**, kept, and it counts toward the stop rule. The game process outlived the harness, and I stopped it by hand.
+
+A passive diagnostic (`diag-02`: `xwd` headers only, no input) showed why:
+- the game window uses a **DirectColor** visual, while the root window uses TrueColor;
+- with both on screen, `xwd -root` switches to a mixed-visual layout: 24 bits per pixel, 8-bit padding, 32-bit row stride;
+- `xwd -id <game window>` gives an ordinary 32-bit image of the window alone.
+
+**Changes:**
+- Screenshots are taken with `xwd -id <game window>` instead of `-root`, so no cropping is needed.
+- For a DirectColor window, each colour channel is mapped through the colour map that `xwd` stores in the file.
+- The harness now always stops the game process if it fails itself.
+
+No judging rule, threshold or step changes.
+
+**Capture self-test before attempt 03 (passive, no input, kept as `capture-selftest`).** The game was launched and screenshots taken at 12 s and 20 s:
+- at 12 s the window is black (still loading);
+- at 20 s it shows the Title (label, Play, Credits, Exit) with correct colours;
+- the unchanged gameplay signature correctly reports **not gameplay** on the Title: 0 of 10 upper brick spots lit. The Title label lights the 20 lower spots, as the protocol anticipated.
+
+This checks the tools only and is not a judged result.

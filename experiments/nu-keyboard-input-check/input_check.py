@@ -164,25 +164,36 @@ class Shot:
                          + chunk(b"IDAT", zlib.compress(bytes(raw), 6)) + chunk(b"IEND", b""))
 
 
-def screenshot(label, rect, t0):
-    data = subprocess.run(["xwd", "-root", "-silent"], capture_output=True, check=True).stdout
+def screenshot(label, window, t0):
+    # Amendment 2: capture the game window itself (`xwd -id`), not the root. The game's DirectColor
+    # window makes `xwd -root` use a mixed-visual layout. DirectColor pixels index the colour map
+    # that xwd stores in the file, so each channel is mapped through it.
+    data = subprocess.run(["xwd", "-id", str(window), "-silent"], capture_output=True, check=True).stdout
     h = struct.unpack(">25I", data[:100])
     header_size, fmt, width, height, byte_order, bpp, bpl = h[0], h[2], h[4], h[5], h[7], h[11], h[12]
-    rmask, gmask, bmask, ncolors = h[14], h[15], h[16], h[19]
+    vclass, rmask, gmask, bmask, ncolors = h[13], h[14], h[15], h[16], h[19]
     if fmt != 2 or bpp != 32 or (rmask, gmask, bmask) != (0xFF0000, 0xFF00, 0xFF):
         raise SystemExit(f"unexpected xwd format {fmt} {bpp} {rmask:x}")
+    luts = [bytearray(range(256)) for _ in range(3)]
+    if vclass == 5:  # DirectColor
+        for k in range(ncolors):
+            pixel, red, green, blue = struct.unpack(">IHHH", data[header_size + 12 * k:header_size + 12 * k + 10])
+            luts[0][(pixel & rmask) >> 16] = red >> 8
+            luts[1][(pixel & gmask) >> 8] = green >> 8
+            luts[2][pixel & bmask] = blue >> 8
+    luts = [bytes(lut) for lut in luts]
     pixels = data[header_size + ncolors * 12:]
-    wx, wy, ww, wh = rect
-    rgb = bytearray(ww * wh * 3)
-    for row in range(wh):
-        line = pixels[(wy + row) * bpl + wx * 4:(wy + row) * bpl + (wx + ww) * 4]
+    rgb = bytearray(width * height * 3)
+    for row in range(height):
+        line = pixels[row * bpl:row * bpl + width * 4]
         if byte_order == 0:        # LSBFirst: B G R X
             r, g, b = line[2::4], line[1::4], line[0::4]
         else:                      # MSBFirst: X R G B
             r, g, b = line[1::4], line[2::4], line[3::4]
-        o = row * ww * 3
-        rgb[o:o + ww * 3:3], rgb[o + 1:o + ww * 3:3], rgb[o + 2:o + ww * 3:3] = r, g, b
-    return Shot(label, rgb, ww, wh, round(time.monotonic() - t0, 3))
+        o = row * width * 3
+        n = width * 3
+        rgb[o:o + n:3], rgb[o + 1:o + n:3], rgb[o + 2:o + n:3] = r.translate(luts[0]), g.translate(luts[1]), b.translate(luts[2])
+    return Shot(label, rgb, width, height, round(time.monotonic() - t0, 3))
 
 
 # ---------- judging rules (fixed by the protocol) ----------
@@ -238,6 +249,16 @@ def lives(s, ref):
 
 # ---------- the check ----------
 def main():
+    children = []
+    try:
+        return run(children)
+    finally:
+        for game in children:
+            if game.poll() is None:
+                os.killpg(game.pid, signal.SIGKILL)
+
+
+def run(children):
     ap = argparse.ArgumentParser()
     ap.add_argument("game_dir", type=Path)
     ap.add_argument("output", type=Path)
@@ -259,6 +280,7 @@ def main():
     game = subprocess.Popen(["dotnet", str(game_dir / "Breakout Mmcc.dll")], cwd=game_dir,
                             stdout=(out / "game-stdout.log").open("wb"), stderr=(out / "game-stderr.log").open("wb"),
                             start_new_session=True)
+    children.append(game)
     emit("launched", pid=game.pid)
     x = X()
 
@@ -306,7 +328,7 @@ def main():
     x.focus(window)
 
     def shot(label=None):
-        s = screenshot(label or "poll", rect, t0)
+        s = screenshot(label or "poll", window, t0)
         if label:
             shots[label] = s
         return s
