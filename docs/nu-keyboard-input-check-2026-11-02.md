@@ -179,3 +179,58 @@ The check repeats every 0.5 s for up to 30 s.
 **Checked against all 17 saved screenshots** (diag-03, the capture self-test, attempts 03 and 04): only the fully faded-in diagnostic frame counts as settled. On it the unchanged paddle rule finds x = −0.25 and 5 lives. Every fade frame (59 … 212 grey) and both attempt-04 frames are rejected.
 
 Nothing else changes. Attempts so far: 01 invalid, 02 invalid, 03 fail, 04 invalid. **Attempt 05 is the last one before the stop rule applies.** If it fails, I stop and report.
+
+## Results (added 2 November 2026, ~21:20 HKT, after attempt 05)
+
+**Conclusion: real keyboard and mouse input sent through the X server reaches the unchanged standalone game, and its effect is visible from outside. But by the protocol's own rule, attempt 05 is a PRIMARY FAIL, on the release check alone.** It was the fifth unresolved attempt, so the stop rule applies. I stopped and did not rerun.
+
+**Attempt 05, in detail** (evidence `run-05/`):
+
+| Check | Result |
+| --- | --- |
+| Gameplay reached by a real click | **Yes.** Click 1 landed on the black loading screen again and was ignored; click 2 worked. |
+| No-input control | **Still:** −0.25, then −0.25 again 0.5 s later. |
+| Right held | **Moved:** from −0.25 to **+67.75**. The first visible movement came 1.16 s after key-down; the target was reached about 7.6 s after key-down. |
+| Left held | **Moved:** from +67.75 to **−64.25**. |
+| Stopped after release | **No, by the rule:** −64.25 at 0.3 s after release, −72.25 at 1.3 s. That is 8 units, 2 game updates, against an allowance of 4. |
+| Lives | 5 throughout. |
+
+**Secondary results (all passed, all by real clicks):**
+- Quit reached a stable Title.
+- Play again gave a **fresh board**: paddle at −0.25 and 5 lives.
+- Quit, then **Exit**: the game exited with **code 0** after 0.27 s.
+
+**What the release failure probably is, and what is not shown.** The game ran at about **2.5 updates per second** under software rendering: 16 updates took about 6.4 s. What is on screen trails the key state by about 2 updates:
+- after Right went down, nothing moved on screen for 1.16 s;
+- after Right was released and Left pressed, the screen still moved the paddle right by 8 units (67.75 → 71.75 → 75.75) before it reversed.
+
+The 8 units of drift after Left was released are the same 2 updates. So the most likely reading is **display lag, not a stuck key**. But the run ended before a later screenshot could show the paddle at rest. The protocol's 1-second allowance assumed a much higher frame rate. This interpretation was made after the result and is not a pass.
+
+**All attempts** (kept in `.artifacts/keyboard-input-check-20261102/`):
+
+| Attempt | Outcome | Cause | Fix (amendment, committed before the next attempt) |
+| --- | --- | --- | --- |
+| 00 | harness self-test passed | — | — |
+| 01 | invalid | window name stored as UTF-8 | 1: read `WM_NAME` with `XGetWMName` |
+| 02 | invalid | mixed-visual `xwd -root` image | 2: capture the window with `xwd -id`, apply its colour map |
+| 03 | fail | brick sample point on a black line | 3: sample above centre; wait for the fade-in |
+| 04 | invalid | settle test passed mid-fade | 4: settled means a white paddle |
+| 05 | **fail** | release check: 8-unit drift | none: stop rule |
+
+Diagnostics that sent no keys (`diag-01`, `diag-02`, `diag-03`, `capture-selftest`) are kept too. Only `diag-03` sent input: one Play click.
+
+**What this establishes:**
+- On this server, **XTEST input reaches unchanged standalone MMCC Breakout through SDL's X11 backend**: two keys and three buttons. The effects can be judged from outside, from screenshots alone.
+- No in-process event publishing or probe was used.
+- This is **new work**. It is not the R02 input gate, which stays stopped, with its returned draft unread.
+
+**What it does not establish:**
+- a clean pass of the frozen protocol;
+- release timing;
+- anything under a real window manager or with real hardware;
+- frame-rate-independent timing;
+- other keys or games, pause, audio, agent access or benefit.
+
+**What would settle the release question (not done; it needs a new written protocol):** a check whose release window is measured in game updates, judged from screenshots over several seconds after release. For example: "no further movement over 5 s once motion has stopped". It could also use a lighter scene or a faster renderer.
+
+**Cleanup (logged).** I deleted this check's scratch source tree (2.4 GB), the build outputs inside it and the NuGet copy (1.0 GB). All of it can be rebuilt with `prepare.py` and `build.py`. I stopped my Xvfb displays `:93`, started by the build wrapper, and `:95`.

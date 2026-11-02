@@ -2,12 +2,23 @@
 
 Newest first. Each item lists the options, my recommendation and what it blocks. Background is in [STATUS.md](STATUS.md) (section dated 1 November 2026).
 
+## 2026-11-02 ~21:20 HKT, item 7 ANSWERED and done — Claude Opus
+
+- **Decision (user approval, orchestrator's choice, ~20:00 HKT):** option (a). The check is **new work**, not a resumption of the stopped R02 input gate. The returned R02 draft stayed unread.
+- **Done:**
+  - Protocol `06ab165`, committed before any run, with four amendments, each committed before the next attempt.
+  - **Result: real X keyboard and mouse input reaches the unchanged standalone game.** Right moved the paddle −0.25 → +67.75, Left moved it to −64.25, and Play, Quit, Play again (a fresh board) and Exit all worked by real clicks.
+  - Attempt 05 is still a **protocol FAIL** on the release check: 8 units of drift within 1 s of releasing Left. That is probably display lag at about 2.5 game updates per second, but it is not proven.
+  - The five-attempt stop rule applied, and I stopped.
+- **Details:** `docs/nu-keyboard-input-check-2026-11-02.md`, STATUS.md, `.artifacts/keyboard-input-check-20261102/`.
+- **No decision needed now.** A follow-up check whose release window is measured in game updates would need its own new protocol. I have not started one.
+
 ## 2026-11-02 ~05:20 HKT, items 7 and 8 applied — Claude Opus
 
 The orchestrator approved "7(a), 8(a) and 8(b) (the recommended options)".
 - **Item 8(a): DONE, option (i).** The R10 initializer-only schema reload and the R12 Terra Firma reopen pair stay Windows-only. No amendment.
 - **Item 8(b): DONE, option (ii).** PLAN's R06 sentence now reads "direct history recovery is slower in every pair on Windows (5 of 6 pairs, with one 0.02 ms tie, in the 2 November Linux reproduction)", with a link to the Linux record.
-- **Item 7: STILL OPEN; the approval contradicts itself.** Item 7 has no parts, so "7(a)" means option (a): run a fresh input check. But my recommended option for item 7 was **(b)**: wait for an explicit user decision, because the check may count as reopening the stopped R02 input gate. The orchestrator's own notes call this "my approval" of the recommended options. Option (b) asks for the user's own decision, which an orchestrator approval of "the recommended option" does not give. So I have **not** run the input check.
+- **Item 7 (answered later, ~20:00 HKT; see the newer entry above). Earlier status: STILL OPEN; the approval contradicts itself.** Item 7 has no parts, so "7(a)" means option (a): run a fresh input check. But my recommended option for item 7 was **(b)**: wait for an explicit user decision, because the check may count as reopening the stopped R02 input gate. The orchestrator's own notes call this "my approval" of the recommended options. Option (b) asks for the user's own decision, which an orchestrator approval of "the recommended option" does not give. So I have **not** run the input check.
   - **To unblock:** the user says either "item 7: run the fresh check (a)" or "item 7: skip (c)". With (a), I commit a protocol first, leave the returned R02 draft unread and label the check as new work, not the R02 gate.
 
 ## 2026-11-02 item 8 — Claude Opus

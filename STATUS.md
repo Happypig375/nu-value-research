@@ -1,11 +1,26 @@
 # Status and continuation plan — 1 November 2026 (HKT)
 
-**NO INDEPENDENT WORK LEFT for the Claude session (2 Nov 2026, ~19:55 HKT).** The latest task, the corrected-import rerun for Daybreak branch B (user decision D41), is done. **With the one-line address fix, the saved screen file loads back and reproduces the B0 state exactly**; see the "Corrected import" part of the Daybreak section below. What would unblock more work:
-- **NEEDS-HUMAN item 7:** I need the user's own answer on whether to run a fresh real-keyboard input check. It may count as reopening the stopped R02 input gate.
+**NO INDEPENDENT WORK LEFT for the Claude session (2 Nov 2026, ~21:25 HKT).** Both tasks from this evening are done:
+- the Daybreak branch B corrected import passes (Daybreak section below);
+- the new real-keyboard check from NEEDS-HUMAN item 7 has run (next section).
+
+What would unblock more work:
+- **Keyboard check follow-up:** the release question needs a new protocol that measures in game updates. Writing one is development work and could start without asking. No decision depends on it, so I have not started it.
 - **Daybreak branch A** (deliberate recovery fault trigger): its private source draft is still not on the server (NEEDS-HUMAN K1). It is not assigned to me.
 - **Other new R-series experiments:** PLAN ties these to a practical comparison or decision that the user has not chosen.
 
 The recent commits are local; the nightly job pushes `main`.
+
+## Real keyboard input to the standalone game — Claude Opus (2 November 2026, ~21:20 HKT; NEEDS-HUMAN item 7, option a)
+
+- **Result: real input works, but the frozen protocol was not passed cleanly.** Key and mouse events sent through the X server's XTEST extension reach unchanged standalone MMCC Breakout through SDL. Screenshots alone show the effect:
+  - Right moved the paddle from −0.25 to +67.75, and Left moved it to −64.25;
+  - Play, Quit, Play again (a fresh board) and Exit all worked by real clicks, and the game exited with code 0.
+- **Protocol verdict: FAIL on one check.** The paddle drifted 8 units (2 game updates) in the 1 s after Left was released, against an allowance of 4. The game runs at about 2.5 updates per second under software rendering, and the screen trails key changes by about 2 updates. So display lag is the likely cause, but this run cannot prove it.
+- **Attempts:** five attempts, all kept. Four were fixed by amendments committed before the next attempt: window-name encoding, screenshot format, brick sample point, and fade-in. The stop rule then applied, and I did not rerun.
+- **This is new work, not the R02 input gate.** That gate stays stopped and its returned draft unread.
+- **Not shown:** release timing; a real window manager or real hardware; other keys or games; pause, audio, agent access or benefit.
+- **Record:** [docs/nu-keyboard-input-check-2026-11-02.md](docs/nu-keyboard-input-check-2026-11-02.md); evidence in `.artifacts/keyboard-input-check-20261102/`. I deleted the scratch builds (3.4 GB, rebuildable) and logged it.
 
 ## October packages reproduce on Linux — Claude Opus (2 November 2026, ~03:10 HKT)
 
@@ -35,7 +50,7 @@ The recent commits are local; the nightly job pushes `main`.
   - R02 manifests differ from Windows only by line endings.
 - **Not touched:** the stopped R02 input draft, R10 schema-migration and R12 material-intent drafts, R03 native-001 and the Daybreak branches. These checks measure no benefit.
 - **Scratch:** all build trees (about 33 GB) deleted, logged in each evidence folder's `DELETIONS.log`. Evidence: `.artifacts/*-linux-*20261102/` and `.artifacts/small-probes-linux-20261102/`.
-- **Windows-bound, not reproduced unchanged:** the R10 initializer-only schema reload (its sealer refuses any OS but Windows; not attempted) and the R12 Terra Firma reopen pair. Terra Firma's asset stage checks a Windows-only read-only attribute, although its 251 assets came out byte-identical to Windows ([doc](docs/nu-r12-terra-firma-linux-reproduction-2026-11-02.md)). They stay Windows-only (NEEDS-HUMAN item 8(a), approved). The real-keyboard input check is on hold pending item 7.
+- **Windows-bound, not reproduced unchanged:** the R10 initializer-only schema reload (its sealer refuses any OS but Windows; not attempted) and the R12 Terra Firma reopen pair. Terra Firma's asset stage checks a Windows-only read-only attribute, although its 251 assets came out byte-identical to Windows ([doc](docs/nu-r12-terra-firma-linux-reproduction-2026-11-02.md)). They stay Windows-only (NEEDS-HUMAN item 8(a), approved). The real-keyboard input check later ran as new work (item 7, option a); see its section above.
 
 ## Daybreak-only branches — Kimi K3 session (2 November 2026)
 
