@@ -46,6 +46,13 @@ X11.XQueryTree.argtypes = [ctypes.c_void_p, Win, ctypes.POINTER(Win), ctypes.POI
                            ctypes.POINTER(ctypes.POINTER(Win)), ctypes.POINTER(ctypes.c_uint)]
 X11.XFetchName.argtypes = [ctypes.c_void_p, Win, ctypes.POINTER(ctypes.c_char_p)]
 X11.XFree.argtypes = [ctypes.c_void_p]
+
+
+class XTextProperty(ctypes.Structure):
+    _fields_ = [("value", ctypes.c_void_p), ("encoding", ctypes.c_ulong), ("format", ctypes.c_int), ("nitems", ctypes.c_ulong)]
+
+
+X11.XGetWMName.argtypes = [ctypes.c_void_p, Win, ctypes.POINTER(XTextProperty)]
 X11.XGetGeometry.argtypes = [ctypes.c_void_p, Win, ctypes.POINTER(Win), ctypes.POINTER(ctypes.c_int),
                              ctypes.POINTER(ctypes.c_int), ctypes.POINTER(ctypes.c_uint),
                              ctypes.POINTER(ctypes.c_uint), ctypes.POINTER(ctypes.c_uint),
@@ -88,9 +95,13 @@ class X:
         return out
 
     def name(self, w):
-        p = ctypes.c_char_p()
-        if X11.XFetchName(self.d, w, ctypes.byref(p)) and p.value is not None:
-            return p.value
+        # Amendment 1: read WM_NAME's raw bytes whatever its encoding (SDL3 writes UTF8_STRING,
+        # which XFetchName does not return).
+        prop = XTextProperty()
+        if X11.XGetWMName(self.d, w, ctypes.byref(prop)) and prop.value:
+            value = ctypes.string_at(prop.value, prop.nitems) if prop.format == 8 else None
+            X11.XFree(prop.value)
+            return value
         return None
 
     def geometry(self, w):

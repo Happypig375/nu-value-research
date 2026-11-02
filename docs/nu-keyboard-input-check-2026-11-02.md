@@ -108,3 +108,13 @@ Screenshots come from `xwd -root` and are cropped to the window. Points are read
 - No timing claim: the frame rate under llvmpipe means nothing.
 - No pause, audio, gameplay-correctness or rendering-parity claim, no agent access, and no benefit.
 - It says nothing about whether the stopped R02 draft would have worked.
+
+## Amendment 1 (2 November 2026, ~20:15 HKT, before attempt 02): how the window name is read
+
+**What happened in attempt 01.** The game started normally: SDL 3.5.0 and OpenGL 4.6 under Mesa initialised. But the script did not find the window within 120 s, so the run was **invalid**. It is kept, and it counts toward the stop rule.
+
+A passive diagnostic (`diag-01`: `xwininfo` and `xprop` only, no input sent, game stopped after 30 s) showed why:
+- the window exists, named `Breakout Mmcc`, at 1280×720, position +320+180;
+- SDL3 stores its `WM_NAME` with type `UTF8_STRING`, and the Xlib call `XFetchName` returns only names of type STRING.
+
+**Change.** The window name is now read with `XGetWMName`, which returns the raw bytes of `WM_NAME` whatever its type. The rule itself is unchanged: the window must be named exactly `Breakout Mmcc` and be 1280×720. No judging rule, threshold or step changes.
