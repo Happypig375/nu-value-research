@@ -1,9 +1,9 @@
 # Status and continuation plan — 1 November 2026 (HKT)
 
-**NO INDEPENDENT WORK LEFT for the Claude session (2 Nov 2026, ~05:20 HKT).** Every retained October package that can run unchanged here now reproduces on Linux; the details are in the section just below. The orchestrator's approvals of NEEDS-HUMAN item 8 are applied: the two Windows-bound packages stay Windows-only, and PLAN's R06 sentence now gives the Linux result too. What would unblock more work:
-- **NEEDS-HUMAN item 7:** the approval said "7(a)" but also "the recommended option", which was (b): let the user decide. I need the user's own answer on whether to run a fresh real-keyboard input check, because it may count as reopening the stopped R02 input gate.
-- **Daybreak branch B:** Kimi K3 is finishing it in its own session. I don't touch those files.
-- **Other new R-series experiments:** PLAN ties these to a practical comparison or decision that the user has not chosen. More literature work is authorized, but no open decision currently depends on it.
+**NO INDEPENDENT WORK LEFT for the Claude session (2 Nov 2026, ~19:55 HKT).** The latest task, the corrected-import rerun for Daybreak branch B (user decision D41), is done. **With the one-line address fix, the saved screen file loads back and reproduces the B0 state exactly**; see the "Corrected import" part of the Daybreak section below. What would unblock more work:
+- **NEEDS-HUMAN item 7:** I need the user's own answer on whether to run a fresh real-keyboard input check. It may count as reopening the stopped R02 input gate.
+- **Daybreak branch A** (deliberate recovery fault trigger): its private source draft is still not on the server (NEEDS-HUMAN K1). It is not assigned to me.
+- **Other new R-series experiments:** PLAN ties these to a practical comparison or decision that the user has not chosen.
 
 The recent commits are local; the nightly job pushes `main`.
 
@@ -50,6 +50,17 @@ The recent commits are local; the nightly job pushes `main`.
 - **Execution:** 5 builds (2 compile errors in my probe, 1 operator shell error, then success) and 4 runs, all preserved in `.artifacts/daybreak-screen-persistence-20261102/`. Export arm **passed** (28.7 s): file 3,045 bytes, SHA-256 `a1827a05…c3e6f`, properties exactly `Incoming, Model, Name, Outgoing, Persistent, RequestedSong, SlideOpt`, zero group descriptors, model round-trips to B0; world undisturbed after export. Import arm **failed** in 22.3 s and the diagnostic arm identically in 23.3 s: `InvalidCastException` (`Nu.Screen`→`Nu.Group`) from `readScreenFromFile`, because `readScreen` (`WorldScreen.fs:309`) addresses the imported screen as `[|"Gameplay"|]` instead of `[|"Game";"Gameplay"|]`. Stop rule met at the import step (two identical deterministic failures); no reruns spent.
 - **What this means:** the export half of the round-trip is genuinely evidenced (with negative controls); the stock import half is adversely resolved — B0 reproduction via `readScreenFromFile` is not achievable at this revision. No claim of reproduced post-import state is made. A corrected import (engine patch or new public API) is a separate, amended question — noted as the next step in the doc, not started.
 - **Scratch:** `/tmp/kimi-daybreak-20261102/` (~3 GB: prepared source, NuGet cache copy, build tree) is rebuildable from committed inputs; evidence is copied into `.artifacts/`. Deletion left to the next session or home-port cleanup.
+
+### Corrected import — Claude Opus (2 November 2026, ~19:50 HKT, user decision D41)
+
+- **Result: the corrected import passes.** I rebuilt pinned Nu with only the one-line fix in `World.readScreen` (`WorldScreen.fs:309`, the same as upstream bryanedds/Nu#1466). With that build, the exported screen file loads into a fresh process and the gameplay model and the visible scene both equal the B0 reference. Both negative controls rejected the freshly started board first.
+- **Protocol first:** the amendment, with its pass/fail conditions, was committed before any build (`9c06f41`). It says plainly that an earlier engineering check had already seen these outcomes, so this run is a confirmation under a written protocol, not a blind test.
+- **Runs:**
+  - Export passed, and its file is byte-identical to Kimi's (`a1827a05…`).
+  - Import passed.
+  - The diagnostic arm (import without first removing the old entities) passed, but its "59 bricks" prediction is falsified. The fresh board and B0 share brick names, so 29 bricks were updated in place and one stale brick (`@449`) survived, giving 30.
+- **Scope:** this is adapted engine source. Stock import at 064f7ae is still broken, as Kimi found. There is no claim about native or physics state, audio, editor workflow or benefit.
+- **Records:** `docs/nu-daybreak-screen-persistence-2026-11-02.md` ("Amendment" and "Corrected-import results"), NEEDS-HUMAN K2, and evidence in `.artifacts/daybreak-screen-persistence-20261102/corrected-import/`. I deleted the scratch builds (about 4.7 GB, all rebuildable) and logged it in the doc. Kimi's `/tmp/kimi-daybreak-20261102/` was already gone.
 
 ### Branch A (deliberate recovery fault-trigger)
 

@@ -169,3 +169,40 @@ So this run repeats that check under a written protocol. It is not a fresh predi
 **Limits.** All limits in "What this experiment cannot show" still apply. This run also cannot say anything about stock Nu at 064f7ae, about later Nu revisions, or about an editor workflow. Gaia has no screen-file command.
 
 **Cleanup.** After the evidence is copied and checked, the scratch source tree, build outputs and NuGet copy are deleted, and the deletion is logged here.
+
+## Corrected-import results (added 2 November 2026, ~19:50 HKT, after the runs)
+
+**Conclusion: with the one-line address fix, the screen file loads back and reproduces the B0 state exactly.** The main import arm passed every condition fixed in the amendment, at the first attempt. So Nu's screen file format does round-trip the gameplay state once the addressing bug is removed. Stock Nu at 064f7ae still cannot do this: the result comes from adapted engine source, as the amendment states.
+
+**Attempts.** One of each step, and none failed: prepare, patch, build, three runs and the comparison. Evidence is in `.artifacts/daybreak-screen-persistence-20261102/corrected-import/`. Kimi's earlier evidence in the parent folder was not touched.
+
+| Step | Result |
+| --- | --- |
+| Patch | Receipt: only line 309 of `WorldScreen.fs` changed (SHA-256 `2ccf6378…` → `cd53e3d7…`). The Gaia bridge was installed as before (`19964b82…`). |
+| Build | Exit 0 (probe `6d5e20ab…`, Breakout `a10e0e86…`; DLL hashes include build paths). |
+| export-01 | **Passed** in 27.8 s. The negative controls rejected the fresh board, and the full check passed before and after export. The file is 3,045 bytes with SHA-256 `a1827a05…c3e6f`, **identical to Kimi's stock-engine export**. That is expected: the patch touches only the read side. |
+| import-01 | **Passed** in 27.2 s: exit 0, `result.pass = true` at phase `verified`. Both negative controls rejected the fresh board. The `Scene` group was destroyed and the file was read back. At the next halted boundary, the model and the projected scene both equal B0, with the world halted and Gameplay selected. `compare.py` reports `transfer_hash_agreement = true`. |
+| replace-nodestroy-01 | **The arm passed** in 27.3 s: the observation completed and the model equals B0. **The frozen prediction is falsified:** `predictionObserved = false`. There were 47 entities and 30 brick entities against 29 bricks in the model, not 59, and the projection differs from B0. |
+
+These numbers match the earlier engineering check outside this protocol: same export hash, import passed, and 47/30/29 in the diagnostic arm.
+
+**Why the prediction failed (declared trace analysis, `diagnostic-name-analysis.json`).** The freshly started board and B0 share brick names: the brick names come from the same deterministic startup. The 30 bricks on the fresh board include all 29 B0 bricks, plus `@449`, which had already been destroyed by the time B0 was saved.
+
+After the no-destroy import:
+- **The 29 bricks in the model are on screen**, at the model's positions and colours (no projection errors).
+- **One stale entity, `@449`, survives** because nothing removes it.
+- No other entity is present beyond the 17 non-brick scene entities.
+
+So the direction of the prediction held: content that is not in the imported model survives a replace without destroy. The count was wrong, because the prediction assumed the old and new brick names would not overlap. The shared names mean content sync updated the 29 existing bricks in place instead of adding new ones.
+
+**What this adds to branch B:**
+- **Round-trip with the fix:** export plus corrected import reproduces the B0 model and projected scene in a fresh process, checked against the closed reference with negative controls. This is a reproduced state, not a resumed historical world.
+- **Policy matters:** importing without first removing the screen's existing groups leaves stale entities. Here that was one leftover brick, an extra live object that the model does not know about. The protocol's destroy-then-import policy is needed.
+- **Unchanged:** stock import at 064f7ae is broken. Nothing here covers native or physics state, audio, camera, transitions, journals, editor state, random-number continuation, later Nu revisions, an editor workflow or any benefit. Rendering parity is not claimed (software renderer).
+
+**Cleanup (logged).** After the evidence was copied and hash-checked, I deleted:
+- this session's scratch source tree (3.1 GB);
+- the build tree (645 MB);
+- the NuGet cache copy (1.0 GB).
+
+All of it can be rebuilt from the archive, `prepare.py`, `apply_import_fix.py` and `build.py`. My Xvfb on `:94` is stopped. Kimi's scratch `/tmp/kimi-daybreak-20261102/` was already gone when I checked.

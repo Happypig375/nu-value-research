@@ -44,6 +44,13 @@ The orchestrator approved "7(a), 8(a) and 8(b) (the recommended options)".
 ### K2. DONE (no decision needed): branch B finished — export works, stock import API broken at pinned revision
 - **Facts:** All three arms ran. Export passed (file contains the complete model and declared screen properties, no entity content, as source-verified). Both import arms crashed identically inside `World.readScreenFromFile`: it addresses the imported screen with one name instead of the game-rooted two, a reproducible engine defect in a callerless code path at pinned Nu `064f7ae`. Results are in `docs/nu-daybreak-screen-persistence-2026-11-02.md` and STATUS.md. Evidence in `.artifacts/daybreak-screen-persistence-20261102/`. Scratch `/tmp/kimi-daybreak-20261102/` (~3 GB, rebuildable) can be deleted.
 - **Open follow-up (for a future decision, not blocking):** whether to amend the protocol to test a corrected import (engine patch or new API) is a separate question; documented as "next step" in the results doc.
+- **Update, 2 Nov ~19:50 HKT (Claude Opus, user decision D41): corrected import DONE, it passes.** The protocol amendment was committed first (`9c06f41`). I rebuilt 064f7ae with only the one-line fix (`WorldScreen.fs:309`, the same as upstream bryanedds/Nu#1466) and reran the three arms once each.
+  - Export passed, with the same file hash as before (`a1827a05…`).
+  - **Import passed:** the model and the projected scene both equal B0 in a fresh process, and both negative controls rejected the fresh board.
+  - The diagnostic replace-without-destroy arm passed, but its frozen "59 bricks" prediction is falsified. There were 30 brick entities: the 29 model bricks, updated in place because they share names with the fresh board, plus one stale brick (`@449`).
+  - This is adapted engine source; stock import at 064f7ae is still broken.
+  - Details are in the results doc's "Corrected-import results" section, and evidence is in `.artifacts/daybreak-screen-persistence-20261102/corrected-import/`.
+  - **No decision needed.**
 
 ### K1. The two private source drafts for the Daybreak branches are still not on the server
 - **Facts:** The brief (`.orchestration/TASK-daybreak-kimi.md`) expects two private, unaccepted source candidates under `~/workspace/home-port/.orchestration/rescued/nu-value-recovery/20261025-s180-integrity-stop-01/value-preparation/`:
