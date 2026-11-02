@@ -82,6 +82,7 @@ The recent commits are local; the nightly job pushes `main`.
   - Export passed, and its file is byte-identical to Kimi's (`a1827a05…`).
   - Import passed.
   - The diagnostic arm (import without first removing the old entities) passed, but its "59 bricks" prediction is falsified. The fresh board and B0 share brick names, so 29 bricks were updated in place and one stale brick (`@449`) survived, giving 30.
+- **Upstream (user, 2 Nov 2026):** the fix is now in Nu itself as bryanedds/Nu commit `7d6389bea` (2 Nov, 20:14; applied by hand without the unit test, and PR #1466 was closed). Future Nu builds can use that commit instead of applying the local one-line patch (`apply_import_fix.py`).
 - **Scope:** this is adapted engine source. Stock import at 064f7ae is still broken, as Kimi found. There is no claim about native or physics state, audio, editor workflow or benefit.
 - **Records:** `docs/nu-daybreak-screen-persistence-2026-11-02.md` ("Amendment" and "Corrected-import results"), NEEDS-HUMAN K2, and evidence in `.artifacts/daybreak-screen-persistence-20261102/corrected-import/`. I deleted the scratch builds (about 4.7 GB, all rebuildable) and logged it in the doc. Kimi's `/tmp/kimi-daybreak-20261102/` was already gone.
 
