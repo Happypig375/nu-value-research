@@ -18,6 +18,8 @@ experiments/nu-daybreak-screen-persistence/linux_run.sh $RUNS/source replace-nod
 python3 experiments/nu-daybreak-screen-persistence/compare.py $RUNS
 ```
 
+**Corrected-import amendment** (adapted engine source, see the record's amendment section): run `python3 experiments/nu-daybreak-screen-persistence/apply_import_fix.py $RUNS/source .artifacts/r03-feasibility-20261015/nu-064f7ae.tar` after `prepare.py` and before `build.py`. It changes only line 309 of `Nu/Nu/World/WorldScreen.fs` (the same fix as upstream bryanedds/Nu#1466). Set `NUGET_PACKAGES` to a private copy of `.artifacts/nuget-packages/` for the build.
+
 `export` requires an empty transfer directory (`$RUNS/transfer`); the import arms require the transfer file it writes. Every attempt must be preserved; rerun under a new `ATTEMPT_NN`, clearing the transfer directory only before a new export attempt.
 
 Required Notice: Copyright (C) Bryan Edds. Nu and Gaia are licensed under the [Nu Game Engine Noncommercial License](https://github.com/bryanedds/Nu/blob/master/License.md).

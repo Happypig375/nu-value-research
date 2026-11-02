@@ -118,3 +118,54 @@ Mechanism: `readScreen` builds the screen as `Screen (ntoa screenState.Name)` �
 ### Next step (not started)
 
 A written amendment could test a corrected import (engine patch rooting the address at `Game.Handle`, or a caller-side descriptor walk using only public APIs — none exists, since `addScreen` is internal) to answer whether the file format round-trips once the addressing defect is removed. That is a new question with a different evidence class; it needs its own protocol first.
+
+## Amendment: corrected-import arms (written 2 November 2026, ~19:20 HKT, before any build or run)
+
+**Status: protocol fixed before building or running.** Results go in their own section below and do not change this amendment.
+
+**Authority.** User decision D41 (2 November, about 19:10 HKT, relayed by the orchestrator) approves re-running the import test with the one-line fix, and says Claude may run this harness. This covers only the corrected-import rerun described here. It does not open branch A or any other Daybreak work.
+
+**Question.** Once the one-line address bug in `World.readScreen` is removed, does the exported screen file load back into a fresh process so that the B0 state is reproduced (the common check in §4)?
+
+**Evidence class.** This uses **adapted engine source**: pinned Nu 064f7ae plus one changed line. It is not the stock API. The finding above stands unchanged: stock import is broken at 064f7ae.
+
+**The change.** `Nu/Nu/World/WorldScreen.fs` line 309, in `readScreen`: `Screen (ntoa screenState.Name)` becomes `Game.Handle / screenState.Name`. This is the address form `createScreen4` already uses. The same fix is upstream as bryanedds/Nu#1466. A new script, `apply_import_fix.py`, applies it after `prepare.py`. It refuses to run unless the file matches the archive byte for byte and the old line appears exactly once, on line 309. Its receipt must show that only line 309 changed.
+
+**Not a blind test.** An engineering check of the fix, outside this protocol, already ran these three arms with the same patch (`~/workspace/nu-import-fix/fix-evidence/daybreak-064f7ae-patched/`, 2 November, about 16:50 HKT). It found:
+- **export:** the same file hash, `a1827a05…`;
+- **import:** passed;
+- **replace without destroy:** 47 entities, 30 brick entities against 29 bricks in the model.
+
+So this run repeats that check under a written protocol. It is not a fresh prediction. The diagnostic arm's prediction stays as it was frozen in §3: stale entities survive, giving 30 + 29 = 59 brick entities. I do not revise it.
+
+**What stays the same.** These files are unchanged and used as committed: `prepare.py`, `Probe.fs`, `Probe.fsproj`, `build.py`, `run.py`, `linux_run.sh` and `compare.py`. The same goes for the B0 reference (`experiments/nu-history-b1/checkpoint/`), the arm definitions, the pass conditions in §4 and §5, the 600-second limit per run, and the Linux environment (Xvfb on `:94`, Mesa software OpenGL with the 4.6 override).
+
+**Environment only.** `NUGET_PACKAGES` points at a private scratch copy of `.artifacts/nuget-packages/`. This avoids the FSharp.Core package difference between the Windows and Linux SDKs, as in the other Linux checks. The runs root is in scratch. Evidence is copied to the new folder `.artifacts/daybreak-screen-persistence-20261102/corrected-import/`. Kimi's existing evidence files are not touched.
+
+**Order:**
+1. `prepare.py` (fresh extract, then the Gaia bridge);
+2. `apply_import_fix.py`;
+3. `build.py`;
+4. arm `export` 01, starting with an empty transfer folder;
+5. arm `import` 01;
+6. arm `replace-nodestroy` 01;
+7. `compare.py`.
+
+**Pass and fail, fixed now:**
+- **Patch:** the receipt lists only line 309 as changed. Anything else stops the run before building.
+- **Build:** exits 0.
+- **Export:** passes under the original conditions. The negative controls must reject the fresh board, and the full check must pass before and after the export. I expect the file SHA-256 to be `a1827a05…`. A different hash is recorded as a difference; on its own it is not a failure.
+- **Import (the main result):** passes only if **all** of these hold:
+  - exit 0 with no timeout;
+  - the trace ends with `result.pass = true` at phase `verified`. That means the negative controls rejected the fresh board, the groups were destroyed, and at the next halted boundary the model and the projected scene both equal B0, with the world halted and Gameplay selected;
+  - `compare.py` reports `transfer_hash_agreement = true`.
+
+  Anything else means the corrected import **fails**, and the failure is recorded as found.
+- **Replace without destroy (diagnostic):** the arm passes, as before, if the observation completes and the model equals B0. The frozen prediction counts as confirmed only if `predictionObserved` is true (59 brick entities and a projection that differs from B0). Otherwise it is falsified, and I report the actual counts.
+- **Declared follow-up analysis (reading traces only, no reruns):** from the `post-import-diagnostic` observation, compare the brick entity names on screen with two lists: the 30 names on the freshly started board (`initial`) and the 29 names in the B0 model. This says which entities are actually present.
+
+**Rules.** Each arm runs once. If an arm fails, I record the failure and do not tune anything. Environment-only fixes are allowed and logged as new attempts. Five unresolved failures at one unchanged step means stop. The probe, the comparison script and the reference are frozen.
+
+**Limits.** All limits in "What this experiment cannot show" still apply. This run also cannot say anything about stock Nu at 064f7ae, about later Nu revisions, or about an editor workflow. Gaia has no screen-file command.
+
+**Cleanup.** After the evidence is copied and checked, the scratch source tree, build outputs and NuGet copy are deleted, and the deletion is logged here.
