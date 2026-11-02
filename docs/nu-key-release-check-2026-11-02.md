@@ -94,3 +94,38 @@ Also recorded but not used in the verdict:
 - Lag is counted in frames, not in milliseconds of real hardware latency.
 - It cannot locate where the delay comes from: the X server, SDL's event queue, Nu's input polling or presentation.
 - No pause, audio, agent access, gameplay-correctness or benefit claim. Nothing about the stopped R02 draft.
+
+## Results (added 2 November 2026, ~21:55 HKT, after attempt 01)
+
+**Conclusion: RELEASE WORKS. The drift seen after key release is display lag of 2 game updates, not a stuck key.** The first attempt was valid and gave the verdict, so I stopped there, as the protocol says.
+
+**The clock held.**
+- Every held step was exactly **4.0 units per new frame**: 17 of 17 for Right and 35 of 35 for Left, so the clock share was 1.0 against the required 0.8.
+- So each distinct frame was one game update.
+- The game ran at **2.5 updates per second** throughout: 126 counted frames, 2.45 to 2.60 per second in every phase.
+
+| | Right | Left |
+| --- | --- | --- |
+| Frames from key-down to first visible movement (press lag) | 3 | 3 |
+| Paddle centre on the frame that triggered key-up | +67.75 | −64.25 |
+| Release-window frames that still moved | frames 1 and 2 (lag **2**) | frames 1 and 2 (lag **2**) |
+| Still frames after the last movement | **28 of 30** | **28 of 30** |
+| Final centre (not at the ±128 clamp) | +75.75 | −72.25 |
+| Lives at the end of the window | 4 | 4 |
+
+- **No-input control:** the paddle sat at −0.25 for 10 frames.
+- **Setup:** the new Title rule fired at 17.5 s, on the visible Title, and the single Play click worked. Gameplay settled at 42.0 s.
+- **Secondary:** Quit, then Exit by real clicks; the game exited with code 0.
+- **Lives:** one life was lost early in the run (5 → 4) and played no part in the verdict.
+
+**Reading.** After each release the paddle moved on exactly 2 more frames, then never again in the next 28. A held key would have moved it on every frame, about 112 more units, into the clamp. So the key-up arrived, and it reached the game about 2 updates after it was sent. This explains the input check's failed release rule exactly:
+- its 8-unit drift was these 2 frames;
+- its 1-second allowance covered only about 2.5 updates at this frame rate.
+
+Press and release lags are similar (3 and 2 frames). That fits one short delay, of about 2–3 updates, between the X server and what is on screen. This check cannot tell which stage causes it: X event delivery, SDL's queue, Nu's input polling or frame presentation.
+
+**Combined with the keyboard input check:** on this server, real X input (two keys, plus Play, Quit and Exit clicks) reaches the unchanged standalone game, takes visible effect within about 3 updates, and stops within 2 updates of release. All of it is judged from screenshots only. This is new work, not the R02 input gate.
+
+**Evidence:** `.artifacts/key-release-check-20261102/run-01/` holds `frames.jsonl` (all 126 frames), the trace, `result.json`, 7 screenshots and the game logs, plus the prepare and build receipts.
+
+**Cleanup (logged).** I deleted the scratch source tree with its build outputs (2.4 GB) and the NuGet copy (1.0 GB); both can be rebuilt. I stopped Xvfb `:95`.

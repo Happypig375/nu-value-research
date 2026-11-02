@@ -1,22 +1,30 @@
 # Status and continuation plan — 1 November 2026 (HKT)
 
-**NO INDEPENDENT WORK LEFT for the Claude session (2 Nov 2026, ~21:25 HKT).** Both tasks from this evening are done:
-- the Daybreak branch B corrected import passes (Daybreak section below);
-- the new real-keyboard check from NEEDS-HUMAN item 7 has run (next section).
-
-What would unblock more work:
-- **Keyboard check follow-up:** the release question needs a new protocol that measures in game updates. Writing one is development work and could start without asking. No decision depends on it, so I have not started it.
+**NO INDEPENDENT WORK LEFT for the Claude session (2 Nov 2026, ~22:00 HKT).** The key-release follow-up is done: **the release drift was display lag, not a stuck key** (section just below). What would unblock more work:
 - **Daybreak branch A** (deliberate recovery fault trigger): its private source draft is still not on the server (NEEDS-HUMAN K1). It is not assigned to me.
 - **Other new R-series experiments:** PLAN ties these to a practical comparison or decision that the user has not chosen.
 
 The recent commits are local; the nightly job pushes `main`.
+
+## Key release counted in game updates — Claude Opus (2 November 2026, ~21:55 HKT)
+
+- **Result: release works.** After each real key release, the paddle moved on exactly **2 more game updates**, then stayed still for the remaining **28 of 30**. This held for both Right and Left. A stuck key would have kept it moving into the clamp.
+  - Press lag was 3 updates for both keys.
+  - So the input check's failed release rule (8 units of drift within 1 s) was display lag, at 2.5 updates per second.
+- **Method:** the harness counts distinct screenshots as game updates. The rotating cube changes every update, and the run confirmed the count: every held step was exactly 4 units per new frame, 52 of 52.
+  - Protocol `fcc67fa`, committed before any run.
+  - The first attempt was valid and gave the verdict, so I stopped there.
+- **Together with the input check:** real X keyboard and mouse input reaches the unchanged standalone game, takes effect within about 3 updates and stops within 2 of release. All of it is judged from screenshots only.
+  - This is new work, not the R02 gate.
+  - Not shown: real hardware or a window manager, other keys or games, pause, audio, agent access or benefit.
+- **Record:** [docs/nu-key-release-check-2026-11-02.md](docs/nu-key-release-check-2026-11-02.md); evidence in `.artifacts/key-release-check-20261102/`. I deleted the scratch builds (3.4 GB, rebuildable) and logged it.
 
 ## Real keyboard input to the standalone game — Claude Opus (2 November 2026, ~21:20 HKT; NEEDS-HUMAN item 7, option a)
 
 - **Result: real input works, but the frozen protocol was not passed cleanly.** Key and mouse events sent through the X server's XTEST extension reach unchanged standalone MMCC Breakout through SDL. Screenshots alone show the effect:
   - Right moved the paddle from −0.25 to +67.75, and Left moved it to −64.25;
   - Play, Quit, Play again (a fresh board) and Exit all worked by real clicks, and the game exited with code 0.
-- **Protocol verdict: FAIL on one check.** The paddle drifted 8 units (2 game updates) in the 1 s after Left was released, against an allowance of 4. The game runs at about 2.5 updates per second under software rendering, and the screen trails key changes by about 2 updates. So display lag is the likely cause, but this run cannot prove it.
+- **Protocol verdict: FAIL on one check** (later explained as display lag by the key-release check above). The paddle drifted 8 units (2 game updates) in the 1 s after Left was released, against an allowance of 4. The game runs at about 2.5 updates per second under software rendering, and the screen trails key changes by about 2 updates. So display lag is the likely cause, but this run cannot prove it.
 - **Attempts:** five attempts, all kept. Four were fixed by amendments committed before the next attempt: window-name encoding, screenshot format, brick sample point, and fade-in. The stop rule then applied, and I did not rerun.
 - **This is new work, not the R02 input gate.** That gate stays stopped and its returned draft unread.
 - **Not shown:** release timing; a real window manager or real hardware; other keys or games; pause, audio, agent access or benefit.
