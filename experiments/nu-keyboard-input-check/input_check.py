@@ -205,7 +205,8 @@ def gameplay_signature(s):
     left = sum(max(s.px(-164, y)) <= DARK for y in range(-170, 171, 10))
     right = sum(max(s.px(164, y)) <= DARK for y in range(-170, 171, 10))
     top = sum(max(s.px(x, 176)) <= DARK for x in range(-150, 151, 10))
-    lit = [max(s.px(x, y)) >= BRIGHT for x, y in BRICKS]
+    # Amendment 3: sample 4 units above each brick centre; the brick image has a black line at its exact centre.
+    lit = [max(s.px(x, y + 4)) >= BRIGHT for x, y in BRICKS]
     upper = sum(lit[k] for k, (x, y) in enumerate(BRICKS) if y >= 128)
     ok = left >= 32 and right >= 32 and top >= 28 and sum(lit) >= 25 and upper >= 8
     return ok, {"leftDark": left, "rightDark": right, "topDark": top, "litBricks": sum(lit), "litUpperBricks": upper}
@@ -362,8 +363,21 @@ def run(children):
                 s = shot()
                 ok, sig = gameplay_signature(s)
                 if ok:
-                    shots[label] = s
                     emit("gameplay-reached", label=label, clicks=attempt, signature=sig)
+                    # Amendment 3: gameplay fades in; wait until the paddle colour at its start position is
+                    # the same (within 8 per channel) in two screenshots 0.5 s apart, for up to 10 s.
+                    prev, settle = s, time.monotonic()
+                    while time.monotonic() - settle < 10:
+                        time.sleep(0.5)
+                        s = shot()
+                        r1, r2 = paddle_reference(prev)[0], paddle_reference(s)[0]
+                        if r1 and r2 and diff(r1, r2) <= 8 and gameplay_signature(s)[0]:
+                            break
+                        prev = s
+                    else:
+                        emit("gameplay-not-settled", label=label)
+                    shots[label] = s
+                    emit("gameplay-settled", label=label, paddle_colour=paddle_reference(s)[0])
                     return s, attempt
                 time.sleep(0.2)
             emit("gameplay-not-reached", attempt=attempt, signature=sig)

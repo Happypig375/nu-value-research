@@ -141,3 +141,23 @@ No judging rule, threshold or step changes.
 - the unchanged gameplay signature correctly reports **not gameplay** on the Title: 0 of 10 upper brick spots lit. The Title label lights the 20 lower spots, as the protocol anticipated.
 
 This checks the tools only and is not a judged result.
+
+## Amendment 3 (2 November 2026, ~20:50 HKT, before attempt 04): brick sample point, and waiting for the fade-in
+
+**What happened in attempt 03 (a recorded FAIL, counted toward the stop rule).**
+- The window and capture worked.
+- The "stable Title" rule fired at 12.3 s on the **black loading screen**, so Play click 1 was ignored.
+- Play click 2 (52.8 s), on the visible Title, **did** start gameplay: the Title label vanished from the screen.
+- The gameplay signature never matched, so the run ended with "gameplay not reached after 3 Play clicks". No key was sent.
+
+**Diagnostic `diag-03` (not judged; one Play click on the visible Title, screenshots every 2.5 s, no keys).** It showed the gameplay screen correctly: walls, 30 bricks, the white paddle at the bottom centre, 5 lives and Quit. It also showed two rule problems:
+1. Each brick image has a **black line exactly at its centre**, where the signature sampled, so all 30 bricks read as unlit.
+2. Gameplay **fades in** over about 6 s at this frame rate. The paddle reads grey 153, then 212, then 255 in successive screenshots. A paddle colour taken mid-fade would not match later frames.
+
+The unchanged paddle rule, applied to the settled diagnostic frame, found the paddle at x = −0.25 and counted 5 lives.
+
+**Changes:**
+- The brick sample point moves to **4 units above each brick centre**, in the brick's upper half. Thresholds are unchanged. Checked against every saved image: the Title, the loading black and the early fade frames all read as "not gameplay", and the settled gameplay frames read as gameplay with 30/30 bricks lit.
+- **Settling:** after the signature first matches, the harness takes screenshots 0.5 s apart until the paddle colour at its start position agrees within 8 per channel in two of them (up to 10 s). The first gameplay screenshot used for the paddle colour and the no-input control is the settled one.
+
+Nothing else changes. Known waste that is not fixed: the Title rule can fire on the black loading screen. The 3-click allowance already covers that. Attempts so far: 01 invalid, 02 invalid, 03 fail. **Two more unresolved failures would trigger the stop rule.**
