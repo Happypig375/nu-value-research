@@ -81,3 +81,17 @@ The stop rule applies: five unresolved failures at one unchanged step means stop
 ## What this check cannot show
 
 The original limits stay: no decoded visual appearance or framebuffer check; no input; no native resource restoration; no propagation or revision; no authoring benefit. The asset check covers presence, container signatures, exact untransformed bytes and the read-only signal, not how textures look.
+
+## Amendment 2 (3 November 2026, ~17:20 HKT), written after two L0 attempts and before any further run
+
+**Attempts so far** (all retained in `.artifacts/r12-terra-linux-amended-20261103/`):
+- Assets, build, seal and acceptance: all passed at the first attempt (details in the results section).
+- **L0 attempt 01 failed** on an environment gap. The Windows-built host has only Windows physics natives, and the run stopped with `DllNotFoundException: libbulletc`. The pinned archive ships exactly two Linux natives in `Nu/Nu/`: `libassimp.so` (already declared above) and `libbulletc.so`. Attempt 02 adds `libbulletc.so` from the same archive to the same `LD_LIBRARY_PATH` folder. This is the same kind of environment fix as Assimp; no package byte changed.
+- **L0 attempt 02 timed out.** All three callbacks ran. Both captures A and B were written, and the saved scene was written 18 s after launch. Its SHA-256 `0bdb814d…` **equals the Windows L0 and L1 saves**. Then the probe called `World.exit`, and the process never returned. No further callback ran. `run.py` killed it at the 180 s deadline (exit −9), so `complete_observation_and_save` is false, no `summary.json` exists, and L1 cannot start. That is a Linux difference: a hang after the engine was asked to exit.
+
+**What I will do next, and only this:**
+1. **L0 attempt 03, diagnostic only.** Same environment and inputs as attempt 02. A watcher waits for `saved-Scene.nugroup`, waits 20 s more, then records the managed thread stacks of the probe process with `dotnet-stack report` (Microsoft's diagnostics tool, installed in scratch). It may also record native thread names from `/proc`. **This attempt is not scored, whatever happens.** Even if it exits normally, it does not replace attempt 02, and it is never used as L1's predecessor.
+2. If the stacks point to a cause **outside the package**, I may make **one** scored L0 attempt 04 with that environment-only fix, declared in a short dated note before the run. Examples of such causes: the audio driver, the display, or a native library. If attempt 04 is complete, L1, `compare.py` and the controls follow as planned. A fix that needs a package or engine change is out of scope; I stop and report it instead.
+3. If the stacks don't show an environment cause, I stop the native stage here. Then `check_controls.py` (synthetic, never loads Nu) still runs, and the result stays "L0 observes and saves identically to Windows, but hangs on exit on Linux; L1 not reached".
+
+The stop rule still counts every attempt at the L0 step, the diagnostic included: 01 environment, 02 hang, 03 diagnostic, 04 optional. That leaves no fifth try.
