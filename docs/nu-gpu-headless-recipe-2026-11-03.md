@@ -6,7 +6,7 @@
 > - Switching the pinned packages to Vulkan would mean re-pinning to a much newer Nu, which is a user decision (NEEDS-HUMAN item 10).
 
 **Short answer:**
-- **It works:** run the app on your own Xvfb display under **VirtualGL's EGL back end**. Its OpenGL then runs on the RTX 4090 D. Unchanged Gaia (pinned Nu `064f7ae`) runs about 7 times faster than with Mesa software rendering. Heavy 3D scenes run about 70 times faster, and faster than our earlier Windows runs.
+- **It works:** run the app on your own Xvfb display under **VirtualGL's EGL back end**. Its OpenGL then runs on the RTX 4090 D. Unchanged Gaia (pinned Nu `064f7ae`) runs about 7 times faster than with Mesa software rendering. Heavy 3D scenes ran about 70 times faster. All figures here are single runs on this server, comparing two configurations.
 - **Limit:** Nu's frames do **not** reach the Xvfb window (it stays black). So use this route for runs judged from the program's own data, and keep software rendering for screenshot-based checks.
 
 Scope: Nu at `064f7ae` renders with **OpenGL 4.6**, not Vulkan. Current Nu master uses Vulkan; see "Vulkan" below.
@@ -36,9 +36,9 @@ Scope: Nu at `064f7ae` renders with **OpenGL 4.6**, not Vulkan. Current Nu maste
 | --- | --- | --- |
 | Gaia + Breakout, branch A A1 (two fault/recovery passes) | 47 s | 6.4 s, the same verdict and behaviour ([re-check](nu-gpu-recheck-2026-11-03.md)) |
 | Gaia + Breakout, 60-update control (A0) | 45 s | 7.2 s |
-| R12 Terra Firma 3D scene, per process | about 750 s (Windows: 34–37 s) | L0 11.2 s, L1 8.8 s, about 1.1–1.2 GB GPU memory; the same comparison, byte-identical captures and saves |
+| R12 Terra Firma 3D scene, per process | about 750 s | L0 11.2 s, L1 8.8 s, about 1.1–1.2 GB GPU memory; the same comparison, byte-identical captures and saves |
 
-These timings are not performance results: the GPU is shared, and VirtualGL copies frames back to X.
+These timings are not performance results: they are single runs, the GPU is shared, and VirtualGL copies frames back to X. Under the 3 November timing rule, they are valid only on this server, and they must not be compared with timings from another machine (for example the October Windows runs).
 
 ## Caveats
 

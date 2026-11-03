@@ -1,5 +1,9 @@
 # Terra Firma scene load/save/reopen feasibility
 
+> **Timing note, 3 November 2026 (user decision):**
+> - Wall-clock times and deadline outcomes here come from the memory-constrained Home PC, so they are provisional and possibly distorted. That includes the restart-interrupted attempt.
+> - The preservation verdicts are data-only. They were reproduced identically on the Linux server (NEEDS-HUMAN item 10).
+
 Date: 2026-10-18. **One corrected native load/save/fresh-reopen pair passes the
 declared configuration and history checks.** The invalid first native attempt
 remains retained. The [prospective protocol](../experiments/nu-r12-terra-firma/PROTOCOL.md),

@@ -1,5 +1,9 @@
 # R03 history feasibility: execution record
 
+> **Note, 3 November 2026 (user decision):**
+> - The two early **deadline failures** happened on the memory-constrained Home PC and may reflect memory pressure, not the probe.
+> - The B0 verdict is data-only, and it reproduced on the Linux server on 2 November (NEEDS-HUMAN item 10).
+
 **Observed result, 2026-10-15:** one real functional Gaia/MMCC Breakout checkpoint passed complete declared B0 model/property recovery through Gaia undo, and a fresh process reconstructed the same checkpoint. Both fresh-initial and omitted-score negative controls were rejected. Two deadline failures and one premature-snapshot instrumentation failure remain in the attempt ledger. This establishes bounded feasibility with an instrumented bridge, not ordinary agent access, B1 continuation, comparative costs or debugging benefit.
 
 The user's 2026-10-15 instruction, “meanwhile, do constructions and experiments that you are confident in,” authorizes this local construction and experiment. It supersedes the earlier construction hold. The subsequent “parallelize your work with subagents” authorizes bounded maintainer assistance: a separate PDF audit and a source-boundary analysis support the main agent's construction and integration. These assistants are not experimental task-solving candidates or human participants. The [selected application contract](nu-history-application-contract-2026-10-11.md) owns the scientific boundary; this record owns actual execution and its limits.

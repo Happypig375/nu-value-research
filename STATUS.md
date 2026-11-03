@@ -1,6 +1,6 @@
 # Status and continuation plan — 1 November 2026 (HKT)
 
-**NO INDEPENDENT WORK LEFT for the Claude session (3 Nov 2026, ~20:00 HKT).** The Vulkan question is checked (section just below). The pinned Nu is OpenGL-only, so re-runs on Vulkan wait on NEEDS-HUMAN item 10. The GPU route works and the GPU re-check matches. Both Daybreak branches and all Linux reproductions asked for are done. I am no longer editing this checkout, and no background jobs or Xvfb displays of mine are running. What is still open:
+**Claude session (3 Nov 2026, ~20:30 HKT): waiting on NEEDS-HUMAN item 10 for the R06 reference re-run's renderer.** The keyboard reference re-runs can start without it; they are next unless the orchestrator says otherwise. The pinned Nu is OpenGL-only, so Vulkan does not apply to it. The GPU route works and the GPU re-check matches. Both Daybreak branches and all Linux reproductions asked for are done. I am no longer editing this checkout, and no background jobs or Xvfb displays of mine are running. What is still open:
 - **The R-series comparison choice:** with the user. PLAN ties new R-series experiments to it.
 - **Optional:** the Terra Firma revision series was never re-run on Linux. Nobody asked for it.
 
@@ -12,6 +12,12 @@
 - **For Vulkan-era Nu,** future runs use NVIDIA Vulkan on Xvfb once nu-gaia-agentic confirms that route. The OpenGL/VirtualGL route is now labelled the fallback in the GPU recipe doc.
 - Nothing was run for this check: source reading and the GitHub API only.
 - **Follow-up (user question): no package needs an OpenGL-specific comparator.** 15 of 18 judge only data, and 6 of those never render. R06's milliseconds are compared only within one run, and the two keyboard checks read screenshots, so they would need a re-tuned protocol on Vulkan. The per-package table is under NEEDS-HUMAN item 10. Branch B is the one package where porting answers a new question.
+- **Timing rule (user, 3 Nov):** timings are valid only within one machine and configuration.
+  - The Home/Windows timings are now marked provisional (Home was memory-constrained) in PLAN and in the R06, R03 B0 and Terra Firma docs. Their values are unchanged.
+  - **This server is the reference machine.** Planned reference re-runs (protocols first):
+    - R06, both arms, 20 alternating pairs;
+    - keyboard and key-release checks, 10 repeats each, with software rendering.
+  - Possible memory-pressure effects on Home's data-only runs are listed under item 10. The strongest is R06's Windows timeout, which passed here.
 
 ## Nu on the NVIDIA GPU — Claude Opus (3 November 2026, ~19:40 HKT; user via orchestrator: "use the GPU resources")
 
@@ -21,7 +27,7 @@
   - **Correction to the request:** this Nu version renders with OpenGL, not Vulkan, so the earlier software runs used Mesa llvmpipe OpenGL, not lavapipe.
 - **Declared re-check:** protocol committed first (`6dde89a`); results `e1f1f9f` and the commit that adds this section. [doc](docs/nu-gpu-recheck-2026-11-03.md)
   - **Branch A A1:** the same verdict (PASS) and behaviour, in 6.4 s instead of 47 s.
-  - **R12 Terra Firma pair:** the same comparison and byte-identical captures and saves, with 17/17 controls. Each process took about 10 s (L0 11.2 s, L1 8.8 s), instead of about 750 s with software rendering; Windows took 34–37 s.
+  - **R12 Terra Firma pair:** the same comparison and byte-identical captures and saves, with 17/17 controls. Each process took about 10 s (L0 11.2 s, L1 8.8 s), instead of about 750 s with software rendering on this server (single runs).
   - Each step passed at its first attempt.
 - **Limits:**
   - Under VirtualGL, Nu's Xvfb window stays black. Screenshot-based checks (like the 2 November keyboard checks) still need the software wrapper.
@@ -65,7 +71,7 @@
     - Under amendment 3 (`4b4249f`, committed before any run), the per-process deadline went from 180 s to 1,800 s. L0 and then L1 both exited normally.
     - The pair passes its declared checks with 0 invalid and 0 adverse findings. It preserves the 197 entities (19 roots), 166 links, 11 histories, 32 palms and 4 villas. The comparison equals Windows `terra-comparison-01.json`.
     - The captures, the saved scene and the 251 prepared assets are byte-identical to Windows, and the 17 checker controls pass.
-    - The only difference is time. Each native process takes about 12.5 minutes, against 34–37 s on Windows, because one reflection-map frame at shutdown is very slow on the software renderer. This is not a performance result.
+    - The only difference is time. Each native process takes about 12.5 minutes here (not comparable with the Windows times, under the 3 November timing rule), because one reflection-map frame at shutdown is very slow on the software renderer. This is not a performance result.
     - Declared Linux deviations:
       - file mode as the read-only signal;
       - the pinned archive's Linux `libassimp.so` and `libbulletc.so`;

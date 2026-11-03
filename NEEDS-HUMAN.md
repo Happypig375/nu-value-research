@@ -39,7 +39,7 @@ Newest first. Each item lists the options, my recommendation and what it blocks.
 | R04 application diagnostics | The same warning inside the full Breakout build | Compiler output only | No; nothing runs | Keep |
 | R04 pause/lifecycle runtime | Pause/quit behaviour of four references; five planted faults caught | Model and property traces per game update | No | Keep on 064f7ae |
 | R05 events | Event delivery order in a stub world | Event traces | No; the stub world has no renderer | Keep |
-| R06 recovery cost | Gaia snapshot/undo vs serialize/restore: correct state, plus component times | Timing (ms) plus state equality | **Timing is environment-specific** (already differs between Windows and Linux). It is compared only within one run, so no OpenGL baseline is needed. | Keep. Never compare ms across machines or renderers. |
+| R06 recovery cost | Gaia snapshot/undo vs serialize/restore: correct state, plus component times | Timing (ms) plus state equality | **Timing is machine- and configuration-specific.** No OpenGL baseline is needed, but the Home timings are provisional (memory pressure). | Keep on 064f7ae. **Paired, repeated reference re-run of both arms on this server** (plan below). |
 | R10 conversion | How Prime converts changed record types | Converted values | No; Prime only, no Nu run | Keep |
 | R10 live reload | Game state survives a code reload | Model fields | No | Keep on 064f7ae |
 | R10 schema reload | A new field after reload gets 0 instead of 200 | Model fields | No | Keep on 064f7ae |
@@ -48,10 +48,47 @@ Newest first. Each item lists the options, my recommendation and what it blocks.
 | R12 Terra Firma revisions | Template revisions (palm tints and others) delivered and kept after reopen | Entity properties and histories | No | Keep (not re-run on Linux) |
 | Branch A recovery fault | Gaia rewinds to the last snapshot after a game-code exception | Model and scene values, log text, exit codes | No | Keep. Port only if recovery on current Nu becomes a question. |
 | Branch B screen save/reload | Screen export and import round-trip the gameplay model | Saved file, model values | No | Keep. **Porting is worth it as a new question:** stock import is broken at 064f7ae but fixed on current Nu (upstream `7d6389bea`). |
-| Keyboard input check | Real X key and mouse input reaches the game | **Screenshots** (paddle and brick pixels) | **Yes.** Sample points were tuned on Mesa images, and they need software rendering (black window under VirtualGL). | Keep as the record. Redo on Vulkan-era Nu with a new, re-tuned protocol only if input work needs it. |
-| Key-release check | Release stops the paddle within 2 game updates | **Screenshots** (one distinct frame = one update) | **Yes**, as above, plus display-lag dependence | Same as the keyboard input check |
+| Keyboard input check | Real X key and mouse input reaches the game | **Screenshots** (paddle and brick pixels) | **Yes.** Sample points were tuned on Mesa images, and they need software rendering (black window under VirtualGL). | Keep as the record. Its timing parts (release drift in seconds, about 2.5 updates/s) are valid only for that configuration. **Repeated reference re-run on this server** (plan below). Redo on Vulkan-era Nu with a re-tuned protocol only if input work needs it. |
+| Key-release check | Release stops the paddle within 2 game updates | **Screenshots** (one distinct frame = one update) | **Yes**, as above, plus display-lag dependence | Same as the keyboard input check, including the **repeated reference re-run** |
 
 The stopped drafts (R02 input, R10 schema migration, R12 material intent) are not runnable, and nothing here changes their status.
+
+#### 10, follow-up 2 (user, 3 Nov): timing is machine-dependent; this server becomes the reference machine
+
+**Rule:**
+- Any timing result (milliseconds, wall-clock, frame pacing, deadlines met or missed) is valid only within one machine and one configuration.
+- The October Home/Windows timings are **provisional and possibly distorted**: Home was memory-constrained. They are now marked so in PLAN and the package docs, with their values unchanged.
+- **This server is the reference machine.** Data-only results can still be compared across machines.
+
+**Timing-sensitive packages: paired or repeated reference re-runs on this server**
+
+| Package | Timing result | Arms to re-run | Planned configuration |
+| --- | --- | --- | --- |
+| **R06 recovery cost** | ms to take a recovery point; ms to recover; request-to-ready | Both arms: Gaia snapshot/undo (history) and serialize/restore (reconstruction) | **20 pairs** (instead of 6), alternating order (H R R H …); one build; `nice -n 10`; one process at a time; before each process, check that the GPU is idle and record the load average and free memory |
+| **Keyboard input check** | Release drift within 1 s; update rate | One arm (press, then release); repeats only | **10 repeats**; Mesa software rendering on Xvfb (screenshots need it); same nice level and checks |
+| **Key-release check** | Press lag and release lag, in updates counted from screenshots | One arm; repeats only | **10 repeats**, same configuration as the keyboard check |
+| GPU vs software speed (recipe doc; not a package) | Seconds per process | Optional: both configurations, alternating, 5 repeats each (A1 and R12 L0) | Only if a speed figure is ever cited; today's figures are single runs |
+
+- **Timing recorded only as description, no re-run planned:** the R12 Terra Firma and revision wall times, branch A/B run times, and R03/R04/R10 process times. No result rests on them.
+- **R02's callback counts** are game-update counts under a fixed 60-update clock, not wall-clock. They were identical on Windows and Linux, so they are treated as data.
+- **Each re-run gets a dated protocol committed first,** and its results replace the provisional timings as the reference.
+- **The configuration for R06 depends on this item:** at `064f7ae` it can only be OpenGL. My proposal is the NVIDIA GPU via VirtualGL (data-only, less CPU noise). The keyboard checks need Mesa software rendering either way.
+
+**Data-only results that Home's memory pressure might have affected** (outcomes stand; listed so nobody reads more into them):
+- **R03 B0:** the first two runs hit a 180 s deadline before the 600 s run passed. The B0 verdict reproduced on the server.
+- **R06:** the reconstruction feasibility run timed out on Windows (unexplained) and **passed on the server**. This is the most likely memory-pressure case.
+- **R12 Terra Firma reopen:** one expanded attempt was interrupted by a restart. The final pair reproduced on the server, identically.
+- **R10 schema reload:** build 01 ended "interrupted, completion unknown". The final verdicts reproduced on the server.
+- **R03 native-001 preparation:** one construction failure was an "SDK first-use timeout". R03 native-001 stays final; this is listed only as a possible memory effect.
+- **Not memory:** R12 revision's B-local input-integrity failure was attributed to the A: storage problem. The stopped R02/R10/R12 drafts failed on compile, control and fixture errors.
+
+**Updated recommendation for item 10: (a), plus the timing rule.**
+- Keep the pinned packages on `064f7ae` with OpenGL.
+- Make this server the reference machine.
+- Run the three timing re-runs above under declared protocols. R06 can start as soon as you confirm OpenGL via VirtualGL for it. The keyboard checks can start at once, because they need software rendering anyway.
+- Run all new Nu work on Vulkan.
+
+Server time is cheap. In total: about 40 R06 processes and 20 short keyboard runs.
 
 ## 2026-11-03 ~18:45 HKT — branch A finished — Claude Opus
 

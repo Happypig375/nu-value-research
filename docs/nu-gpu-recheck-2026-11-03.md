@@ -1,5 +1,10 @@
 # GPU re-check of branch A (A1) and R12 Terra Firma (3 November 2026)
 
+> **Timing note, added 3 November 2026 after the results:**
+> - The run times below are single runs on this server. They show that the GPU configuration is much faster here.
+> - The mentions of Windows times are context only. They are not valid comparisons (3 November timing rule: Home was memory-constrained, and timings are valid only within one machine and configuration).
+> - The data-only verdicts are unaffected.
+
 **Status: protocol fixed before either re-check ran.** Results are added afterwards in their own section.
 
 ## Why

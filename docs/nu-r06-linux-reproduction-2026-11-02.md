@@ -1,5 +1,10 @@
 # R06 recovery-cost series: Linux reproduction check (2 November 2026)
 
+> **Timing note, 3 November 2026:**
+> - The timings here are valid only within this server under this run's configuration: Mesa software rendering, the run order of the original plan, six pairs.
+> - They must not be compared with the October Home/Windows numbers.
+> - They are not yet the reference timings. Those will come from a declared, paired and repeated re-run on this server (NEEDS-HUMAN item 10).
+
 **Status: protocol fixed before any build or run.** Results are added afterwards in their own section and do not change this protocol.
 
 ## Why

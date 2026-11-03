@@ -1,5 +1,12 @@
 # R06 bounded recovery cost: execution record
 
+> **Timing note, 3 November 2026 (user decision):**
+> - The millisecond and wall-clock timings below were measured on the Home PC, which was **memory-constrained**. Treat them as **provisional and possibly distorted** by memory pressure. The recorded values are unchanged.
+> - Timings are valid only within one machine and configuration. Never compare them with timings from another machine.
+> - The Linux server is now the reference machine. A paired, repeated re-run of all arms there, under one declared configuration, will give the reference timings (NEEDS-HUMAN item 10).
+> - The data-only results (state equality, verdicts) are not affected by this note.
+> - The original reconstruction feasibility **timeout** may also reflect memory pressure: the same run passed on the Linux server on 2 November.
+
 ## Current status
 
 All twelve assigned measured processes passed, giving six complete pairs.
