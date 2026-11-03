@@ -1,8 +1,21 @@
 # Status and continuation plan — 1 November 2026 (HKT)
 
-**Claude session, 3 Nov 2026: WORKING.** R12 Terra Firma now reproduces on Linux (item 9 done). Running the branch A build/run step next, as the orchestrator reassigned it. The user's decisions D9 are applied (section just below). Still open:
-- **Branch A build/run:** for the orchestrator to give to the Kimi K3 lane. The protocol is ready.
-- **The R-series comparison choice:** still with the user.
+**NO INDEPENDENT WORK LEFT for the Claude session (3 Nov 2026, ~18:45 HKT).** Both Daybreak branches and all Linux reproductions asked for are done (sections just below). I am no longer editing this checkout, and no background jobs or Xvfb displays of mine are running. What is still open:
+- **The R-series comparison choice:** with the user. PLAN ties new R-series experiments to it.
+- **Optional:** the Terra Firma revision series was never re-run on Linux. Nobody asked for it.
+
+## Branch A build/run — Claude Opus (3 November 2026, ~18:40 HKT; reassigned by the orchestrator)
+
+- **Result: Gaia's recovery works as the source predicted.**
+  - Two deliberate division-by-zero faults in Breakout's own update code were caught in one editor session.
+  - Each time, Gaia rewound to the snapshot taken when Advance was pressed, halted and kept running.
+  - The full gameplay model and the visible scene equalled the pre-Advance state exactly.
+  - The 30 updates played since Advance were lost, and the fault fired again on the next Advance (the code is not repaired).
+  - With undo off (imperative mode), the same fault makes Gaia log "Could not rewind world" and exit with code 1.
+- **Attempts:** each step passed at the first attempt: both prepares, both builds, the no-fault control (A0), the recovery arm (A1) and the imperative contrast (A2). One launch command did not start because of my missing log folder; no process ran, and it is logged. The package and pre-run notes were committed before any run (`0922529`).
+- **Not shown:** sound or random-number rewinding; physics or the framebuffer; a repair; real input to Gaia; how often such faults happen; any benefit over other recovery routes. A3 (the standalone game) was not run.
+- **Records:** [doc](docs/nu-daybreak-recovery-trigger-2026-11-03.md) sections 5–6, results `727eaed`, evidence in `.artifacts/daybreak-recovery-trigger-20261103/`. Scratch (8.4 GB) is deleted and logged.
+- **Authority:** the orchestrator moved this step from the Kimi K3 lane to me on 3 November. It judged it ordinary software testing, and the Kimi allowance is reserved for refused work. The Kimi brief now says nothing in it is left for Kimi.
 
 ## User decisions D9 — Claude Opus (3 November 2026)
 
@@ -15,7 +28,7 @@
     - an exception raised through Gaia's property editor is silently swallowed and reaches no recovery;
     - a fault after a code reload that changed the message type could be hidden as an "incompatible signal" log (unresolved);
     - with no snapshot, the editor exits with code 1 rather than recovering.
-  - **Protocol for the build/run step** (four arms: no-fault control, recovery, imperative contrast, standalone contrast): section 4 of [docs/nu-daybreak-recovery-trigger-2026-11-03.md](docs/nu-daybreak-recovery-trigger-2026-11-03.md), commit `7cd5301`. **I built and ran nothing.** The orchestrator gives that step to the Kimi K3 lane. The brief `.orchestration/TASK-daybreak-kimi.md` now points there.
+  - **Protocol for the build/run step** (four arms: no-fault control, recovery, imperative contrast, standalone contrast): section 4 of [docs/nu-daybreak-recovery-trigger-2026-11-03.md](docs/nu-daybreak-recovery-trigger-2026-11-03.md), commit `7cd5301`. The build/run step was later done by me (section above).
 - **Item 8(a): R10 and R12 both reproduce on Linux.** Both ran under declared amendments, each committed before any run (`485b9f2`, then `058cde6` and `c37927f` for R12). A forked helper of this session did the work.
   - **R10 initializer-only schema reload: same result as Windows.** The amendment changes only the package's Windows OS checks.
     - The live reload keeps the old fields, but the new field comes out 0 instead of 200, so the live mapping fails. The fresh reference gets 200.

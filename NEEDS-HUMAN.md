@@ -2,6 +2,15 @@
 
 Newest first. Each item lists the options, my recommendation and what it blocks. Background is in [STATUS.md](STATUS.md) (section dated 1 November 2026).
 
+## 2026-11-03 ~18:45 HKT — branch A finished — Claude Opus
+
+- **No decision needed.** The orchestrator reassigned the branch A build/run step from Kimi K3 to me, and it is done. All three arms passed at the first attempt:
+  - Gaia recovers from a deliberate game-code exception by restoring the Advance snapshot exactly;
+  - it loses the progress since that snapshot, and the fault repeats;
+  - with undo off, Gaia exits.
+- Record: `docs/nu-daybreak-recovery-trigger-2026-11-03.md` section 6 (`727eaed`).
+- **Both Daybreak-only branches are now complete.** Nothing is left for the Kimi lane from this workspace.
+
 ## 2026-11-03 — user decisions D9 applied (items 8 and K1) — Claude Opus
 
 - **K1: ANSWERED (option b), steps 1–2 DONE.**
