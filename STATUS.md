@@ -1,8 +1,20 @@
 # Status and continuation plan — 1 November 2026 (HKT)
 
-**Claude session, 3 Nov 2026 ~20:50 HKT: WORKING (still editing this checkout; GPU runs in progress).** Item 10 (D11) is being applied. Protocol and ported packages are committed (`c319a4b`). The R06 feasibility processes passed on the RTX 4090 D under Vulkan; the 40 measured R06 processes are running, and the keyboard-timing series follows.
+**NO INDEPENDENT WORK LEFT for the Claude session (3 Nov 2026, ~21:10 HKT).** The D11 timing re-runs are done (section just below), and the R-series results report is ready. Still open with the user: **NEEDS-HUMAN item 11** (which comparison the next R-series serves; recommendation: recovery after a game-code fault). No jobs, displays or GPU processes of mine are running.
 - **The R-series comparison choice:** with the user. PLAN ties new R-series experiments to it.
 - **Optional:** the Terra Firma revision series was never re-run on Linux. Nobody asked for it.
+
+## Timing reference re-runs on Vulkan-era Nu (D11) — Claude Opus (3 November 2026, 20:44–21:01 HKT)
+
+- **Setup:** Nu master `47ef39e`, Vulkan on the RTX 4090 D (every process logged the device), our own Xvfb, `nice -n 10`, an idle-GPU check before each process, and load, memory and GPU samples recorded. Protocol and ports committed before any run (`c319a4b`). [Record](docs/nu-vulkan-timing-reference-2026-11-03.md).
+- **R06 recovery cost:** all 42 processes passed (2 feasibility, 40 measured), and both routes always reached the B0 output.
+  - **The history route was faster:** snapshot 0.70 ms vs serialize 4.47 ms (20/20 pairs); undo 10.3 ms vs deserialize-and-set 19.3 ms (19/20); request-to-ready 13.5 vs 21.1 ms (16/20).
+  - This is a new reference result. It is not compared with the provisional October timings, where undo was slower.
+  - History times fall into two unexplained clusters (about 5.9 and 10.3 ms).
+- **Keyboard input and release timing:** after feasibility repeat KF found that the board freezes on game over at about 60 updates/s, **amendment 1** (`f5b1ecd`) restarts the board. KF2 then passed, and **K01–K10 all passed** (60 trials).
+  - The game runs at about 60 updates/s. Movement appears within about 71 ms of a press and stops within about 59 ms of release (median upper bounds). Overshoot after release is 3 updates (range 2–4).
+- **Port changes, declared in the protocol:** master has no rotating cube and no `Light3d`, so R06 compares the B0 scene without them. The keyboard port measures ms bounds and overshoot instead of counting frames.
+- **Scratch:** 19 GB deleted (logged in `DELETIONS.log`); Xvfb `:94` stopped. The 1.25 GB pinned source tar stays in `.artifacts/vulkan-timing-20261103/`.
 
 ## R-series results report — Claude Opus (3 November 2026, ~21:00 HKT)
 

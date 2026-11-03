@@ -19,7 +19,11 @@ Newest first. Each item lists the options, my recommendation and what it blocks.
   - **Data-only results** stay as recorded at `064f7ae`, with no re-runs.
   - **The timing measurements** (R06 recovery cost, keyboard input check, key-release check) are re-run as **new, declared experiments ported to Vulkan-era Nu**: current master `47ef39e`, on the NVIDIA GPU with Vulkan, on our own Xvfb, with no software rendering.
   - **This server is the reference machine.** Home timings stay recorded, marked provisional.
-- **Done so far:**
+- **DONE, 3 Nov ~21:10 HKT:** both timing re-runs ran and are the reference timings ([record](docs/nu-vulkan-timing-reference-2026-11-03.md)).
+  - R06: the history route was faster in 20/20, 19/20 and 16/20 pairs.
+  - Keyboard: about 60 updates/s, movement within about 71 ms, stop within about 59 ms, 3-update overshoot.
+  - One amendment (restart the board on game over) was committed before any scored keyboard repeat.
+- **Done before the runs:**
   - The NVIDIA Vulkan + Xvfb route works here with master: Nu logs "Selected Vulkan Device NVIDIA GeForce RTX 4090 D", and the window shows the image.
   - Wrapper: `scripts/linux_nu_vulkan_env.sh`.
   - The ports and protocols follow; see STATUS.

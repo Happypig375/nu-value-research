@@ -1,0 +1,649 @@
+{
+  "attempts": [
+    {
+      "attempt": "F-H",
+      "route": "H",
+      "kind": "feasibility",
+      "outcome": "pass",
+      "elapsed_seconds": 10.749,
+      "gpu_wait_seconds": 0.1,
+      "ms": {
+        "acquisitionTicks": 0.432528,
+        "recoveryDirectTicks": 5.87041,
+        "requestToReadyTicks": 7.630882
+      }
+    },
+    {
+      "attempt": "F-R",
+      "route": "R",
+      "kind": "feasibility",
+      "outcome": "pass",
+      "elapsed_seconds": 6.337,
+      "gpu_wait_seconds": 15.1,
+      "ms": {
+        "acquisitionTicks": 6.19555,
+        "recoveryDirectTicks": 23.49373,
+        "requestToReadyTicks": 25.397247
+      }
+    },
+    {
+      "attempt": "H01",
+      "route": "H",
+      "kind": "measured",
+      "outcome": "pass",
+      "elapsed_seconds": 6.084,
+      "gpu_wait_seconds": 0.1,
+      "ms": {
+        "acquisitionTicks": 0.766587,
+        "recoveryDirectTicks": 10.673846,
+        "requestToReadyTicks": 14.039971
+      }
+    },
+    {
+      "attempt": "R01",
+      "route": "R",
+      "kind": "measured",
+      "outcome": "pass",
+      "elapsed_seconds": 5.984,
+      "gpu_wait_seconds": 15.1,
+      "ms": {
+        "acquisitionTicks": 3.868888,
+        "recoveryDirectTicks": 13.852294,
+        "requestToReadyTicks": 15.370097
+      }
+    },
+    {
+      "attempt": "R02",
+      "route": "R",
+      "kind": "measured",
+      "outcome": "pass",
+      "elapsed_seconds": 6.084,
+      "gpu_wait_seconds": 0.1,
+      "ms": {
+        "acquisitionTicks": 4.531607,
+        "recoveryDirectTicks": 11.009623,
+        "requestToReadyTicks": 12.129741
+      }
+    },
+    {
+      "attempt": "H02",
+      "route": "H",
+      "kind": "measured",
+      "outcome": "pass",
+      "elapsed_seconds": 5.983,
+      "gpu_wait_seconds": 0.1,
+      "ms": {
+        "acquisitionTicks": 0.752943,
+        "recoveryDirectTicks": 10.33131,
+        "requestToReadyTicks": 13.661606
+      }
+    },
+    {
+      "attempt": "H03",
+      "route": "H",
+      "kind": "measured",
+      "outcome": "pass",
+      "elapsed_seconds": 4.529,
+      "gpu_wait_seconds": 0.1,
+      "ms": {
+        "acquisitionTicks": 0.542934,
+        "recoveryDirectTicks": 5.914603,
+        "requestToReadyTicks": 7.611485
+      }
+    },
+    {
+      "attempt": "R03",
+      "route": "R",
+      "kind": "measured",
+      "outcome": "pass",
+      "elapsed_seconds": 5.833,
+      "gpu_wait_seconds": 0.1,
+      "ms": {
+        "acquisitionTicks": 4.335454,
+        "recoveryDirectTicks": 18.519979,
+        "requestToReadyTicks": 20.155922
+      }
+    },
+    {
+      "attempt": "R04",
+      "route": "R",
+      "kind": "measured",
+      "outcome": "pass",
+      "elapsed_seconds": 5.885,
+      "gpu_wait_seconds": 0.1,
+      "ms": {
+        "acquisitionTicks": 6.037034,
+        "recoveryDirectTicks": 22.545075,
+        "requestToReadyTicks": 24.492669
+      }
+    },
+    {
+      "attempt": "H04",
+      "route": "H",
+      "kind": "measured",
+      "outcome": "pass",
+      "elapsed_seconds": 4.831,
+      "gpu_wait_seconds": 0.1,
+      "ms": {
+        "acquisitionTicks": 0.404188,
+        "recoveryDirectTicks": 5.942946,
+        "requestToReadyTicks": 7.579969
+      }
+    },
+    {
+      "attempt": "H05",
+      "route": "H",
+      "kind": "measured",
+      "outcome": "pass",
+      "elapsed_seconds": 5.584,
+      "gpu_wait_seconds": 0.1,
+      "ms": {
+        "acquisitionTicks": 0.437069,
+        "recoveryDirectTicks": 5.687374,
+        "requestToReadyTicks": 7.308825
+      }
+    },
+    {
+      "attempt": "R05",
+      "route": "R",
+      "kind": "measured",
+      "outcome": "pass",
+      "elapsed_seconds": 5.833,
+      "gpu_wait_seconds": 0.1,
+      "ms": {
+        "acquisitionTicks": 4.325279,
+        "recoveryDirectTicks": 15.57767,
+        "requestToReadyTicks": 17.049591
+      }
+    },
+    {
+      "attempt": "R06",
+      "route": "R",
+      "kind": "measured",
+      "outcome": "pass",
+      "elapsed_seconds": 6.588,
+      "gpu_wait_seconds": 0.1,
+      "ms": {
+        "acquisitionTicks": 6.228702,
+        "recoveryDirectTicks": 24.211183,
+        "requestToReadyTicks": 26.378364
+      }
+    },
+    {
+      "attempt": "H06",
+      "route": "H",
+      "kind": "measured",
+      "outcome": "pass",
+      "elapsed_seconds": 6.135,
+      "gpu_wait_seconds": 0.1,
+      "ms": {
+        "acquisitionTicks": 0.722594,
+        "recoveryDirectTicks": 10.30853,
+        "requestToReadyTicks": 13.786829
+      }
+    },
+    {
+      "attempt": "H07",
+      "route": "H",
+      "kind": "measured",
+      "outcome": "pass",
+      "elapsed_seconds": 6.643,
+      "gpu_wait_seconds": 15.1,
+      "ms": {
+        "acquisitionTicks": 0.749385,
+        "recoveryDirectTicks": 11.731508,
+        "requestToReadyTicks": 15.458709
+      }
+    },
+    {
+      "attempt": "R07",
+      "route": "R",
+      "kind": "measured",
+      "outcome": "pass",
+      "elapsed_seconds": 6.437,
+      "gpu_wait_seconds": 0.1,
+      "ms": {
+        "acquisitionTicks": 3.899089,
+        "recoveryDirectTicks": 13.725413,
+        "requestToReadyTicks": 15.247268
+      }
+    },
+    {
+      "attempt": "R08",
+      "route": "R",
+      "kind": "measured",
+      "outcome": "pass",
+      "elapsed_seconds": 5.682,
+      "gpu_wait_seconds": 0.1,
+      "ms": {
+        "acquisitionTicks": 2.423418,
+        "recoveryDirectTicks": 10.382583,
+        "requestToReadyTicks": 11.437179
+      }
+    },
+    {
+      "attempt": "H08",
+      "route": "H",
+      "kind": "measured",
+      "outcome": "pass",
+      "elapsed_seconds": 5.831,
+      "gpu_wait_seconds": 0.1,
+      "ms": {
+        "acquisitionTicks": 0.755213,
+        "recoveryDirectTicks": 10.288173,
+        "requestToReadyTicks": 13.515887
+      }
+    },
+    {
+      "attempt": "H09",
+      "route": "H",
+      "kind": "measured",
+      "outcome": "pass",
+      "elapsed_seconds": 5.785,
+      "gpu_wait_seconds": 15.1,
+      "ms": {
+        "acquisitionTicks": 0.421995,
+        "recoveryDirectTicks": 6.061806,
+        "requestToReadyTicks": 8.002817
+      }
+    },
+    {
+      "attempt": "R09",
+      "route": "R",
+      "kind": "measured",
+      "outcome": "pass",
+      "elapsed_seconds": 6.137,
+      "gpu_wait_seconds": 15.1,
+      "ms": {
+        "acquisitionTicks": 6.344944,
+        "recoveryDirectTicks": 25.220698,
+        "requestToReadyTicks": 27.369414
+      }
+    },
+    {
+      "attempt": "R10",
+      "route": "R",
+      "kind": "measured",
+      "outcome": "pass",
+      "elapsed_seconds": 4.982,
+      "gpu_wait_seconds": 0.1,
+      "ms": {
+        "acquisitionTicks": 2.410683,
+        "recoveryDirectTicks": 8.539994,
+        "requestToReadyTicks": 9.462654
+      }
+    },
+    {
+      "attempt": "H10",
+      "route": "H",
+      "kind": "measured",
+      "outcome": "pass",
+      "elapsed_seconds": 6.135,
+      "gpu_wait_seconds": 0.1,
+      "ms": {
+        "acquisitionTicks": 0.476934,
+        "recoveryDirectTicks": 5.971436,
+        "requestToReadyTicks": 7.895928
+      }
+    },
+    {
+      "attempt": "H11",
+      "route": "H",
+      "kind": "measured",
+      "outcome": "pass",
+      "elapsed_seconds": 5.33,
+      "gpu_wait_seconds": 0.1,
+      "ms": {
+        "acquisitionTicks": 0.442863,
+        "recoveryDirectTicks": 6.085688,
+        "requestToReadyTicks": 7.911165
+      }
+    },
+    {
+      "attempt": "R11",
+      "route": "R",
+      "kind": "measured",
+      "outcome": "pass",
+      "elapsed_seconds": 6.082,
+      "gpu_wait_seconds": 0.1,
+      "ms": {
+        "acquisitionTicks": 5.003261,
+        "recoveryDirectTicks": 20.402957,
+        "requestToReadyTicks": 22.284003
+      }
+    },
+    {
+      "attempt": "R12",
+      "route": "R",
+      "kind": "measured",
+      "outcome": "pass",
+      "elapsed_seconds": 5.832,
+      "gpu_wait_seconds": 0.1,
+      "ms": {
+        "acquisitionTicks": 4.366813,
+        "recoveryDirectTicks": 19.039221,
+        "requestToReadyTicks": 20.858789
+      }
+    },
+    {
+      "attempt": "H12",
+      "route": "H",
+      "kind": "measured",
+      "outcome": "pass",
+      "elapsed_seconds": 6.386,
+      "gpu_wait_seconds": 0.1,
+      "ms": {
+        "acquisitionTicks": 0.768531,
+        "recoveryDirectTicks": 10.400078,
+        "requestToReadyTicks": 14.101822
+      }
+    },
+    {
+      "attempt": "H13",
+      "route": "H",
+      "kind": "measured",
+      "outcome": "pass",
+      "elapsed_seconds": 5.784,
+      "gpu_wait_seconds": 15.1,
+      "ms": {
+        "acquisitionTicks": 0.739185,
+        "recoveryDirectTicks": 10.579427,
+        "requestToReadyTicks": 13.883647
+      }
+    },
+    {
+      "attempt": "R13",
+      "route": "R",
+      "kind": "measured",
+      "outcome": "pass",
+      "elapsed_seconds": 6.085,
+      "gpu_wait_seconds": 0.1,
+      "ms": {
+        "acquisitionTicks": 6.146166,
+        "recoveryDirectTicks": 23.082526,
+        "requestToReadyTicks": 24.98567
+      }
+    },
+    {
+      "attempt": "R14",
+      "route": "R",
+      "kind": "measured",
+      "outcome": "pass",
+      "elapsed_seconds": 6.789,
+      "gpu_wait_seconds": 0.1,
+      "ms": {
+        "acquisitionTicks": 6.104114,
+        "recoveryDirectTicks": 24.598478,
+        "requestToReadyTicks": 27.084793
+      }
+    },
+    {
+      "attempt": "H14",
+      "route": "H",
+      "kind": "measured",
+      "outcome": "pass",
+      "elapsed_seconds": 4.882,
+      "gpu_wait_seconds": 15.2,
+      "ms": {
+        "acquisitionTicks": 0.448026,
+        "recoveryDirectTicks": 5.802631,
+        "requestToReadyTicks": 7.537596
+      }
+    },
+    {
+      "attempt": "H15",
+      "route": "H",
+      "kind": "measured",
+      "outcome": "pass",
+      "elapsed_seconds": 4.926,
+      "gpu_wait_seconds": 0.1,
+      "ms": {
+        "acquisitionTicks": 0.437424,
+        "recoveryDirectTicks": 5.7886,
+        "requestToReadyTicks": 7.62676
+      }
+    },
+    {
+      "attempt": "R15",
+      "route": "R",
+      "kind": "measured",
+      "outcome": "pass",
+      "elapsed_seconds": 6.537,
+      "gpu_wait_seconds": 0.1,
+      "ms": {
+        "acquisitionTicks": 6.056196,
+        "recoveryDirectTicks": 24.441425,
+        "requestToReadyTicks": 26.511652
+      }
+    },
+    {
+      "attempt": "R16",
+      "route": "R",
+      "kind": "measured",
+      "outcome": "pass",
+      "elapsed_seconds": 5.934,
+      "gpu_wait_seconds": 15.1,
+      "ms": {
+        "acquisitionTicks": 4.477698,
+        "recoveryDirectTicks": 19.492874,
+        "requestToReadyTicks": 21.300149
+      }
+    },
+    {
+      "attempt": "H16",
+      "route": "H",
+      "kind": "measured",
+      "outcome": "pass",
+      "elapsed_seconds": 5.63,
+      "gpu_wait_seconds": 0.1,
+      "ms": {
+        "acquisitionTicks": 0.746682,
+        "recoveryDirectTicks": 10.270722,
+        "requestToReadyTicks": 13.591764
+      }
+    },
+    {
+      "attempt": "H17",
+      "route": "H",
+      "kind": "measured",
+      "outcome": "pass",
+      "elapsed_seconds": 5.482,
+      "gpu_wait_seconds": 15.1,
+      "ms": {
+        "acquisitionTicks": 0.682803,
+        "recoveryDirectTicks": 10.244054,
+        "requestToReadyTicks": 13.514089
+      }
+    },
+    {
+      "attempt": "R17",
+      "route": "R",
+      "kind": "measured",
+      "outcome": "pass",
+      "elapsed_seconds": 6.739,
+      "gpu_wait_seconds": 0.1,
+      "ms": {
+        "acquisitionTicks": 6.532787,
+        "recoveryDirectTicks": 25.329622,
+        "requestToReadyTicks": 27.875005
+      }
+    },
+    {
+      "attempt": "R18",
+      "route": "R",
+      "kind": "measured",
+      "outcome": "pass",
+      "elapsed_seconds": 5.936,
+      "gpu_wait_seconds": 0.1,
+      "ms": {
+        "acquisitionTicks": 4.332121,
+        "recoveryDirectTicks": 15.918269,
+        "requestToReadyTicks": 17.486196
+      }
+    },
+    {
+      "attempt": "H18",
+      "route": "H",
+      "kind": "measured",
+      "outcome": "pass",
+      "elapsed_seconds": 6.084,
+      "gpu_wait_seconds": 0.1,
+      "ms": {
+        "acquisitionTicks": 0.670916,
+        "recoveryDirectTicks": 10.268571,
+        "requestToReadyTicks": 13.446654
+      }
+    },
+    {
+      "attempt": "H19",
+      "route": "H",
+      "kind": "measured",
+      "outcome": "pass",
+      "elapsed_seconds": 6.084,
+      "gpu_wait_seconds": 15.1,
+      "ms": {
+        "acquisitionTicks": 0.750141,
+        "recoveryDirectTicks": 10.523715,
+        "requestToReadyTicks": 13.908738
+      }
+    },
+    {
+      "attempt": "R19",
+      "route": "R",
+      "kind": "measured",
+      "outcome": "pass",
+      "elapsed_seconds": 6.086,
+      "gpu_wait_seconds": 0.1,
+      "ms": {
+        "acquisitionTicks": 4.463805,
+        "recoveryDirectTicks": 20.081393,
+        "requestToReadyTicks": 21.964907
+      }
+    },
+    {
+      "attempt": "R20",
+      "route": "R",
+      "kind": "measured",
+      "outcome": "pass",
+      "elapsed_seconds": 5.734,
+      "gpu_wait_seconds": 0.1,
+      "ms": {
+        "acquisitionTicks": 2.403036,
+        "recoveryDirectTicks": 8.651186,
+        "requestToReadyTicks": 9.556212
+      }
+    },
+    {
+      "attempt": "H20",
+      "route": "H",
+      "kind": "measured",
+      "outcome": "pass",
+      "elapsed_seconds": 5.728,
+      "gpu_wait_seconds": 0.1,
+      "ms": {
+        "acquisitionTicks": 0.737404,
+        "recoveryDirectTicks": 10.1646,
+        "requestToReadyTicks": 12.987623
+      }
+    }
+  ],
+  "by_route_ms": {
+    "H": {
+      "acquisitionTicks": {
+        "n": 20,
+        "median": 0.7027,
+        "q1": 0.4442,
+        "q3": 0.75,
+        "min": 0.4042,
+        "max": 0.7685
+      },
+      "recoveryDirectTicks": {
+        "n": 20,
+        "median": 10.2563,
+        "q1": 5.9501,
+        "q3": 10.3829,
+        "min": 5.6874,
+        "max": 11.7315
+      },
+      "requestToReadyTicks": {
+        "n": 20,
+        "median": 13.4804,
+        "q1": 7.6941,
+        "q3": 13.8594,
+        "min": 7.3088,
+        "max": 15.4587
+      }
+    },
+    "R": {
+      "acquisitionTicks": {
+        "n": 20,
+        "median": 4.4708,
+        "q1": 4.0056,
+        "q3": 6.0921,
+        "min": 2.403,
+        "max": 6.5328
+      },
+      "recoveryDirectTicks": {
+        "n": 20,
+        "median": 19.266,
+        "q1": 13.7571,
+        "q3": 23.929,
+        "min": 8.54,
+        "max": 25.3296
+      },
+      "requestToReadyTicks": {
+        "n": 20,
+        "median": 21.0795,
+        "q1": 15.278,
+        "q3": 26.0302,
+        "min": 9.4627,
+        "max": 27.875
+      }
+    }
+  },
+  "paired_ms": {
+    "acquisitionTicks": {
+      "history_minus_reconstruction": {
+        "n": 20,
+        "median": -3.7856,
+        "q1": -5.5906,
+        "q3": -3.2618,
+        "min": -5.9229,
+        "max": -1.6656
+      },
+      "history_slower_pairs": 0,
+      "history_faster_pairs": 20,
+      "ties": 0,
+      "complete_pairs": 20
+    },
+    "recoveryDirectTicks": {
+      "history_minus_reconstruction": {
+        "n": 20,
+        "median": -9.724,
+        "q1": -14.8935,
+        "q3": -2.721,
+        "min": -19.1589,
+        "max": 1.5134
+      },
+      "history_slower_pairs": 1,
+      "history_faster_pairs": 19,
+      "ties": 0,
+      "complete_pairs": 20
+    },
+    "requestToReadyTicks": {
+      "history_minus_reconstruction": {
+        "n": 20,
+        "median": -8.8985,
+        "q1": -14.3699,
+        "q3": -1.3893,
+        "min": -19.5472,
+        "max": 3.4314
+      },
+      "history_slower_pairs": 4,
+      "history_faster_pairs": 16,
+      "ties": 0,
+      "complete_pairs": 20
+    }
+  },
+  "note": "Descriptive only; valid on this server and configuration; no cross-machine comparison."
+}

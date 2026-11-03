@@ -137,3 +137,83 @@ The secondary click path is recorded.
   - A repeat is valid only if all 6 counted trials are valid.
 - **Verification:** one more unscored feasibility repeat, **KF2**, then K01–K10 as planned.
 - **R06 is not affected.** Its feasibility processes and all 40 measured processes passed under the original protocol.
+
+## Results, part 1: R06 recovery cost (3 November 2026, 20:44–20:51 HKT)
+
+**Conclusion:**
+- On the reference configuration (Nu master `47ef39e`, Vulkan on the RTX 4090 D, this server), **Gaia's history route is faster than reconstruction for both taking and using the recovery point.**
+  - Taking the snapshot is faster in **20 of 20 pairs**.
+  - The undo call itself is faster in **19 of 20**.
+  - Request-to-ready is faster in **16 of 20**.
+- This is a **new reference result.** It must not be compared with the October Windows/Home series (where undo was slower in 6/6 pairs) or the 2 November Linux software-rendering series (5/6). Those used a different engine revision, renderer and machine, and the Home timings are marked provisional.
+- Both routes always reached the declared B0 output.
+
+**Attempts:** all 42 processes passed at their first attempt: F-H and F-R (unscored feasibility), then the 40 measured processes in the declared order.
+- Every process logged "Selected Vulkan Device NVIDIA GeForce RTX 4090 D".
+- Each took 4.5–6.8 s in total, with peak GPU memory about 1.2 GB.
+- No other process appeared on the GPU during the series; the idle check waited 15 s before some processes while our own previous process wound down.
+- Load average was 2.5–6.5 and free memory about 470 GB; no swap was used.
+- One launch command failed before any process ran: the runner was started from a scratch copy, so it could not find the wrapper. That is logged in `OPERATOR-NOTES.log`; it was not an attempt.
+
+**Component times (ms; 20 passing measured processes per route):**
+
+| Component | History (H): median [quartiles; range] | Reconstruction (R): median [quartiles; range] | Paired H − R: median; H faster / slower |
+| --- | --- | --- | --- |
+| Take the recovery point | 0.70 [0.44–0.75; 0.40–0.77] | 4.47 [4.01–6.09; 2.40–6.53] | −3.79; **20 / 0** |
+| Recover (direct call) | 10.26 [5.95–10.38; 5.69–11.73] | 19.27 [13.76–23.93; 8.54–25.33] | −9.72; **19 / 1** |
+| Request to ready (next callback) | 13.48 [7.69–13.86; 7.31–15.46] | 21.08 [15.28–26.03; 9.46–27.88] | −8.90; **16 / 4** |
+
+**Observed, not explained:**
+- History recovery times fall into two clusters (about 5.9 ms and about 10.3 ms), interleaved across the series. They do not follow run order or position within a pair.
+- Reconstruction times are spread more widely (8.5–25 ms).
+- Possible causes, none tested: CPU core placement or frequency, or GC timing. The per-process GC and memory samples are in each trace.
+
+**What this does and does not show:** the same limits as the original contract.
+- The history route keeps a whole world state; the reconstruction payload is only the gameplay model.
+- The timings are machine time for one checkpoint, not repair effort or a benefit.
+- They are valid only on this server and configuration.
+
+**Evidence:**
+- `.artifacts/vulkan-timing-20261103/r06/`: prepare and build receipts, `runs/` with the ledger, each process's trace, `result.json`, environment and GPU samples, and `summary.json`.
+- `experiments/nu-vulkan-r06-recovery-cost/result-receipt.json` is the committed copy of the summary.
+
+## Results, part 2: keyboard input and release timing (3 November 2026, 20:53–21:01 HKT)
+
+**Conclusion:**
+- On the reference configuration, real X keyboard input reaches standalone MMCC Breakout at Nu master in every trial.
+- The game runs at about **60 updates per second** (median 60.2).
+- Movement appears **within about 71 ms** of a key press (median upper bound), and the paddle stops **within about 59 ms** of release (median upper bound).
+- **It overshoots by 3 updates after release** (median; range 2–4), that is 12 units.
+- These are **new reference values for this server and configuration.** They must not be compared with the 2 November software-rendering checks (2.5 updates per second, 2-update overshoot), which used a different engine revision and renderer.
+
+**Attempts:**
+- KF (unscored) found the game-over freeze, which led to amendment 1. KF2 (unscored) then passed.
+- **K01–K10 all passed at their first attempt:** 60 counted trials, all valid.
+- In K06 one trial ended on game over. Under amendment 1 it was kept, excluded, and redone on a fresh board.
+- Every repeat: gameplay was reached by one real click, the no-input control stayed still, and Quit → title → Play gave a fresh board (5 lives, paddle at the start). Exit by click returned code 0.
+- Every repeat logged "Selected Vulkan Device NVIDIA GeForce RTX 4090 D". No other process appeared on the GPU.
+
+**Measures (60 trials: 30 Right, 30 Left; Right and Left agree closely):**
+
+| Measure | Median [quartiles; range] |
+| --- | --- |
+| Press → first screenshot showing movement (upper bound of press latency) | 71.1 ms [66.4–80.5; 52.9–94.8] |
+| Release → first screenshot of the final position (upper bound of stop time) | 58.9 ms [52.5–64.4; 41.8–76.6] |
+| Overshoot after release | 3.0 updates [3–3; 2–4] |
+| Update rate (paddle speed ÷ 4) | 60.2 per s [57.7–63.0; 53.7–71.0] |
+| Screenshot duration (per-trial median) | 24.9 ms [23.6–28.8; 22.3–36.9] |
+
+**Limits of these numbers:**
+- The **lower** bounds of press latency and stop time are 0 ms in every trial: the first screenshot starts as the key event is sent. So only the upper bounds are informative, and they include one screenshot's capture time (about 25 ms).
+- Overshoot in updates rests on the source fact of 4 units per update.
+- Valid only on this server and configuration. No real hardware, window manager, other games or Gaia.
+
+**Evidence:**
+- `.artifacts/vulkan-timing-20261103/keyboard/`: prepare and build receipts, and `runs/` with KF, KF2, K01–K10, each with its trace (every poll), screenshots, game logs, environment and GPU samples, plus `summary.json`.
+- `experiments/nu-vulkan-keyboard-timing/result-receipt.json` is the committed copy of the summary.
+
+## Status of D11
+
+- Both timing re-runs are done. They are the reference timings for this server.
+- The October and 2 November timings stay recorded as provisional and are not compared with these.
+- Data-only results are unchanged.
