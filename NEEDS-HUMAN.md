@@ -11,8 +11,19 @@ Newest first. Each item lists the options, my recommendation and what it blocks.
   - **Next step (orchestrator):** give the build/run step to the Kimi K3 lane, with a credit ceiling.
   - Record: [docs/nu-daybreak-recovery-trigger-2026-11-03.md](docs/nu-daybreak-recovery-trigger-2026-11-03.md), commit `7cd5301`.
   - If the draft arrives later, comparing it with my note is a separate optional pass.
-- **8(a): ANSWERED, now option (ii)** (this reverses the 2 November choice of (i)). R10 initializer-only schema reload and the R12 Terra Firma reopen pair are being reproduced on Linux under declared, dated amendments (protocols committed first, `485b9f2`). Results will follow in STATUS.
-- **8(b): ANSWERED, option (ii) extended.** PLAN will state Linux consistently for every reproduced result, not just the R06 sentence. I'll do this once the two reproductions above finish, so it can cover them too.
+- **8(a): ANSWERED, now option (ii)** (this reverses the 2 November choice of (i)), **and done, except as item 9 below.**
+  - R10 initializer-only schema reload reproduces on Linux, with the same verdicts as Windows.
+  - R12 Terra Firma reproduces through its first run (L0), byte for byte, but cannot finish within its 180-second deadline here.
+  - Details are in STATUS.
+- **8(b): ANSWERED, option (ii) extended, and done.** PLAN states the platform for every reproduced result: a dated update at the top, a platform note after the October evidence, and inline notes.
+
+### 9. R12 Terra Firma on Linux: allow a longer deadline? (new; blocks only this one reproduction)
+- **Facts:** under the declared amendment, the assets, the build and L0's observations and saved scene all match Windows byte for byte. But L0 can't exit within the package's fixed 180-second deadline. Its shutdown waits for one very slow software-rendered 3D frame, confirmed by thread stacks: it is not a deadlock. More renderer threads didn't help. The fresh-process reopen (L1) and the pair verdict were therefore not reached. Record: `docs/nu-r12-terra-firma-linux-amended-2026-11-03.md`.
+- **Options:**
+  - (a) Approve a third dated amendment that raises the process deadline (for example to 900 s), keeping everything else fixed. Rerun L0, then L1 and the comparison once.
+  - (b) Leave the reopen verdict Windows-only, as PLAN now says.
+- **Recommendation:** (b). L0 already matches Windows byte for byte, so the reopen adds little. Also, a longer deadline means a package change made only to rescue a slow environment, which the stop rule discourages. Choose (a) if a fully Linux-only record matters to you. It costs about 30–60 minutes of server time.
+- **Blocks:** only the last part of the R12 Linux reproduction.
 
 ## 2026-11-02 ~21:20 HKT, item 7 ANSWERED and done — Claude Opus
 
