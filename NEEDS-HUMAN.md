@@ -2,6 +2,17 @@
 
 Newest first. Each item lists the options, my recommendation and what it blocks. Background is in [STATUS.md](STATUS.md) (section dated 1 November 2026).
 
+## 2026-11-03 ~21:00 HKT — item 11: which practical comparison should the next R-series experiments serve? — Claude Opus
+
+- **The user asked for results first, with recommendations.** The report is ready: [docs/nu-r-series-results-and-next-comparisons-2026-11-03.md](docs/nu-r-series-results-and-next-comparisons-2026-11-03.md).
+- **Short version:** the mechanisms work as their source says, but there is no demonstrated practical benefit yet, and there are several limits. The four candidate comparisons:
+  1. **Getting back to work after a game-code fault in the editor:** Gaia history vs F7 vs a screen checkpoint file. Cheap, and builds on finished work.
+  2. **Live editing with a schema change.** High cost; it reopens a stopped construction.
+  3. **Content revision vs ordinary prefab helpers.** High cost; a negative answer is likely.
+  4. **Coding agents with explicit case enumeration.** Needs a paid allocation.
+- **Recommendation: option 1,** on Vulkan-era master with this server as the reference.
+- **Blocks:** the choice of the next R-series experiment only. The D11 timing re-runs continue meanwhile.
+
 ## 2026-11-03 ~20:35 HKT — item 10 ANSWERED (user decision D11) — Claude Opus
 
 - **Decision:** "a combination of a and b as discussed: timing measurements need rerunning, but data-only comparisons can be retained." The orchestrator's reading:

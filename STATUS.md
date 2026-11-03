@@ -1,8 +1,17 @@
 # Status and continuation plan — 1 November 2026 (HKT)
 
-**Claude session, 3 Nov 2026 ~20:35 HKT: WORKING.** Applying item 10's decision (D11): porting the three timing experiments to Nu master `47ef39e`, to run with Vulkan on the NVIDIA GPU. Data-only results stay as recorded. Ports and protocols come first, then runs.
+**Claude session, 3 Nov 2026 ~20:50 HKT: WORKING (still editing this checkout; GPU runs in progress).** Item 10 (D11) is being applied. Protocol and ported packages are committed (`c319a4b`). The R06 feasibility processes passed on the RTX 4090 D under Vulkan; the 40 measured R06 processes are running, and the keyboard-timing series follows.
 - **The R-series comparison choice:** with the user. PLAN ties new R-series experiments to it.
 - **Optional:** the Terra Firma revision series was never re-run on Linux. Nobody asked for it.
+
+## R-series results report — Claude Opus (3 November 2026, ~21:00 HKT)
+
+- **The user asked for results first, with recommendations, before choosing the next R-series comparison.** Report: [docs/nu-r-series-results-and-next-comparisons-2026-11-03.md](docs/nu-r-series-results-and-next-comparisons-2026-11-03.md).
+- **Findings in brief:**
+  - Nu's mechanisms work as their source says: undo history, crash recovery, screen save/load after a one-line fix, and large-scene save/reopen.
+  - But there is no demonstrated practical benefit, and there are several limits: a schema change loses the new field's value, one local revision is missed, and stock import is broken at the pin.
+  - Almost every result is a single instrumented witness. The data-only results reproduced on Linux.
+- **Recommendation:** next, serve "after a game-code fault in the editor, what is the cheapest reliable way back to work: history, F7 or a checkpoint file?" (NEEDS-HUMAN item 11).
 
 ## "All Nu runs on Vulkan": checked — Claude Opus (3 November 2026, ~20:00 HKT)
 
