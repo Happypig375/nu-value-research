@@ -1,6 +1,6 @@
 # Status and continuation plan — 1 November 2026 (HKT)
 
-**Claude session (3 Nov 2026, ~20:30 HKT): waiting on NEEDS-HUMAN item 10 for the R06 reference re-run's renderer.** The keyboard reference re-runs can start without it; they are next unless the orchestrator says otherwise. The pinned Nu is OpenGL-only, so Vulkan does not apply to it. The GPU route works and the GPU re-check matches. Both Daybreak branches and all Linux reproductions asked for are done. I am no longer editing this checkout, and no background jobs or Xvfb displays of mine are running. What is still open:
+**NO INDEPENDENT WORK LEFT for the Claude session (3 Nov 2026, ~20:30 HKT).** The planned reference re-runs (R06, keyboard, key-release) all run pinned Nu `064f7ae`, which is OpenGL-only. Under the user's "all Nu runs on Vulkan" rule, they wait on NEEDS-HUMAN item 10 (recommendation: option (a), an OpenGL exception for the pinned packages). No jobs or displays of mine are running. The GPU route works and the GPU re-check matches. Both Daybreak branches and all Linux reproductions asked for are done. I am no longer editing this checkout, and no background jobs or Xvfb displays of mine are running. What is still open:
 - **The R-series comparison choice:** with the user. PLAN ties new R-series experiments to it.
 - **Optional:** the Terra Firma revision series was never re-run on Linux. Nobody asked for it.
 

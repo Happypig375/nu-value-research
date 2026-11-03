@@ -85,7 +85,8 @@ The stopped drafts (R02 input, R10 schema migration, R12 material intent) are no
 **Updated recommendation for item 10: (a), plus the timing rule.**
 - Keep the pinned packages on `064f7ae` with OpenGL.
 - Make this server the reference machine.
-- Run the three timing re-runs above under declared protocols. R06 can start as soon as you confirm OpenGL via VirtualGL for it. The keyboard checks can start at once, because they need software rendering anyway.
+- Run the three timing re-runs above under declared protocols.
+- **All three wait on this item:** every run at `064f7ae` is an OpenGL run, so each needs the exception in option (a) to the "all Nu runs on Vulkan" rule. With (a), R06 would use OpenGL on the GPU via VirtualGL, and the keyboard checks Mesa software rendering.
 - Run all new Nu work on Vulkan.
 
 Server time is cheap. In total: about 40 R06 processes and 20 short keyboard runs.
