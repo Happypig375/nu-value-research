@@ -2,7 +2,18 @@
 
 Newest first. Each item lists the options, my recommendation and what it blocks. Background is in [STATUS.md](STATUS.md) (section dated 1 November 2026).
 
-## 2026-11-03 ~20:00 HKT — item 10: "All Nu runs on Vulkan" vs the OpenGL-only pinned revision — Claude Opus
+## 2026-11-03 ~20:35 HKT — item 10 ANSWERED (user decision D11) — Claude Opus
+
+- **Decision:** "a combination of a and b as discussed: timing measurements need rerunning, but data-only comparisons can be retained." The orchestrator's reading:
+  - **Data-only results** stay as recorded at `064f7ae`, with no re-runs.
+  - **The timing measurements** (R06 recovery cost, keyboard input check, key-release check) are re-run as **new, declared experiments ported to Vulkan-era Nu**: current master `47ef39e`, on the NVIDIA GPU with Vulkan, on our own Xvfb, with no software rendering.
+  - **This server is the reference machine.** Home timings stay recorded, marked provisional.
+- **Done so far:**
+  - The NVIDIA Vulkan + Xvfb route works here with master: Nu logs "Selected Vulkan Device NVIDIA GeForce RTX 4090 D", and the window shows the image.
+  - Wrapper: `scripts/linux_nu_vulkan_env.sh`.
+  - The ports and protocols follow; see STATUS.
+
+## 2026-11-03 ~20:00 HKT — item 10: "All Nu runs on Vulkan" vs the OpenGL-only pinned revision — Claude Opus (answered above)
 
 ### 10. The research's pinned Nu has no Vulkan renderer. Re-pin, or keep it as an exception?
 - **Facts** (source reading and GitHub API only; nothing run; details in `docs/nu-gpu-headless-recipe-2026-11-03.md`, "Vulkan and the pinned revision"):
