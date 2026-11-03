@@ -170,3 +170,25 @@ Each process's exit time is recorded.
 **What counts as a failure or difference:** any crash, timeout (now at 1,800 s), incomplete observation, invalid or adverse comparison, correspondence count different from Windows, or control failure. It is recorded as found, not fixed and rerun.
 
 **Stop rule.** The count at the L0 step continues: attempts 01, 02 and 04 are failures, and 03 was an unscored diagnostic. If L0-05 fails, that is the fourth failure. One more environment-only attempt would then be allowed, declared in a dated note before it runs; after that, stop. L1 starts its own count at 01.
+
+## Results of amendment 3 (added 3 November 2026, ~18:25 HKT, after the runs)
+
+**Conclusion: with the longer deadline, the Terra Firma pair passes on Linux exactly as on Windows.** L0 loaded, observed, saved and exited normally. L1 reopened L0's saved bytes in a fresh process and saved them again. The pair comparison gives `passed_declared_checks` with 0 invalid and 0 adverse findings. That covers the 197 original entities (19 roots), 166 explicit links, 11 saved source histories, 32 palms and 4 villas. The verdict, counts, findings and descriptive output are all identical to Windows `terra-comparison-01.json`. **The only difference is time.** Each native process needs about 12.5 minutes on the software renderer, against 34–37 s on Windows. Almost all of that is one shutdown frame.
+
+| Step | Result |
+| --- | --- |
+| Assets 02 (rebuild, required) | Exit 0 in 54 s, ready, 0 closure failures. All 251 published files are again **byte-identical to Windows**. |
+| Build 02 (rebuild, required) | Exit 0, ready, **72 warnings, 0 errors**. DLL `eb769856…`, PDB `027a0404…`. These differ from build 01 and from Windows because builds embed paths, and this copy's `run.py` differs. |
+| Seal and acceptance | 8 original units and 1 observer verified; accepted with no failed check (deadline recorded as 1,800 s). |
+| **L0 attempt 05** | **Exit 0 after 749 s**, `complete_observation_and_save` true, 3 callbacks, 2 captures, saved descriptor matches B. The save came 16 s after launch; the remaining ~733 s was shutdown waiting for the last software-rendered frame (see attempt 03's stacks). Protected application files unchanged; new files `Scene.nav`, `Scene.nbrd`, `Log.txt`, `imgui.ini`, **the same four as on Windows**. |
+| **L1 attempt 01** (predecessor L0-05) | **Exit 0 after 747 s**, complete, same callback/capture counts, saved descriptor matches B. |
+| `compare.py` | **`passed_declared_checks`, scope `pair`, 0 invalid, 0 adverse**, no findings. Inputs unchanged during the comparison. |
+| Across platforms | Disposition, scope, counts, `L1_assigned_observed`, findings (empty) and the descriptive generated-entity records are **all equal to Windows**. L0 and L1 captures A and B (`10ab23a3…`) and saved scenes (`0bdb814d…`) are byte-identical to the Windows L0 and L1 files. A and B hold 233 live entities, with 36 generated, as on Windows. |
+| `check_controls.py` (rerun on the new copy) | **17 of 17 pass**, as on Windows. |
+
+**Attempts under amendment 3:** one each of assets, build, seal, acceptance, L0 (05), L1 (01), comparison and controls. All passed, and nothing was repeated. The L0 stop-rule count ends at 3 failures (01, 02, 04), with 03 as an unscored diagnostic. Evidence: `.artifacts/r12-terra-linux-amended-20261103/amendment-3/`. It holds the runner scripts, the amendment receipt, the assets/build/seal/acceptance records, the receipts, observations and logs of both native runs, the comparison and the controls receipt. All earlier attempt folders are kept. Scratch is deleted and logged in `DELETIONS.log`; Xvfb `:96` is stopped.
+
+**Limits.** These hold in addition to the protocol's limits.
+- The deadline change, the build acceptance and the Linux natives from the pinned archive are declared deviations, checked by me only, without a second reviewer.
+- The 12.5-minute process times reflect software rendering of one reflection-map frame at shutdown. They are not a performance result.
+- No decoded visual appearance, input, native resource restoration, propagation or authoring benefit is shown.
