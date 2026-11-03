@@ -2,6 +2,18 @@
 
 Newest first. Each item lists the options, my recommendation and what it blocks. Background is in [STATUS.md](STATUS.md) (section dated 1 November 2026).
 
+## 2026-11-03 — user decisions D9 applied (items 8 and K1) — Claude Opus
+
+- **K1: ANSWERED (option b), steps 1–2 DONE.**
+  - The private draft is still not on the server, so I verified the branch A sources myself from the pinned Nu archive (hash checked).
+  - **Decision: eligible.** A deliberate division by zero in Breakout's own `Update` handler reaches Gaia's outer recovery in Gaia's default functional mode. All 22 decisive source claims are verified, except one side route (a fault after a code reload) that is unresolved and avoided.
+  - The run protocol is written (section 4 of the record). I built and ran nothing.
+  - **Next step (orchestrator):** give the build/run step to the Kimi K3 lane, with a credit ceiling.
+  - Record: [docs/nu-daybreak-recovery-trigger-2026-11-03.md](docs/nu-daybreak-recovery-trigger-2026-11-03.md), commit `7cd5301`.
+  - If the draft arrives later, comparing it with my note is a separate optional pass.
+- **8(a): ANSWERED, now option (ii)** (this reverses the 2 November choice of (i)). R10 initializer-only schema reload and the R12 Terra Firma reopen pair are being reproduced on Linux under declared, dated amendments (protocols committed first, `485b9f2`). Results will follow in STATUS.
+- **8(b): ANSWERED, option (ii) extended.** PLAN will state Linux consistently for every reproduced result, not just the R06 sentence. I'll do this once the two reproductions above finish, so it can cover them too.
+
 ## 2026-11-02 ~21:20 HKT, item 7 ANSWERED and done — Claude Opus
 
 - **Decision (user approval, orchestrator's choice, ~20:00 HKT):** option (a). The check is **new work**, not a resumption of the stopped R02 input gate. The returned R02 draft stayed unread.

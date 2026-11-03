@@ -1,6 +1,25 @@
 # Status and continuation plan — 1 November 2026 (HKT)
 
-**NO INDEPENDENT WORK LEFT for the Claude session (2 Nov 2026, ~22:00 HKT).** The key-release follow-up is done: **the release drift was display lag, not a stuck key** (section just below). What would unblock more work:
+**Claude session, 3 Nov 2026: WORKING (still editing this checkout).** Applying the user's decisions of 3 November (D9). Section just below.
+
+## User decisions D9 — Claude Opus (3 November 2026)
+
+- **Branch A (deliberate recovery fault trigger): source check and eligibility done. Result: eligible.** Steps 1 and 2 of the Daybreak brief (user approval K1).
+  - **What I checked:** whether an ordinary exception in the game's own code, while the game runs inside Gaia (Nu's editor), reaches Gaia's built-in recovery. I traced every link in the pinned Nu source (archive hash checked). The private draft from October is still missing, so this is my own reading.
+  - **Answer, by source reading:** yes, in Gaia's default "functional" mode, where undo is on. The exception passes uncaught from Breakout's update handler to Gaia's outer error handler. That handler rewinds to the last editor snapshot (taken when the user pressed Advance), halts and keeps the editor running. In imperative mode (undo off) the editor exits instead.
+  - **Named fault:** a deliberate division by zero in Breakout's `Update` handler when the gameplay clock reaches 30. It copies the maintainer's own 2017 test of this feature (Nu commit `a4a3de4`).
+  - **Predicted losses:** progress since the snapshot (no redo); sound already played and the random-number state are not rewound; the code stays broken, so the fault repeats.
+  - **New source findings:**
+    - an exception raised through Gaia's property editor is silently swallowed and reaches no recovery;
+    - a fault after a code reload that changed the message type could be hidden as an "incompatible signal" log (unresolved);
+    - with no snapshot, the editor exits with code 1 rather than recovering.
+  - **Protocol for the build/run step** (four arms: no-fault control, recovery, imperative contrast, standalone contrast): section 4 of [docs/nu-daybreak-recovery-trigger-2026-11-03.md](docs/nu-daybreak-recovery-trigger-2026-11-03.md), commit `7cd5301`. **I built and ran nothing.** The orchestrator gives that step to the Kimi K3 lane. The brief `.orchestration/TASK-daybreak-kimi.md` now points there.
+- **Item 8(a): R10 schema reload and R12 Terra Firma on Linux.** In progress. Protocols with declared amendments were committed before any run (`485b9f2`). Results will be added here.
+- **Item 8(b): Linux stated consistently in PLAN.** Pending the two reproductions above, so one edit covers everything.
+
+## Earlier state, 2 November 2026 (~22:00 HKT)
+
+No independent work was left for the Claude session then. The key-release follow-up is done: **the release drift was display lag, not a stuck key** (section just below). What would unblock more work:
 - **Daybreak branch A** (deliberate recovery fault trigger): its private source draft is still not on the server (NEEDS-HUMAN K1). It is not assigned to me.
 - **Other new R-series experiments:** PLAN ties these to a practical comparison or decision that the user has not chosen.
 
