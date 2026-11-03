@@ -95,3 +95,12 @@ The original limits stay: no decoded visual appearance or framebuffer check; no 
 3. If the stacks don't show an environment cause, I stop the native stage here. Then `check_controls.py` (synthetic, never loads Nu) still runs, and the result stays "L0 observes and saves identically to Windows, but hangs on exit on Linux; L1 not reached".
 
 The stop rule still counts every attempt at the L0 step, the diagnostic included: 01 environment, 02 hang, 03 diagnostic, 04 optional. That leaves no fifth try.
+
+### Note before L0 attempt 04 (3 November 2026, ~17:15 HKT)
+
+**Diagnostic attempt 03 (unscored)** hung the same way: same saved scene `0bdb814d…`, killed at 180 s. The stacks taken 20 s after the save (`.artifacts/r12-terra-linux-amended-20261103/L0-03-diagnostic/`) show the cause. **It is not a deadlock.**
+- The main thread is in `World.cleanUp`, waiting (`Thread.Join`) for the renderer thread to finish.
+- The renderer thread is still drawing a frame. It is building a reflection map (`LightMap.CreateReflectionMap` → `renderGeometry` → `DrawPhysicallyBasedDeferredLightMappingSurface`), and a Mesa software-renderer thread (`llvmpipe-0`) is running.
+- On a GPU this frame is quick. On the software renderer, with the 4 renderer threads the wrapper sets by default (`LP_NUM_THREADS=4`), it takes longer than the rest of the 180 s budget.
+
+That is an environment cause (rendering speed), so amendment 2 allows **one** scored attempt with an environment-only fix: **L0 attempt 04 sets `LP_NUM_THREADS=32`**, so Mesa's software renderer uses 32 threads instead of 4. `scripts/linux_nu_env.sh` already reads this variable; nothing else changes. If L0-04 is complete, L1 runs with the same setting. If L0-04 still times out, the native stage stops there.
