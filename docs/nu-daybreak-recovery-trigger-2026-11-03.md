@@ -219,3 +219,17 @@ Rendering is software (Mesa), so timings carry no meaning.
 - Raw evidence: `.artifacts/daybreak-recovery-trigger-YYYYMMDD/`.
 - Results: appended here.
 - Builds: in scratch, deleted afterwards and logged.
+
+## 5. Build/run step: assignment and package notes (committed before any run, 3 November 2026)
+
+**Who runs it.** On 3 November the orchestrator reassigned this build/run step from the Kimi K3 lane to this Claude Opus session. Its reasons: the fault is an ordinary `DivideByZeroException` in game code, used to check that recovery is reached, which is normal software testing; and the Kimi lane's monthly allowance is reserved for work that Claude and Codex decline. This is an orchestrator allocation, recorded as such. The 25 October restriction names non-Daybreak *ChatGPT* models. The user had already given bounded Daybreak-branch steps to Claude Opus (D41, D9).
+
+**Package:** `experiments/nu-daybreak-recovery-trigger/` (`prepare.py`, `Probe.fs`, `Probe.fsproj`, `run.py`, `check.py`, `README.md`). Notes on how it implements section 4:
+- **Arms run:** A0, A1 and A2, as the orchestrator asked. **A3 (standalone, diagnostic) is not run.** Section 4.1 already says it does not gate A1.
+- **Bridge:** it adds read-only accessors, `researchToggleAdvancing` (which calls Gaia's own `toggleAdvancing`, the F5 route) and the post-ImGui hook. Nothing else in `Gaia.fs` changes. `prepare.py` prints the before/after hashes of `Gaia.fs` and `Gameplay.fs`.
+- **Hook timing:** the hook runs after the frame's Update and before its TimeUpdate, as in B0. So the last hook before the fault should show gameplay clock 29. The fault fires in the next frame's Update, which sees clock 30, after that frame's earlier TimeUpdate. "Lost progress" is reported as observed.
+- **Detecting recovery:** the probe watches the `Pasts` count. It is P0 + 1 after Advance and drops back to P0 when recovery undoes. The message box is read-only and stays open (no input), so it cannot mark the second recovery by itself. The log is checked for two "Unexpected exception!" entries.
+- **Precondition, not a pass condition:** the settled clock must be below 30. Otherwise the fault cannot fire after Advance, and the attempt is invalid.
+- **Comparisons:** "equals S0" means the exact JSON of B0's model serializer (every field as float bits, every brick) and of B0's scene projection (entity names, sprite positions, sizes, colours, texts, cube rotation).
+- **Environment:** `scripts/linux_nu_env.sh` (SDK 10.0.302, Xvfb display `:94`, Mesa with the OpenGL 4.6 override, `nice -n 10`), and a NuGet cache seeded from `.artifacts/nuget-packages/`. A0 uses an unpatched prepared tree, and A1/A2 use a fault-patched tree; each is built separately.
+- **Order:** prepare and build both trees, then A0, then A1, then A2. Each arm runs once unless an attempt fails. Failures follow the stop rule in 4.4.
