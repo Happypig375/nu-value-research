@@ -1,5 +1,10 @@
 # Running OpenGL Nu/Gaia on the server's NVIDIA GPU without admin rights (3 November 2026)
 
+> **Update, 3 November 2026 (user rule: "All Nu runs should be on Vulkan").**
+> - **The default for Vulkan-era Nu will be NVIDIA Vulkan on Xvfb,** once nu-gaia-agentic confirms that route.
+> - **This OpenGL/VirtualGL route is the fallback.** It is also the only GPU route for the research's pinned Nu `064f7ae`, which has **no Vulkan renderer** (see "Vulkan and the pinned revision" below).
+> - Switching the pinned packages to Vulkan would mean re-pinning to a much newer Nu, which is a user decision (NEEDS-HUMAN item 10).
+
 **Short answer:**
 - **It works:** run the app on your own Xvfb display under **VirtualGL's EGL back end**. Its OpenGL then runs on the RTX 4090 D. Unchanged Gaia (pinned Nu `064f7ae`) runs about 7 times faster than with Mesa software rendering. Heavy 3D scenes run about 70 times faster, and faster than our earlier Windows runs.
 - **Limit:** Nu's frames do **not** reach the Xvfb window (it stays black). So use this route for runs judged from the program's own data, and keep software rendering for screenshot-based checks.
@@ -46,3 +51,24 @@ These timings are not performance results: the GPU is shared, and VirtualGL copi
 - **Shared GPU:** check `nvidia-smi` first, run one GPU process at a time, use `nice -n 10`, and keep runs bounded.
 - **Vulkan (current Nu master, e.g. nu-gaia-agentic):** VirtualGL does not cover Vulkan. Pointing `VK_ICD_FILENAMES` at `/usr/share/vulkan/icd.d/nvidia_icd.json` selects the NVIDIA Vulkan driver. Whether it can present to a non-NVIDIA X server like Xvfb was **not tested here**: no Vulkan test tool is installed, and this repo's Nu is OpenGL. nu-gaia-agentic's launcher already has a `GAIA_VULKAN=nvidia` switch to try.
 - **Line endings:** this checkout has `core.autocrlf=true`. The repository stores the scripts with LF, but a fresh checkout here would write CRLF, which breaks bash. Use the working copy, or `git show HEAD:scripts/linux_nu_gpu_env.sh`.
+
+## Vulkan and the pinned revision (checked 3 November, source and GitHub API only; nothing run)
+
+- **Every retained package that runs Nu pins `064f7ae`** (23 July 2026). That covers R02–R06, R10, R12, B0/B1, branches A/B and the input checks. R10 conversion uses Prime only, and R01's traces use Box2D.NET.
+- **`064f7ae` is OpenGL-only:**
+  - no file or line in the engine or Gaia source mentions Vulkan;
+  - the renderer is OpenGL.Net, and SDL windows are created with the OpenGL flag (`Nu/Nu/Sdl/Sdl.fs:28`);
+  - there is no switch to choose a renderer.
+- **Current Nu master** (`47ef39e17`, 3 November) is **Vulkan-only**: it has `Nu/Nu/Vulkan/` and no OpenGL folder.
+  - OpenGL was removed on a separate Vulkan branch (`aab38e2f9`, "Ripped out OpenGL dependency and code", 12 July 2026). That branch had diverged from our pin's line and was merged into master later.
+  - Master is 1,938 commits ahead of `064f7ae`.
+  - So the renderer is fixed by the Nu revision. Neither revision can switch at run time.
+- **Comparability if the research moved to a Vulkan-era revision:**
+  - **The main change would be the engine revision, not the renderer.** 1,938 commits change engine behaviour and APIs. That includes the screen-import fix (upstream `7d6389bea`), which would make stock import work. Every probe and the Gaia bridge anchors would need porting under new protocols. The results would be new observations, not reproductions of the October records.
+  - **Mostly data-only observations** (model values, entity properties, event and callback traces, saved files, verdicts) would not depend on the renderer, but would still depend on the revision. This covers R03 B0/B1, R04, R10, R12, branch A and branch B.
+  - **Rendering- or timing-dependent observations** would also change with the renderer and hardware:
+    - the screenshot-judged keyboard and key-release checks;
+    - R06's millisecond component timings;
+    - wall-clock times;
+    - anything tied to frame pacing, such as R02's callback counts.
+

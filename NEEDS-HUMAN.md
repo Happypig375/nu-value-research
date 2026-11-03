@@ -2,6 +2,24 @@
 
 Newest first. Each item lists the options, my recommendation and what it blocks. Background is in [STATUS.md](STATUS.md) (section dated 1 November 2026).
 
+## 2026-11-03 ~20:00 HKT — item 10: "All Nu runs on Vulkan" vs the OpenGL-only pinned revision — Claude Opus
+
+### 10. The research's pinned Nu has no Vulkan renderer. Re-pin, or keep it as an exception?
+- **Facts** (source reading and GitHub API only; nothing run; details in `docs/nu-gpu-headless-recipe-2026-11-03.md`, "Vulkan and the pinned revision"):
+  - Every retained package that runs Nu pins Nu `064f7ae` (23 July 2026), and that revision is **OpenGL-only**. It has no Vulkan code and no renderer switch.
+  - Current Nu master is **Vulkan-only**. The two lines diverged: OpenGL was removed on a Vulkan branch that master merged after our pin. Master is 1,938 commits ahead.
+  - So "on Vulkan" for these packages means **moving the research to a much newer Nu**, not flipping a setting.
+- **What a move would change:**
+  - Every probe, bridge and protocol needs porting, and every result becomes a new observation, not a reproduction of the October Windows and 2–3 November Linux records.
+  - The engine changes matter more than the renderer. Example: stock screen import works on master (upstream `7d6389bea`) but not at `064f7ae`.
+  - Data-only results (model values, properties, traces, saved files) would not depend on the renderer itself. Screenshot- and timing-based ones would (keyboard/key-release checks, R06 timings, wall-clock times).
+- **Options:**
+  - **(a)** Keep the pinned `064f7ae` packages on OpenGL, their only renderer, as a declared exception to the Vulkan rule. Use the NVIDIA GPU via VirtualGL for data-only runs, and Mesa software rendering for screenshot checks. **All new Nu work** uses a Vulkan-era revision on NVIDIA Vulkan, once nu-gaia-agentic confirms the Vulkan + Xvfb route.
+  - **(b)** Re-pin the research to a Vulkan-era revision (for example current master), port the packages and re-run them as new, declared experiments. Large: about 20 packages, each with its own protocol. The October records stay as the `064f7ae` evidence.
+  - **(c)** Stop running the pinned packages at all, and use only new Vulkan-era work from now on.
+- **Recommendation: (a).** The pinned packages exist to reproduce recorded results, and they can only do that on the revision they pin. Re-pinning is a research-design choice, closer to starting new experiments, and fits better with the open R-series comparison choice.
+- **Blocks:** only the question of which renderer re-runs of the pinned packages use. Nothing is running now.
+
 ## 2026-11-03 ~18:45 HKT — branch A finished — Claude Opus
 
 - **No decision needed.** The orchestrator reassigned the branch A build/run step from Kimi K3 to me, and it is done. All three arms passed at the first attempt:
