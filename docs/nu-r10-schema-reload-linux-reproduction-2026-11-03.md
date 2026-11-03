@@ -66,3 +66,27 @@ The stop rule applies: five unresolved failures at one unchanged step means stop
 ## What this check cannot show
 
 The original limits stay: the reload goes through Gaia's guarded reload core, not the F9 key or menu; no native input replay; no audio or framebuffer observation; one schema and one edit. A matching result shows only that this bounded observation reproduces on this server. It does not resume the stopped migration construction, and it says nothing about benefit.
+
+## Results (added 3 November 2026, after the runs)
+
+**Conclusion: the R10 schema reload gives the same result on Linux as on Windows. The live reload kept every old field but the new field came out as 0, not the required 200, so the live mapping fails again. The fresh reference got 200.** Every verdict field equals the Windows comparison.
+
+| Step | Result |
+| --- | --- |
+| 1. Prepare | Exit 0. `Gaia.fs` `0cf653d4…` → `0700ba14…` and `Gameplay.fs` V0 `571e2a5c…`, **equal to Windows**. |
+| 2. Full-graph build (V0) | Exit 0 in 81 s, **334 warnings, 0 errors**, the same count as Windows build 02 (codes NU1608/NU1901/NU1902 only). |
+| 3. Seal V0 | Attempt 01 failed: I ran the sealer with Python's isolated mode (`-I`), which hides the package's own modules (`ModuleNotFoundError: schema_edit`). Nothing was written. Attempt 02, run normally, passed. The receipt binds **1,145 independent copies, the same count as the Windows V0 receipt** (receipt SHA-256 `b382efe4…25b5`). |
+| 4. Objective checks | **28 of 29 pass. The one failure is the predicted one**: the forced-`taskkill`-failure control cannot pass on Linux, because the runner's non-Windows branch never calls that command. All the other checks pass, including rejection of a Windows trace by the amended OS check and the 3,240-file source manifest. |
+| 5. Live run | Exit 0 in 42 s, `runnerPass` true. The reload installed `FSI_0005.Breakout.Gameplay` (the same generated name as Windows) with **reward 0**. After one hit: score 100, brick `@455` removed, next halt stable. |
+| 6. V1 build and seal | V1 source `b8a2cac2…feccb8` as required. Build exit 0 in 14 s, **212 warnings, the same as Windows**. Seal passed (`b71c7b9e…25ce3`). |
+| 7. Fresh run | Exit 0 in 35 s, `runnerPass` true. Initial reward 200; after one hit: score 300. |
+| 8. `compare.py` | Completed. |
+| 9. Across platforms | **All 17 verdict fields and the oracle hash equal Windows `comparison-01.json`.** Live required reward installed false, live mapping false, fresh initialization true, both preservations true, both continuations passed, live reward 0, fresh reward 200, checkpoint equal, post-update states not equal, matched pair false. |
+| 10. Recorded | **All 64 compared trace fields equal Windows** in both arms: checkpoint, post-update and next-halt models and projections, rewards, field names, the generated type names and every field of each result record. The generated reload script is byte-identical to Windows (`e5132fd6…`). Only the OS string differs (`Ubuntu 22.04.5 LTS` against `Microsoft Windows 10.0.19045`), as declared. |
+
+**Attempts:** one failed seal invocation (my command error) and one of every other step. No run was repeated. Evidence: `.artifacts/r10-schema-reload-linux-20261103/`, including `platform-comparison.json`, the amendment receipt, both runtime folders, the checkpoint binding and both build-snapshot receipts. I deleted the scratch builds (about 10 GB, all regenerable) and logged it in `DELETIONS.log`.
+
+**Limits.** These hold in addition to the protocol's limits.
+- The amendment and the build acceptance were checked by me only, without a second reviewer.
+- The same OpenGL-override caveat as the other Linux runs applies.
+- Process times include file checks and software rendering. They are not a performance comparison.
