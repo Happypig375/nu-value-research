@@ -17,7 +17,11 @@ Newest first. Each item lists the options, my recommendation and what it blocks.
   - Details are in STATUS.
 - **8(b): ANSWERED, option (ii) extended, and done.** PLAN states the platform for every reproduced result: a dated update at the top, a platform note after the October evidence, and inline notes.
 
-### 9. R12 Terra Firma on Linux: allow a longer deadline? (new; blocks only this one reproduction)
+### 9. ANSWERED (user: yes) and DONE — R12 Terra Firma on Linux with a longer deadline
+- Amendment 3 (`4b4249f`, committed before any run) raised the per-process deadline to 1,800 s.
+- The pair now passes exactly as on Windows (0 invalid, 0 adverse, byte-identical captures and saves). Each process takes about 12.5 minutes on the software renderer. Results: `ffe493b`.
+
+Original question, kept for the record:
 - **Facts:** under the declared amendment, the assets, the build and L0's observations and saved scene all match Windows byte for byte. But L0 can't exit within the package's fixed 180-second deadline. Its shutdown waits for one very slow software-rendered 3D frame, confirmed by thread stacks: it is not a deadlock. More renderer threads didn't help. The fresh-process reopen (L1) and the pair verdict were therefore not reached. Record: `docs/nu-r12-terra-firma-linux-amended-2026-11-03.md`.
 - **Options:**
   - (a) Approve a third dated amendment that raises the process deadline (for example to 900 s), keeping everything else fixed. Rerun L0, then L1 and the comparison once.

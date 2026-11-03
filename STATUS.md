@@ -1,8 +1,7 @@
 # Status and continuation plan — 1 November 2026 (HKT)
 
-**NO INDEPENDENT WORK LEFT for the Claude session (3 Nov 2026).** The user's decisions D9 are applied (section just below). I am no longer editing this checkout, and no background jobs or Xvfb displays of mine are running. What is open:
+**Claude session, 3 Nov 2026: WORKING.** R12 Terra Firma now reproduces on Linux (item 9 done). Running the branch A build/run step next, as the orchestrator reassigned it. The user's decisions D9 are applied (section just below). Still open:
 - **Branch A build/run:** for the orchestrator to give to the Kimi K3 lane. The protocol is ready.
-- **NEEDS-HUMAN item 9:** a longer deadline for R12 Terra Firma on Linux (recommendation: no).
 - **The R-series comparison choice:** still with the user.
 
 ## User decisions D9 — Claude Opus (3 November 2026)
@@ -17,24 +16,31 @@
     - a fault after a code reload that changed the message type could be hidden as an "incompatible signal" log (unresolved);
     - with no snapshot, the editor exits with code 1 rather than recovering.
   - **Protocol for the build/run step** (four arms: no-fault control, recovery, imperative contrast, standalone contrast): section 4 of [docs/nu-daybreak-recovery-trigger-2026-11-03.md](docs/nu-daybreak-recovery-trigger-2026-11-03.md), commit `7cd5301`. **I built and ran nothing.** The orchestrator gives that step to the Kimi K3 lane. The brief `.orchestration/TASK-daybreak-kimi.md` now points there.
-- **Item 8(a): R10 reproduces on Linux; R12 does only up to its first run.** Both ran under declared amendments, each committed before any run (`485b9f2`, then `058cde6` and `c37927f` for R12). A forked helper of this session did the work.
+- **Item 8(a): R10 and R12 both reproduce on Linux.** Both ran under declared amendments, each committed before any run (`485b9f2`, then `058cde6` and `c37927f` for R12). A forked helper of this session did the work.
   - **R10 initializer-only schema reload: same result as Windows.** The amendment changes only the package's Windows OS checks.
     - The live reload keeps the old fields, but the new field comes out 0 instead of 200, so the live mapping fails. The fresh reference gets 200.
     - All 17 verdict fields, 64 trace fields (including the generated type name `FSI_0005`), the warning counts and the snapshot equal Windows.
     - One seal call failed on an operator command error. One objective control failed, as the protocol predicted: it tests a Windows-only cleanup path.
     - Records: [doc](docs/nu-r10-schema-reload-linux-reproduction-2026-11-03.md), `7c077d5`, `.artifacts/r10-schema-reload-linux-20261103/`.
-  - **R12 Terra Firma reopen pair: the first run (L0) matches Windows byte for byte, but the reopen was not reached.** The amendment uses file mode as the read-only signal. It also adds the pinned archive's Linux `libassimp.so` and `libbulletc.so`; the physics library was added after attempt 01 failed without it.
-    - Assets (251 files) are byte-identical, the build matches (72 warnings), and the 17 checker controls pass.
-    - L0's observations and saved scene are byte-identical to Windows, with 233 entities.
-    - **But L0 cannot exit within the package's fixed 180-second deadline.** Thread stacks show shutdown waiting on one very slow software-rendered 3D frame, not a deadlock. More renderer threads (32 instead of 4) didn't help. The stop condition of amendment 2 applied.
-    - So the fresh-process reopen (L1) and the pair verdict stay Windows-only. Finishing would need a longer deadline (a package change, so a user decision: NEEDS-HUMAN item 9) or a GPU.
-    - Records: [doc](docs/nu-r12-terra-firma-linux-amended-2026-11-03.md), `3870d1c`, `.artifacts/r12-terra-linux-amended-20261103/`.
-    - The Terra Firma revision series was out of scope and not tried. It likely hits the same limit.
+  - **R12 Terra Firma reopen pair: now reproduces on Linux, identical to Windows.** The user approved a longer time limit (NEEDS-HUMAN item 9).
+    - Under amendment 3 (`4b4249f`, committed before any run), the per-process deadline went from 180 s to 1,800 s. L0 and then L1 both exited normally.
+    - The pair passes its declared checks with 0 invalid and 0 adverse findings. It preserves the 197 entities (19 roots), 166 links, 11 histories, 32 palms and 4 villas. The comparison equals Windows `terra-comparison-01.json`.
+    - The captures, the saved scene and the 251 prepared assets are byte-identical to Windows, and the 17 checker controls pass.
+    - The only difference is time. Each native process takes about 12.5 minutes, against 34–37 s on Windows, because one reflection-map frame at shutdown is very slow on the software renderer. This is not a performance result.
+    - Declared Linux deviations:
+      - file mode as the read-only signal;
+      - the pinned archive's Linux `libassimp.so` and `libbulletc.so`;
+      - 32 software-renderer threads;
+      - the 1,800 s deadline;
+      - build acceptance by the operator, without a second reviewer.
+    - Earlier attempts are all kept: L0 01, 02 and 04 failed; 03 was an unscored diagnostic.
+    - Records: [doc](docs/nu-r12-terra-firma-linux-amended-2026-11-03.md), results `3870d1c` and `ffe493b`, `.artifacts/r12-terra-linux-amended-20261103/`.
+    - **So every retained native package now reproduces on Linux, except the Terra Firma revision series, which was not attempted.**
   - Scratch builds were deleted and logged in each evidence folder's `DELETIONS.log`. Xvfb displays `:95` and `:96` are stopped.
 - **Item 8(b): done.** PLAN now has a dated update at the top: work runs on Linux, and the state of both Daybreak branches. It also has a platform note after the October execution evidence, listing which results reproduced on Linux and which differ:
   - R06: 5 of 6 pairs, and its Windows timeout passed on Linux;
   - B0: a different random checkpoint, restored exactly;
-  - R12 Terra Firma: the reopen was not reached.
+  - R12 Terra Firma: identical, after a declared longer deadline.
 
   Inline notes were added to the R06, R10 schema and Terra Firma sentences. AGENTS.md's server header got a one-line pointer saying the Daybreak branches are now user-assigned.
 
