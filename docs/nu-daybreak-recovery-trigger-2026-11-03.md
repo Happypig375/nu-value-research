@@ -233,3 +233,79 @@ Rendering is software (Mesa), so timings carry no meaning.
 - **Comparisons:** "equals S0" means the exact JSON of B0's model serializer (every field as float bits, every brick) and of B0's scene projection (entity names, sprite positions, sizes, colours, texts, cube rotation).
 - **Environment:** `scripts/linux_nu_env.sh` (SDK 10.0.302, Xvfb display `:94`, Mesa with the OpenGL 4.6 override, `nice -n 10`), and a NuGet cache seeded from `.artifacts/nuget-packages/`. A0 uses an unpatched prepared tree, and A1/A2 use a fault-patched tree; each is built separately.
 - **Order:** prepare and build both trees, then A0, then A1, then A2. Each arm runs once unless an attempt fails. Failures follow the stop rule in 4.4.
+
+## 6. Results (3 November 2026, after the runs)
+
+**Conclusion: recovery is reached, and it works as the source predicted.**
+- **What happened:** the deliberate division by zero in Breakout's own `Update` handler was caught by Gaia's outer error handler both times it fired. Each time Gaia rewound the world to the snapshot taken at Advance, halted, and kept running.
+- **What came back:** the full gameplay model and the visible scene equal the pre-Advance state S0, right after recovery and again 10 frames later.
+- **What was lost:** the 30 gameplay updates played since Advance, with no redo.
+- **Not repaired:** the code. Advancing again hit the same fault, and recovery repeated identically.
+- **Contrast:** with undo off (imperative mode), the same fault makes Gaia log "Could not rewind world" and exit with code 1.
+- **Every arm passed at its first attempt**, and both controls passed, so A1 can be interpreted.
+
+### Attempts (all kept)
+
+| Step | Attempts | Outcome |
+| --- | --- | --- |
+| Prepare (both trees) | 1 each | Pass. Original `Gaia.fs` `0cf653d4…` (the same as B0's record); bridged `adcd0587…`. `Gameplay.fs` `571e2a5c…` → fault `cded97cd…`. The diff is exactly the two fault lines. |
+| Build (both trees) | 1 each | Pass, 0 errors, 334 warnings each (the same count as B0 on Linux). |
+| A0 run | 1 | **PASS** (45 s) |
+| A1 run | 1 | **PASS** (47 s) |
+| A2 run | 1 | **PASS** (33 s) |
+
+One launch command did not start: its log folder did not exist yet. No process ran, so it is not an attempt; it is logged in `OPERATOR-NOTES.log`.
+
+### What each arm showed
+
+- **A0 (no fault):**
+  - Gaia advanced through 60 gameplay updates.
+  - No exception was logged, no message box appeared, and `Pasts` stayed at 1 (P0 = 0, plus the Advance snapshot).
+  - The clock rose by exactly one per frame (0, 1, …, 60). Exit code 0.
+- **A1 (fault, functional Gaia, the default):**
+  - **Start:** settled S0 at gameplay clock 0, with `Pasts` empty (P0 = 0). Advance pushed one `Advance` snapshot, and it was the same object as the pre-Advance state (K).
+  - **The fault:** after 30 TimeUpdates (the last hook before the fault showed clock 29), the next `Update` threw `DivideByZeroException`. The log shows it raised in `Breakout.GameplayDispatcher.Message`. It passed through the engine's signal and update layers to Gaia's handler, as claims 1–5 predicted. Both log entries read "Unexpected exception!\nRewound to previous world.\nError due to: Attempted to divide by zero."; the "and halted" variant never appeared (claim 10).
+  - **First hook after recovery:**
+    - halted, `Futures` = 0, `Pasts` = 0 (the snapshot was used up);
+    - message box set;
+    - model equal to S0, and scene equal to S0 already at that first hook;
+    - the live world state is **not** the same object as K, as predicted (claim 13). Recovery installs a copy with a switched ambient state.
+  - **After 10 more halted frames:** model and scene still equal S0, so nothing advanced.
+  - **Second pass:** Advance pushed a new snapshot (again the pre-Advance state). The fault fired again at the same clock value. Recovery gave the same results.
+  - **Exit:** requested after the second pass; the editor shut down normally with exit code 0. Two faults were caught in one editor session without losing the session.
+- **A2 (fault, imperative Gaia):**
+  - Advance still pushed a snapshot. The same fault at the same point produced "Unexpected exception! Could not rewind world. Error due to: System.DivideByZeroException…".
+  - Gaia exited with code 1 after the last hook at clock 29. No recovery hook call followed.
+
+### What this shows, and what it does not
+
+**Shown, at this scope:**
+- An ordinary unhandled exception in game code reaches Gaia's existing recovery in its default mode.
+- Recovery restores the last Advance snapshot exactly: every model field and the projected scene, compared as exact float bits.
+- The editor session survives repeated faults.
+- Progress since the snapshot is lost.
+- With undo off, the session ends instead.
+
+These are runtime observations of the source claims in section 2.
+
+**Not shown:**
+- Sound or random-number rewinding (not measured).
+- Native physics, contacts or framebuffer (Breakout has no physics bodies, and screenshots were not compared).
+- Recovery of the last good state or the fault-time state (by design it returns to K).
+- A code repair, because the fault repeats.
+- The effect of many repeated faults on the stack (claim 11).
+- Real input to Gaia (Advance went through the bridge, which calls Gaia's own F5 function).
+- Faults raised through the property editor or after a reload (claims 18 and 19).
+- How often such faults happen.
+- Any benefit over saving and reloading the screen or rebuilding from model files.
+
+Rendering was Mesa software rendering, so timings carry no meaning. A3 (standalone) was not run (section 5).
+
+### Evidence
+
+- Raw evidence: `.artifacts/daybreak-recovery-trigger-20261103/`:
+  - `prepare-*.json`, `build-*-01.log`, `build-hashes.sha256`;
+  - `runs/a0-01`, `runs/a1-01`, `runs/a2-01`: process receipt, stdout/stderr and probe trace for each;
+  - `verdict.json` (SHA-256 `64fab2df…7928`), `DELETIONS.log`.
+- The verdict is also committed as `experiments/nu-daybreak-recovery-trigger/result-receipt.json`.
+- Scratch (8.4 GB of prepared trees, builds and the NuGet cache) is deleted and logged.

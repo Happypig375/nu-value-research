@@ -1,0 +1,64 @@
+{
+  "a0": {
+    "verdict": "PASS",
+    "checks": {
+      "no_exception_logged": true,
+      "reached_60_updates_advancing": true,
+      "no_message_box": true,
+      "pasts_P0_plus_1": true,
+      "exit_code_0": true
+    },
+    "elapsed_seconds": 45.193
+  },
+  "a1": {
+    "verdict": "PASS",
+    "checks": {
+      "a_two_faults_logged_divide_by_zero_in_gameplay": true,
+      "a_no_could_not_rewind": true,
+      "b_pass1_hook_fired_after_fault": true,
+      "c_pass1_halted_futures0_pasts_P0": true,
+      "c_pass1_message_box": true,
+      "d_pass1_model_equals_S0_immediate": true,
+      "d_pass1_model_equals_S0_settled": true,
+      "e_pass1_projection_equals_S0_settled": true,
+      "b_pass2_hook_fired_after_fault": true,
+      "c_pass2_halted_futures0_pasts_P0": true,
+      "c_pass2_message_box": true,
+      "d_pass2_model_equals_S0_immediate": true,
+      "d_pass2_model_equals_S0_settled": true,
+      "e_pass2_projection_equals_S0_settled": true,
+      "g_exit_code_0": true
+    },
+    "missing": [],
+    "recorded": {
+      "pass1_live_state_is_K": false,
+      "pass1_last_good_hook_time": 29,
+      "pass1_projection_equals_S0_immediate": true,
+      "pass1_updates_timeupdates_at_recovery": [
+        29,
+        30
+      ],
+      "pass2_live_state_is_K": false,
+      "pass2_last_good_hook_time": 29,
+      "pass2_projection_equals_S0_immediate": true,
+      "pass2_updates_timeupdates_at_recovery": [
+        58,
+        60
+      ],
+      "and_halted_variant_seen": false,
+      "clock_irregular_events": [],
+      "elapsed_seconds": 47.049
+    }
+  },
+  "a2": {
+    "verdict": "PASS",
+    "checks": {
+      "advanced_with_snapshot": true,
+      "could_not_rewind_logged": true,
+      "no_recovery_observed": true,
+      "exit_code_1": true
+    },
+    "elapsed_seconds": 32.614
+  },
+  "a1_interpretable": true
+}
