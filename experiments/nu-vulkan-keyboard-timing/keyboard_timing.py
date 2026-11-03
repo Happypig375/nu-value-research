@@ -478,17 +478,47 @@ def run(children):
         return invalid(f"paddle not found at x=0 in first gameplay screenshot (found {c0})")
     control_ok = c1 is not None and abs(c1 - c0) <= STILL
 
+    # Amendment 1 (3 Nov 2026): at ~60 updates/s the ball loses all 5 lives within seconds and Breakout freezes the
+    # paddle on "Game over!". Before each trial, if no life icon is left, start a fresh board by the ordinary
+    # Quit -> Play clicks. A trial that ends with no lives left is kept (labelled), excluded, and redone once.
+    restarts = []
+
+    def fresh_board(reason):
+        qx, qy = centre_of(232, -144)
+        x.click(qx, qy)
+        emit("click", target="Quit", at=[qx, qy], reason=reason)
+        if not wait_title(f"title-restart-{len(restarts) + 1}", 3):
+            return False
+        g3, _ = play(f"gameplay-restart-{len(restarts) + 1}")
+        restarts.append({"reason": reason, "ok": g3 is not None})
+        return g3 is not None
+
     for k in range(a.trials):
         for keysym, name, sign in ((XK_RIGHT, "Right", 1), (XK_LEFT, "Left", -1)):
-            r = trial(x, window, ref, t0, keysym, name, sign, emit)
-            r["index"] = k + 1
-            result["trials"].append(r)
-            emit("trial", **r)
+            for redo in (False, True):
+                if lives(shot(), ref) == 0 and not fresh_board("game over before trial"):
+                    return invalid("could not start a fresh board after game over")
+                r = trial(x, window, ref, t0, keysym, name, sign, emit)
+                r["index"] = k + 1
+                r["redo"] = redo
+                if lives(shot(), ref) == 0:  # ended on game over: a freeze could fake the stop, so never counted
+                    r["interrupted_by_game_over"] = True
+                    result["trials"].append(r)
+                    emit("trial", **r)
+                    if not redo:
+                        continue
+                    break
+                result["trials"].append(r)
+                emit("trial", **r)
+                break
             time.sleep(0.3)
     shot("after-trials")
-    result["validity"] = {"pass": control_ok and all(t["valid"] for t in result["trials"]),
+    counted = [t for t in result["trials"] if not t.get("interrupted_by_game_over")]
+    result["restarts"] = restarts
+    result["validity"] = {"pass": control_ok and len(counted) == 2 * a.trials and all(t["valid"] for t in counted),
                           "gameplay_reached_by_click": True, "play_clicks": clicks, "no_input_control_still": control_ok,
-                          "all_trials_moved_and_stopped": all(t["valid"] for t in result["trials"])}
+                          "all_trials_moved_and_stopped": all(t["valid"] for t in counted),
+                          "interrupted_trials": len(result["trials"]) - len(counted), "fresh_boards": len(restarts)}
 
     qx, qy = centre_of(232, -144)
     x.click(qx, qy)

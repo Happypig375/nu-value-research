@@ -124,3 +124,16 @@ The secondary click path is recorded.
 4. Run keyboard KF, then K01–K10.
 5. Append the results here, then update STATUS and NEEDS-HUMAN.
 6. Delete the scratch builds and log the deletions.
+
+## Amendment 1 (3 November 2026, after keyboard feasibility repeat KF, before any scored keyboard repeat)
+
+- **What KF found:**
+  - Five of six trials were valid, and the control and click path passed.
+  - The sixth trial (Left 3) showed no movement for 8 s, because the screen read **"Game over!"**. At about 60 updates per second, the ball loses all five lives within seconds, and Breakout then freezes the paddle. At 2.5 updates per second (the 2 November runs) this could not happen in time.
+  - KF is kept as recorded (`.artifacts/vulkan-timing-20261103/keyboard/runs/KF/`).
+- **Change** (`keyboard_timing.py`; nothing else changes):
+  - Before each trial, if no life icon is left, start a fresh board with the ordinary Quit → Play clicks.
+  - Any trial that ends with no lives left is kept, labelled `interrupted_by_game_over`, excluded from the summaries, and redone once on a fresh board. Such a trial is excluded even when it looked valid, because a game-over freeze could fake the "stopped" reading.
+  - A repeat is valid only if all 6 counted trials are valid.
+- **Verification:** one more unscored feasibility repeat, **KF2**, then K01–K10 as planned.
+- **R06 is not affected.** Its feasibility processes and all 40 measured processes passed under the original protocol.

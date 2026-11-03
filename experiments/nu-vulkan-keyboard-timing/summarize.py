@@ -28,7 +28,7 @@ def main():
         repeats.append({"repeat": res.parent.name, "validity": r.get("validity"), "invalid": r.get("invalid"),
                         "secondary": r.get("secondary")})
         if r.get("validity", {}) and r["validity"].get("pass"):
-            trials += [dict(t, repeat=res.parent.name) for t in r["trials"] if t.get("valid")]
+            trials += [dict(t, repeat=res.parent.name) for t in r["trials"] if t.get("valid") and not t.get("interrupted_by_game_over")]
     out = {"repeats": repeats, "valid_trials": len(trials)}
     for key in ("Right", "Left", "all"):
         ts = [t for t in trials if key == "all" or t["key"] == key]

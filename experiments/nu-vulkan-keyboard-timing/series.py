@@ -30,7 +30,7 @@ def main():
     runs = a.runs.resolve()
     runs.mkdir(parents=True, exist_ok=True)
     ledger = runs / "series-ledger.jsonl"
-    for rid in ["KF"] + [f"K{k:02d}" for k in range(1, 11)]:
+    for rid in ["KF", "KF2"] + [f"K{k:02d}" for k in range(1, 11)]:  # KF2: amendment 1 feasibility
         if a.only and rid not in a.only:
             continue
         out = runs / rid
