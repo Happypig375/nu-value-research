@@ -104,3 +104,33 @@ The stop rule still counts every attempt at the L0 step, the diagnostic included
 - On a GPU this frame is quick. On the software renderer, with the 4 renderer threads the wrapper sets by default (`LP_NUM_THREADS=4`), it takes longer than the rest of the 180 s budget.
 
 That is an environment cause (rendering speed), so amendment 2 allows **one** scored attempt with an environment-only fix: **L0 attempt 04 sets `LP_NUM_THREADS=32`**, so Mesa's software renderer uses 32 threads instead of 4. `scripts/linux_nu_env.sh` already reads this variable; nothing else changes. If L0-04 is complete, L1 runs with the same setting. If L0-04 still times out, the native stage stops there.
+
+## Results (added 3 November 2026, after the attempts)
+
+**Conclusion: with the amendment, Terra Firma's asset preparation and build pass on Linux, and L0 loads, observes and saves the scene exactly as on Windows. Its two captures and its saved file are byte-identical to the Windows ones. But L0 never exits within the package's fixed 180-second deadline.** After the save, the engine's shutdown waits for one last software-rendered 3D frame (a reflection map), and that frame takes longer than the remaining time. More renderer threads did not fix it. So L0 never counts as complete, and **L1 (the fresh-process reopen) and the pair comparison were not reached.** The 17 synthetic checker controls pass.
+
+| Step | Result |
+| --- | --- |
+| Assets | Exit 0 in 54 s, `ready_for_parent_review` **true**: 0 closure failures for all 248 expected outputs. Nu.Pipe gives the published assets mode `0444` (no write bits), so the amended read-only check passes. All **251 published files are byte-identical to Windows** `terra-assets-01`. The extra `AssetGraph.tracker` is reported as on Windows. |
+| Build | Exit 0, `ready_for_parent_review` true, **72 warnings and 0 errors, as on Windows**. DLL `3879d069…`, PDB `76940c5f…` (different from Windows because builds embed paths). |
+| Seal and acceptance | PE/PDB identity matches; 8 original units and 1 observer verified. `accept_linux_build.py` accepted with no failed check; the copied `App.config` equals Windows. |
+| L0 attempt 01 | **Failed (environment):** `DllNotFoundException: libbulletc`. The Windows-built host has no Linux physics native. |
+| L0 attempt 02 (+ `libbulletc.so` from the pinned archive) | **Timed out (killed at 180 s, exit −9).** All 3 callbacks ran, and captures A and B and the save were written 18 s after launch. Then shutdown never finished. |
+| L0 attempt 03 (diagnostic, unscored) | Same hang. The thread stacks show the main thread waiting in `World.cleanUp` for the renderer thread, which is still drawing a reflection-map frame on the software renderer. Not a deadlock. |
+| L0 attempt 04 (`LP_NUM_THREADS=32`) | **Timed out the same way** (save 15 s after launch, killed at 180 s). Per amendment 2, the native stage stops here. |
+| L1, `compare.py` | **Not reached:** L1 requires a complete L0. |
+| `check_controls.py` | Attempt 01 failed on my command (Python isolated mode `-I` hid the package's own `compare` module; nothing was written). Attempt 02: **17 of 17 controls pass, as on Windows.** |
+
+**What L0 did observe, compared with Windows** (attempts 02 and 04 agree exactly):
+- Captures `A.nugroup` and `B.nugroup`, `saved-Scene.nugroup` and its canonical form: all **byte-identical to Windows** L0 (`10ab23a3…`, `0bdb814d…`). The saved file also equals the Windows L1 save.
+- Live entities in A and B: **233, with 36 generated protected entities**, the same as Windows.
+- `original-expectations.json` differs in hash; it records paths.
+
+These are observations from incomplete processes. They support "the load and save behave identically on Linux". They do not show the reopen, because L1 never ran.
+
+**Attempts:** assets 1, build 1, seal 1, acceptance 1, L0 4 (one environment failure, two scored timeouts, one unscored diagnostic), controls 2 (one my command error). Nothing was rerun beyond what amendment 2 declared. Evidence: `.artifacts/r12-terra-linux-amended-20261103/`. That folder holds the receipts and observations of every L0 attempt, the build and seal records, the thread stacks, the hash lists of the two archive natives (`libassimp.so` `52321db7…`, `libbulletc.so` `0ddb5f81…`) and the asset hash list. I deleted the scratch trees and logged it in `DELETIONS.log`.
+
+**Notes and limits.**
+- The wrapper's environment log does not print `LP_NUM_THREADS`, because its filter pattern is too narrow. `wrapper-lp-check.txt` shows that the wrapper passes the value 32 through.
+- The fix that would most likely complete L0 is a longer deadline or a GPU. A longer deadline is a package change (the 180 s deadline is frozen in `run.py`), so it would need a new written amendment and the user's agreement. I did not make it.
+- The amendment, the build acceptance and the diagnosis were checked by me only, without a second reviewer.
