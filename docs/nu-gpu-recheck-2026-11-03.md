@@ -45,10 +45,11 @@ The settled model values themselves (ball direction, brick colours) are random p
 - Rendered images: no framebuffer or screenshot comparison is made, so this does not show that GPU and software images are equal.
 - Real-hardware display or input.
 - Timing as a performance result: the GPU is shared, and VirtualGL copies frames back to Xvfb.
-EOF
-cd /home/happypig375/workspace/nu-value-research && printf '%s\n' /scripts/linux_nu_gpu_env.sh | git sparse-checkout add --stdin && bash scripts/linux_smoke.sh > /dev/null 2>&1; echo smoke=$?; git add --sparse scripts/linux_nu_gpu_env.sh docs/nu-gpu-recheck-2026-11-03.md && git commit -q -m "GPU re-check protocol (branch A A1, R12) and GPU wrapper: unchanged Nu on the RTX 4090 D via VirtualGL EGL, before any re-check run
 
-Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>" -- scripts/linux_nu_gpu_env.sh docs/nu-gpu-recheck-2026-11-03.md 2>&1 | grep -v "CRLF\|original line"; git log --oneline -1
+*Correction, 3 November (after the runs): three lines of stray shell text (a heredoc terminator and a `git commit` command) were accidentally committed here at `6dde89a`. They have been removed. They were never part of the protocol, and no protocol content changed.*
+
+## Results (added after the runs)
+
 ### R12 results (GPU)
 
 Added 3 November 2026, ~19:25 HKT, after the runs. Done by the Claude Opus fork that ran the amendment-3 software runs.
@@ -82,3 +83,30 @@ Evidence is in `.artifacts/gpu-recheck-20261103/r12/`:
 - the comparison and the controls receipt.
 
 I deleted the scratch and logged it in `DELETIONS.log`, and stopped Xvfb `:96`.
+
+### Branch A A1 results (GPU)
+
+- **Result: the same verdict and the same recorded behaviour as the software run.**
+  - `check.py` A1 verdict **PASS**, with all 17 checks true.
+  - The last hook before each fault was at gameplay clock 29. 30 TimeUpdates had completed when the first recovery came (60 by the second).
+  - No "and halted" variant appeared. The live state was not the same object as K, in both passes.
+  - Exit code 0.
+- **Device:** Nu logged "Initialized OpenGL 4.6.0 NVIDIA 580.178.04 (NVIDIA Corporation)". `nvidia-smi` showed the run's `dotnet` process (PID 295276) on the GPU with about 1,059 MiB.
+- **Time:** 6.4 s, against 47 s with software rendering.
+- **Attempts:** one, which passed. The GPU was idle beforehand (0 %, 16 MiB).
+- **Environment checks before the re-check** (not attempts):
+  - an SDL-offscreen start, which failed in Nu's renderer thread for the EGL reason in the [recipe](nu-gpu-headless-recipe-2026-11-03.md);
+  - two A0 starts under VirtualGL, which passed in 8.4 s and 7.2 s;
+  - screenshot tests that found the black-window limit.
+
+  All are in `.artifacts/gpu-recheck-20261103/runs/` (`smoke-*`, `shot-*`, `standalone-*`).
+- **Evidence:** `.artifacts/gpu-recheck-20261103/runs/a1-gpu-01/` and `a1-gpu-verdict.json`. The trees were prepared again from the same archive with the same source hashes (`prepare-*.json`, `build-*.log`).
+
+### Conclusion of the re-check
+
+Both re-checked results are unchanged on the GPU:
+- branch A A1: same verdict and behaviour;
+- R12 Terra Firma: the same comparison, byte-identical captures and saves, and 17/17 controls.
+
+Run times drop from about 47 s to 6.4 s (A1), and from about 750 s to about 10 s per process (R12). No rendered images were compared.
+

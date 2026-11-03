@@ -1,8 +1,25 @@
 # Status and continuation plan — 1 November 2026 (HKT)
 
-**NO INDEPENDENT WORK LEFT for the Claude session (3 Nov 2026, ~18:45 HKT).** Both Daybreak branches and all Linux reproductions asked for are done (sections just below). I am no longer editing this checkout, and no background jobs or Xvfb displays of mine are running. What is still open:
+**NO INDEPENDENT WORK LEFT for the Claude session (3 Nov 2026, ~19:40 HKT).** The GPU route works and the GPU re-check matches (section just below). Both Daybreak branches and all Linux reproductions asked for are done. I am no longer editing this checkout, and no background jobs or Xvfb displays of mine are running. What is still open:
 - **The R-series comparison choice:** with the user. PLAN ties new R-series experiments to it.
 - **Optional:** the Terra Firma revision series was never re-run on Linux. Nobody asked for it.
+
+## Nu on the NVIDIA GPU — Claude Opus (3 November 2026, ~19:40 HKT; user via orchestrator: "use the GPU resources")
+
+- **Result: unchanged pinned Nu/Gaia now runs with OpenGL on the server's RTX 4090 D, without admin rights.**
+  - **How:** our own Xvfb display, plus VirtualGL's EGL back end (a user-level copy, `VGL_DISPLAY=egl`). The wrapper is `scripts/linux_nu_gpu_env.sh`; the recipe and caveats are in [docs/nu-gpu-headless-recipe-2026-11-03.md](docs/nu-gpu-headless-recipe-2026-11-03.md).
+  - **Device proof:** Nu logs "Initialized OpenGL 4.6.0 NVIDIA 580.178.04", and `nvidia-smi` shows the run's process on the GPU.
+  - **Correction to the request:** this Nu version renders with OpenGL, not Vulkan, so the earlier software runs used Mesa llvmpipe OpenGL, not lavapipe.
+- **Declared re-check:** protocol committed first (`6dde89a`); results `e1f1f9f` and the commit that adds this section. [doc](docs/nu-gpu-recheck-2026-11-03.md)
+  - **Branch A A1:** the same verdict (PASS) and behaviour, in 6.4 s instead of 47 s.
+  - **R12 Terra Firma pair:** the same comparison and byte-identical captures and saves, with 17/17 controls. Each process took about 10 s (L0 11.2 s, L1 8.8 s), instead of about 750 s with software rendering; Windows took 34–37 s.
+  - Each step passed at its first attempt.
+- **Limits:**
+  - Under VirtualGL, Nu's Xvfb window stays black. Screenshot-based checks (like the 2 November keyboard checks) still need the software wrapper.
+  - SDL's X-free `offscreen` driver with NVIDIA EGL fails inside unchanged Nu, because two threads share one window surface.
+  - Vulkan (current Nu master) was not tested.
+  - No rendered images were compared.
+- **For the shared machine notes:** the recipe doc is written for other agents (nu-gaia-agentic too).
 
 ## Branch A build/run — Claude Opus (3 November 2026, ~18:40 HKT; reassigned by the orchestrator)
 
