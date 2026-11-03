@@ -134,3 +134,39 @@ These are observations from incomplete processes. They support "the load and sav
 - The wrapper's environment log does not print `LP_NUM_THREADS`, because its filter pattern is too narrow. `wrapper-lp-check.txt` shows that the wrapper passes the value 32 through.
 - The fix that would most likely complete L0 is a longer deadline or a GPU. A longer deadline is a package change (the 180 s deadline is frozen in `run.py`), so it would need a new written amendment and the user's agreement. I did not make it.
 - The amendment, the build acceptance and the diagnosis were checked by me only, without a second reviewer.
+
+## Amendment 3 (3 November 2026, ~17:45 HKT): longer deadline for the native runs, written before any further run
+
+**Authority:** the user approved NEEDS-HUMAN item 9, relayed by the orchestrator on 3 November: extend Terra Firma's time limit on Linux so that L0 can exit and the reopen (L1) and the comparison can finish ("server time is practically free").
+
+**The only new change.** `run.py` gives each native run (L0, L1) a 180-second deadline (line 366: `process(command, app, output, 180, environment)`). Amendment 3 raises it to **1,800 seconds per process**. The amendment script applies this only when called with `--deadline 1800`; without the option it makes exactly the amendment-1 copy (same `run.py` hash, `d12b17b1…`). `accept_linux_build.py` records the deadline in the acceptance file. Nothing is checked differently.
+
+**Why 1,800 s.** In attempts 02 and 04 the save came 15–18 s after launch. Shutdown was then still waiting on the renderer when the process was killed, more than 160 s later. The last frame's real length is unknown; it is only known to be over about 160 s. 1,800 s allows more than ten times that. It still bounds a true hang to 30 minutes per process. Server time is cheap and the frame is a one-off at shutdown, so a generous bound is better than a tight guess that could waste the run.
+
+**Everything else stays as in amendments 1 and 2:**
+- the file-mode read-only signal and the `getattr` change from amendment 1;
+- `libassimp.so` and `libbulletc.so` from the pinned archive on `LD_LIBRARY_PATH`;
+- **`LP_NUM_THREADS=32`**, the software-renderer setting attempt 04 used;
+- display `:96` (Xvfb, private cookie, no TCP), the OpenGL 4.6 override, the seeded NuGet cache, `nice -n 10`;
+- the stage order and every pass condition in "Steps and pass conditions" above, including the comparison with Windows `terra-comparison-01.json`.
+
+**Rebuilding first (required, not a rerun for a better result).** I deleted the scratch asset and build trees after attempt 04. `run.py run` needs them, and the build stage snapshots the package files, including `run.py`, so the build must be redone with the amended `run.py`. So the sequence is:
+1. assets again (`linux-assets-02`) and build again (`linux-build-02`) from the amendment-3 copy;
+2. PE/PDB seal and `accept_linux_build.py` again;
+3. **L0 attempt 05**;
+4. **L1 attempt 01**, with L0-05 as its predecessor;
+5. `compare.py` on L0-05 and L1-01;
+6. `check_controls.py` again. It is synthetic and never loads Nu, but it reads the amended `run.py` copy, so it is rerun once on the new copy.
+
+The assets, build, seal and acceptance must pass as before: the same 251 asset hashes, the same 72 warnings and an 8+1 seal. If any of them fails or differs, that is recorded as a difference.
+
+**Pass conditions** (unchanged from the protocol):
+- L0 and L1 each exit 0 within the deadline with `complete_observation_and_save` true;
+- `compare.py` gives `passed_declared_checks` with scope `pair` and 0 invalid / 0 adverse findings. That covers the 197 original entities, 19 roots, 166 explicit links, 11 saved source histories, 32 palms and 4 villas, as on Windows;
+- all 17 controls pass.
+
+Each process's exit time is recorded.
+
+**What counts as a failure or difference:** any crash, timeout (now at 1,800 s), incomplete observation, invalid or adverse comparison, correspondence count different from Windows, or control failure. It is recorded as found, not fixed and rerun.
+
+**Stop rule.** The count at the L0 step continues: attempts 01, 02 and 04 are failures, and 03 was an unscored diagnostic. If L0-05 fails, that is the fourth failure. One more environment-only attempt would then be allowed, declared in a dated note before it runs; after that, stop. L1 starts its own count at 01.

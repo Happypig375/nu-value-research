@@ -5,7 +5,8 @@ which hard-codes Windows DLL/PDB hashes). It checks the same readiness facts
 the Windows acceptance checked, except the DLL/PDB hashes, which differ because
 builds embed paths. There is no second reviewer.
 
-Usage: python accept_linux_build.py BUILD_DIR AMENDED_PACKAGE_DIR
+Usage: python accept_linux_build.py BUILD_DIR AMENDED_PACKAGE_DIR [NATIVE_DEADLINE_SECONDS]
+(the deadline is recorded only; amendment 3 raised it from 180 s)
 """
 
 import hashlib
@@ -30,6 +31,7 @@ def read(path: Path):
 
 def main() -> int:
     built, package = Path(sys.argv[1]).resolve(strict=True), Path(sys.argv[2]).resolve(strict=True)
+    deadline = int(sys.argv[3]) if len(sys.argv) > 3 else 180
     receipt = read(built / "receipt.json")
     checks = {
         "build_ready_flags": all(receipt[k] for k in ("ready_for_parent_review", "source_host_unchanged", "source_unchanged", "host_copied_exactly")),
@@ -60,8 +62,8 @@ def main() -> int:
         "dll_sha256": seal["dll_sha256"],
         "pdb_sha256": seal["pdb_sha256"],
         "parent_review": "Linux amendment 2026-11-03: self-check by the reproducing session against the Windows acceptance criteria, without a second reviewer. Windows DLL/PDB hashes are not required (builds embed paths).",
-        "assigned_native": ["linux-L0-01", "linux-L1-01_if_L0_complete"],
-        "native_deadline_seconds_each": 180,
+        "assigned_native": ["linux-L0-01", "linux-L1-01_if_L0_complete"] if deadline == 180 else ["linux-L0-05", "linux-L1-01_if_L0-05_complete"],
+        "native_deadline_seconds_each": deadline,
         "no_outcome_claim": True,
     }
     output.write_text(json.dumps(record, indent=2) + "\n", encoding="utf-8")

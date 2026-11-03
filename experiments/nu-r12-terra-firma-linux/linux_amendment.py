@@ -11,7 +11,12 @@ Declared replacements (see docs/nu-r12-terra-firma-linux-amended-2026-11-03.md):
   run.py L1 scene replacement records: `st_file_attributes` (absent on Linux, so
          the L1 stage would crash with AttributeError) is read with getattr(..., None).
 
-Usage: python linux_amendment.py REPO_ROOT NEW_SCRATCH_ROOT
+Amendment 3 (3 November 2026, user-approved NEEDS-HUMAN item 9): with
+`--deadline SECONDS`, the native run stage's per-process deadline in run.py
+(`process(command, app, output, 180, environment)`, line 366) is raised to SECONDS.
+Without the option the output is exactly the amendment-1 copy.
+
+Usage: python linux_amendment.py REPO_ROOT NEW_SCRATCH_ROOT [--deadline SECONDS]
 """
 
 import hashlib
@@ -55,13 +60,26 @@ def sha(path: Path) -> str:
 
 
 def main() -> int:
-    repo, scratch = Path(sys.argv[1]).resolve(strict=True), Path(sys.argv[2]).resolve()
+    argv = sys.argv[1:]
+    deadline = None
+    if "--deadline" in argv:
+        index = argv.index("--deadline")
+        deadline = int(argv[index + 1])
+        del argv[index:index + 2]
+        if deadline <= 180:
+            raise SystemExit("amendment 3 only raises the 180 s deadline")
+        REPLACEMENTS["run.py"].append((
+            "    result = process(command, app, output, 180, environment)\n",
+            f"    result = process(command, app, output, {deadline}, environment)  # Linux amendment 3, 2026-11-03\n",
+            1,
+        ))
+    repo, scratch = Path(argv[0]).resolve(strict=True), Path(argv[1]).resolve()
     if scratch.exists():
         raise SystemExit("scratch root must be new")
     source = repo / PACKAGE
     target = scratch / PACKAGE
     target.mkdir(parents=True)
-    receipt = {"schemaVersion": 1, "amendment": "linux-2026-11-03", "source": str(source), "target": str(target), "files": {}}
+    receipt = {"schemaVersion": 1, "amendment": "linux-2026-11-03" + (f"+deadline-{deadline}" if deadline else ""), "source": str(source), "target": str(target), "files": {}}
     for name, expected in ORIGINALS.items():
         if sha(source / name) != expected:
             raise SystemExit(f"original {name} differs from the committed package")
