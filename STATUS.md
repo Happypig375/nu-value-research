@@ -11,6 +11,7 @@
 - **Decision needed:** NEEDS-HUMAN item 10. My recommendation is to keep the pinned packages on OpenGL as a declared exception, and run all new Nu work on Vulkan.
 - **For Vulkan-era Nu,** future runs use NVIDIA Vulkan on Xvfb once nu-gaia-agentic confirms that route. The OpenGL/VirtualGL route is now labelled the fallback in the GPU recipe doc.
 - Nothing was run for this check: source reading and the GitHub API only.
+- **Follow-up (user question): no package needs an OpenGL-specific comparator.** 15 of 18 judge only data, and 6 of those never render. R06's milliseconds are compared only within one run, and the two keyboard checks read screenshots, so they would need a re-tuned protocol on Vulkan. The per-package table is under NEEDS-HUMAN item 10. Branch B is the one package where porting answers a new question.
 
 ## Nu on the NVIDIA GPU — Claude Opus (3 November 2026, ~19:40 HKT; user via orchestrator: "use the GPU resources")
 

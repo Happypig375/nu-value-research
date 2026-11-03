@@ -20,6 +20,39 @@ Newest first. Each item lists the options, my recommendation and what it blocks.
 - **Recommendation: (a).** The pinned packages exist to reproduce recorded results, and they can only do that on the revision they pin. Re-pinning is a research-design choice, closer to starting new experiments, and fits better with the open R-series comparison choice.
 - **Blocks:** only the question of which renderer re-runs of the pinned packages use. Nothing is running now.
 
+#### 10, follow-up (user question, 3 Nov): what the packages are, and whether they need OpenGL-specific comparators
+
+**Short answer: no package needs an OpenGL-specific comparator.**
+- 15 of the 18 rows below judge only data (model values, entity properties, event traces, saved files, compiler output). Those comparators would work the same on Vulkan.
+- 6 of those 15 never render at all: R01, the two R04 compiler/build probes, R05, R10 conversion, and R12 propagation.
+- Only three rows are environment-specific:
+  - **R06** reads milliseconds, which are already not comparable between Windows and Linux. They are only compared within one run.
+  - **The two keyboard checks** read screenshots, so a Vulkan run would need re-tuned sample points under its own protocol, not a comparison against the OpenGL images.
+- Moving to Vulkan matters because of the engine version (1,938 commits of changes), not because of the comparators.
+
+| Package (all at Nu `064f7ae`) | What it measures | Its pass condition reads | Renderer-specific? | Recommendation |
+| --- | --- | --- | --- | --- |
+| R01 platform | Whether a moving platform carries a rider (Box2D.NET mirror of Nu's physics settings) | Physics traces | No; it runs neither Nu nor a renderer | Keep; the Vulkan rule doesn't apply |
+| R02 standalone lifecycle | Both Breakout games go title → play → quit → exit with the expected lifecycle events | Event sequences and callback counts (game updates, not ms) | No | Keep on 064f7ae |
+| R03 B0/B1 history | Gaia undo restores a checkpoint; a 20-step continuation matches | Model values and scene properties | No | Keep on 064f7ae |
+| R04 compiler diagnostics | Compiler warning for explicit cases vs a catch-all | Compiler output only | No; nothing runs | Keep |
+| R04 application diagnostics | The same warning inside the full Breakout build | Compiler output only | No; nothing runs | Keep |
+| R04 pause/lifecycle runtime | Pause/quit behaviour of four references; five planted faults caught | Model and property traces per game update | No | Keep on 064f7ae |
+| R05 events | Event delivery order in a stub world | Event traces | No; the stub world has no renderer | Keep |
+| R06 recovery cost | Gaia snapshot/undo vs serialize/restore: correct state, plus component times | Timing (ms) plus state equality | **Timing is environment-specific** (already differs between Windows and Linux). It is compared only within one run, so no OpenGL baseline is needed. | Keep. Never compare ms across machines or renderers. |
+| R10 conversion | How Prime converts changed record types | Converted values | No; Prime only, no Nu run | Keep |
+| R10 live reload | Game state survives a code reload | Model fields | No | Keep on 064f7ae |
+| R10 schema reload | A new field after reload gets 0 instead of 200 | Model fields | No | Keep on 064f7ae |
+| R12 propagation | Entity-template propagation in a stub world | Serialized entity values | No; no renderer | Keep |
+| R12 Terra Firma reopen | A big 3D scene keeps its entities, links and histories across save and reopen | Entity properties and saved files | No; identical on Windows, Linux software and Linux GPU | Keep on 064f7ae |
+| R12 Terra Firma revisions | Template revisions (palm tints and others) delivered and kept after reopen | Entity properties and histories | No | Keep (not re-run on Linux) |
+| Branch A recovery fault | Gaia rewinds to the last snapshot after a game-code exception | Model and scene values, log text, exit codes | No | Keep. Port only if recovery on current Nu becomes a question. |
+| Branch B screen save/reload | Screen export and import round-trip the gameplay model | Saved file, model values | No | Keep. **Porting is worth it as a new question:** stock import is broken at 064f7ae but fixed on current Nu (upstream `7d6389bea`). |
+| Keyboard input check | Real X key and mouse input reaches the game | **Screenshots** (paddle and brick pixels) | **Yes.** Sample points were tuned on Mesa images, and they need software rendering (black window under VirtualGL). | Keep as the record. Redo on Vulkan-era Nu with a new, re-tuned protocol only if input work needs it. |
+| Key-release check | Release stops the paddle within 2 game updates | **Screenshots** (one distinct frame = one update) | **Yes**, as above, plus display-lag dependence | Same as the keyboard input check |
+
+The stopped drafts (R02 input, R10 schema migration, R12 material intent) are not runnable, and nothing here changes their status.
+
 ## 2026-11-03 ~18:45 HKT — branch A finished — Claude Opus
 
 - **No decision needed.** The orchestrator reassigned the branch A build/run step from Kimi K3 to me, and it is done. All three arms passed at the first attempt:
