@@ -121,3 +121,13 @@ Entities are found by name in any group of the Gameplay screen. The project buil
   - reference build run 03 passed for E0, R0, M2 and M3.
 
   Both are logged in `.artifacts/d9-agent-cases-20261111/OPERATOR-NOTES.log`.
+
+## Amendment 4 (11 November 2026, 03:2x HKT): oracle correction after validation attempt 1, before any candidate output is opened
+
+- **Nu-Gaia's GPU trial ended first:** their verdict read CLEAN at 03:22 HKT, and no Gaia process ran for 60 s. All 12 candidates had finished on the CPU by then (weekly usage 91 % throughout). None of their outputs has been opened.
+- **Validation attempt 1** (`.artifacts/d9-agent-cases-20261111/validation/*-01/`):
+  - M2 failed (b) and (d); M3 failed (a); E0 failed (a) and (b), all as required.
+  - **R0 (correct) failed (c).** Its first moved ball position was 18 units from the paused one, against the limit of 6.5.
+- **Cause, an oracle bug:** the trace shows R0 resuming exactly. The first frame after resume moved 3 units, one update, with the message cleared. But the oracle began collecting the resume window only after its 80 ms P tap had ended, while the game resumes on key-down. So the oracle missed the first moved frames.
+- **Correction (`oracle.py` only):** the resume window now starts at the frame before the tap and lasts 1.0 s in total. No threshold or other check changes.
+- **Next:** all four references are re-run (validation attempt 2). This is validation failure 1 of 5.

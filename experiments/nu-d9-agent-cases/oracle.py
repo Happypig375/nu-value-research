@@ -241,9 +241,12 @@ def main():
 
         # (c) resume continues from the same state
         s = w1[-1] if w1 else trace.last()
+        trace.pump()
+        since = len(trace.frames)   # amendment 4: judge from the frame before the tap (resume acts on key-down)
         tap(XK_P)
         emit("key", key="P", purpose="resume")
-        w2 = trace.window(1.0)
+        trace.window(1.0 - TAP)
+        w2 = trace.frames[since:]
         moved = next((f for f in w2 if f.get("ball") and s.get("ball") and not same(f["ball"], s["ball"])), None)
         c = {"paused_ball": s.get("ball"), "first_moved_ball": moved and moved["ball"],
              "score_before": s.get("score"), "score_at_resume": moved and moved.get("score"),
