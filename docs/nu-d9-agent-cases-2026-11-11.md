@@ -107,3 +107,17 @@ Entities are found by name in any group of the Gameplay screen. The project buil
 - The GPU validation waits until Nu-Gaia's current GPU trial has stopped (its process gone from `nvidia-smi` and from the process list).
 - Candidates need no GPU. They start only after validation passes.
 - Candidates' oracle runs happen after all of them finish, or at the checkpoint for those that ran, one at a time.
+
+## Amendment 3 (11 November 2026, 02:4x HKT; before any oracle run and before any candidate)
+
+- **Why:** Nu-Gaia holds the next GPU slot. Its pilot runs agents with Gaia on the GPU for up to 20 minutes each, within a 90-minute allocation. So the GPU validation in section 3 may not be possible for over an hour. Candidates need no GPU.
+- **Change: candidates may start before the GPU validation.** This keeps blindness because:
+  - the oracle code (`OracleProgram.fs`, `oracle.py`, `build_for_oracle.py`) and the four references were fixed and committed (`be3b97a`) before any candidate existed;
+  - **no candidate's output is opened, built for the oracle, or scored until validation has passed;**
+  - if validation needs an oracle correction, it is made under a dated amendment from the reference results alone, and the oracle then runs unchanged on every candidate.
+- **Construction record so far:**
+  - oracle build 01 failed (a missing `open Prime`), which is 1 failure at the oracle-build step;
+  - reference build run 02 never reached `dotnet`, because of a script error;
+  - reference build run 03 passed for E0, R0, M2 and M3.
+
+  Both are logged in `.artifacts/d9-agent-cases-20261111/OPERATOR-NOTES.log`.

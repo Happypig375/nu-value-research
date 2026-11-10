@@ -20,7 +20,8 @@ PROJECT = "Projects/Breakout Mmcc"
 
 
 def main():
-    otree, source, games, name, logs = (Path(p).resolve() for p in sys.argv[1:6])
+    otree, source, games, logs = (Path(p).resolve() for p in (sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[5]))
+    name = sys.argv[4]
     project = otree / PROJECT
     with tarfile.open(ARCHIVE) as tar:   # restore shipped sources (bin/obj stay, so builds are incremental)
         members = [m for m in tar.getmembers() if m.name.startswith(PROJECT + "/") and m.isfile()
