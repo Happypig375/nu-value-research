@@ -131,3 +131,43 @@ Entities are found by name in any group of the Gameplay screen. The project buil
 - **Cause, an oracle bug:** the trace shows R0 resuming exactly. The first frame after resume moved 3 units, one update, with the message cleared. But the oracle began collecting the resume window only after its 80 ms P tap had ended, while the game resumes on key-down. So the oracle missed the first moved frames.
 - **Correction (`oracle.py` only):** the resume window now starts at the frame before the tap and lasts 1.0 s in total. No threshold or other check changes.
 - **Next:** all four references are re-run (validation attempt 2). This is validation failure 1 of 5.
+
+## Results (11 November 2026, 02:3x–03:3x HKT; 12 candidates, oracle validation attempt 2)
+
+**Conclusion: no difference.** All 12 candidates solved the task, 6/6 in each condition. The explicit-enumeration warning never came into play.
+- **All 12 builds pass every oracle check (a)–(e)** on NVIDIA Vulkan. Pause stops paddle and ball, the message reads "Paused", resume continues from the same state, Quit while paused returns to the title, and normal play is unchanged.
+- **Missed-case count is 0 at every site (S1–S5) in every candidate.**
+  - Every candidate kept the scene and Quit button visible while paused (S2). That is the miss the checklist predicted as likely, and nobody made it.
+  - Each one added a P toggle (S3) and set the "Paused" message (S4). Quit while paused (S5) worked in every case.
+- **The compiler warning (FS0025) never appeared in any build.** Every E candidate added `Paused` to the explicit `| Playing | Quit -> gameplay` arm before its first build. Every W candidate left the catch-all, which is correct there.
+  - So the condition difference (a warning that would fire on a missed S1 case) was never exercised.
+  - **Checked from the tool logs:** in all six E candidates, the edit adding `Paused` to the S1 arm was in the same shell command as the first build, and ran before it. This matters because some candidates filtered their build output (cand-11's shows 0 errors but no "Build succeeded" line), so a text search alone could have missed a warning.
+  - Many candidates also stopped game time (`AdvanceTime`) while paused, which the task did not require. This was in both conditions.
+- **Effort was the same:**
+
+| Condition | Pass | Wall time, median (range) | Turns, median | Builds | Prompt tokens, median | Output tokens, median |
+| --- | --- | --- | --- | --- | --- | --- |
+| **E:** explicit cases | 6/6 | 61 s (45–79) | 8.5 | 1–2 | 122k | 2.9k |
+| **W:** catch-all | 6/6 | 63 s (43–100) | 8.5 | 1–3 | 122k | 2.6k |
+
+- **Quota:** the 12 candidates together moved the weekly reading from 90 % to 91 %.
+- **Isolation:**
+  - The automatic scan flagged 38 path-like strings across the candidates. All were reviewed by hand: they are `grep -v "/bin/\|/obj/"` exclusions, `//` comments inside edit scripts, and `cd ../..` from `Projects/Breakout Mmcc` back to the candidate's own root, confirmed by each `ls` output.
+  - **No candidate read or wrote outside its folder, so all 12 are valid.**
+  - The scanner's first regex also flagged fragments of relative paths; it was fixed before the review (`rescan_isolation.py`, the original flags kept as `isolation_flags_v1`).
+
+**How to read this:**
+- With this task and this model, the task was too easy to separate the conditions: a ceiling effect.
+- The checklist's design caveat held. The warning covers only S1, where the catch-all is harmless, and the risky site (S2) was handled by everyone without any warning.
+- **This does not show** that explicit enumeration is useless for agents. It shows that on a small, readable file, Opus 5.5 reads every match site first. A harder task (more sites, a larger codebase, or a case where the catch-all is wrong) would be needed to test the mechanism.
+- Still limited to one model family, one task and one game. There are no human developers.
+
+**Attempts (all kept):**
+- Candidate 01's first launch never reached the model (`claude` not on the clean PATH).
+- The candidate loop paused once on an HTTP 429 from the usage endpoint and resumed when reads worked.
+- Oracle build 01 failed (a missing `open Prime`). Reference build run 02 was a script error.
+- Validation attempt 1 failed on an oracle timing bug (amendment 4); attempt 2 passed.
+
+**Evidence:**
+- `.artifacts/d9-agent-cases-20261111/`: `candidates/` with each candidate's stream, start and final source, `run.json` and `warnings.json`; `scoring/` with the oracle runs and builds; `validation/`; `summary.json`; `OPERATOR-NOTES.log`.
+- Committed copy: `experiments/nu-d9-agent-cases/result-receipt.json`.

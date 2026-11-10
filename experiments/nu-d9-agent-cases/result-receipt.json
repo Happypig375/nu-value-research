@@ -1,0 +1,218 @@
+[
+ {
+  "name": "cand-01-E",
+  "cond": "E",
+  "pass_": true,
+  "wall": 45.1,
+  "turns": 7,
+  "calls": 6,
+  "builds": 1,
+  "fs0025": false,
+  "catchall": false,
+  "prompt": 94418,
+  "out": 2264,
+  "isolation": 2,
+  "q": [
+   90.0,
+   90.0
+  ]
+ },
+ {
+  "name": "cand-02-W",
+  "cond": "W",
+  "pass_": true,
+  "wall": 69.5,
+  "turns": 10,
+  "calls": 9,
+  "builds": 1,
+  "fs0025": false,
+  "catchall": true,
+  "prompt": 148136,
+  "out": 3176,
+  "isolation": 5,
+  "q": [
+   90.0,
+   91.0
+  ]
+ },
+ {
+  "name": "cand-03-W",
+  "cond": "W",
+  "pass_": true,
+  "wall": 60.5,
+  "turns": 9,
+  "calls": 8,
+  "builds": 1,
+  "fs0025": false,
+  "catchall": true,
+  "prompt": 132762,
+  "out": 2935,
+  "isolation": 3,
+  "q": [
+   91.0,
+   91.0
+  ]
+ },
+ {
+  "name": "cand-04-E",
+  "cond": "E",
+  "pass_": true,
+  "wall": 68.2,
+  "turns": 10,
+  "calls": 9,
+  "builds": 1,
+  "fs0025": false,
+  "catchall": false,
+  "prompt": 144823,
+  "out": 3180,
+  "isolation": 0,
+  "q": [
+   91.0,
+   91.0
+  ]
+ },
+ {
+  "name": "cand-05-E",
+  "cond": "E",
+  "pass_": true,
+  "wall": 79.1,
+  "turns": 10,
+  "calls": 9,
+  "builds": 1,
+  "fs0025": false,
+  "catchall": false,
+  "prompt": 149551,
+  "out": 3099,
+  "isolation": 4,
+  "q": [
+   91.0,
+   91.0
+  ]
+ },
+ {
+  "name": "cand-06-W",
+  "cond": "W",
+  "pass_": true,
+  "wall": 66.0,
+  "turns": 8,
+  "calls": 7,
+  "builds": 1,
+  "fs0025": false,
+  "catchall": true,
+  "prompt": 111677,
+  "out": 2239,
+  "isolation": 0,
+  "q": [
+   91.0,
+   null
+  ]
+ },
+ {
+  "name": "cand-07-W",
+  "cond": "W",
+  "pass_": true,
+  "wall": 100.1,
+  "turns": 13,
+  "calls": 12,
+  "builds": 3,
+  "fs0025": false,
+  "catchall": true,
+  "prompt": 188922,
+  "out": 4515,
+  "isolation": 3,
+  "q": [
+   91.0,
+   91.0
+  ]
+ },
+ {
+  "name": "cand-08-E",
+  "cond": "E",
+  "pass_": true,
+  "wall": 46.6,
+  "turns": 7,
+  "calls": 6,
+  "builds": 1,
+  "fs0025": false,
+  "catchall": false,
+  "prompt": 97565,
+  "out": 2213,
+  "isolation": 3,
+  "q": [
+   91.0,
+   91.0
+  ]
+ },
+ {
+  "name": "cand-09-E",
+  "cond": "E",
+  "pass_": true,
+  "wall": 61.0,
+  "turns": 9,
+  "calls": 8,
+  "builds": 2,
+  "fs0025": false,
+  "catchall": false,
+  "prompt": 130275,
+  "out": 2795,
+  "isolation": 2,
+  "q": [
+   91.0,
+   91.0
+  ]
+ },
+ {
+  "name": "cand-10-W",
+  "cond": "W",
+  "pass_": true,
+  "wall": 43.2,
+  "turns": 6,
+  "calls": 5,
+  "builds": 1,
+  "fs0025": false,
+  "catchall": true,
+  "prompt": 79478,
+  "out": 2075,
+  "isolation": 4,
+  "q": [
+   91.0,
+   91.0
+  ]
+ },
+ {
+  "name": "cand-11-W",
+  "cond": "W",
+  "pass_": true,
+  "wall": 47.2,
+  "turns": 7,
+  "calls": 6,
+  "builds": 1,
+  "fs0025": false,
+  "catchall": true,
+  "prompt": 95889,
+  "out": 1910,
+  "isolation": 5,
+  "q": [
+   91.0,
+   91.0
+  ]
+ },
+ {
+  "name": "cand-12-E",
+  "cond": "E",
+  "pass_": true,
+  "wall": 61.5,
+  "turns": 8,
+  "calls": 7,
+  "builds": 2,
+  "fs0025": false,
+  "catchall": false,
+  "prompt": 114482,
+  "out": 2908,
+  "isolation": 7,
+  "q": [
+   91.0,
+   91.0
+  ]
+ }
+]
