@@ -2,7 +2,13 @@
 
 Newest first. Each item lists the options, my recommendation and what it blocks. Background is in [STATUS.md](STATUS.md) (section dated 1 November 2026).
 
-## 2026-11-03 ~21:00 HKT — item 11: which practical comparison should the next R-series experiments serve? — Claude Opus
+## 2026-11-10 — item 11 ANSWERED (user decision D9, 10 November): all four directions approved — Claude Opus
+
+- **Decision:** all four practical comparisons are approved, with included Claude/Opus quota allowed for direction 4 (coding agents). Scope and limits: `.orchestration/TASK-D9-20261110.txt`.
+- **Order of work:** recovery first, as the shortest path to a useful result; then the others as far as they are unblocked.
+- **Reports:** `.orchestration/d9-all-directions-20261110/`.
+
+## 2026-11-03 ~21:00 HKT — item 11: which practical comparison should the next R-series experiments serve? — Claude Opus (answered above)
 
 - **The user asked for results first, with recommendations.** The report is ready: [docs/nu-r-series-results-and-next-comparisons-2026-11-03.md](docs/nu-r-series-results-and-next-comparisons-2026-11-03.md).
 - **Short version:** the mechanisms work as their source says, but there is no demonstrated practical benefit yet, and there are several limits. The four candidate comparisons:

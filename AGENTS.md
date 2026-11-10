@@ -1,3 +1,18 @@
+## Central orchestration — Codex migration, 7 November 2026
+
+Central orchestration now runs in Codex. Read [.orchestration/CODEX-ORCHESTRATOR.md](.orchestration/CODEX-ORCHESTRATOR.md) for the current contact and durable-report fallback. This supersedes historical references to a Claude/Pro orchestrator; local project leadership and frozen experiment roles remain unchanged.
+
+## User decision D9 (10 November 2026): all four practical comparisons are approved.** This updates the scope wording below.
+
+- **Approved:** the four directions in [the R-series report](docs/nu-r-series-results-and-next-comparisons-2026-11-03.md):
+  1. recovery after a game-code fault;
+  2. live editing with a schema change;
+  3. content revision versus ordinary prefab helpers;
+  4. coding agents with and without explicit case enumeration, using the included Claude/Opus quota.
+- **This replaces the old need to choose one direction.** Older text in this file that calls the research goal "blocked", or says that no native experiment or goal activation is selected, no longer prevents this user-selected work.
+- **Still in force:** every stopped R02/R10/R12 attempt stays final; new work uses newly declared protocols and attempt budgets. No paid API, Codex worker, new coordinator, upstream push or broad-survey expansion.
+- **Task:** `.orchestration/TASK-D9-20261110.txt`. Reports: `.orchestration/d9-all-directions-20261110/`.
+
 # Server migration scope — 30 October 2026
 
 The operational copy is `/home/happypig375/workspace/nu-value-research`. Read [STATUS.md](STATUS.md) for setup, verified session resumes and migration limits. The original Home instructions below are preserved byte-for-byte; migration does not activate their historical research assignments.

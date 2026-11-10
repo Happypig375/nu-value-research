@@ -1,8 +1,10 @@
 # Status and continuation plan — 1 November 2026 (HKT)
 
-**NO INDEPENDENT WORK LEFT for the Claude session (3 Nov 2026, ~21:10 HKT).** The D11 timing re-runs are done (section just below), and the R-series results report is ready. Still open with the user: **NEEDS-HUMAN item 11** (which comparison the next R-series serves; recommendation: recovery after a game-code fault). No jobs, displays or GPU processes of mine are running.
-- **The R-series comparison choice:** with the user. PLAN ties new R-series experiments to it.
-- **Optional:** the Terra Firma revision series was never re-run on Linux. Nobody asked for it.
+**Claude session, 10 Nov 2026 (from ~15:40 UTC): WORKING on user decision D9 (10 November).** All four practical comparisons are approved (NEEDS-HUMAN item 11). The allocation is 120 active minutes, ending about 17:40 UTC, with at most one bounded experiment running beside this session. Recovery after a game-code fault comes first. Live reports: `.orchestration/d9-all-directions-20261110/`.
+
+## Earlier state, 3 November 2026 (~21:10 HKT)
+
+No independent work was left then: the D11 timing re-runs were done and the R-series report was ready.
 
 ## Timing reference re-runs on Vulkan-era Nu (D11) — Claude Opus (3 November 2026, 20:44–21:01 HKT)
 

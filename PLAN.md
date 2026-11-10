@@ -1,5 +1,15 @@
 # Research plan
 
+**User decision D9 (10 November 2026): all four practical comparisons are approved.** This updates the scope wording below.
+- **Approved:** the four directions in [the R-series report](docs/nu-r-series-results-and-next-comparisons-2026-11-03.md):
+  1. recovery after a game-code fault;
+  2. live editing with a schema change;
+  3. content revision versus ordinary prefab helpers;
+  4. coding agents with and without explicit case enumeration, using the included Claude/Opus quota.
+- **This replaces the old need to choose one direction.** Older text in this file that calls the research goal "blocked", or says that no native experiment or goal activation is selected, no longer prevents this user-selected work.
+- **Still in force:** every stopped R02/R10/R12 attempt stays final; new work uses newly declared protocols and attempt budgets. No paid API, Codex worker, new coordinator, upstream push or broad-survey expansion.
+- **Task:** `.orchestration/TASK-D9-20261110.txt`. Reports: `.orchestration/d9-all-directions-20261110/`.
+
 **Linux server and Daybreak update, 2026-11-03 (user decisions of 2–3 November):**
 - **Where the work runs.** Work now runs on the Linux server checkout ([STATUS](STATUS.md)). All execution results below were first observed on **Windows** in October. On 2–3 November every retained native package was re-run on **Linux**, so each result now states both platforms; see the note after the October 15 execution evidence. There is one exception: the Terra Firma revision series was not re-run. The Terra Firma reopen pair needed a longer, declared per-process deadline on Linux, because software rendering makes one shutdown frame very slow. The 2 November real-keyboard and key-release checks ([input](docs/nu-keyboard-input-check-2026-11-02.md), [release](docs/nu-key-release-check-2026-11-02.md)) ran on Linux only. They are new work, not the returned R02 input gate.
 - **The two Daybreak-only branches, now user-assigned.** On 2 November the user assigned them to a Kimi K3 session; later decisions (D41, D9) gave bounded steps to Claude Opus. No other model gains access from this.
