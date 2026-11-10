@@ -1,0 +1,111 @@
+# D9 directions 2–4: protocol packets, fixed before any outcome (10 November 2026)
+
+**Status:** protocol packets only. Nothing in this file has been built or run.
+- Each packet fixes the question, conditions, attempt budget and scoring before any candidate or native outcome exists.
+- A packet may be refined by a dated amendment before its first run, never after.
+- Authority: user decision D9 (10 November 2026), `.orchestration/TASK-D9-20261110.txt`.
+- Direction 1 (recovery) has its own [protocol and results](nu-d9-recovery-routes-2026-11-10.md).
+
+**Shared rules for all three directions:**
+- **Engine:** Nu master `47ef39e` (`.artifacts/vulkan-timing-20261103/nu-47ef39e.tar`, SHA-256 `3dcae8b0…faac`).
+- **Renderer:** NVIDIA Vulkan on our own Xvfb (`scripts/linux_nu_vulkan_env.sh`), with the same run discipline as direction 1, including its idle-GPU rule (amendment 1).
+- **Stopped work stays final:** the R10 schema-migration and R12 material-intent drafts are not opened, reused or relabelled. Their recorded failures stay theirs, and new attempts get new budgets.
+- **Attempts:** every attempt is kept. Five unresolved failures at one unchanged step stops that step. An adverse or null result is a result.
+
+## Direction 2: live editing with a schema change (R10 family)
+
+**Question:** when a developer adds a field to a live game's model and reloads code in Gaia, which route gives the correct state with less loss?
+- **L, live reload, no migration:** today's behaviour. On 16 October at `064f7ae`, live reload gave a new field 0 instead of its initializer 200.
+- **M, live reload with an explicit migration function:** a user-written function from the old record to the new one, applied by the probe after reload.
+- **R, restart and reconstruct:** save the model before the edit, start a fresh process with the new code, and set the model with the new field filled.
+
+**Cases for the new field:**
+- **A, absent:** the field must take its declared default, 200.
+- **Z, zero:** the field must be 0 because the design says so.
+- **N, nondefault:** the field must take a value computed from old state (75).
+
+**Outcome (common):**
+- the complete old fields are preserved;
+- the new field equals the case's required value;
+- the scene projection matches;
+- one declared post-edit gameplay event (a brick hit) scores with the new field.
+
+**Port and attempt budget:**
+- Start from the tracked, completed `experiments/nu-r10-schema-reload/` package (initializer-only reload), ported to master like the R06 port.
+- **Construction budget:** 5 failed builds or controls at one unchanged step, then stop and report. This is a new budget. The October migration attempts stay final and are not counted or continued.
+- **Runs:** 1 unscored feasibility per route, then 3 scored runs per route × case: 3 routes × 3 cases × 3 = 27 processes.
+
+**Measures:** correctness per route × case; declared steps; machine time for reload or restart (this server only).
+
+**What it cannot show:** developer effort, or other schema changes (field removal, renames, union cases).
+
+**Start condition:** direction 1 complete; a quota/time check passes for a port of about 1–2 hours.
+
+## Direction 3: content revision versus ordinary prefab/material helpers (R12 family)
+
+**Question:** for matched revision tasks on a real scene, does Nu's entity propagation deliver the required edits with fewer misses or less total work than an ordinary helper?
+- The ordinary helper is a small, fair script that sets the shared material or tint on all instances and the per-instance overrides from an explicit list.
+- The October [status-quo audit](nu-status-quo-and-transfer-audit-2026-10-23.md) found such helpers credible and common in other engines.
+
+**Conditions:**
+- **P:** Nu's `World.propagateEntityStructure` from an edited source entity.
+- **O:** the ordinary helper, with the same intent information (which instances keep local overrides).
+
+**Tasks** (Terra Firma scene, which on 3 November reproduced identically on Linux):
+- **T1:** a shared tint change on all 32 palms.
+- **T2:** a shared change on 31 palms, with one palm keeping its local tint (the October P-local case, where propagation missed the local palm).
+- **T3:** a shared roughness change plus a local tint on one palm (the October B-local case).
+
+**Outcome:**
+- every required property on every instance;
+- no unrequested change;
+- the state persists after save and fresh reopen.
+
+**Measures:** missed and extra edits; declared steps; machine time.
+
+**Budget:**
+- Construction: 5 failures at one unchanged step.
+- Runs: 1 unscored feasibility, then 3 scored runs per condition × task, 18 pairs of save/reopen processes.
+
+**Fairness rule:** the helper gets the same intent list that propagation needs. A baseline denied that information is invalid. A result where O matches or beats P is a valid and likely result.
+
+**What it cannot show:** designer effort, collaboration, or engines other than Nu.
+
+**Start condition:** after direction 2, or in parallel only if the single-experiment slot is free.
+
+## Direction 4: coding agents with and without explicit case enumeration (R04/D1 + R08)
+
+**Question:** when an AI coding agent must add a new case to a game's state type, does code that lists cases explicitly (so the compiler warns about the missing case) lead to fewer missed-behaviour bugs than equivalent code with catch-all branches?
+
+**Conditions** (the same game, the same task, two source variants):
+- **E, explicit:** the shipped Breakout code, where the gameplay update matches `| Playing | Quit -> gameplay`.
+- **W, catch-all:** the same match sites rewritten with `| _ -> gameplay`. This is behaviourally identical before the task, and checked by the R04 compiler probe method.
+
+**Candidate task** (one, fixed): *"Add a `Paused` gameplay state. Pressing P toggles pause during play. While paused, nothing moves and the message reads 'Paused'. Quitting while paused works as before."* The task text is identical in both conditions and does not mention warnings.
+
+**Candidates:**
+- Claude Opus subagents, using included quota only.
+- Each starts with a fresh context containing only the task text and a private copy of the Breakout source in its condition. They have no access to this repository, other candidates' work, oracles or answers.
+- One candidate runs at a time (the single experiment slot). Candidates may build, but they may not run the oracle.
+- **Model family:** included Opus only. A fair comparison across model families would need families with no allocation; that packet is written here but **not substituted**. Results are labelled "one model family".
+
+**Budget:** 6 candidates per condition (12 runs), in alternating order E W W E …; one attempt each; no reruns. Before each candidate, read quota and forecast. Stop and checkpoint if the next candidate cannot fit.
+
+**Scoring** (fixed before any candidate output; applied after all candidates finish, by a scorer that never edits candidate code):
+1. The candidate's code builds (SDK 10.0.403).
+2. **A behavioural oracle on master,** run with Vulkan on the GPU and XTEST keys (the direction-1 and keyboard-timing harness methods):
+   - (a) pause stops paddle and ball;
+   - (b) the message reads "Paused";
+   - (c) resume continues from the same state;
+   - (d) Quit while paused returns to the title;
+   - (e) no change to normal play (paddle moves, ball moves).
+3. **Missed-case count:** match sites where `Paused` falls into wrong behaviour, read from the diff by a fixed checklist written before any candidate runs.
+4. Whether the compiler warned in condition E, and whether the candidate acted on it (from its build log).
+
+**Outcomes:** the pass count per condition, and missed-case counts. Descriptive only; 6 per condition cannot establish an effect size.
+
+**What it cannot show:** human developers, other model families, other tasks or larger codebases, and long-term maintenance.
+
+**Start condition:**
+- the oracle is built and validated on hand-written reference solutions (one correct, two with planted misses) before any candidate runs;
+- a quota forecast for 12 candidate runs is recorded first.
