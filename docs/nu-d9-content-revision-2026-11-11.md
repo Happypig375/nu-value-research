@@ -99,3 +99,37 @@ Steps are declared counts, not measured human work. The helper is fair only in t
   - T1 and T2 passed on both routes, and T3-O passed. **T3-P missed L's roughness**, which stayed unset, both after the operation and after reopen. This is an adverse result for P, not an apparatus failure, so it does not change the protocol.
 - **Construction record:** probe build 01 failed (a missing namespace); builds 02 and 03 passed. Feasibility failures at the run step: 1.
 - **Scored rounds 1–3 follow unchanged.**
+
+## Results (11 November 2026, 03:37–03:45 HKT; scored rounds 1–3)
+
+**Conclusion:**
+- **For a shared change with no conflicting local edit (T1), or a shared tint where the local palm keeps its own tint (T2), Nu's propagation and the ordinary helper both deliver every required edit:** 3/3 each, with no unrequested change, and the result survives save and fresh reopen.
+- **When the shared change is to a different field than the local override (T3), propagation misses it on the overridden palm in every run (0/3).** The helper delivers it (3/3).
+- **Cause:** propagation merges whole properties. The local palm's `MaterialProperties` differed from the source's last propagated value, so the whole record counted as a local override and was kept as it was. The palm kept its local tint, but its roughness stayed unset instead of 0.75. The helper sets one field at a time, so the local tint and the new roughness coexist.
+- **Machine time:** propagation took about 0.53 s per operation (it rebuilds the 31 targets and the copied villas). The helper took 1–6 ms. Saving took about 0.5–0.7 s for both.
+
+| Task | P: Nu propagation | O: ordinary helper | Missed edits (P / O) | Unrequested changes | Persists after reopen |
+| --- | --- | --- | --- | --- | --- |
+| **T1:** shared tint, 32 palms | 3/3 | 3/3 | 0 / 0 | 0 | yes |
+| **T2:** shared tint, L keeps its local tint | 3/3 | 3/3 | 0 / 0 | 0 | yes |
+| **T3:** shared roughness, L keeps its local tint | **0/3** | 3/3 | **1** (L's roughness) / 0 | 0 | yes, the miss persists too |
+| **Control N:** load, save, reopen | 3/3 with no differences | | | | |
+
+**Operation time, median:** P 525–612 ms; O 1.0–5.8 ms. **Declared steps:** P 2 (edit the source, propagate); O 1 helper invocation with the field, the value and the keep list, after a one-time 10-line helper.
+
+**How to read this:**
+- The helper wins on T3 only because it was given the same intent list ("L keeps its tint") and works field by field.
+- Propagation needs no list of family members: it found all 32 by itself. The helper's family list came from the same source links, so building it is not counted here.
+- In a real editor, P is the Gaia "Propagate" command, while O is a script the user must write and keep.
+- Propagation's whole-property merge is a design choice, not a defect. But it means **a field-level local override silently blocks every later shared change to any other field of the same property.** Nothing warns about it.
+
+**What this does not show:** designer effort, other properties or families, collaboration, Gaia's interactive path, or other engines. The October `064f7ae` Terra Firma results used a different scene revision and observer, so they are not directly comparable.
+
+**Attempts (all kept):**
+- Probe build 01 failed (a missing namespace).
+- Feasibility attempt 1 stopped on the existing screen (amendment 1); attempt 2 passed the apparatus checks.
+- All 42 scored processes exited 0 and logged "Selected Vulkan Device NVIDIA GeForce RTX 4090 D", with no timeouts.
+
+**Evidence:**
+- `.artifacts/d9-content-revision-20261111/`: `builds/`, and `series/` with the ledger, every snapshot (`before`, `prepared`, `after`, `reopen`), the saved scenes, `score.json` per run, and environment and GPU samples; `summary.json`; `OPERATOR-NOTES.log`.
+- Committed copy: `experiments/nu-d9-content-revision/result-receipt.json`.
