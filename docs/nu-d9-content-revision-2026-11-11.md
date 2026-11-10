@@ -137,7 +137,11 @@ Steps are declared counts, not measured human work. The helper is fair only in t
 ## Audit note (D9 evidence audit, 10 Nov 2026, written before commit at 20:02:09 UTC; does not change any score)
 
 An independent review is in `.orchestration/d9-evidence-audit-20261111/`.
-- **The helper O updates live `MaterialProperties` but not the propagation history**, which the scorer does not see. After O, a later Propagate would treat the 31 targets as local overrides and skip them (the engine rule, read from the code, not run). So "O matches P on T1/T2" holds only within what was scored.
+- **The helper O updates live `MaterialProperties` but not the propagation history**, which the scorer does not see. **Predicted from the engine code, not measured:** after O, a later Propagate would treat the 31 targets as local overrides and skip them. No engine run tested this. So "O matches P on T1/T2" holds only within what was scored.
 - **P changes 46 entity `Order` values**, which the probe leaves out.
 - **The family is 31 linked entities plus the source** (32). The "38" in section 2 counted text occurrences, history copies included.
 - **The cause is the "no previous value" branch:** the source's history has no `MaterialProperties` entry, so L's whole non-default record was kept. **This is a design limitation, not a defect.**
+
+- **Erratum, 20:09:14 UTC, from the D9 offline validation:** scored totals are 18 task pairs plus 3 controls, which is 21 op/reopen pairs and 42 processes: 3 adverse (T3-P) and 18 passing, controls included.
+  - The scorer's detection was then checked offline with injected faults (`.orchestration/d9-validation-gaps-20261111/`).
+  - `Order` and propagation history remain outside the old snapshot contract.

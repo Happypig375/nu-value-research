@@ -188,3 +188,7 @@ An independent review is in `.orchestration/d9-evidence-audit-20261111/` (review
 - **Isolation was confirmed by inspecting every tool call.** The setup did not prevent access: the scanner skips relative paths, and the reference builds sat beside the candidate folders.
 - **The references failed more checks than required** (M2 also fails (a) and (c)), so S1 and S2 are not cleanly separated.
 - **Amendment 4's "CLEAN at 03:22 HKT" is Nu-Gaia's own label.** The watcher observed cessation at 03:11:32 HKT, and their file was rewritten at 03:13:09.
+- **Supplemental post-hoc check, 20:09:39 UTC (D9 offline validation):** `quit_paused_v1.py` requires the old (d) **and** the recorded `paused_before_quit = true`.
+  - It gives pass for R0 and all 12 candidates, and fail for E0, M2 and M3.
+  - The original oracle results are unchanged. This check reads recorded evidence only and does not re-run or repair the live oracle.
+  - Details: `.orchestration/d9-validation-gaps-20261111/REPORT.md`.
