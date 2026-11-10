@@ -80,3 +80,40 @@ The D9 evidence audit predicted, from the engine code, that the ordinary helper'
 - Other properties or families; designer effort; other engines.
 - One scene revision only.
 - Whole-property merge is a design choice. Whatever the result, it is reported as engine behaviour, not an upstream bug.
+
+## Results (feasibility 20:25:16–20:27:00 UTC; scored rounds 20:27:38–20:33:16 UTC, 10 Nov 2026, ledger times)
+
+**Conclusion: the audit's code-based prediction is confirmed by measurement.**
+- **After an ordinary helper edit, a later Nu propagation does not deliver the next shared change to the 31 linked palms.** In HP, 0/3 runs pass: after step 2 and after fresh reopen, all 31 non-source members kept the tint but had no roughness. Only the source received 0.75.
+- **Propagation twice (PP) and the helper twice (HH) both deliver both steps,** 3/3 each.
+- No sequence made an unrequested live change, and every stage persisted after reopen.
+
+| Sequence | Pass | Missed after step 1 / reopen 1 | Missed after step 2 / reopen 2 | Unrequested | Persistence differences | Step 1 / step 2 time, median |
+| --- | --- | --- | --- | --- | --- | --- |
+| **PP:** propagate, propagate | 3/3 | 0 / 0 | 0 / 0 | 0 | 0 | 571 ms / 504 ms |
+| **HP:** helper, then propagate | **0/3** | 0 / 0 | **31 / 31** in every run (roughness unset; the source is fine) | 0 | 0 | 4.7 ms / 446 ms |
+| **HH:** helper, helper | 3/3 | 0 / 0 | 0 / 0 | 0 | 0 | 3.0 ms / 1.3 ms |
+| **N:** load, save, reopen | 3/3, no differences | | | | | |
+
+- **The independently derived values agree with the probe's summary everywhere** (0 disagreements).
+- **Raw check** (round-1 HP, `Villa-0002/Palm`): its `MaterialProperties` string after step 2 reads `AlbedoOpt [Some [0.25 0.5 0.75 1]]`, `RoughnessOpt None`, and reopen2 also reads `RoughnessOpt None`. The source reads `RoughnessOpt [Some 0.75]`.
+- **All 44 processes** (11 feasibility, 33 scored) exited 0 and logged "Selected Vulkan Device NVIDIA GeForce RTX 4090 D". The feasibility round needed no amendment.
+
+**Metadata (observations, not defects):**
+- **Propagation history:**
+  - After a propagation step, the source's history contains `MaterialProperties`, and 2 history strings change: the source's and its villa's.
+  - After helper steps, no history changes, and the source's history still has no `MaterialProperties`.
+  - This matches the mechanism: in HP, the helper made all 32 members' values non-default while the history held no previous value. At step 2, propagation therefore kept each target's own record.
+- **`Order`:**
+  - The saved files hold 63 `[Order n]` tokens. Two separate no-op controls are identical in all 63.
+  - **Any propagation step changes 46 of them** (PP after step 1, HP after step 2). Helper steps change none.
+  - The probe's per-entity `order` field (from `writeEntity true true`) is a different, clock-based value. It showed 0 changes within a process, so **it did not capture the `Order` change that propagation makes in the saved file.** That is a limitation of this observation. It confirms the audit's finding F3 that propagation rewrites `Order` values.
+
+**How to read this:**
+- Mixing routes is the risk: a scene edited with an ordinary field-level helper silently stops receiving later propagated changes for that property, and nothing warns. Using one route consistently (PP or HH) delivers both steps.
+- This is engine behaviour following from whole-property merging with propagation history, a design choice, **not an upstream bug.**
+- Limited to one property, one family, one scene revision, and direct world calls rather than Gaia's interface. Three replicates of a deterministic operation show it repeats; they are not a sampling estimate.
+
+**Evidence:**
+- `.artifacts/d9-history-sequence-20261111/`: `builds/`, `series/` (ledger, every snapshot and saved file, `score.json` per run, environment and GPU samples), `summary.json`.
+- Committed copy: `experiments/nu-d9-history-sequence/result-receipt.json`.

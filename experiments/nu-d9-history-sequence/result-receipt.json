@@ -1,0 +1,658 @@
+{
+ "summary": {
+  "N": {
+   "runs": 3,
+   "pass": 3,
+   "processes_ok": true,
+   "missed_after1": [
+    0,
+    0,
+    0
+   ],
+   "missed_reopen1": [
+    0,
+    0,
+    0
+   ],
+   "missed_after2": [
+    0,
+    0,
+    0
+   ],
+   "missed_reopen2": [
+    0,
+    0,
+    0
+   ],
+   "unrequested": [
+    0,
+    0,
+    0
+   ],
+   "persistence": [
+    0,
+    0,
+    0
+   ],
+   "derived_disagreements": [
+    0,
+    0,
+    0
+   ],
+   "control_diffs": [
+    0,
+    0,
+    0
+   ],
+   "step1_ms_median": 0,
+   "step2_ms_median": 0,
+   "metadata_step1": [
+    null
+   ],
+   "metadata_step2": [
+    null
+   ]
+  },
+  "PP": {
+   "runs": 3,
+   "pass": 3,
+   "processes_ok": true,
+   "missed_after1": [
+    0,
+    0,
+    0
+   ],
+   "missed_reopen1": [
+    0,
+    0,
+    0
+   ],
+   "missed_after2": [
+    0,
+    0,
+    0
+   ],
+   "missed_reopen2": [
+    0,
+    0,
+    0
+   ],
+   "unrequested": [
+    0,
+    0,
+    0
+   ],
+   "persistence": [
+    0,
+    0,
+    0
+   ],
+   "derived_disagreements": [
+    0,
+    0,
+    0
+   ],
+   "control_diffs": [
+    0,
+    0,
+    0
+   ],
+   "step1_ms_median": 571.4558,
+   "step2_ms_median": 503.5524,
+   "metadata_step1": [
+    {
+     "order_changed": 0,
+     "history_changed": 2,
+     "source_history_has_MaterialProperties": true,
+     "family_with_raw_MaterialProperties": 32
+    }
+   ],
+   "metadata_step2": [
+    {
+     "order_changed": 0,
+     "history_changed": 2,
+     "source_history_has_MaterialProperties": true,
+     "family_with_raw_MaterialProperties": 32
+    }
+   ]
+  },
+  "HP": {
+   "runs": 3,
+   "pass": 0,
+   "processes_ok": true,
+   "missed_after1": [
+    0,
+    0,
+    0
+   ],
+   "missed_reopen1": [
+    0,
+    0,
+    0
+   ],
+   "missed_after2": [
+    31,
+    31,
+    31
+   ],
+   "missed_reopen2": [
+    31,
+    31,
+    31
+   ],
+   "unrequested": [
+    0,
+    0,
+    0
+   ],
+   "persistence": [
+    0,
+    0,
+    0
+   ],
+   "derived_disagreements": [
+    0,
+    0,
+    0
+   ],
+   "control_diffs": [
+    0,
+    0,
+    0
+   ],
+   "step1_ms_median": 4.6544,
+   "step2_ms_median": 446.4099,
+   "metadata_step1": [
+    {
+     "order_changed": 0,
+     "history_changed": 0,
+     "source_history_has_MaterialProperties": false,
+     "family_with_raw_MaterialProperties": 32
+    }
+   ],
+   "metadata_step2": [
+    {
+     "order_changed": 0,
+     "history_changed": 2,
+     "source_history_has_MaterialProperties": true,
+     "family_with_raw_MaterialProperties": 32
+    }
+   ],
+   "missed_after2_problem_kinds": [
+    "{\"roughness\": null}"
+   ],
+   "missed_includes_source": false
+  },
+  "HH": {
+   "runs": 3,
+   "pass": 3,
+   "processes_ok": true,
+   "missed_after1": [
+    0,
+    0,
+    0
+   ],
+   "missed_reopen1": [
+    0,
+    0,
+    0
+   ],
+   "missed_after2": [
+    0,
+    0,
+    0
+   ],
+   "missed_reopen2": [
+    0,
+    0,
+    0
+   ],
+   "unrequested": [
+    0,
+    0,
+    0
+   ],
+   "persistence": [
+    0,
+    0,
+    0
+   ],
+   "derived_disagreements": [
+    0,
+    0,
+    0
+   ],
+   "control_diffs": [
+    0,
+    0,
+    0
+   ],
+   "step1_ms_median": 3.0303,
+   "step2_ms_median": 1.3032,
+   "metadata_step1": [
+    {
+     "order_changed": 0,
+     "history_changed": 0,
+     "source_history_has_MaterialProperties": false,
+     "family_with_raw_MaterialProperties": 32
+    }
+   ],
+   "metadata_step2": [
+    {
+     "order_changed": 0,
+     "history_changed": 0,
+     "source_history_has_MaterialProperties": false,
+     "family_with_raw_MaterialProperties": 32
+    }
+   ]
+  },
+  "raw_check_round1_HP": {
+   "member": "Game/Gameplay/Scene/Villa-0002/Palm",
+   "after2_raw_AlbedoOpt": "[Some [0.25 0.5 0.75 1]]",
+   "after2_raw_RoughnessOpt": "None",
+   "reopen2_raw_RoughnessOpt": "None",
+   "source_after2_raw_RoughnessOpt": "[Some 0.75]]"
+  }
+ },
+ "rows": [
+  {
+   "run": "round-1/N",
+   "seq": "N",
+   "family_size": 32,
+   "step1_ms": 0,
+   "step2_ms": 0,
+   "save2_ms": 408.9151,
+   "control_diffs": 0,
+   "persistence2": 0,
+   "metadata_before": {
+    "order_changed": 0,
+    "history_changed": 0,
+    "source_history_has_MaterialProperties": false,
+    "family_with_raw_MaterialProperties": 0
+   },
+   "pass_live": true,
+   "processes_ok": true,
+   "pass": true
+  },
+  {
+   "run": "round-1/PP",
+   "seq": "PP",
+   "family_size": 32,
+   "step1_ms": 571.4558,
+   "step2_ms": 514.5836,
+   "save2_ms": 454.1815,
+   "missed_after1": 0,
+   "missed_reopen1": 0,
+   "missed_after2": 0,
+   "missed_reopen2": 0,
+   "derived_disagreements": 0,
+   "unrequested1": 0,
+   "unrequested2": 0,
+   "persistence1": 0,
+   "persistence2": 0,
+   "metadata_before": {
+    "order_changed": 0,
+    "history_changed": 0,
+    "source_history_has_MaterialProperties": false,
+    "family_with_raw_MaterialProperties": 0
+   },
+   "metadata_step1": {
+    "order_changed": 0,
+    "history_changed": 2,
+    "source_history_has_MaterialProperties": true,
+    "family_with_raw_MaterialProperties": 32
+   },
+   "metadata_step2": {
+    "order_changed": 0,
+    "history_changed": 2,
+    "source_history_has_MaterialProperties": true,
+    "family_with_raw_MaterialProperties": 32
+   },
+   "pass_live": true,
+   "processes_ok": true,
+   "pass": true
+  },
+  {
+   "run": "round-1/HP",
+   "seq": "HP",
+   "family_size": 32,
+   "step1_ms": 2.8295,
+   "step2_ms": 458.4348,
+   "save2_ms": 312.4849,
+   "missed_after1": 0,
+   "missed_reopen1": 0,
+   "missed_after2": 31,
+   "missed_reopen2": 31,
+   "derived_disagreements": 0,
+   "unrequested1": 0,
+   "unrequested2": 0,
+   "persistence1": 0,
+   "persistence2": 0,
+   "metadata_before": {
+    "order_changed": 0,
+    "history_changed": 0,
+    "source_history_has_MaterialProperties": false,
+    "family_with_raw_MaterialProperties": 0
+   },
+   "metadata_step1": {
+    "order_changed": 0,
+    "history_changed": 0,
+    "source_history_has_MaterialProperties": false,
+    "family_with_raw_MaterialProperties": 32
+   },
+   "metadata_step2": {
+    "order_changed": 0,
+    "history_changed": 2,
+    "source_history_has_MaterialProperties": true,
+    "family_with_raw_MaterialProperties": 32
+   },
+   "pass_live": false,
+   "processes_ok": true,
+   "pass": false
+  },
+  {
+   "run": "round-1/HH",
+   "seq": "HH",
+   "family_size": 32,
+   "step1_ms": 3.0303,
+   "step2_ms": 3.4196,
+   "save2_ms": 382.7343,
+   "missed_after1": 0,
+   "missed_reopen1": 0,
+   "missed_after2": 0,
+   "missed_reopen2": 0,
+   "derived_disagreements": 0,
+   "unrequested1": 0,
+   "unrequested2": 0,
+   "persistence1": 0,
+   "persistence2": 0,
+   "metadata_before": {
+    "order_changed": 0,
+    "history_changed": 0,
+    "source_history_has_MaterialProperties": false,
+    "family_with_raw_MaterialProperties": 0
+   },
+   "metadata_step1": {
+    "order_changed": 0,
+    "history_changed": 0,
+    "source_history_has_MaterialProperties": false,
+    "family_with_raw_MaterialProperties": 32
+   },
+   "metadata_step2": {
+    "order_changed": 0,
+    "history_changed": 0,
+    "source_history_has_MaterialProperties": false,
+    "family_with_raw_MaterialProperties": 32
+   },
+   "pass_live": true,
+   "processes_ok": true,
+   "pass": true
+  },
+  {
+   "run": "round-2/N",
+   "seq": "N",
+   "family_size": 32,
+   "step1_ms": 0,
+   "step2_ms": 0,
+   "save2_ms": 475.3051,
+   "control_diffs": 0,
+   "persistence2": 0,
+   "metadata_before": {
+    "order_changed": 0,
+    "history_changed": 0,
+    "source_history_has_MaterialProperties": false,
+    "family_with_raw_MaterialProperties": 0
+   },
+   "pass_live": true,
+   "processes_ok": true,
+   "pass": true
+  },
+  {
+   "run": "round-2/PP",
+   "seq": "PP",
+   "family_size": 32,
+   "step1_ms": 605.0213,
+   "step2_ms": 415.8321,
+   "save2_ms": 422.6575,
+   "missed_after1": 0,
+   "missed_reopen1": 0,
+   "missed_after2": 0,
+   "missed_reopen2": 0,
+   "derived_disagreements": 0,
+   "unrequested1": 0,
+   "unrequested2": 0,
+   "persistence1": 0,
+   "persistence2": 0,
+   "metadata_before": {
+    "order_changed": 0,
+    "history_changed": 0,
+    "source_history_has_MaterialProperties": false,
+    "family_with_raw_MaterialProperties": 0
+   },
+   "metadata_step1": {
+    "order_changed": 0,
+    "history_changed": 2,
+    "source_history_has_MaterialProperties": true,
+    "family_with_raw_MaterialProperties": 32
+   },
+   "metadata_step2": {
+    "order_changed": 0,
+    "history_changed": 2,
+    "source_history_has_MaterialProperties": true,
+    "family_with_raw_MaterialProperties": 32
+   },
+   "pass_live": true,
+   "processes_ok": true,
+   "pass": true
+  },
+  {
+   "run": "round-2/HP",
+   "seq": "HP",
+   "family_size": 32,
+   "step1_ms": 4.7247,
+   "step2_ms": 446.4099,
+   "save2_ms": 365.223,
+   "missed_after1": 0,
+   "missed_reopen1": 0,
+   "missed_after2": 31,
+   "missed_reopen2": 31,
+   "derived_disagreements": 0,
+   "unrequested1": 0,
+   "unrequested2": 0,
+   "persistence1": 0,
+   "persistence2": 0,
+   "metadata_before": {
+    "order_changed": 0,
+    "history_changed": 0,
+    "source_history_has_MaterialProperties": false,
+    "family_with_raw_MaterialProperties": 0
+   },
+   "metadata_step1": {
+    "order_changed": 0,
+    "history_changed": 0,
+    "source_history_has_MaterialProperties": false,
+    "family_with_raw_MaterialProperties": 32
+   },
+   "metadata_step2": {
+    "order_changed": 0,
+    "history_changed": 2,
+    "source_history_has_MaterialProperties": true,
+    "family_with_raw_MaterialProperties": 32
+   },
+   "pass_live": false,
+   "processes_ok": true,
+   "pass": false
+  },
+  {
+   "run": "round-2/HH",
+   "seq": "HH",
+   "family_size": 32,
+   "step1_ms": 5.0031,
+   "step2_ms": 1.0311,
+   "save2_ms": 295.1811,
+   "missed_after1": 0,
+   "missed_reopen1": 0,
+   "missed_after2": 0,
+   "missed_reopen2": 0,
+   "derived_disagreements": 0,
+   "unrequested1": 0,
+   "unrequested2": 0,
+   "persistence1": 0,
+   "persistence2": 0,
+   "metadata_before": {
+    "order_changed": 0,
+    "history_changed": 0,
+    "source_history_has_MaterialProperties": false,
+    "family_with_raw_MaterialProperties": 0
+   },
+   "metadata_step1": {
+    "order_changed": 0,
+    "history_changed": 0,
+    "source_history_has_MaterialProperties": false,
+    "family_with_raw_MaterialProperties": 32
+   },
+   "metadata_step2": {
+    "order_changed": 0,
+    "history_changed": 0,
+    "source_history_has_MaterialProperties": false,
+    "family_with_raw_MaterialProperties": 32
+   },
+   "pass_live": true,
+   "processes_ok": true,
+   "pass": true
+  },
+  {
+   "run": "round-3/N",
+   "seq": "N",
+   "family_size": 32,
+   "step1_ms": 0,
+   "step2_ms": 0,
+   "save2_ms": 919.317,
+   "control_diffs": 0,
+   "persistence2": 0,
+   "metadata_before": {
+    "order_changed": 0,
+    "history_changed": 0,
+    "source_history_has_MaterialProperties": false,
+    "family_with_raw_MaterialProperties": 0
+   },
+   "pass_live": true,
+   "processes_ok": true,
+   "pass": true
+  },
+  {
+   "run": "round-3/PP",
+   "seq": "PP",
+   "family_size": 32,
+   "step1_ms": 527.134,
+   "step2_ms": 503.5524,
+   "save2_ms": 354.3576,
+   "missed_after1": 0,
+   "missed_reopen1": 0,
+   "missed_after2": 0,
+   "missed_reopen2": 0,
+   "derived_disagreements": 0,
+   "unrequested1": 0,
+   "unrequested2": 0,
+   "persistence1": 0,
+   "persistence2": 0,
+   "metadata_before": {
+    "order_changed": 0,
+    "history_changed": 0,
+    "source_history_has_MaterialProperties": false,
+    "family_with_raw_MaterialProperties": 0
+   },
+   "metadata_step1": {
+    "order_changed": 0,
+    "history_changed": 2,
+    "source_history_has_MaterialProperties": true,
+    "family_with_raw_MaterialProperties": 32
+   },
+   "metadata_step2": {
+    "order_changed": 0,
+    "history_changed": 2,
+    "source_history_has_MaterialProperties": true,
+    "family_with_raw_MaterialProperties": 32
+   },
+   "pass_live": true,
+   "processes_ok": true,
+   "pass": true
+  },
+  {
+   "run": "round-3/HP",
+   "seq": "HP",
+   "family_size": 32,
+   "step1_ms": 4.6544,
+   "step2_ms": 410.6652,
+   "save2_ms": 256.2793,
+   "missed_after1": 0,
+   "missed_reopen1": 0,
+   "missed_after2": 31,
+   "missed_reopen2": 31,
+   "derived_disagreements": 0,
+   "unrequested1": 0,
+   "unrequested2": 0,
+   "persistence1": 0,
+   "persistence2": 0,
+   "metadata_before": {
+    "order_changed": 0,
+    "history_changed": 0,
+    "source_history_has_MaterialProperties": false,
+    "family_with_raw_MaterialProperties": 0
+   },
+   "metadata_step1": {
+    "order_changed": 0,
+    "history_changed": 0,
+    "source_history_has_MaterialProperties": false,
+    "family_with_raw_MaterialProperties": 32
+   },
+   "metadata_step2": {
+    "order_changed": 0,
+    "history_changed": 2,
+    "source_history_has_MaterialProperties": true,
+    "family_with_raw_MaterialProperties": 32
+   },
+   "pass_live": false,
+   "processes_ok": true,
+   "pass": false
+  },
+  {
+   "run": "round-3/HH",
+   "seq": "HH",
+   "family_size": 32,
+   "step1_ms": 2.8537,
+   "step2_ms": 1.3032,
+   "save2_ms": 333.6393,
+   "missed_after1": 0,
+   "missed_reopen1": 0,
+   "missed_after2": 0,
+   "missed_reopen2": 0,
+   "derived_disagreements": 0,
+   "unrequested1": 0,
+   "unrequested2": 0,
+   "persistence1": 0,
+   "persistence2": 0,
+   "metadata_before": {
+    "order_changed": 0,
+    "history_changed": 0,
+    "source_history_has_MaterialProperties": false,
+    "family_with_raw_MaterialProperties": 0
+   },
+   "metadata_step1": {
+    "order_changed": 0,
+    "history_changed": 0,
+    "source_history_has_MaterialProperties": false,
+    "family_with_raw_MaterialProperties": 32
+   },
+   "metadata_step2": {
+    "order_changed": 0,
+    "history_changed": 0,
+    "source_history_has_MaterialProperties": false,
+    "family_with_raw_MaterialProperties": 32
+   },
+   "pass_live": true,
+   "processes_ok": true,
+   "pass": true
+  }
+ ]
+}

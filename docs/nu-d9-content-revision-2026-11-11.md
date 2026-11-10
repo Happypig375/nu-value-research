@@ -145,3 +145,7 @@ An independent review is in `.orchestration/d9-evidence-audit-20261111/`.
 - **Erratum, 20:09:14 UTC, from the D9 offline validation:** scored totals are 18 task pairs plus 3 controls, which is 21 op/reopen pairs and 42 processes: 3 adverse (T3-P) and 18 passing, controls included.
   - The scorer's detection was then checked offline with injected faults (`.orchestration/d9-validation-gaps-20261111/`).
   - `Order` and propagation history remain outside the old snapshot contract.
+- **Supplement, measured 10 Nov 2026 20:27–20:33 UTC ([history-sequence record](nu-d9-history-sequence-2026-11-11.md)):** the audit's prediction is now measured.
+  - After the helper sets the tint on all 32 palms, a later Nu propagation of a roughness change reaches only the source. All 31 linked palms miss it (0/3 runs).
+  - Propagation twice, or the helper twice, delivers both changes (3/3 each).
+  - The original direction 3 series and scores are unchanged.
