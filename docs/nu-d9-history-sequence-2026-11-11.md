@@ -104,14 +104,19 @@ The D9 evidence audit predicted, from the engine code, that the ordinary helper'
   - After a propagation step, the source's history contains `MaterialProperties`, and 2 history strings change: the source's and its villa's.
   - After helper steps, no history changes, and the source's history still has no `MaterialProperties`.
   - This matches the mechanism: in HP, the helper made all 32 members' values non-default while the history held no previous value. At step 2, propagation therefore kept each target's own record.
-- **`Order`:**
-  - The saved files hold 63 `[Order n]` tokens. Two separate no-op controls are identical in all 63.
-  - **Any propagation step changes 46 of them** (PP after step 1, HP after step 2). Helper steps change none.
-  - The probe's per-entity `order` field (from `writeEntity true true`) is a different, clock-based value. It showed 0 changes within a process, so **it did not capture the `Order` change that propagation makes in the saved file.** That is a limitation of this observation. It confirms the audit's finding F3 that propagation rewrites `Order` values.
+- **`Order`** (corrected at 20:39:34 UTC after the independent review, and checked by the parent): **no entity's live `Order` changed at any step.**
+  - Saved group files do not contain entities' own `Order`: the group writer uses `writeEntities false true`, `WorldGroup.fs:247`. All 63 `[Order n]` tokens in a saved file sit inside the propagation-history fields of the 11 entities that have one.
+  - The 46 tokens that change after a propagation step are the two history rewrites already counted above, the Villa's and the source palm's. Propagation copies the current process's clock-based `Order` values into the rewritten history.
+  - The first version of this section said the probe's `order` field "did not capture" a propagation `Order` change, and that this confirmed the audit's F3. **Both statements were wrong, and they are withdrawn here.**
 
 **How to read this:**
 - Mixing routes is the risk: a scene edited with an ordinary field-level helper silently stops receiving later propagated changes for that property, and nothing warns. Using one route consistently (PP or HH) delivers both steps.
 - This is engine behaviour following from whole-property merging with propagation history, a design choice, **not an upstream bug.**
+- **Cause, more precisely (review F3):**
+  - After the helper, each target's record is non-default, and the source's history had no previous `MaterialProperties`, so the engine kept the target's record.
+  - Had the history held a previous record, the target would also have been kept, because it differs from that record. **The miss does not depend on the history lacking a value.**
+- **Timing note (review F2):** propagating the palm also re-propagates the whole Villa to its 3 copies, because an ancestor with its own targets is propagated too. So P's 446–571 ms include that pass. It changed no core property and no entity set.
+- **Checker note (review F4):** the independent raw-string cross-check covered after1, after2 and reopen2, not reopen1. The reviewer's own raw scoring of all 4 stages in all 16 runs gave the same counts.
 - Limited to one property, one family, one scene revision, and direct world calls rather than Gaia's interface. Three replicates of a deterministic operation show it repeats; they are not a sampling estimate.
 
 **Evidence:**

@@ -149,3 +149,4 @@ An independent review is in `.orchestration/d9-evidence-audit-20261111/`.
   - After the helper sets the tint on all 32 palms, a later Nu propagation of a roughness change reaches only the source. All 31 linked palms miss it (0/3 runs).
   - Propagation twice, or the helper twice, delivers both changes (3/3 each).
   - The original direction 3 series and scores are unchanged.
+- **Erratum (20:39:34 UTC, history-sequence review):** the audit note above said "P changes 46 entity `Order` values". **That is wrong.** The 46 changed `[Order n]` tokens in saved files sit inside rewritten propagation histories (the Villa's and the source palm's). No entity's own `Order` changed, and saved group files do not include it.
