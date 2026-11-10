@@ -1,6 +1,6 @@
 # Status and continuation plan — 1 November 2026 (HKT)
 
-**Claude session, checkpointed 10 Nov 2026 ~16:40 UTC (11 Nov 00:40 HKT), about 1 h before its allocation ended, because the next stage (about 2 h) could not fit.** User decision D9 (10 November): directions 1 (recovery) and 2 (schema change) are done with scored results; directions 3 (content revision) and 4 (coding agents) have frozen protocol packets and need a fresh allocation. Verdict: `.orchestration/d9-all-directions-20261110/latest.txt` (NOT CLEAN at the D9 scope). No jobs, displays or GPU processes of mine are running; nothing is pushed.
+**Claude session, 11 Nov 2026 ~03:50 HKT (10 Nov 19:50 UTC): all four D9 comparisons are done with scored results** (allocation 2, 18:19–21:19 UTC). Integrated results: [R-series report, section 4](docs/nu-r-series-results-and-next-comparisons-2026-11-03.md). Verdict: `.orchestration/d9-all-directions-20261110/latest.txt`. No jobs, displays or GPU processes of mine are running; scratch is deleted; nothing is pushed. Weekly quota 90 % → 92 %.
 
 ## D9 (10 November): all four practical comparisons — Claude Opus (10–11 November 2026)
 
@@ -16,8 +16,14 @@
   - Explicit migration after reload, and restart plus explicit reconstruction, are correct in 9/9 each, and the brick hit scores with the new value.
   - Whole runs take about 12 s on every route, including the 5.9 s reload compile. The restart route also needs a build of the new code (20 s incremental to 2.8 min full), which the timing excludes.
   - **Findings at Nu master:** code reload of the bundled samples fails on a stock checkout (a hard-coded `../Nu.Dependencies` path since `d51f628d9a`; worked around with an environment-only symlink). Live-reload conversion gives 0, while Prime symbol conversion gives the initializer 200.
-- **Directions 3–4:** protocol packets frozen, including the direction 4 missed-case checklist. Not run.
-  - Direction 4 design note: the explicit-case warning covers only the update match, where a catch-all happens to be harmless. The likely missed case (content hidden while paused) gets no warning in either condition.
+- **Direction 3, content revision: done** (18 scored op/reopen pairs plus 3 controls). [Record](docs/nu-d9-content-revision-2026-11-11.md).
+  - On 32 Terra Firma palms, Nu propagation and an ordinary field-level helper both deliver a shared tint, and a shared tint with one local keep, 3/3 each.
+  - **A shared roughness change while one palm has a local tint: propagation misses that palm (0/3)**, because it merges whole properties. The helper with the same intent list delivers it (3/3).
+  - There were no unrequested changes, and everything persisted after save and reopen. Propagation takes about 0.5 s; the helper about 5 ms.
+- **Direction 4, coding agents: done** (12 Opus 5.5 candidates, behavioural oracle validated on 4 references). [Record](docs/nu-d9-agent-cases-2026-11-11.md).
+  - 12/12 correct, 6/6 in each condition, with 0 missed sites.
+  - The FS0025 warning never fired: every explicit-condition agent extended the match before building. A ceiling effect: no difference on this task.
+  - All candidates stayed inside their folders.
 - **Reports:** `.orchestration/d9-all-directions-20261110/` (REPORT.md, latest.txt).
 
 ## Earlier state, 3 November 2026 (~21:10 HKT)

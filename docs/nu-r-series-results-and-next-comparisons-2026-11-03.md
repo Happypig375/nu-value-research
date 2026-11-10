@@ -96,3 +96,33 @@ Each option names who would use the answer, what it would change, the experiment
 Options 2 and 3 need reopening stopped constructions and face likely negative answers. Option 4 needs a paid allocation. They can follow if option 1 shows a gap worth pursuing.
 
 **What option 1 would still not show:** human or agent effort, real-world fault frequency, other games or engines, and native or audio state.
+
+## 4. Results of the four approved comparisons (user decision D9, run 10–11 November 2026)
+
+All four ran on Nu master `47ef39e` with Vulkan on this server's NVIDIA RTX 4090 D. Each had a protocol committed before its outcomes, and every failed attempt is kept.
+
+| Comparison | What was compared | Result | Record |
+| --- | --- | --- | --- |
+| **1. Recovery after a game-code fault** | Gaia's automatic rewind, an F7 restore point, and a screen checkpoint file plus restart (15 scored runs) | **All three restore the right state, 5/5 each.** They differ in loss and time: rewind loses everything since Advance (30 updates here) and is ready in about 46 ms; F7 or a file loses only the 10 updates since the checkpoint; the file route needs a crash and a 5.7 s restart. F7 during play halts the game at master. | [record](nu-d9-recovery-routes-2026-11-10.md) |
+| **2. Live editing with a schema change** | Live reload alone, reload plus an explicit migration, and restart with reconstruction; new field absent, zero or nondefault (27 scored runs) | **Live reload alone always gives the new field 0** (correct 3/9, only where 0 is wanted). Migration and restart are correct 9/9 each, and both need the developer to state the value. Reload of the bundled samples fails on a stock master checkout (a hard-coded path). | [record](nu-d9-directions-2-4-packets-2026-11-10.md) |
+| **3. Content revision: Nu propagation vs an ordinary helper** | 32 palms in Terra Firma; shared tint, shared tint with one local keep, shared roughness with one local tint (18 scored op/reopen pairs plus 3 controls) | **Both routes deliver the first two tasks, 3/3 each.** When the shared change hits a different field than the local override, **propagation silently misses the overridden palm (0/3)**, because it merges whole properties. The field-by-field helper given the same intent list delivers it (3/3). No unrequested changes on either route; propagation takes about 0.5 s, the helper about 5 ms. | [record](nu-d9-content-revision-2026-11-11.md) |
+| **4. Coding agents with and without explicit case lists** | 12 Claude Opus 5.5 agents (6 explicit-match code, 6 catch-all code) adding a pause state to Breakout, scored by a validated behavioural oracle | **No difference: 12/12 correct, 0 missed sites.** The compiler warning never fired, because every agent read the code and extended the match before building. A ceiling effect on this small task. | [record](nu-d9-agent-cases-2026-11-11.md) |
+
+**What the four together say:**
+- **Where Nu's state-preserving features help, the gain is in what survives, not in correctness.** Recovery (1) works on every route. The question is how much progress you lose, and F7 or a checkpoint keeps more than the automatic rewind.
+- **Where they risk silent loss, the risk comes from defaults the user does not see.**
+  - Live reload fills a new field with 0 (2).
+  - Propagation drops a shared change behind a field-level local edit (3).
+  - Both were reproduced exactly, and both are cured by stating intent explicitly: a migration function, or a field-level helper with a keep list.
+- **The explicit-enumeration warning did not matter for capable agents on a small task** (4). Testing its value would need a task where the missed case is one the warning actually covers, in code too large to read in full.
+- **Two Nu master defects** were found on the way: F7 halts play, and code reload of the bundled samples breaks on a stock checkout. **One unwarned behaviour** was also found: whole-property propagation merges.
+
+**Limits for all four:**
+- one engine revision, one machine, and authored tasks;
+- small samples: 3–6 runs per cell, descriptive only;
+- no human developers or designers, no measured human effort, and one model family for direction 4.
+
+**Possible next steps (not started; each would need its own protocol and budget):**
+- direction 4 with a harder task, where the catch-all is wrong at the warned site, in a larger codebase;
+- direction 3 with a per-field merge or a warning prototype;
+- reporting the two master defects upstream, which is the user's call (no upstream contact has been made).
