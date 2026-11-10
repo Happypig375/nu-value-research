@@ -11,8 +11,12 @@
   - A screen checkpoint file loses 10 updates but needs a crash and a fresh editor: about 5.7 s, plus a 25 ms write and a 60–94 ms import. It needs an API call, because Gaia has no menu command for screen files.
   - **Finding:** at Gaia master, F7 during play halts the game (time-advancing changes are deferred).
   - Two amendments, both committed before scored runs: an idle-GPU rule, because a labmate's service stays resident on the GPU; and, after feasibility round Z, a hook-based continuation halt plus the F7 resume. Every attempt is kept.
-- **Directions 2–4:** protocol packets frozen ([packets](docs/nu-d9-directions-2-4-packets-2026-11-10.md)), including the direction 4 missed-case checklist. Not run yet.
-  - Direction 2 port risk (source only): master's code reload pins two package versions that differ from the project's own.
+- **Direction 2, live editing with a schema change: done** (scored: 3 routes × 3 cases × 3 repeats, 36 processes). [Record](docs/nu-d9-directions-2-4-packets-2026-11-10.md).
+  - **Live reload alone always gives the new field 0:** it is correct only for the deliberate-zero case (3/9).
+  - Explicit migration after reload, and restart plus explicit reconstruction, are correct in 9/9 each, and the brick hit scores with the new value.
+  - Whole runs take about 12 s on every route, including the 5.9 s reload compile. The restart route also needs a build of the new code (20 s incremental to 2.8 min full), which the timing excludes.
+  - **Findings at Nu master:** code reload of the bundled samples fails on a stock checkout (a hard-coded `../Nu.Dependencies` path since `d51f628d9a`; worked around with an environment-only symlink). Live-reload conversion gives 0, while Prime symbol conversion gives the initializer 200.
+- **Directions 3–4:** protocol packets frozen, including the direction 4 missed-case checklist. Not run.
   - Direction 4 design note: the explicit-case warning covers only the update match, where a catch-all happens to be harmless. The likely missed case (content hidden while paused) gets no warning in either condition.
 - **Reports:** `.orchestration/d9-all-directions-20261110/` (REPORT.md, latest.txt).
 

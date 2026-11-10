@@ -190,3 +190,39 @@ Taken from master's `Projects/Breakout Mmcc/Gameplay.fs` (`47ef39e`). A candidat
   - Adverse outcomes do not stop the series; infrastructure failures do.
 - **Construction record:** build 05 failed to compile (a missing helper and an out-of-order reference); build 06 passed. That is 1 failed build at this step, within the budget of 5.
 - **Limits:** this measures correctness per route and case, not developer effort. The October R10 attempts stay final and separate.
+
+## Direction 2: results of the scored series (11 November 2026, 00:26–00:35 HKT)
+
+**Conclusion:**
+- **Live reload alone (L) never gives a new record field its declared value: it is always 0.** So L reaches the common outcome only in case Z, where 0 is what is required. The brick hit then scores nothing.
+- **Explicit migration after reload (M) and restart with explicit reconstruction (R) reach the common outcome in every case** (9/9 each). Each preserves the old fields, sets the new field to the required value, and scores the brick hit with it.
+- **Both need the user to state the new field's value somewhere.** M does it in a migration function (1.7 ms), R in the reconstruction step (60 ms).
+- **On machine time, a whole run takes about 12 s on every route** here (L 11.9, M 12.3, R 12.0 s median).
+  - L and M include Gaia's 5.9 s F# Interactive compile of the reload (median; 4.7–7.8 s).
+  - R includes two process starts, but **excludes compiling the new code**: the new-code build was prepared in advance. A real restart would add an ordinary `dotnet build`: on this server about 20–25 s incremental, or about 2.8 min for a full build (from the build logs here).
+- **Two Nu master defects/behaviours found:**
+  1. code reload of the bundled samples fails on a stock checkout (the hard-coded `../Nu.Dependencies` path since `d51f628d9a`);
+  2. live reload's conversion fills a new field with 0, while converting a saved Prime symbol into the compiled new type fills it with 200.
+
+| Route | A: absent (200 required) | Z: deliberate zero (0) | N: nondefault (75) | Observed new field |
+| --- | --- | --- | --- | --- |
+| **L** live reload, no migration | 0/3 | 3/3 | 0/3 | always 0 |
+| **M** live reload + explicit migration | 3/3 | 3/3 | 3/3 | 200 / 0 / 75 |
+| **R** restart + explicit reconstruction | 3/3 | 3/3 | 3/3 | 200 / 0 / 75 |
+
+**Attempts:** all 36 scored processes exited 0 and logged "Selected Vulkan Device NVIDIA GeForce RTX 4090 D", with no timeouts. Earlier attempts are all kept:
+- route L feasibility: attempt 01 failed on the upstream path defect; attempt 02, with the environment symlink, passed;
+- M-A and R-A feasibility passed;
+- round F4 matched;
+- builds: 01–04 passed, except that 02 was built from edited source and never used; 05 failed to compile; 06 passed.
+
+**What this does not show:**
+- **Developer effort:** writing the migration or the reconstruction is not measured.
+- Other schema changes: removed or renamed fields, union cases, nested records.
+- Native, audio or physics state.
+- That L's 0 is "wrong" for every design: for case Z it is exactly right.
+- These are machine times on this server only.
+
+**Evidence:**
+- `.artifacts/d9-schema-reload-20261110/`: prepare and build logs; feasibility runs `runs/`; scored `series/` with the ledger, traces, stdout, and environment and GPU samples; `verdict.json`; `times.txt`; `OPERATOR-NOTES.log`.
+- Committed copy: `experiments/nu-d9-schema-reload/result-receipt.json`.

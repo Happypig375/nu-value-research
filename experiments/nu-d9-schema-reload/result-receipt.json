@@ -1,0 +1,489 @@
+{
+  "attempts": {
+    "F4-L-A": {
+      "round": "F4",
+      "route": "L",
+      "case": "A",
+      "pass": false,
+      "checks": {
+        "old_fields_preserved": true,
+        "new_field_equals_required": false,
+        "brick_hit_scores_required": false
+      },
+      "observed_new_field": "0",
+      "continuation_score": "100",
+      "reload_ms": 7188.662768
+    },
+    "F4-M-A": {
+      "round": "F4",
+      "route": "M",
+      "case": "A",
+      "pass": true,
+      "checks": {
+        "old_fields_preserved": true,
+        "new_field_equals_required": true,
+        "brick_hit_scores_required": true
+      },
+      "observed_new_field": "200",
+      "continuation_score": "300",
+      "reload_ms": 6924.736464
+    },
+    "F4-R-A": {
+      "round": "F4",
+      "route": "R",
+      "case": "A",
+      "pass": true,
+      "checks": {
+        "old_fields_preserved": true,
+        "new_field_equals_required": true,
+        "brick_hit_scores_required": true
+      },
+      "observed_new_field": "200",
+      "continuation_score": "300",
+      "reload_ms": null
+    },
+    "1-L-A": {
+      "round": "1",
+      "route": "L",
+      "case": "A",
+      "pass": false,
+      "checks": {
+        "old_fields_preserved": true,
+        "new_field_equals_required": false,
+        "brick_hit_scores_required": false
+      },
+      "observed_new_field": "0",
+      "continuation_score": "100",
+      "reload_ms": 5264.03026
+    },
+    "1-L-Z": {
+      "round": "1",
+      "route": "L",
+      "case": "Z",
+      "pass": true,
+      "checks": {
+        "old_fields_preserved": true,
+        "new_field_equals_required": true,
+        "brick_hit_scores_required": true
+      },
+      "observed_new_field": "0",
+      "continuation_score": "100",
+      "reload_ms": 5200.18098
+    },
+    "1-L-N": {
+      "round": "1",
+      "route": "L",
+      "case": "N",
+      "pass": false,
+      "checks": {
+        "old_fields_preserved": true,
+        "new_field_equals_required": false,
+        "brick_hit_scores_required": false
+      },
+      "observed_new_field": "0",
+      "continuation_score": "100",
+      "reload_ms": 6420.848434
+    },
+    "1-M-A": {
+      "round": "1",
+      "route": "M",
+      "case": "A",
+      "pass": true,
+      "checks": {
+        "old_fields_preserved": true,
+        "new_field_equals_required": true,
+        "brick_hit_scores_required": true
+      },
+      "observed_new_field": "200",
+      "continuation_score": "300",
+      "reload_ms": 4829.635542
+    },
+    "1-M-Z": {
+      "round": "1",
+      "route": "M",
+      "case": "Z",
+      "pass": true,
+      "checks": {
+        "old_fields_preserved": true,
+        "new_field_equals_required": true,
+        "brick_hit_scores_required": true
+      },
+      "observed_new_field": "0",
+      "continuation_score": "100",
+      "reload_ms": 6446.92186
+    },
+    "1-M-N": {
+      "round": "1",
+      "route": "M",
+      "case": "N",
+      "pass": true,
+      "checks": {
+        "old_fields_preserved": true,
+        "new_field_equals_required": true,
+        "brick_hit_scores_required": true
+      },
+      "observed_new_field": "75",
+      "continuation_score": "175",
+      "reload_ms": 6385.712005
+    },
+    "1-R-A": {
+      "round": "1",
+      "route": "R",
+      "case": "A",
+      "pass": true,
+      "checks": {
+        "old_fields_preserved": true,
+        "new_field_equals_required": true,
+        "brick_hit_scores_required": true
+      },
+      "observed_new_field": "200",
+      "continuation_score": "300",
+      "reload_ms": null
+    },
+    "1-R-Z": {
+      "round": "1",
+      "route": "R",
+      "case": "Z",
+      "pass": true,
+      "checks": {
+        "old_fields_preserved": true,
+        "new_field_equals_required": true,
+        "brick_hit_scores_required": true
+      },
+      "observed_new_field": "0",
+      "continuation_score": "100",
+      "reload_ms": null
+    },
+    "1-R-N": {
+      "round": "1",
+      "route": "R",
+      "case": "N",
+      "pass": true,
+      "checks": {
+        "old_fields_preserved": true,
+        "new_field_equals_required": true,
+        "brick_hit_scores_required": true
+      },
+      "observed_new_field": "75",
+      "continuation_score": "175",
+      "reload_ms": null
+    },
+    "2-M-A": {
+      "round": "2",
+      "route": "M",
+      "case": "A",
+      "pass": true,
+      "checks": {
+        "old_fields_preserved": true,
+        "new_field_equals_required": true,
+        "brick_hit_scores_required": true
+      },
+      "observed_new_field": "200",
+      "continuation_score": "300",
+      "reload_ms": 6791.475159
+    },
+    "2-M-Z": {
+      "round": "2",
+      "route": "M",
+      "case": "Z",
+      "pass": true,
+      "checks": {
+        "old_fields_preserved": true,
+        "new_field_equals_required": true,
+        "brick_hit_scores_required": true
+      },
+      "observed_new_field": "0",
+      "continuation_score": "100",
+      "reload_ms": 7112.306667
+    },
+    "2-M-N": {
+      "round": "2",
+      "route": "M",
+      "case": "N",
+      "pass": true,
+      "checks": {
+        "old_fields_preserved": true,
+        "new_field_equals_required": true,
+        "brick_hit_scores_required": true
+      },
+      "observed_new_field": "75",
+      "continuation_score": "175",
+      "reload_ms": 6121.39846
+    },
+    "2-R-A": {
+      "round": "2",
+      "route": "R",
+      "case": "A",
+      "pass": true,
+      "checks": {
+        "old_fields_preserved": true,
+        "new_field_equals_required": true,
+        "brick_hit_scores_required": true
+      },
+      "observed_new_field": "200",
+      "continuation_score": "300",
+      "reload_ms": null
+    },
+    "2-R-Z": {
+      "round": "2",
+      "route": "R",
+      "case": "Z",
+      "pass": true,
+      "checks": {
+        "old_fields_preserved": true,
+        "new_field_equals_required": true,
+        "brick_hit_scores_required": true
+      },
+      "observed_new_field": "0",
+      "continuation_score": "100",
+      "reload_ms": null
+    },
+    "2-R-N": {
+      "round": "2",
+      "route": "R",
+      "case": "N",
+      "pass": true,
+      "checks": {
+        "old_fields_preserved": true,
+        "new_field_equals_required": true,
+        "brick_hit_scores_required": true
+      },
+      "observed_new_field": "75",
+      "continuation_score": "175",
+      "reload_ms": null
+    },
+    "2-L-A": {
+      "round": "2",
+      "route": "L",
+      "case": "A",
+      "pass": false,
+      "checks": {
+        "old_fields_preserved": true,
+        "new_field_equals_required": false,
+        "brick_hit_scores_required": false
+      },
+      "observed_new_field": "0",
+      "continuation_score": "100",
+      "reload_ms": 5447.195096
+    },
+    "2-L-Z": {
+      "round": "2",
+      "route": "L",
+      "case": "Z",
+      "pass": true,
+      "checks": {
+        "old_fields_preserved": true,
+        "new_field_equals_required": true,
+        "brick_hit_scores_required": true
+      },
+      "observed_new_field": "0",
+      "continuation_score": "100",
+      "reload_ms": 5703.623398
+    },
+    "2-L-N": {
+      "round": "2",
+      "route": "L",
+      "case": "N",
+      "pass": false,
+      "checks": {
+        "old_fields_preserved": true,
+        "new_field_equals_required": false,
+        "brick_hit_scores_required": false
+      },
+      "observed_new_field": "0",
+      "continuation_score": "100",
+      "reload_ms": 5139.378871
+    },
+    "3-R-A": {
+      "round": "3",
+      "route": "R",
+      "case": "A",
+      "pass": true,
+      "checks": {
+        "old_fields_preserved": true,
+        "new_field_equals_required": true,
+        "brick_hit_scores_required": true
+      },
+      "observed_new_field": "200",
+      "continuation_score": "300",
+      "reload_ms": null
+    },
+    "3-R-Z": {
+      "round": "3",
+      "route": "R",
+      "case": "Z",
+      "pass": true,
+      "checks": {
+        "old_fields_preserved": true,
+        "new_field_equals_required": true,
+        "brick_hit_scores_required": true
+      },
+      "observed_new_field": "0",
+      "continuation_score": "100",
+      "reload_ms": null
+    },
+    "3-R-N": {
+      "round": "3",
+      "route": "R",
+      "case": "N",
+      "pass": true,
+      "checks": {
+        "old_fields_preserved": true,
+        "new_field_equals_required": true,
+        "brick_hit_scores_required": true
+      },
+      "observed_new_field": "75",
+      "continuation_score": "175",
+      "reload_ms": null
+    },
+    "3-L-A": {
+      "round": "3",
+      "route": "L",
+      "case": "A",
+      "pass": false,
+      "checks": {
+        "old_fields_preserved": true,
+        "new_field_equals_required": false,
+        "brick_hit_scores_required": false
+      },
+      "observed_new_field": "0",
+      "continuation_score": "100",
+      "reload_ms": 7774.433313
+    },
+    "3-L-Z": {
+      "round": "3",
+      "route": "L",
+      "case": "Z",
+      "pass": true,
+      "checks": {
+        "old_fields_preserved": true,
+        "new_field_equals_required": true,
+        "brick_hit_scores_required": true
+      },
+      "observed_new_field": "0",
+      "continuation_score": "100",
+      "reload_ms": 7089.454869
+    },
+    "3-L-N": {
+      "round": "3",
+      "route": "L",
+      "case": "N",
+      "pass": false,
+      "checks": {
+        "old_fields_preserved": true,
+        "new_field_equals_required": false,
+        "brick_hit_scores_required": false
+      },
+      "observed_new_field": "0",
+      "continuation_score": "100",
+      "reload_ms": 4716.802585
+    },
+    "3-M-A": {
+      "round": "3",
+      "route": "M",
+      "case": "A",
+      "pass": true,
+      "checks": {
+        "old_fields_preserved": true,
+        "new_field_equals_required": true,
+        "brick_hit_scores_required": true
+      },
+      "observed_new_field": "200",
+      "continuation_score": "300",
+      "reload_ms": 6070.745193
+    },
+    "3-M-Z": {
+      "round": "3",
+      "route": "M",
+      "case": "Z",
+      "pass": true,
+      "checks": {
+        "old_fields_preserved": true,
+        "new_field_equals_required": true,
+        "brick_hit_scores_required": true
+      },
+      "observed_new_field": "0",
+      "continuation_score": "100",
+      "reload_ms": 4857.322828
+    },
+    "3-M-N": {
+      "round": "3",
+      "route": "M",
+      "case": "N",
+      "pass": true,
+      "checks": {
+        "old_fields_preserved": true,
+        "new_field_equals_required": true,
+        "brick_hit_scores_required": true
+      },
+      "observed_new_field": "75",
+      "continuation_score": "175",
+      "reload_ms": 5747.369395
+    }
+  },
+  "summary": {
+    "L-A": {
+      "scored": 3,
+      "passed": 0,
+      "observed_new_field": [
+        "0"
+      ]
+    },
+    "L-Z": {
+      "scored": 3,
+      "passed": 3,
+      "observed_new_field": [
+        "0"
+      ]
+    },
+    "L-N": {
+      "scored": 3,
+      "passed": 0,
+      "observed_new_field": [
+        "0"
+      ]
+    },
+    "M-A": {
+      "scored": 3,
+      "passed": 3,
+      "observed_new_field": [
+        "200"
+      ]
+    },
+    "M-Z": {
+      "scored": 3,
+      "passed": 3,
+      "observed_new_field": [
+        "0"
+      ]
+    },
+    "M-N": {
+      "scored": 3,
+      "passed": 3,
+      "observed_new_field": [
+        "75"
+      ]
+    },
+    "R-A": {
+      "scored": 3,
+      "passed": 3,
+      "observed_new_field": [
+        "200"
+      ]
+    },
+    "R-Z": {
+      "scored": 3,
+      "passed": 3,
+      "observed_new_field": [
+        "0"
+      ]
+    },
+    "R-N": {
+      "scored": 3,
+      "passed": 3,
+      "observed_new_field": [
+        "75"
+      ]
+    }
+  }
+}
