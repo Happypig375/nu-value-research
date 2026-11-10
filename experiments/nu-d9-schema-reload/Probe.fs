@@ -49,8 +49,8 @@ module Program =
 
     [<EntryPoint; STAThread>]
     let main args =
-        if args.Length <> 4 || not (List.contains args[0] ["L"; "M"]) then
-            eprintfn "Usage: Probe <L|M> <Breakout DLL> <Gameplay.fs to edit> <new receipt dir>"
+        if args.Length <> 4 || not (List.contains args[0] ["L"; "M"; "R1"; "R2"]) then
+            eprintfn "Usage: Probe <L|M|R1|R2> <Breakout DLL> <Gameplay.fs to edit, or transfer dir for R1/R2> <new receipt dir>"
             2
         else
             let route = args[0]
@@ -77,6 +77,37 @@ module Program =
                         callbacks <- callbacks + 1
                         require "callback watchdog (2400)" (callbacks <= 2400)
                         match phase with
+                        | "initialize" when route = "R2" ->
+                            // Amendment 3, route R process 2 (new code, fresh process): reconstruct with the new field explicit
+                            let transfer = gameplaySource
+                            let oldFields = JsonSerializer.Deserialize<Dictionary<string, string>> (File.ReadAllText (Path.Combine (transfer, "fields.json")))
+                            let t0 = Stopwatch.GetTimestamp ()
+                            let converted = scvalue<Gameplay> (File.ReadAllText (Path.Combine (transfer, "model.symbol")))
+                            let t = converted.GetType ()
+                            let props = FSharpType.GetRecordFields (t, true)
+                            let values = FSharpValue.GetRecordFields (converted, true)
+                            let convertedReward = match props |> Array.tryFindIndex (fun p -> p.Name = "BrickReward") with Some i -> sprintf "%A" values[i] | None -> "(absent)"
+                            match props |> Array.tryFindIndex (fun p -> p.Name = "BrickReward") with Some i -> values[i] <- box 200 | None -> ()
+                            let target = FSharpValue.MakeRecord (t, values, true) :?> Gameplay
+                            Simulants.Gameplay.SetGameplay target world
+                            let t1 = Stopwatch.GetTimestamp ()
+                            emit "reconstructed" ["reconstructMs", box (float (t1 - t0) * 1000.0 / float Stopwatch.Frequency)
+                                                  "brickRewardAfterSymbolConversion", box convertedReward; "oldFields", box oldFields]
+                            before <- [| for KeyValue (k, v) in oldFields -> k, v |]
+                            phase <- "settle-reconstructed"
+                            settle <- 0
+                        | "settle-reconstructed" ->
+                            settle <- settle + 1
+                            if settle >= 10 then
+                                let m = liveModel world
+                                let afterMap = dict (recordFields m)
+                                let oldPreserved = before |> Array.forall (fun (n, v) -> afterMap.ContainsKey n && afterMap[n] = v)
+                                emit "post-reconstruction"
+                                    [ "modelType", box (m.GetType().FullName); "oldFieldsPreserved", box oldPreserved
+                                      "brickReward", box (if afterMap.ContainsKey "BrickReward" then afterMap["BrickReward"] else "(absent)")
+                                      "requiredBrickReward", box "200"; "halted", box world.TimeHalted
+                                      "processUptimeMs", box (int64 (DateTime.Now - Process.GetCurrentProcess().StartTime).TotalMilliseconds) ]
+                                finish true "Reconstruction observed." world
                         | "initialize" ->
                             require "initial world advancing" world.TimeHalted
                             require "Gameplay not selected" (World.getSelectedScreen world = Simulants.Gameplay)
@@ -89,6 +120,15 @@ module Program =
                             if world.TimeAdvancing && g.GameplayTime >= 10L then
                                 World.setTimeAdvancing false world
                                 phase <- "halting"
+                        | "halting" when world.TimeHalted && route = "R1" ->
+                            // Amendment 3, route R process 1 (old code): save the model and its fields, then exit
+                            let transfer = gameplaySource
+                            Directory.CreateDirectory transfer |> ignore
+                            let g = Simulants.Gameplay.GetGameplay world
+                            File.WriteAllText (Path.Combine (transfer, "model.symbol"), scstring g)
+                            File.WriteAllText (Path.Combine (transfer, "fields.json"), json (dict (recordFields (liveModel world))))
+                            emit "saved" ["fields", box (dict (recordFields (liveModel world)))]
+                            finish true "Old-code model saved." world
                         | "halting" when world.TimeHalted ->
                             before <- recordFields (liveModel world)
                             emit "pre-reload" ["modelType", box ((liveModel world).GetType().FullName); "fields", box (dict before)]

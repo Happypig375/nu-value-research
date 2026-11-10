@@ -156,3 +156,13 @@ Taken from master's `Projects/Breakout Mmcc/Gameplay.fs` (`47ef39e`). A candidat
 - **Route M**, after the same reload, builds a migrated record of the reloaded type by reflection, with `BrickReward` = 200 for case A. It sets the record through the reloaded code's own `Screen.SetGameplay` (in the F# Interactive assembly), settles for 10 halted frames, and then records the new field, the old fields and the scene's entity names.
 - **One unscored feasibility run (M-A).** The environment fix stays in place.
 - Builds: build 02 accidentally compiled Breakout from the edited source left by attempt 02. It was not used for any run. The source was restored and rebuilt as build 03 (logged).
+
+## Direction 2: route M feasibility result, and amendment 3 (11 November 2026 HKT)
+
+- **Route M, case A feasibility (M-A-feasibility-01): passed.**
+  - After the reload (6.9 s), the migration through the reloaded code's own setter took 1.6 ms.
+  - `BrickReward` became 200, the old fields were preserved, and the scene's entity names were unchanged.
+- **Amendment 3 (route R, before any route-R run):** two processes.
+  - **R1**, the old code (`src2`): advance 10 updates, halt, save the model as a Prime symbol and its field values, exit.
+  - **R2**, a fresh process built from the schema-edited source (`src3`, the same three edits applied before the build): convert the symbol into the new record type, record what `BrickReward` became after conversion, then set it to 200 explicitly. Settle for 10 halted frames and record the new field and the old fields.
+  - **One unscored feasibility run (R-A).** Build 04 (old and new) passed.
