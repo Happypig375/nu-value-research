@@ -59,7 +59,7 @@ def isolation(stream, cand, allowed, scratch):
             inp = block.get("input", {})
             texts = [str(inp.get(k)) for k in ("file_path", "path", "notebook_path") if inp.get(k)]
             if block.get("name") == "Bash":
-                texts += re.findall(r"(?:~|\$HOME|/)[^\s'\"|;&<>()]*", inp.get("command", ""))
+                texts += re.findall(r"(?:^|(?<=[\s'\"=:<>|;&(]))((?:~|\$HOME|/)[^\s'\"|;&<>()]*)", inp.get("command", ""))
             for t in texts:
                 if t.startswith(("~", "$HOME")):
                     flags.append({"tool": block.get("name"), "path": t})
@@ -90,7 +90,7 @@ def main():
     cand, out = (a.scratch / name).resolve(), (a.artifacts / name).resolve()
     out.mkdir(parents=True, exist_ok=False)
     env = {"HOME": HOME, "USER": os.environ.get("USER", ""), "LANG": "C.UTF-8", "TERM": "dumb",
-           "PATH": f"{DOTNET}:/usr/local/bin:/usr/bin:/bin", "DOTNET_ROOT": DOTNET, "NUGET_PACKAGES": str(a.nuget),
+           "PATH": f"{DOTNET}:{HOME}/.local/bin:/usr/local/bin:/usr/bin:/bin", "DOTNET_ROOT": DOTNET, "NUGET_PACKAGES": str(a.nuget),
            "DOTNET_CLI_TELEMETRY_OPTOUT": "1", "DOTNET_NOLOGO": "1", "DOTNET_MULTILEVEL_LOOKUP": "0",
            "MSBUILDDISABLENODEREUSE": "1", "DOTNET_CLI_USE_MSBUILD_SERVER": "0"}
     run = {"name": name, "variant": a.variant, "flags": FLAGS, "limit_seconds": a.limit}
