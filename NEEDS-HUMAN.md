@@ -7,6 +7,9 @@ Newest first. Each item lists the options, my recommendation and what it blocks.
 - **Decision:** all four practical comparisons are approved, with included Claude/Opus quota allowed for direction 4 (coding agents). Scope and limits: `.orchestration/TASK-D9-20261110.txt`.
 - **Order of work:** recovery first, as the shortest path to a useful result; then the others as far as they are unblocked.
 - **Reports:** `.orchestration/d9-all-directions-20261110/`.
+- **Checkpoint, 11 Nov ~00:40 HKT:** directions 1 and 2 are done. Direction 2: live reload alone gives a new field 0, correct in 3/9 runs; explicit migration and restart are correct in 9/9 each.
+  - Directions 3 and 4 have frozen packets. **They need a fresh time/quota allocation** (roughly 2 h for direction 4, 2–3 h for direction 3; weekly use is now 90 %).
+  - No other decision is needed.
 - **Progress, 11 Nov ~00:15 HKT:** direction 1 is done (history, F7 and checkpoint-file recovery all reach the common outcome (15/15 scored runs). History loses everything since Advance (30 updates here), but is ready in about 46 ms. F7 or a screen file loses only the 10 updates since the checkpoint. F7 is ready in about 46 ms; the file route needs a crash and a fresh editor, about 5.7 s. At Gaia master, F7 during play halts the game. [Record](docs/nu-d9-recovery-routes-2026-11-10.md).) Directions 2–4 have frozen protocol packets. No decision is needed.
 
 ## 2026-11-03 ~21:00 HKT — item 11: which practical comparison should the next R-series experiments serve? — Claude Opus (answered above)
