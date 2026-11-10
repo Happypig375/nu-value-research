@@ -226,3 +226,17 @@ Taken from master's `Projects/Breakout Mmcc/Gameplay.fs` (`47ef39e`). A candidat
 **Evidence:**
 - `.artifacts/d9-schema-reload-20261110/`: prepare and build logs; feasibility runs `runs/`; scored `series/` with the ledger, traces, stdout, and environment and GPU samples; `verdict.json`; `times.txt`; `OPERATOR-NOTES.log`.
 - Committed copy: `experiments/nu-d9-schema-reload/result-receipt.json`.
+
+## Direction 4: amendment 1 — candidate isolation and the oracle plan (11 November 2026 HKT, before any oracle or candidate exists)
+
+- **Isolation:**
+  - Each candidate runs in a fresh, empty scratch folder outside this repository and outside `.artifacts/`. It contains only the task text and a private copy of master's `Projects/Breakout Mmcc/` in the candidate's condition.
+  - The reference solutions and the oracle are stored in a separate, non-shared folder, and are written only after the oracle is validated.
+  - The candidate's instructions forbid reading outside its folder. **Afterwards, the scorer checks the candidate's tool log for any read outside its folder; any such read makes that candidate invalid** (kept, not replaced).
+- **Oracle plan** (to build before any candidate):
+  - Standalone master Breakout with the candidate's `Gameplay.fs`, on Vulkan on our own Xvfb.
+  - Real XTEST key presses (P, Right), as in the keyboard-timing harness.
+  - In-process observation of the model state, the ball and paddle positions, and the Message entity's text, using a probe like directions 1–2. Screenshots are not used for text.
+  - Checks (a)–(e) as declared.
+  - **Validation first:** one correct reference solution must pass all checks, and two planted misses (S2: the scene hidden while paused; S3: no P toggle) must each fail the intended check.
+- **Quota:** read before each candidate. 12 candidates are expected to need a few percent of the weekly allowance each (an estimate; it will be measured on the first candidate and the forecast updated).
