@@ -126,3 +126,17 @@ Taken from master's `Projects/Breakout Mmcc/Gameplay.fs` (`47ef39e`). A candidat
 - The explicit-enumeration warning covers S1 only, where the catch-all happens to be harmless.
 - The likely missed case is S2, which neither condition flags.
 - So **a null or reversed result is plausible.** The packet's outcome measure stays as declared: the behavioural oracle (a)–(e) plus the per-site missed-case count.
+
+## Direction 2: amendment 1 (11 November 2026 HKT, before any direction-2 run)
+
+- **Order of work:** before building all three routes, run **one unscored feasibility of route L, case A** (package `experiments/nu-d9-schema-reload/`). Its purpose is to check that Gaia master's code reload works on this server at all, and to observe the new field's value.
+- **Procedure:**
+  1. Functional Gaia, Gameplay edit mode. Advance 10 updates and halt.
+  2. Apply the October R10 schema edit to the scratch tree's `Gameplay.fs`: add `BrickReward : int`, initialize it to 200 in `empty`, and use it in scoring.
+  3. Call Gaia's own `tryReloadCode`.
+  4. After 10 halted frames, read the live model by reflection.
+- **Recorded:**
+  - whether reload compiled and installed the project code, with the reload time;
+  - whether the seven old fields are unchanged;
+  - the value of `BrickReward` (required: 200).
+- **No migration** is tried in this step. This is the first construction attempt under the direction-2 budget (5 failures at one unchanged step). The October R10 attempts are not counted.
