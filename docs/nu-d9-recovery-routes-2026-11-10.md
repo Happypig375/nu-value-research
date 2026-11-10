@@ -101,3 +101,44 @@ Times are valid only on this server and configuration. They must not be compared
 2. **Route F resumes after F7.** If time is halted at the next hook after F7, call Advance (F5) once, as a user would, and record it. Its declared steps become 4: Advance, F7, Advance again, dismiss the message. The recovery point is then the Advance snapshot at clock 20, whose model and scene equal the F7 point's (time was halted in between).
 
 **Verification:** one more unscored feasibility round, **Z2**, then scored rounds 1–5 as planned. Build 03 has these changes.
+
+## Results (11 November 2026, 00:03–00:07 HKT; scored rounds 1–5)
+
+**Conclusion:**
+- **All three routes reach the common outcome in all 5 scored runs each (15/15).** After the fault, the full gameplay model and scene equal the route's recovery point, and 5 more updates reproduce the original run exactly.
+- They differ in **what survives and in machine time:**
+  - **History (H)** loses everything since Advance: 30 updates here.
+  - **An F7 restore point (F) or a screen checkpoint file (C)** loses only the 10 updates since the checkpoint.
+  - **History routes are ready about 46 ms after the fault**; the editor never closes.
+  - **The checkpoint-file route needs a crash and a fresh editor: about 5.7 s,** and it needs an API call because Gaia has no menu command for screen files.
+  - **Taking an F7 restore point costs about 1.1 ms; writing the screen file about 25 ms.**
+- **A Gaia master defect found on the way:** F7 during play halts the game (amendment 2), so the user must press Advance again.
+- This measures machine time and declared steps on one authored fault in one game, not human effort or benefit.
+
+| Route | Passed | Progress lost | Fault to ready | Checkpoint | Declared steps |
+| --- | --- | --- | --- | --- | --- |
+| **H:** history (automatic rewind to the Advance snapshot) | 5/5 | 30 updates | median 46.7 ms (45.9–52.2) | none | 2: Advance, dismiss message |
+| **F:** F7 restore point at clock 20 | 5/5 | 10 updates | median 46.3 ms (44.6–51.9) | median 1.12 ms (1.10–1.44) | 4: Advance, F7, Advance again (F7 halts play), dismiss |
+| **C:** screen file at clock 20, imperative editor ends, fresh editor imports | 5/5 | 10 updates | median **5.73 s** (5.55–6.42): exit after the crash 0.21–0.29 s, plus fresh start and import 5.31–6.21 s | file write median 25.1 ms (24.5–29.1); import 60–94 ms | 4: Advance, save file, restart editor, load file (Interactive F#) |
+
+**How to read the times:**
+- H and F's "fault to ready" is an upper bound: last hook before the fault → first hook after recovery, including the faulting frame.
+- C's figure excludes the runner's gap between processes (2.1 s, or 19.3 s in round 5 because of an idle-GPU wait).
+- The checker's raw C figure (C1's last hook → C2 ready, median 8.3 s) includes that gap, so it overstates the restart. The split is in `restart-split.txt`.
+- All times are valid only on this server and configuration.
+
+**Attempts:**
+- All 20 scored processes exited as declared (C1 with code 1, the others 0), and every one logged "Selected Vulkan Device NVIDIA GeForce RTX 4090 D".
+- There were no timeouts, and every F run needed and recorded the F7 resume.
+- Earlier attempts are all kept: feasibility round Z (F and C failed, which led to amendment 2) and Z2 (all passed). Build 01 failed to compile on a list-layout error; builds 02 and 03 passed.
+- One launch attempt waited on the GPU-idle rule and was stopped before any process started (amendment 1).
+
+**What this does not show:**
+- **Human effort:** the steps are declared counts.
+- Real fault frequency, or faults at other moments. A fault right after a checkpoint would make C and F lose almost nothing, while H's loss grows with play time.
+- Sound or random-number state; other games or engines.
+- That functional mode's per-frame cost is worth its recovery benefit (R06 measured component costs only).
+
+**Evidence:**
+- `.artifacts/d9-recovery-routes-20261110/`: prepare and build receipts; `runs/` with the ledger, the traces, the stdout/stderr of every process, environment and GPU samples, and the transfer folders with the checkpoint files; `verdict.json`, `restart-split.txt`.
+- `experiments/nu-d9-recovery-routes/result-receipt.json` is the committed copy of the verdict.

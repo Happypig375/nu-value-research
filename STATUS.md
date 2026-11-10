@@ -2,6 +2,20 @@
 
 **Claude session, 10 Nov 2026 (from ~15:40 UTC): WORKING on user decision D9 (10 November).** All four practical comparisons are approved (NEEDS-HUMAN item 11). The allocation is 120 active minutes, ending about 17:40 UTC, with at most one bounded experiment running beside this session. Recovery after a game-code fault comes first. Live reports: `.orchestration/d9-all-directions-20261110/`.
 
+## D9 (10 November): all four practical comparisons — Claude Opus (10–11 November 2026)
+
+- **Direction 1, recovery after a game-code fault: done.** Nu master `47ef39e`, Vulkan on the RTX 4090 D. [Record](docs/nu-d9-recovery-routes-2026-11-10.md).
+  - All three routes reached the common outcome in 5/5 scored runs each.
+  - History loses everything since Advance (30 updates) and is ready in about 46 ms.
+  - An F7 restore point loses 10 updates, ready in about 46 ms; the restore point costs 1.1 ms.
+  - A screen checkpoint file loses 10 updates but needs a crash and a fresh editor: about 5.7 s, plus a 25 ms write and a 60–94 ms import. It needs an API call, because Gaia has no menu command for screen files.
+  - **Finding:** at Gaia master, F7 during play halts the game (time-advancing changes are deferred).
+  - Two amendments, both committed before scored runs: an idle-GPU rule, because a labmate's service stays resident on the GPU; and, after feasibility round Z, a hook-based continuation halt plus the F7 resume. Every attempt is kept.
+- **Directions 2–4:** protocol packets frozen ([packets](docs/nu-d9-directions-2-4-packets-2026-11-10.md)), including the direction 4 missed-case checklist. Not run yet.
+  - Direction 2 port risk (source only): master's code reload pins two package versions that differ from the project's own.
+  - Direction 4 design note: the explicit-case warning covers only the update match, where a catch-all happens to be harmless. The likely missed case (content hidden while paused) gets no warning in either condition.
+- **Reports:** `.orchestration/d9-all-directions-20261110/` (REPORT.md, latest.txt).
+
 ## Earlier state, 3 November 2026 (~21:10 HKT)
 
 No independent work was left then: the D11 timing re-runs were done and the R-series report was ready.

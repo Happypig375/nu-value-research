@@ -1,0 +1,425 @@
+{
+  "attempts": {
+    "Z-H": {
+      "pass": true,
+      "checks": {
+        "fault_caught_and_rewound": true,
+        "halted_futures_0": true,
+        "model_scene_equal_recovery_point_first_hook": true,
+        "model_scene_equal_recovery_point_settled": true,
+        "continuation_equals_original_run": true,
+        "exit_code_0": true
+      },
+      "recovered_clock": 0,
+      "lost_updates": 30,
+      "fault_to_ready_ms_upper": 24.132446,
+      "checkpoint_ms": null,
+      "processes": 1
+    },
+    "Z-F": {
+      "pass": false,
+      "checks": {
+        "fault_caught_and_rewound": false,
+        "halted_futures_0": false,
+        "model_scene_equal_recovery_point_first_hook": false,
+        "model_scene_equal_recovery_point_settled": false,
+        "continuation_equals_original_run": false,
+        "exit_code_0": true
+      },
+      "recovered_clock": null,
+      "lost_updates": null,
+      "fault_to_ready_ms_upper": null,
+      "checkpoint_ms": 1.402402,
+      "processes": 1
+    },
+    "Z-C": {
+      "pass": false,
+      "checks": {
+        "checkpoint_written": true,
+        "session_ended_by_fault": true,
+        "import_done": true,
+        "model_scene_equal_checkpoint_first_hook": true,
+        "model_scene_equal_checkpoint_settled": true,
+        "continuation_equals_original_run": false,
+        "restart_exit_code_0": false
+      },
+      "recovered_clock": 20,
+      "lost_updates": 10,
+      "fault_to_ready_ms_upper": 25353,
+      "checkpoint_ms": 24.702707,
+      "import_ms": 86.323197,
+      "processes": 2
+    },
+    "Z2-H": {
+      "pass": true,
+      "checks": {
+        "fault_caught_and_rewound": true,
+        "halted_futures_0": true,
+        "model_scene_equal_recovery_point_first_hook": true,
+        "model_scene_equal_recovery_point_settled": true,
+        "continuation_equals_original_run": true,
+        "exit_code_0": true
+      },
+      "recovered_clock": 0,
+      "lost_updates": 30,
+      "fault_to_ready_ms_upper": 49.374894,
+      "checkpoint_ms": null,
+      "processes": 1
+    },
+    "Z2-F": {
+      "pass": true,
+      "checks": {
+        "fault_caught_and_rewound": true,
+        "halted_futures_0": true,
+        "model_scene_equal_recovery_point_first_hook": true,
+        "model_scene_equal_recovery_point_settled": true,
+        "continuation_equals_original_run": true,
+        "exit_code_0": true
+      },
+      "recovered_clock": 20,
+      "lost_updates": 10,
+      "fault_to_ready_ms_upper": 49.139907,
+      "checkpoint_ms": 1.379197,
+      "processes": 1
+    },
+    "Z2-C": {
+      "pass": true,
+      "checks": {
+        "checkpoint_written": true,
+        "session_ended_by_fault": true,
+        "import_done": true,
+        "model_scene_equal_checkpoint_first_hook": true,
+        "model_scene_equal_checkpoint_settled": true,
+        "continuation_equals_original_run": true,
+        "restart_exit_code_0": true
+      },
+      "recovered_clock": 20,
+      "lost_updates": 10,
+      "fault_to_ready_ms_upper": 8451,
+      "checkpoint_ms": 29.069459,
+      "import_ms": 75.640671,
+      "processes": 2
+    },
+    "1-H": {
+      "pass": true,
+      "checks": {
+        "fault_caught_and_rewound": true,
+        "halted_futures_0": true,
+        "model_scene_equal_recovery_point_first_hook": true,
+        "model_scene_equal_recovery_point_settled": true,
+        "continuation_equals_original_run": true,
+        "exit_code_0": true
+      },
+      "recovered_clock": 0,
+      "lost_updates": 30,
+      "fault_to_ready_ms_upper": 45.946831,
+      "checkpoint_ms": null,
+      "processes": 1
+    },
+    "1-F": {
+      "pass": true,
+      "checks": {
+        "fault_caught_and_rewound": true,
+        "halted_futures_0": true,
+        "model_scene_equal_recovery_point_first_hook": true,
+        "model_scene_equal_recovery_point_settled": true,
+        "continuation_equals_original_run": true,
+        "exit_code_0": true
+      },
+      "recovered_clock": 20,
+      "lost_updates": 10,
+      "fault_to_ready_ms_upper": 46.292757,
+      "checkpoint_ms": 1.104665,
+      "processes": 1
+    },
+    "1-C": {
+      "pass": true,
+      "checks": {
+        "checkpoint_written": true,
+        "session_ended_by_fault": true,
+        "import_done": true,
+        "model_scene_equal_checkpoint_first_hook": true,
+        "model_scene_equal_checkpoint_settled": true,
+        "continuation_equals_original_run": true,
+        "restart_exit_code_0": true
+      },
+      "recovered_clock": 20,
+      "lost_updates": 10,
+      "fault_to_ready_ms_upper": 8569,
+      "checkpoint_ms": 24.564086,
+      "import_ms": 94.349764,
+      "processes": 2
+    },
+    "2-H": {
+      "pass": true,
+      "checks": {
+        "fault_caught_and_rewound": true,
+        "halted_futures_0": true,
+        "model_scene_equal_recovery_point_first_hook": true,
+        "model_scene_equal_recovery_point_settled": true,
+        "continuation_equals_original_run": true,
+        "exit_code_0": true
+      },
+      "recovered_clock": 0,
+      "lost_updates": 30,
+      "fault_to_ready_ms_upper": 46.567388,
+      "checkpoint_ms": null,
+      "processes": 1
+    },
+    "2-F": {
+      "pass": true,
+      "checks": {
+        "fault_caught_and_rewound": true,
+        "halted_futures_0": true,
+        "model_scene_equal_recovery_point_first_hook": true,
+        "model_scene_equal_recovery_point_settled": true,
+        "continuation_equals_original_run": true,
+        "exit_code_0": true
+      },
+      "recovered_clock": 20,
+      "lost_updates": 10,
+      "fault_to_ready_ms_upper": 44.580935,
+      "checkpoint_ms": 1.124579,
+      "processes": 1
+    },
+    "2-C": {
+      "pass": true,
+      "checks": {
+        "checkpoint_written": true,
+        "session_ended_by_fault": true,
+        "import_done": true,
+        "model_scene_equal_checkpoint_first_hook": true,
+        "model_scene_equal_checkpoint_settled": true,
+        "continuation_equals_original_run": true,
+        "restart_exit_code_0": true
+      },
+      "recovered_clock": 20,
+      "lost_updates": 10,
+      "fault_to_ready_ms_upper": 8301,
+      "checkpoint_ms": 29.090947,
+      "import_ms": 75.380266,
+      "processes": 2
+    },
+    "3-H": {
+      "pass": true,
+      "checks": {
+        "fault_caught_and_rewound": true,
+        "halted_futures_0": true,
+        "model_scene_equal_recovery_point_first_hook": true,
+        "model_scene_equal_recovery_point_settled": true,
+        "continuation_equals_original_run": true,
+        "exit_code_0": true
+      },
+      "recovered_clock": 0,
+      "lost_updates": 30,
+      "fault_to_ready_ms_upper": 48.326963,
+      "checkpoint_ms": null,
+      "processes": 1
+    },
+    "3-F": {
+      "pass": true,
+      "checks": {
+        "fault_caught_and_rewound": true,
+        "halted_futures_0": true,
+        "model_scene_equal_recovery_point_first_hook": true,
+        "model_scene_equal_recovery_point_settled": true,
+        "continuation_equals_original_run": true,
+        "exit_code_0": true
+      },
+      "recovered_clock": 20,
+      "lost_updates": 10,
+      "fault_to_ready_ms_upper": 51.947921,
+      "checkpoint_ms": 1.316017,
+      "processes": 1
+    },
+    "3-C": {
+      "pass": true,
+      "checks": {
+        "checkpoint_written": true,
+        "session_ended_by_fault": true,
+        "import_done": true,
+        "model_scene_equal_checkpoint_first_hook": true,
+        "model_scene_equal_checkpoint_settled": true,
+        "continuation_equals_original_run": true,
+        "restart_exit_code_0": true
+      },
+      "recovered_clock": 20,
+      "lost_updates": 10,
+      "fault_to_ready_ms_upper": 7706,
+      "checkpoint_ms": 24.51104,
+      "import_ms": 65.334523,
+      "processes": 2
+    },
+    "4-H": {
+      "pass": true,
+      "checks": {
+        "fault_caught_and_rewound": true,
+        "halted_futures_0": true,
+        "model_scene_equal_recovery_point_first_hook": true,
+        "model_scene_equal_recovery_point_settled": true,
+        "continuation_equals_original_run": true,
+        "exit_code_0": true
+      },
+      "recovered_clock": 0,
+      "lost_updates": 30,
+      "fault_to_ready_ms_upper": 46.689353,
+      "checkpoint_ms": null,
+      "processes": 1
+    },
+    "4-F": {
+      "pass": true,
+      "checks": {
+        "fault_caught_and_rewound": true,
+        "halted_futures_0": true,
+        "model_scene_equal_recovery_point_first_hook": true,
+        "model_scene_equal_recovery_point_settled": true,
+        "continuation_equals_original_run": true,
+        "exit_code_0": true
+      },
+      "recovered_clock": 20,
+      "lost_updates": 10,
+      "fault_to_ready_ms_upper": 45.612884,
+      "checkpoint_ms": 1.107648,
+      "processes": 1
+    },
+    "4-C": {
+      "pass": true,
+      "checks": {
+        "checkpoint_written": true,
+        "session_ended_by_fault": true,
+        "import_done": true,
+        "model_scene_equal_checkpoint_first_hook": true,
+        "model_scene_equal_checkpoint_settled": true,
+        "continuation_equals_original_run": true,
+        "restart_exit_code_0": true
+      },
+      "recovered_clock": 20,
+      "lost_updates": 10,
+      "fault_to_ready_ms_upper": 7694,
+      "checkpoint_ms": 26.938926,
+      "import_ms": 71.609468,
+      "processes": 2
+    },
+    "5-H": {
+      "pass": true,
+      "checks": {
+        "fault_caught_and_rewound": true,
+        "halted_futures_0": true,
+        "model_scene_equal_recovery_point_first_hook": true,
+        "model_scene_equal_recovery_point_settled": true,
+        "continuation_equals_original_run": true,
+        "exit_code_0": true
+      },
+      "recovered_clock": 0,
+      "lost_updates": 30,
+      "fault_to_ready_ms_upper": 52.194711,
+      "checkpoint_ms": null,
+      "processes": 1
+    },
+    "5-F": {
+      "pass": true,
+      "checks": {
+        "fault_caught_and_rewound": true,
+        "halted_futures_0": true,
+        "model_scene_equal_recovery_point_first_hook": true,
+        "model_scene_equal_recovery_point_settled": true,
+        "continuation_equals_original_run": true,
+        "exit_code_0": true
+      },
+      "recovered_clock": 20,
+      "lost_updates": 10,
+      "fault_to_ready_ms_upper": 48.387176,
+      "checkpoint_ms": 1.443177,
+      "processes": 1
+    },
+    "5-C": {
+      "pass": true,
+      "checks": {
+        "checkpoint_written": true,
+        "session_ended_by_fault": true,
+        "import_done": true,
+        "model_scene_equal_checkpoint_first_hook": true,
+        "model_scene_equal_checkpoint_settled": true,
+        "continuation_equals_original_run": true,
+        "restart_exit_code_0": true
+      },
+      "recovered_clock": 20,
+      "lost_updates": 10,
+      "fault_to_ready_ms_upper": 25016,
+      "checkpoint_ms": 25.118647,
+      "import_ms": 59.742211,
+      "processes": 2
+    }
+  },
+  "summary": {
+    "H": {
+      "scored": 5,
+      "passed": 5,
+      "lost_updates": {
+        "n": 5,
+        "median": 30,
+        "min": 30,
+        "max": 30
+      },
+      "fault_to_ready_ms_upper": {
+        "n": 5,
+        "median": 46.69,
+        "min": 45.95,
+        "max": 52.19
+      },
+      "checkpoint_ms": null,
+      "import_ms": null
+    },
+    "F": {
+      "scored": 5,
+      "passed": 5,
+      "lost_updates": {
+        "n": 5,
+        "median": 10,
+        "min": 10,
+        "max": 10
+      },
+      "fault_to_ready_ms_upper": {
+        "n": 5,
+        "median": 46.29,
+        "min": 44.58,
+        "max": 51.95
+      },
+      "checkpoint_ms": {
+        "n": 5,
+        "median": 1.12,
+        "min": 1.1,
+        "max": 1.44
+      },
+      "import_ms": null
+    },
+    "C": {
+      "scored": 5,
+      "passed": 5,
+      "lost_updates": {
+        "n": 5,
+        "median": 10,
+        "min": 10,
+        "max": 10
+      },
+      "fault_to_ready_ms_upper": {
+        "n": 5,
+        "median": 8301,
+        "min": 7694,
+        "max": 25016
+      },
+      "checkpoint_ms": {
+        "n": 5,
+        "median": 25.12,
+        "min": 24.51,
+        "max": 29.09
+      },
+      "import_ms": {
+        "n": 5,
+        "median": 71.61,
+        "min": 59.74,
+        "max": 94.35
+      }
+    }
+  }
+}

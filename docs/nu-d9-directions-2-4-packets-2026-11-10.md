@@ -109,3 +109,20 @@
 **Start condition:**
 - the oracle is built and validated on hand-written reference solutions (one correct, two with planted misses) before any candidate runs;
 - a quota forecast for 12 candidate runs is recorded first.
+
+## Direction 4: missed-case checklist (fixed 11 November 2026 HKT, before any candidate exists)
+
+Taken from master's `Projects/Breakout Mmcc/Gameplay.fs` (`47ef39e`). A candidate's diff is scored against these sites:
+
+| Site | Where | What a correct `Paused` change needs | Does the compiler warn? |
+| --- | --- | --- | --- |
+| S1 | `Gameplay.update`, `match gameplay.GameplayState with … \| Playing \| Quit -> gameplay` (lines 89–168) | Paused must not move the paddle or the ball | **E: yes** (incomplete match, FS0025). **W: no.** The catch-all already treats `Paused` as "no update", which is correct here |
+| S2 | `Content`: `if gameplay.GameplayState = Playing then` (line 240) | The scene must stay visible while paused; otherwise the board **and the Quit button** disappear | No, in either condition (an equality test) |
+| S3 | Input: a P key toggle (new message or command, plus `Definitions` or keyboard handling) | P toggles Playing ↔ Paused only during play | No |
+| S4 | The message text entity | It reads "Paused" while paused, and its normal text otherwise | No |
+| S5 | Quit while paused (the Quit button and the `StartQuitting` command) | It returns to the title as before | No; it depends on S2 |
+
+**What this means for interpreting direction 4:**
+- The explicit-enumeration warning covers S1 only, where the catch-all happens to be harmless.
+- The likely missed case is S2, which neither condition flags.
+- So **a null or reversed result is plausible.** The packet's outcome measure stays as declared: the behavioural oracle (a)–(e) plus the per-site missed-case count.

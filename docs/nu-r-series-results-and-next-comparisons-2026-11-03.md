@@ -86,6 +86,8 @@ Each option names who would use the answer, what it would change, the experiment
 
 ## 3. Recommendation
 
+*(Update, 11 November 2026: the user approved all four options (decision D9, 10 November). Option 1 is done: history, F7 and checkpoint-file recovery all reach the common outcome (15/15 scored runs). History loses everything since Advance (30 updates here), but is ready in about 46 ms. F7 or a screen file loses only the 10 updates since the checkpoint. F7 is ready in about 46 ms; the file route needs a crash and a fresh editor, about 5.7 s. At Gaia master, F7 during play halts the game. [Record](nu-d9-recovery-routes-2026-11-10.md).)*
+
 **Choose option 1** (recovery after a fault), on Vulkan-era master, with this server as the reference machine. Why:
 - It turns three finished pieces (history recovery, crash recovery, screen save/load) into **one practical comparison with a common outcome**. That is the step the project's rules say is missing before any benefit claim.
 - It is cheap: server time only, with no paid runs, participants or stopped gates to reopen. Stock import works on master, so no engine patch is needed.
