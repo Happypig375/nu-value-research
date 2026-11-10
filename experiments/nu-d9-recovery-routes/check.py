@@ -82,7 +82,7 @@ def main():
             r = json.loads(l)
             ledger[r["attempt"]] = r
     results = {}
-    for rnd in "Z12345":
+    for rnd in ["Z", "Z2", "1", "2", "3", "4", "5"]:
         for route in "HFC":
             base = f"{rnd}-{route}"
             if route == "C" and (base + "1") in ledger:

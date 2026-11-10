@@ -111,6 +111,8 @@ module Program =
             let mutable lastHookUtc, lastHookTick = 0L, 0L
             let modelsByClock = Dictionary<int64, string> ()
             let mutable settle = 0
+            let mutable haltRequested = false
+            let mutable f7Resumed = false
             let require m c = if not c then invalidOp m
             let finish ok detail (world : World) =
                 complete <- ok
@@ -142,7 +144,6 @@ module Program =
                             require "initial Gameplay contract" (g.Score = 0 && g.Bricks.Count = 30 && g.GameplayState = Playing && g.GameplayTime = 0L)
                             World.subscribe (fun _ w ->
                                 updates <- updates + 1
-                                if phase = "continue" && updates - continuationStart = ContinuationUpdates then World.setTimeAdvancing false w
                                 Cascade) Simulants.Gameplay.UpdateEvent Game world |> ignore
                             World.subscribe (fun _ _ -> timeAdvances <- timeAdvances + 1; Cascade) Simulants.Gameplay.TimeAdvanceEvent Game world |> ignore
                             s0Model <- json (modelData g)
@@ -180,6 +181,12 @@ module Program =
                                                     "lastHookClock", box (Seq.max modelsByClock.Keys) ])
                                 phase <- "settle"
                                 settle <- 0
+                            elif route = "F" && world.TimeHalted && maxPasts >= 2 && not f7Resumed then
+                                // Amendment 2: at master, F7 during play leaves time halted; resume with Advance (F5) as a user would
+                                Gaia.researchToggleAdvancing world
+                                maxPasts <- Gaia.researchPastsCount ()
+                                f7Resumed <- true
+                                emit "f7-resume" (snap world)
                             elif world.TimeAdvancing then
                                 modelsByClock[g.GameplayTime] <- json (modelData g)
                                 lastHookTick <- entryTick
@@ -216,11 +223,17 @@ module Program =
                                 continuationStart <- updates
                                 Gaia.researchToggleAdvancing world
                                 phase <- "continue"
-                        | "continue" when world.TimeHalted && updates - continuationStart >= ContinuationUpdates ->
+                        | "continue" when world.TimeAdvancing ->
+                            // Amendment 2: halt from the hook once the clock reaches recovered + 5 (no subscription needed)
+                            if g.GameplayTime >= recoveredClock + int64 ContinuationUpdates && not haltRequested then
+                                World.setTimeAdvancing false world
+                                haltRequested <- true
+                        | "continue" when world.TimeHalted && haltRequested ->
                             let reference = match modelsByClock.TryGetValue g.GameplayTime with | (true, m) -> m | _ -> ""
                             emit "continuation"
                                 (snap world @ [ "recoveredClock", box recoveredClock
                                                 "continuationUpdates", box (updates - continuationStart)
+                                                "continuationClocks", box (g.GameplayTime - recoveredClock)
                                                 "referenceFound", box (reference <> "")
                                                 "modelEqualsOriginalRunAtSameClock", box (reference <> "" && json (modelData g) = reference) ])
                             finish true "Recovered, settled and continued." world

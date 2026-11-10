@@ -86,3 +86,18 @@ Times are valid only on this server and configuration. They must not be compared
 
 - **Problem:** the first launch of round Z never started a process. A labmate's long-running service (`buildinggpt-rag`, resident on the GPU for nearly 3 days, 4.6 GB, 0 % utilization) means "no process on the GPU except Xorg" can never hold, so the idle check would only time out.
 - **Change** (`series.py` only): **idle means GPU utilization < 10 % on two polls 2 s apart.** The processes present are recorded with each attempt. Nothing else changes, and no Nu process ran before this amendment.
+
+## Amendment 2 (11 November 2026 HKT, after feasibility round Z, before any scored run)
+
+**Round Z** (kept as recorded in `.artifacts/d9-recovery-routes-20261110/runs/`, unscored):
+- **H passed every condition.** It lost 30 updates, and was ready about 24 ms after the fault.
+- **F failed.** After F7 at clock 20, the game never advanced again, and the probe hit its 1,200-callback watchdog.
+  - **Cause, a Gaia master behaviour (source-confirmed):** `World.setTimeAdvancing` only records a request, applied later in the frame (`WorldPrelude.fs`, `AmbientState.setTimeAdvancing`). Gaia's `createRestorePoint` calls halt, then snapshot, then resume. The resume is ignored, because the state still reads "advancing", so only the halt takes effect.
+  - **So at `47ef39e`, pressing F7 during play halts the game.** The keyboard shortcut calls the same function.
+- **C restored the checkpoint model and scene exactly** (it lost 10 updates). But its continuation never stopped: the probe's update subscription did not count after the screen import, so the 5-update halt never fired. The game reached clock 30, faulted again, and the imperative editor exited with code 1.
+
+**Changes** (`Probe.fs`; `series.py` and `check.py` only add the round name):
+1. **Continuation halt from the observer hook.** Once the gameplay clock reaches the recovered clock + 5, request a halt. Compare the model at the clock where time actually halted with the original run's model at that same clock. The update count is still recorded, as a diagnostic.
+2. **Route F resumes after F7.** If time is halted at the next hook after F7, call Advance (F5) once, as a user would, and record it. Its declared steps become 4: Advance, F7, Advance again, dismiss the message. The recovery point is then the Advance snapshot at clock 20, whose model and scene equal the F7 point's (time was halted in between).
+
+**Verification:** one more unscored feasibility round, **Z2**, then scored rounds 1–5 as planned. Build 03 has these changes.

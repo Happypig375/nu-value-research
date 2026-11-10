@@ -23,7 +23,7 @@ WRAPPER = REPO / "scripts" / "linux_nu_vulkan_env.sh"
 spec = importlib.util.spec_from_file_location("r06series", REPO / "experiments" / "nu-vulkan-r06-recovery-cost" / "series.py")
 r06 = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(r06)
-ROUNDS = [("Z", "HFC"), ("1", "HFC"), ("2", "FCH"), ("3", "CHF"), ("4", "HFC"), ("5", "FCH")]
+ROUNDS = [("Z", "HFC"), ("Z2", "HFC"), ("1", "HFC"), ("2", "FCH"), ("3", "CHF"), ("4", "HFC"), ("5", "FCH")]
 
 
 def wait_idle(log):
