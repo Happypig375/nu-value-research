@@ -89,7 +89,7 @@ The probe writes JSON snapshots of every entity in the group: the dispatcher, th
 
 Steps are declared counts, not measured human work. The helper is fair only in that it receives the same intent list. A helper denied the list would be invalid.
 
-## Amendment 1 (11 November 2026, 03:3x HKT): after feasibility attempt 1, before any scored round
+## Amendment 1 (committed 11 November 2026 03:37:32 HKT, `5e05050`): after feasibility attempt 1, before any scored round
 
 - **Feasibility attempt 1 stopped at control N:** the probe raised "Screen 'Game/Gameplay' already exists and cannot be created". The engine had already made that screen by frame 3, even with the plain plugin. Kept in `.artifacts/d9-content-revision-20261111/series/round-F.attempt1/`.
 - **Correction (`TerraProbe.fs` only):** reuse an existing `Gameplay` screen, and destroy any existing `Scene` group before loading the file, inside the same callback. The probe records which of the two existed in `setup.json`: here the screen existed, and the group did not. Probe build 03 passed.
@@ -100,7 +100,7 @@ Steps are declared counts, not measured human work. The helper is fair only in t
 - **Construction record:** probe build 01 failed (a missing namespace); builds 02 and 03 passed. Feasibility failures at the run step: 1.
 - **Scored rounds 1–3 follow unchanged.**
 
-## Results (11 November 2026, 03:37–03:45 HKT; scored rounds 1–3)
+## Results (scored rounds 1–3: ledger 03:37:47–03:45:16 HKT, 11 November 2026)
 
 **Conclusion:**
 - **For a shared change with no conflicting local edit (T1), or a shared tint where the local palm keeps its own tint (T2), Nu's propagation and the ordinary helper both deliver every required edit:** 3/3 each, with no unrequested change, and the result survives save and fresh reopen.
@@ -133,3 +133,11 @@ Steps are declared counts, not measured human work. The helper is fair only in t
 **Evidence:**
 - `.artifacts/d9-content-revision-20261111/`: `builds/`, and `series/` with the ledger, every snapshot (`before`, `prepared`, `after`, `reopen`), the saved scenes, `score.json` per run, and environment and GPU samples; `summary.json`; `OPERATOR-NOTES.log`.
 - Committed copy: `experiments/nu-d9-content-revision/result-receipt.json`.
+
+## Audit note (D9 evidence audit, 10 Nov 2026, written before commit at 20:02:09 UTC; does not change any score)
+
+An independent review is in `.orchestration/d9-evidence-audit-20261111/`.
+- **The helper O updates live `MaterialProperties` but not the propagation history**, which the scorer does not see. After O, a later Propagate would treat the 31 targets as local overrides and skip them (the engine rule, read from the code, not run). So "O matches P on T1/T2" holds only within what was scored.
+- **P changes 46 entity `Order` values**, which the probe leaves out.
+- **The family is 31 linked entities plus the source** (32). The "38" in section 2 counted text occurrences, history copies included.
+- **The cause is the "no previous value" branch:** the source's history has no `MaterialProperties` entry, so L's whole non-default record was kept. **This is a design limitation, not a defect.**

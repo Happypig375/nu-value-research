@@ -7,7 +7,7 @@ Newest first. Each item lists the options, my recommendation and what it blocks.
 - **Decision:** all four practical comparisons are approved, with included Claude/Opus quota allowed for direction 4 (coding agents). Scope and limits: `.orchestration/TASK-D9-20261110.txt`.
 - **Order of work:** recovery first, as the shortest path to a useful result; then the others as far as they are unblocked.
 - **Reports:** `.orchestration/d9-all-directions-20261110/`.
-- **Done, 11 Nov ~03:50 HKT:** all four directions have scored results (directions 3 and 4 ran in the second allocation). Integrated results: [R-series report, section 4](docs/nu-r-series-results-and-next-comparisons-2026-11-03.md).
+- **Done, 11 Nov 03:47:57 HKT (commit `1ed602b`):** all four directions have scored results (directions 3 and 4 ran in the second allocation). Integrated results: [R-series report, section 4](docs/nu-r-series-results-and-next-comparisons-2026-11-03.md).
   - **No decision is needed to finish D9.**
   - Optional choices for later, each a new experiment with its own budget: direction 4 with a harder task; direction 3 with a per-field-merge prototype; whether to report the two Nu master defects (F7 halts play; code reload of the bundled samples breaks on a stock checkout) upstream. I recommend the upstream reports first: small, factual and reproducible. Nothing waits on these.
 - **Checkpoint, 11 Nov ~00:40 HKT:** directions 1 and 2 are done. Direction 2: live reload alone gives a new field 0, correct in 3/9 runs; explicit migration and restart are correct in 9/9 each.

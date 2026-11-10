@@ -30,7 +30,7 @@
   - The output format is `stream-json --verbose`, and the full tool log is saved outside the folder. The session is not persisted.
   - The prompt is the content of `TASK.md`.
   - Environment: `PATH` with SDK 10.0.403; `NUGET_PACKAGES` points at the shared package cache used for all builds here; MSBuild node reuse is off.
-- **Context it sees, checked by two probe calls** (11 Nov, 18:3x UTC, `.artifacts/d9-agent-cases-20261111/ctxprobe*.jsonl`):
+- **Context it sees, checked by two probe calls** (10 Nov 18:28 UTC, file times; first mislabelled "11 Nov, 18:3x UTC"; `.artifacts/d9-agent-cases-20261111/ctxprobe*.jsonl`):
   - with these flags, the tool list is exactly the six tools, and there are no MCP servers;
   - asked to name any CLAUDE.md or AGENTS.md in its context, the model answered "NONE";
   - the starting prompt is 7,828 tokens.
@@ -108,7 +108,7 @@ Entities are found by name in any group of the Gameplay screen. The project buil
 - Candidates need no GPU. They start only after validation passes.
 - Candidates' oracle runs happen after all of them finish, or at the checkpoint for those that ran, one at a time.
 
-## Amendment 3 (11 November 2026, 02:4x HKT; before any oracle run and before any candidate)
+## Amendment 3 (committed 11 November 2026 02:32:42 HKT, `53bc989`; before any oracle run and before any candidate)
 
 - **Why:** Nu-Gaia holds the next GPU slot. Its pilot runs agents with Gaia on the GPU for up to 20 minutes each, within a 90-minute allocation. So the GPU validation in section 3 may not be possible for over an hour. Candidates need no GPU.
 - **Change: candidates may start before the GPU validation.** This keeps blindness because:
@@ -122,7 +122,7 @@ Entities are found by name in any group of the Gameplay screen. The project buil
 
   Both are logged in `.artifacts/d9-agent-cases-20261111/OPERATOR-NOTES.log`.
 
-## Amendment 4 (11 November 2026, 03:2x HKT): oracle correction after validation attempt 1, before any candidate output is opened
+## Amendment 4 (committed 11 November 2026 03:16:18 HKT, `94e9dae`): oracle correction after validation attempt 1, before any candidate output is opened
 
 - **Nu-Gaia's GPU trial ended first:** their verdict read CLEAN at 03:22 HKT, and no Gaia process ran for 60 s. All 12 candidates had finished on the CPU by then (weekly usage 91 % throughout). None of their outputs has been opened.
 - **Validation attempt 1** (`.artifacts/d9-agent-cases-20261111/validation/*-01/`):
@@ -132,7 +132,16 @@ Entities are found by name in any group of the Gameplay screen. The project buil
 - **Correction (`oracle.py` only):** the resume window now starts at the frame before the tap and lasts 1.0 s in total. No threshold or other check changes.
 - **Next:** all four references are re-run (validation attempt 2). This is validation failure 1 of 5.
 
-## Results (11 November 2026, 02:3x–03:3x HKT; 12 candidates, oracle validation attempt 2)
+## Results (12 candidates, oracle validation attempt 2)
+
+*Times (from run, result and commit files, HKT = UTC+8):*
+- *candidates ran 02:35–03:12 HKT (01 at 02:35:28, 12 ending 03:12:08);*
+- *validation attempt 1 ran 03:13–03:15;*
+- *amendment 4 was committed at 03:16:18;*
+- *validation attempt 2 ran 03:17–03:19;*
+- *candidate scoring ran 03:20:34–03:33:06.*
+
+*The heading first said "02:3x–03:3x HKT"; corrected in the D9 evidence audit.*
 
 **Conclusion: no difference.** All 12 candidates solved the task, 6/6 in each condition. The explicit-enumeration warning never came into play.
 - **All 12 builds pass every oracle check (a)–(e)** on NVIDIA Vulkan. Pause stops paddle and ball, the message reads "Paused", resume continues from the same state, Quit while paused returns to the title, and normal play is unchanged.
@@ -171,3 +180,11 @@ Entities are found by name in any group of the Gameplay screen. The project buil
 **Evidence:**
 - `.artifacts/d9-agent-cases-20261111/`: `candidates/` with each candidate's stream, start and final source, `run.json` and `warnings.json`; `scoring/` with the oracle runs and builds; `validation/`; `summary.json`; `OPERATOR-NOTES.log`.
 - Committed copy: `experiments/nu-d9-agent-cases/result-receipt.json`.
+
+## Audit note (D9 evidence audit, 10 Nov 2026, written before commit at 20:02:09 UTC; does not change any score)
+
+An independent review is in `.orchestration/d9-evidence-audit-20261111/` (reviewer.md, REPORT.md).
+- **Check (d) does not test that the game was paused when Quit was clicked** (`oracle.py:273-287`). `paused_before_quit` is recorded but not scored, so S5 was confirmed by that detail: all 12 candidates are `true`. It was not confirmed by (d) as declared.
+- **Isolation was confirmed by inspecting every tool call.** The setup did not prevent access: the scanner skips relative paths, and the reference builds sat beside the candidate folders.
+- **The references failed more checks than required** (M2 also fails (a) and (c)), so S1 and S2 are not cleanly separated.
+- **Amendment 4's "CLEAN at 03:22 HKT" is Nu-Gaia's own label.** The watcher observed cessation at 03:11:32 HKT, and their file was rewritten at 03:13:09.
