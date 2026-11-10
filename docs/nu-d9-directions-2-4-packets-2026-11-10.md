@@ -166,3 +166,27 @@ Taken from master's `Projects/Breakout Mmcc/Gameplay.fs` (`47ef39e`). A candidat
   - **R1**, the old code (`src2`): advance 10 updates, halt, save the model as a Prime symbol and its field values, exit.
   - **R2**, a fresh process built from the schema-edited source (`src3`, the same three edits applied before the build): convert the symbol into the new record type, record what `BrickReward` became after conversion, then set it to 200 explicitly. Settle for 10 halted frames and record the new field and the old fields.
   - **One unscored feasibility run (R-A).** Build 04 (old and new) passed.
+
+## Direction 2: route R feasibility result, and amendment 4 — the scored series (11 November 2026 HKT, before any scored run)
+
+**Route R, case A feasibility: passed.**
+- The old fields were preserved and `BrickReward` was 200 after the explicit set. Both processes took 6.2 s and 11.6 s of wall time.
+- **Observation:** converting the saved Prime symbol into the newly compiled type already gave `BrickReward` = 200 before the explicit set. Live reload's conversion gave 0 (route L). Two of Nu's conversion paths disagree about a new field.
+
+**Amendment 4, the declared scored series** (package `experiments/nu-d9-schema-reload/`: `series.py`, `check.py`; probe build 06):
+- **Seed (replaces "advance 10 updates"):** the fixed B0 model (`experiments/nu-history-b1/checkpoint/gameplay.symbol`, time 149, score 100, 29 bricks), with the ball placed under the existing bottom-row brick nearest x = −64, at y = 52, moving straight up. The next update must hit that brick.
+- **Cases and required values:** A (absent: declared default 200), Z (deliberate zero: 0), N (nondefault: 75). The code edit is the same in all cases (initializer 200). Only the requirement changes, and M and R set the required value.
+- **Common outcome (pass only if all three hold):**
+  1. the old fields are preserved;
+  2. the new field equals the required value;
+  3. after one update, the seeded brick is gone and the score is 100 + the required value.
+- **Order:**
+  - unscored feasibility round F4 (L-A, M-A, R-A);
+  - then 3 scored repeats, each with all 9 route × case runs, routes rotating (L M R, M R L, R L M) and cases A Z N within each route: **27 scored runs** (R uses two processes).
+- **Discipline:**
+  - Before each L/M run, `Gameplay.fs` is restored from the pinned tar; the probe then applies the edit itself.
+  - The environment symlink from attempt 02 stays.
+  - The idle-GPU rule is direction 1's amendment 1. 300 s deadline per process.
+  - Adverse outcomes do not stop the series; infrastructure failures do.
+- **Construction record:** build 05 failed to compile (a missing helper and an out-of-order reference); build 06 passed. That is 1 failed build at this step, within the budget of 5.
+- **Limits:** this measures correctness per route and case, not developer effort. The October R10 attempts stay final and separate.

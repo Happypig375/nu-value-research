@@ -49,12 +49,14 @@ module Program =
 
     [<EntryPoint; STAThread>]
     let main args =
-        if args.Length <> 4 || not (List.contains args[0] ["L"; "M"; "R1"; "R2"]) then
-            eprintfn "Usage: Probe <L|M|R1|R2> <Breakout DLL> <Gameplay.fs to edit, or transfer dir for R1/R2> <new receipt dir>"
+        if args.Length <> 6 || not (List.contains args[0] ["L"; "M"; "R1"; "R2"]) || not (List.contains args[1] ["A"; "Z"; "N"]) then
+            eprintfn "Usage: Probe <L|M|R1|R2> <A|Z|N> <Breakout DLL> <Gameplay.fs to edit, or transfer dir for R1/R2> <B0 seed gameplay.symbol> <new receipt dir>"
             2
         else
-            let route = args[0]
-            let dll, gameplaySource, output = Path.GetFullPath args[1], Path.GetFullPath args[2], Path.GetFullPath args[3]
+            let route, case = args[0], args[1]
+            // Amendment 4: required new-field value per case (A absent -> declared default 200; Z deliberate zero; N nondefault 75)
+            let required = match case with "A" -> 200 | "Z" -> 0 | _ -> 75
+            let dll, gameplaySource, seedPath, output = Path.GetFullPath args[2], Path.GetFullPath args[3], Path.GetFullPath args[4], Path.GetFullPath args[5]
             if Directory.Exists output then invalidOp "Receipt directory must be new."
             Directory.CreateDirectory output |> ignore
             let trace = Path.Combine (output, "trace.jsonl")
@@ -64,6 +66,16 @@ module Program =
             let mutable before : (string * string) array = [||]
             let mutable done_ = false
             let mutable entityNamesAfterReload : string array = [||]
+            let mutable hitTarget = ""
+            let mutable contStartClock = -1L
+            let mutable contHaltRequested = false
+            let fieldOf (m : obj) name = match (dict (recordFields m)).TryGetValue name with | (true, v) -> v | _ -> "(absent)"
+            let beginContinuation (world : World) =
+                let m = Simulants.Gameplay.GetModelGeneric<obj> world
+                contStartClock <- int64 (fieldOf m "GameplayTime" |> fun s -> s.TrimEnd 'L')
+                emit "continuation-start" ["score", box (fieldOf m "Score"); "brickReward", box (fieldOf m "BrickReward"); "clock", box contStartClock]
+                Gaia.researchToggleAdvancing world
+                phase <- "continue"
             let require m c = if not c then invalidOp m
             let finish ok detail (world : World) =
                 done_ <- true
@@ -87,7 +99,7 @@ module Program =
                             let props = FSharpType.GetRecordFields (t, true)
                             let values = FSharpValue.GetRecordFields (converted, true)
                             let convertedReward = match props |> Array.tryFindIndex (fun p -> p.Name = "BrickReward") with Some i -> sprintf "%A" values[i] | None -> "(absent)"
-                            match props |> Array.tryFindIndex (fun p -> p.Name = "BrickReward") with Some i -> values[i] <- box 200 | None -> ()
+                            match props |> Array.tryFindIndex (fun p -> p.Name = "BrickReward") with Some i -> values[i] <- box required | None -> ()
                             let target = FSharpValue.MakeRecord (t, values, true) :?> Gameplay
                             Simulants.Gameplay.SetGameplay target world
                             let t1 = Stopwatch.GetTimestamp ()
@@ -105,16 +117,22 @@ module Program =
                                 emit "post-reconstruction"
                                     [ "modelType", box (m.GetType().FullName); "oldFieldsPreserved", box oldPreserved
                                       "brickReward", box (if afterMap.ContainsKey "BrickReward" then afterMap["BrickReward"] else "(absent)")
-                                      "requiredBrickReward", box "200"; "halted", box world.TimeHalted
+                                      "requiredBrickReward", box (string required); "halted", box world.TimeHalted
                                       "processUptimeMs", box (int64 (DateTime.Now - Process.GetCurrentProcess().StartTime).TotalMilliseconds) ]
-                                finish true "Reconstruction observed." world
+                                beginContinuation world
                         | "initialize" ->
                             require "initial world advancing" world.TimeHalted
                             require "Gameplay not selected" (World.getSelectedScreen world = Simulants.Gameplay)
                             World.subscribe (fun _ _ -> updates <- updates + 1; Cascade) Simulants.Gameplay.UpdateEvent Game world |> ignore
                             World.subscribe (fun _ _ -> reloadEvents <- reloadEvents + 1; Cascade) Game.CodeReloadEvent Game world |> ignore
-                            Gaia.researchToggleAdvancing world
-                            phase <- "advance"
+                            // Amendment 4: seed a deterministic one-brick-hit state (B0 model; ball just under a bottom-row brick, moving up)
+                            let b0 = scvalue<Gameplay> (File.ReadAllText seedPath)
+                            let (hitName, hitBrick) = b0.Bricks |> Map.toList |> List.filter (fun (_, b) -> b.Position.Y = 64.0f) |> List.minBy (fun (_, b) -> abs (b.Position.X + 64.0f))
+                            let seeded = { b0 with Ball = { b0.Ball with Position = Numerics.Vector3 (hitBrick.Position.X, 52.0f, 0.0f); Direction = Numerics.Vector3 (0.0f, 1.0f, 0.0f) } }
+                            hitTarget <- hitName
+                            Simulants.Gameplay.SetGameplay seeded world
+                            emit "seeded" ["hitBrick", box hitName; "score", box seeded.Score; "bricks", box seeded.Bricks.Count]
+                            phase <- "halting"
                         | "advance" ->
                             let g = Simulants.Gameplay.GetGameplay world
                             if world.TimeAdvancing && g.GameplayTime >= 10L then
@@ -152,16 +170,16 @@ module Program =
                                     [ "modelType", box (m.GetType().FullName); "modelAssembly", box (m.GetType().Assembly.FullName)
                                       "fields", box afterMap; "oldFieldsPreserved", box oldPreserved
                                       "brickReward", box (if afterMap.ContainsKey "BrickReward" then afterMap["BrickReward"] else "(absent)")
-                                      "requiredBrickReward", box "200"; "codeReloadEvents", box reloadEvents
+                                      "requiredBrickReward", box (string required); "codeReloadEvents", box reloadEvents
                                       "fsiHasProjectCode", box (Gaia.researchFsiHasProjectCode ()); "halted", box world.TimeHalted ]
-                                if route = "L" then finish true "Reload observed." world
+                                if route = "L" then beginContinuation world
                                 else
                                     // Amendment 2: explicit migration, case A (required 200), via the reloaded code's own setter
                                     let t = m.GetType ()
                                     let props = FSharpType.GetRecordFields (t, true)
                                     let values = FSharpValue.GetRecordFields (m, true)
                                     let i = props |> Array.findIndex (fun p -> p.Name = "BrickReward")
-                                    values[i] <- box 200
+                                    values[i] <- box required
                                     let migrated = FSharpValue.MakeRecord (t, values, true)
                                     let ext = t.Assembly.GetTypes () |> Array.find (fun ty -> ty.FullName.EndsWith "Breakout.GameplayExtensions")
                                     let setter = ext.GetMethods () |> Array.find (fun mi -> mi.Name = "Screen.SetGameplay")
@@ -181,9 +199,23 @@ module Program =
                                 emit "post-migration"
                                     [ "modelType", box (m.GetType().FullName); "oldFieldsPreserved", box oldPreserved
                                       "brickReward", box (if afterMap.ContainsKey "BrickReward" then afterMap["BrickReward"] else "(absent)")
-                                      "requiredBrickReward", box "200"; "sceneNamesUnchanged", box (names = entityNamesAfterReload)
+                                      "requiredBrickReward", box (string required); "sceneNamesUnchanged", box (names = entityNamesAfterReload)
                                       "halted", box world.TimeHalted ]
-                                finish true "Migration observed." world
+                                beginContinuation world
+                        | "continue" when world.TimeAdvancing ->
+                            let m = liveModel world
+                            let clock = int64 ((fieldOf m "GameplayTime").TrimEnd 'L')
+                            if clock >= contStartClock + 1L && not contHaltRequested then
+                                World.setTimeAdvancing false world
+                                contHaltRequested <- true
+                        | "continue" when world.TimeHalted && contHaltRequested ->
+                            let m = liveModel world
+                            let bricks = fieldOf m "Bricks"
+                            emit "continuation"
+                                [ "clock", box (fieldOf m "GameplayTime"); "score", box (fieldOf m "Score"); "brickReward", box (fieldOf m "BrickReward")
+                                  "hitBrickRemoved", box (not (bricks.Contains ("\"" + hitTarget + "\""))); "requiredBrickReward", box (string required)
+                                  "expectedScore", box (string (100 + required)) ]
+                            finish true "Continuation observed." world
                         | _ -> ()
                     with ex ->
                         emit "probe-exception" ["type", box (ex.GetType().FullName); "message", box ex.Message; "stack", box ex.StackTrace; "phase", box phase]
