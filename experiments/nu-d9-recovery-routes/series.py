@@ -26,8 +26,26 @@ spec.loader.exec_module(r06)
 ROUNDS = [("Z", "HFC"), ("1", "HFC"), ("2", "FCH"), ("3", "CHF"), ("4", "HFC"), ("5", "FCH")]
 
 
+def wait_idle(log):
+    """Amendment 1 (10 Nov 2026): a labmate's service stays resident on the GPU at 0 % use, so "no other process"
+    can never hold. Idle now means utilization < 10 % on two polls 2 s apart; resident processes are recorded."""
+    start, polls = time.monotonic(), 0
+    while True:
+        a = r06.gpu_state()
+        time.sleep(2)
+        b = r06.gpu_state()
+        polls += 1
+        if a["utilization"] < 10 and b["utilization"] < 10:
+            return {"idle": True, "rule": "utilization<10% twice, 2 s apart (amendment 1)",
+                    "waited_seconds": round(time.monotonic() - start, 1), "polls": polls, "state": b}
+        if time.monotonic() - start > 1800:
+            return {"idle": False, "waited_seconds": round(time.monotonic() - start, 1), "polls": polls, "state": b}
+        log(f"GPU busy ({b}); waiting 15 s")
+        time.sleep(15)
+
+
 def run_process(probe, breakout, runs, attempt, mode, transfer, log):
-    idle = r06.wait_idle(log)
+    idle = wait_idle(log)
     if not idle["idle"]:
         return {"attempt": attempt, "mode": mode, "outcome": "not-run: GPU not idle", "gpu_before": idle}
     out = runs / attempt

@@ -81,3 +81,8 @@ Times are valid only on this server and configuration. They must not be compared
   - The checkpoint route depends on an API call with no menu command.
   - Sound and random-number state are not compared.
   - No real-world fault frequency, no other game or engine, and no benefit claim beyond what survives and the machine time.
+
+## Amendment 1 (10 November 2026, before any run)
+
+- **Problem:** the first launch of round Z never started a process. A labmate's long-running service (`buildinggpt-rag`, resident on the GPU for nearly 3 days, 4.6 GB, 0 % utilization) means "no process on the GPU except Xorg" can never hold, so the idle check would only time out.
+- **Change** (`series.py` only): **idle means GPU utilization < 10 % on two polls 2 s apart.** The processes present are recorded with each attempt. Nothing else changes, and no Nu process ran before this amendment.
