@@ -1,6 +1,6 @@
 # Status and continuation plan — 1 November 2026 (HKT)
 
-**Claude session, checkpointed 10 Nov 2026 ~16:40 UTC (11 Nov 00:40 HKT), at its allocation boundary.** User decision D9 (10 November): directions 1 (recovery) and 2 (schema change) are done with scored results; directions 3 (content revision) and 4 (coding agents) have frozen protocol packets and need a fresh allocation. Verdict: `.orchestration/d9-all-directions-20261110/latest.txt` (NOT CLEAN at the D9 scope). No jobs, displays or GPU processes of mine are running; nothing is pushed.
+**Claude session, checkpointed 10 Nov 2026 ~16:40 UTC (11 Nov 00:40 HKT), about 1 h before its allocation ended, because the next stage (about 2 h) could not fit.** User decision D9 (10 November): directions 1 (recovery) and 2 (schema change) are done with scored results; directions 3 (content revision) and 4 (coding agents) have frozen protocol packets and need a fresh allocation. Verdict: `.orchestration/d9-all-directions-20261110/latest.txt` (NOT CLEAN at the D9 scope). No jobs, displays or GPU processes of mine are running; nothing is pushed.
 
 ## D9 (10 November): all four practical comparisons — Claude Opus (10–11 November 2026)
 
