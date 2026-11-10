@@ -88,3 +88,14 @@ The probe writes JSON snapshots of every entity in the group: the dispatcher, th
 - Engines other than Nu.
 
 Steps are declared counts, not measured human work. The helper is fair only in that it receives the same intent list. A helper denied the list would be invalid.
+
+## Amendment 1 (11 November 2026, 03:3x HKT): after feasibility attempt 1, before any scored round
+
+- **Feasibility attempt 1 stopped at control N:** the probe raised "Screen 'Game/Gameplay' already exists and cannot be created". The engine had already made that screen by frame 3, even with the plain plugin. Kept in `.artifacts/d9-content-revision-20261111/series/round-F.attempt1/`.
+- **Correction (`TerraProbe.fs` only):** reuse an existing `Gameplay` screen, and destroy any existing `Scene` group before loading the file, inside the same callback. The probe records which of the two existed in `setup.json`: here the screen existed, and the group did not. Probe build 03 passed.
+- **Feasibility attempt 2 (unscored)** ran all seven runs. Every process exited 0 with the NVIDIA Vulkan device line.
+  - Control N: no difference after save and reopen.
+  - The family has 32 members; the local palm L is `Game/Gameplay/Scene/Villa-0002/Palm`.
+  - T1 and T2 passed on both routes, and T3-O passed. **T3-P missed L's roughness**, which stayed unset, both after the operation and after reopen. This is an adverse result for P, not an apparatus failure, so it does not change the protocol.
+- **Construction record:** probe build 01 failed (a missing namespace); builds 02 and 03 passed. Feasibility failures at the run step: 1.
+- **Scored rounds 1–3 follow unchanged.**

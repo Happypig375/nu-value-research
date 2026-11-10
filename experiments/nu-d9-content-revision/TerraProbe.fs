@@ -83,7 +83,14 @@ module Program =
     let private run world =
         let mode, task, cond, input, out = env "PROBE_MODE", env "PROBE_TASK", env "PROBE_COND", env "PROBE_IN", env "PROBE_OUT"
         let write (name : string) (text : string) = File.WriteAllText (Path.Combine (out, name), text)
-        let screen = World.createScreen<ScreenDispatcher> (Some "Gameplay") world
+        // amendment 1: the engine may already have made the Gameplay screen (and a Scene group); reuse the screen and
+        // replace any existing Scene group with the file's contents, all inside this one callback
+        let existing = Game / "Gameplay"
+        let screenExisted = existing.GetExists world
+        let screen = if screenExisted then existing else World.createScreen<ScreenDispatcher> (Some "Gameplay") world
+        let groupExisted = (screen / "Scene").GetExists world
+        if groupExisted then World.destroyGroupImmediate (screen / "Scene") world
+        write "setup.json" (String.Format ("{{\"screen_existed\":{0},\"scene_group_existed\":{1}}}", (if screenExisted then "true" else "false"), (if groupExisted then "true" else "false")))
         let watch = Diagnostics.Stopwatch.StartNew ()
         let group = World.readGroupFromFile input (Some "Scene") screen world
         let loadMs = watch.Elapsed.TotalMilliseconds
