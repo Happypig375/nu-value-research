@@ -140,3 +140,19 @@ Taken from master's `Projects/Breakout Mmcc/Gameplay.fs` (`47ef39e`). A candidat
   - whether the seven old fields are unchanged;
   - the value of `BrickReward` (required: 200).
 - **No migration** is tried in this step. This is the first construction attempt under the direction-2 budget (5 failures at one unchanged step). The October R10 attempts are not counted.
+
+## Direction 2: route L feasibility results, and amendment 2 (11 November 2026 HKT)
+
+**Route L, case A feasibility** (`.artifacts/d9-schema-reload-20261110/`):
+- **Attempt 01 failed.** Gaia master's code reload did not compile: "Unable to find the file '../../../../Nu.Dependencies/AssimpNet/…'".
+  - **Cause (upstream, source-confirmed):** since Nu commit `d51f628d9a` (11 August 2026), the reload script hard-codes `../Nu.Dependencies/…` relative to the project folder. For the bundled samples under `Projects/`, that points to a folder that doesn't exist. At `064f7ae` the paths came from the project's HintPaths.
+  - **So at master, code reload of the bundled sample games fails on a stock checkout.**
+- **Attempt 02, environment-only fix:** a symlink `Projects/Nu.Dependencies` → `../Nu/Nu.Dependencies` in the scratch tree, with no source change. **Reload then compiled and installed in 5.9 s.**
+  - The live model became `FSI_0005.Breakout.Gameplay`, and all seven old fields were preserved.
+  - **`BrickReward` was 0, not the required 200.** This is the October `064f7ae` finding (the new field gets its type default, not its initializer), reproduced at master on Vulkan.
+
+**Amendment 2** (before any route-M run):
+- `Probe.fs` takes a route argument, L or M.
+- **Route M**, after the same reload, builds a migrated record of the reloaded type by reflection, with `BrickReward` = 200 for case A. It sets the record through the reloaded code's own `Screen.SetGameplay` (in the F# Interactive assembly), settles for 10 halted frames, and then records the new field, the old fields and the scene's entity names.
+- **One unscored feasibility run (M-A).** The environment fix stays in place.
+- Builds: build 02 accidentally compiled Breakout from the edited source left by attempt 02. It was not used for any run. The source was restored and rebuilt as build 03 (logged).

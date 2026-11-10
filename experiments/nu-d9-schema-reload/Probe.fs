@@ -49,11 +49,12 @@ module Program =
 
     [<EntryPoint; STAThread>]
     let main args =
-        if args.Length <> 3 then
-            eprintfn "Usage: Probe <Breakout DLL> <Gameplay.fs to edit> <new receipt dir>"
+        if args.Length <> 4 || not (List.contains args[0] ["L"; "M"]) then
+            eprintfn "Usage: Probe <L|M> <Breakout DLL> <Gameplay.fs to edit> <new receipt dir>"
             2
         else
-            let dll, gameplaySource, output = Path.GetFullPath args[0], Path.GetFullPath args[1], Path.GetFullPath args[2]
+            let route = args[0]
+            let dll, gameplaySource, output = Path.GetFullPath args[1], Path.GetFullPath args[2], Path.GetFullPath args[3]
             if Directory.Exists output then invalidOp "Receipt directory must be new."
             Directory.CreateDirectory output |> ignore
             let trace = Path.Combine (output, "trace.jsonl")
@@ -62,6 +63,7 @@ module Program =
             let mutable phase, callbacks, updates, reloadEvents, settle = "initialize", 0, 0, 0, 0
             let mutable before : (string * string) array = [||]
             let mutable done_ = false
+            let mutable entityNamesAfterReload : string array = [||]
             let require m c = if not c then invalidOp m
             let finish ok detail (world : World) =
                 done_ <- true
@@ -104,13 +106,44 @@ module Program =
                                 let after = recordFields m
                                 let afterMap = dict after
                                 let oldPreserved = before |> Array.forall (fun (n, v) -> afterMap.ContainsKey n && afterMap[n] = v)
+                                let names (w : World) = World.getEntities Simulants.GameplayScene w |> Seq.map (fun e -> e.Name) |> Seq.sort |> Seq.toArray
+                                entityNamesAfterReload <- names world
                                 emit "post-reload"
                                     [ "modelType", box (m.GetType().FullName); "modelAssembly", box (m.GetType().Assembly.FullName)
                                       "fields", box afterMap; "oldFieldsPreserved", box oldPreserved
                                       "brickReward", box (if afterMap.ContainsKey "BrickReward" then afterMap["BrickReward"] else "(absent)")
                                       "requiredBrickReward", box "200"; "codeReloadEvents", box reloadEvents
                                       "fsiHasProjectCode", box (Gaia.researchFsiHasProjectCode ()); "halted", box world.TimeHalted ]
-                                finish true "Reload observed." world
+                                if route = "L" then finish true "Reload observed." world
+                                else
+                                    // Amendment 2: explicit migration, case A (required 200), via the reloaded code's own setter
+                                    let t = m.GetType ()
+                                    let props = FSharpType.GetRecordFields (t, true)
+                                    let values = FSharpValue.GetRecordFields (m, true)
+                                    let i = props |> Array.findIndex (fun p -> p.Name = "BrickReward")
+                                    values[i] <- box 200
+                                    let migrated = FSharpValue.MakeRecord (t, values, true)
+                                    let ext = t.Assembly.GetTypes () |> Array.find (fun ty -> ty.FullName.EndsWith "Breakout.GameplayExtensions")
+                                    let setter = ext.GetMethods () |> Array.find (fun mi -> mi.Name = "Screen.SetGameplay")
+                                    let t0 = Stopwatch.GetTimestamp ()
+                                    setter.Invoke (null, [| box Simulants.Gameplay; migrated; box world |]) |> ignore
+                                    let t1 = Stopwatch.GetTimestamp ()
+                                    emit "migration-applied" ["migrationMs", box (float (t1 - t0) * 1000.0 / float Stopwatch.Frequency); "setter", box (ext.FullName + "." + setter.Name)]
+                                    phase <- "settle-migrated"
+                                    settle <- 0
+                        | "settle-migrated" ->
+                            settle <- settle + 1
+                            if settle >= 10 then
+                                let m = liveModel world
+                                let afterMap = dict (recordFields m)
+                                let oldPreserved = before |> Array.forall (fun (n, v) -> afterMap.ContainsKey n && afterMap[n] = v)
+                                let names = World.getEntities Simulants.GameplayScene world |> Seq.map (fun e -> e.Name) |> Seq.sort |> Seq.toArray
+                                emit "post-migration"
+                                    [ "modelType", box (m.GetType().FullName); "oldFieldsPreserved", box oldPreserved
+                                      "brickReward", box (if afterMap.ContainsKey "BrickReward" then afterMap["BrickReward"] else "(absent)")
+                                      "requiredBrickReward", box "200"; "sceneNamesUnchanged", box (names = entityNamesAfterReload)
+                                      "halted", box world.TimeHalted ]
+                                finish true "Migration observed." world
                         | _ -> ()
                     with ex ->
                         emit "probe-exception" ["type", box (ex.GetType().FullName); "message", box ex.Message; "stack", box ex.StackTrace; "phase", box phase]
